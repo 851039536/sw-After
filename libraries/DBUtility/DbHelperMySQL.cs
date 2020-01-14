@@ -231,13 +231,13 @@ namespace DBUtility
                         cmd.Parameters.Clear();
                     }
                     string oraConnectionString = PubConstant.GetConnectionString("ConnectionStringPPC");
-                    //bool res = OracleHelper.ExecuteSqlTran(oraConnectionString, oracleCmdSqlList);
-                    //if (!res)
-                    //{
-                    //    tx.Rollback();
-                    //    throw new Exception("执行失败");
-                    //    // return -1;
-                    //}
+                    bool res = OracleHelper.ExecuteSqlTran(oraConnectionString, oracleCmdSqlList);
+                    if (!res)
+                    {
+                        tx.Rollback();
+                        throw new Exception("执行失败");
+                        // return -1;
+                    }
                     tx.Commit();
                     return 1;
                 }
@@ -859,6 +859,8 @@ namespace DBUtility
                 }
             }
         }
+
+
 
         #endregion
 

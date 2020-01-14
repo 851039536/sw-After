@@ -21,6 +21,7 @@ namespace After_Test
             form1 = this;
         }
         public After.BLL.user userBLL = new After.BLL.user();
+        public After.BLL.miscellaneous miscellaneousBLL = new After.BLL.miscellaneous();
         GenericForm genericForm = new GenericForm();
 
         /// <summary>
@@ -39,25 +40,8 @@ namespace After_Test
         private void Form1_Load(object sender, EventArgs e)
         {
 
-             List<After.Model.user> userlist = userBLL.GetModelList("");
-             foreach (After.Model.user item in userlist)
-             {
-                 DataGridViewRow row = new DataGridViewRow();
-
-                 DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
-                 cell.Value = item.用户;
-                 DataGridViewTextBoxCell cell2 = new DataGridViewTextBoxCell();
-                 cell2.Value = item.密码;
-                 DataGridViewTextBoxCell cell3 = new DataGridViewTextBoxCell();
-                 cell3.Value = item.权限;
-                 row.Cells.Add(cell);
-                 row.Cells.Add(cell2);
-                 row.Cells.Add(cell3);
-
-                 this.dataGridView1.Rows.Add(row);
-             }
-
-             CheckForIllegalCrossThreadCalls = false;
+          
+            CheckForIllegalCrossThreadCalls = false;
             Jurisdiction();
             genericForm.Firstload();
 
@@ -65,6 +49,7 @@ namespace After_Test
             ctl.setTag(this);
             form1.WindowState = FormWindowState.Normal;
 
+            genericForm.Loadcontrol();
         }
 
         private void Form1_Resize(object sender, EventArgs e)
@@ -74,6 +59,11 @@ namespace After_Test
             float newY = Form1.form1.Height;
             ctl.setControls(newX / GenericForm._x, newY / GenericForm._y, this);
           
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
