@@ -39,13 +39,9 @@ namespace After_Test
         ClassControl ctl = new ClassControl();
         private void Form1_Load(object sender, EventArgs e)
         {
-
-          
             CheckForIllegalCrossThreadCalls = false;
             Jurisdiction();
             genericForm.Firstload();
-
-           
             ctl.setTag(this);
             form1.WindowState = FormWindowState.Normal;
 
@@ -62,6 +58,11 @@ namespace After_Test
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace After.BLL
 {
-	public partial class alltestitem
+	public partial class testitem
 	{
-		private readonly DAL.alltestitem dal = new DAL.alltestitem();
-		public alltestitem()
+		private readonly DAL.testitem dal = new DAL.testitem();
+		public testitem()
 		{ }
 		#region  BasicMethod
 
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public bool Add(Model.alltestitem model)
+		public bool Add(Model.user model)
 		{
 			return dal.Add(model);
 		}
@@ -26,7 +26,7 @@ namespace After.BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Model.alltestitem model)
+		public bool Update(Model.user model)
 		{
 			return dal.Update(model);
 		}
@@ -43,7 +43,7 @@ namespace After.BLL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Model.alltestitem GetModel()
+		public Model.testitem GetModel()
 		{
 			//该表无主键信息，请自定义主键/条件字段
 			return dal.GetModel();
@@ -52,7 +52,7 @@ namespace After.BLL
 		/// <summary>
 		/// 得到一个对象实体，从缓存中
 		/// </summary>
-		public Model.alltestitem GetModelByCache()
+		public Model.user GetModelByCache()
 		{
 			//该表无主键信息，请自定义主键/条件字段
 			string CacheKey = "userModel-";
@@ -70,7 +70,7 @@ namespace After.BLL
 				}
 				catch { }
 			}
-			return (Model.alltestitem)objModel;
+			return (Model.user)objModel;
 		}
 
 		/// <summary>
@@ -83,34 +83,24 @@ namespace After.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Model.alltestitem> GetModelList(string strWhere)
+		public List<Model.testitem> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
 		}
 		/// <summary>
-		/// 加载测试机型
-		/// </summary>
-		/// <param name="strWhere"></param>
-		/// <returns></returns>
-        public List<Model.alltestitem> LoadTestModel(string strWhere)
-        {
-            DataSet ds = dal.LoadTestModel(strWhere);//dal
-            return DataTableToList(ds.Tables[0]); //bll
-        }
-		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Model.alltestitem> DataTableToList(DataTable dt)
+		public List<Model.testitem> DataTableToList(DataTable dt)
 		{
-			List<Model.alltestitem> modelList = new List<Model.alltestitem>();
+			List<Model.testitem> modelList = new List<Model.testitem>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				Model.alltestitem model;
+				Model.testitem model;
 				for (int n = 0; n < rowsCount; n++)
 				{
-					model = dal.LoadTestModel(dt.Rows[n]);
+					model = dal.DataRowToModel(dt.Rows[n]);
 					if (model != null)
 					{
 						modelList.Add(model);

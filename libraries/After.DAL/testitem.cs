@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 
 namespace After.DAL
 {
-    public partial class alltestitem
-    {
-		public alltestitem()
+	/// <summary>
+	/// 数据访问类:user
+	/// </summary>
+	public partial class testitem
+	{
+		public testitem()
 		{ }
 		#region  BasicMethod
 
@@ -20,10 +23,10 @@ namespace After.DAL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public bool Add(Model.alltestitem model)
+		public bool Add(Model.user model)
 		{
 			StringBuilder strSql = new StringBuilder();
-			strSql.Append("insert into alltestitem(");
+			strSql.Append("insert into user(");
 			strSql.Append("id,name,age)");
 			strSql.Append(" values (");
 			strSql.Append("@id,@name,@age)");
@@ -31,9 +34,9 @@ namespace After.DAL
 					new MySqlParameter("@id", MySqlDbType.Int32,8),
 					new MySqlParameter("@name", MySqlDbType.VarChar,255),
 					new MySqlParameter("@age", MySqlDbType.Int32,8)};
-			//parameters[0].Value = model.用户;
-			//parameters[1].Value = model.密码;
-			//parameters[2].Value = model.权限;
+			parameters[0].Value = model.用户;
+			parameters[1].Value = model.密码;
+			parameters[2].Value = model.权限;
 
 			int rows = DbHelperMySql.ExecuteSql(strSql.ToString(), parameters);
 			if (rows > 0)
@@ -48,10 +51,10 @@ namespace After.DAL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Model.alltestitem model)
+		public bool Update(Model.user model)
 		{
 			StringBuilder strSql = new StringBuilder();
-			strSql.Append("update alltestitem set ");
+			strSql.Append("update user set ");
 			strSql.Append("name=@name,");
 			strSql.Append("age=@age");
 			strSql.Append(" where id=@id ");
@@ -59,9 +62,9 @@ namespace After.DAL
 					new MySqlParameter("@name", MySqlDbType.VarChar,255),
 					new MySqlParameter("@age", MySqlDbType.Int32,8),
 					new MySqlParameter("@id", MySqlDbType.Int32,8)};
-			//parameters[0].Value = model.用户;
-			//parameters[1].Value = model.密码;
-			//parameters[2].Value = model.权限;
+			parameters[0].Value = model.用户;
+			parameters[1].Value = model.密码;
+			parameters[2].Value = model.权限;
 
 			int rows = DbHelperMySql.ExecuteSql(strSql.ToString(), parameters);
 			if (rows > 0)
@@ -81,7 +84,7 @@ namespace After.DAL
 		{
 			//该表无主键信息，请自定义主键/条件字段
 			StringBuilder strSql = new StringBuilder();
-			strSql.Append("delete from alltestitem ");
+			strSql.Append("delete from user ");
 			strSql.Append(" where id=@userID");
 			MySqlParameter[] parameters = {
 				 new MySqlParameter("@@userID", SqlDbType.BigInt)
@@ -104,16 +107,16 @@ namespace After.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Model.alltestitem GetModel()
+		public Model.testitem GetModel()
 		{
 			//该表无主键信息，请自定义主键/条件字段
 			StringBuilder strSql = new StringBuilder();
-			strSql.Append("select id,name,age from alltestitem ");
+			strSql.Append("select id,name,age from user ");
 			strSql.Append(" where ");
 			MySqlParameter[] parameters = {
 			};
 
-			Model.alltestitem model = new Model.alltestitem();
+			Model.testitem model = new Model.testitem();
 			DataSet ds = DbHelperMySql.Query(strSql.ToString(), parameters);
 			if (ds.Tables[0].Rows.Count > 0)
 			{
@@ -127,101 +130,51 @@ namespace After.DAL
 
 
 		/// <summary>
-		/// 得到一个对象实体 返回model
+		/// 得到一个对象实体
 		/// </summary>
-		public Model.alltestitem DataRowToModel(DataRow row)
+		public Model.testitem DataRowToModel(DataRow row)
 		{
-			Model.alltestitem model = new Model.alltestitem();
+			Model.testitem model = new Model.testitem();
 			if (row != null)
 			{
-				if (row["机型"] != null && row["机型"].ToString() != "")
+				if (row["测试站别"] != null && row["测试站别"].ToString() != "")
 				{
-					model.机型 = row["机型"].ToString();
+					model.测试站别 = row["测试站别"].ToString();
 				}
-				//if (row["测试项目"] != null)
-				//{
-				//	model.测试项目 = row["测试项目"].ToString();
-				//}
-    //            if (row["耳机指令"] != null)
-    //            {
-    //                model.耳机指令 = row["耳机指令"].ToString();
-    //            }
-    //            if (row["单位"] != null)
-    //            {
-    //                model.单位 = row["单位"].ToString();
-    //            }
-    //            if (row["数值下限"] != null)
-    //            {
-    //                model.数值下限 = row["数值下限"].ToString();
-    //            }
-    //            if (row["数值上限"] != null)
-    //            {
-    //                model.数值上限 = row["数值上限"].ToString();
-    //            }
-				//if (row["编号"] != null && row["编号"].ToString() != "")
-				//{
-				//	model.编号 = int.Parse(row["编号"].ToString());
-				//}
+//				if (row["密码"] != null)
+//				{
+//					model.密码 = row["密码"].ToString();
+//				}
+//				if (row["权限"] != null && row["权限"].ToString() != "")
+//				{
+//					model.权限 = int.Parse(row["权限"].ToString());
+//				}
 			}
 			return model;
 		}
 
-
 		/// <summary>
-		/// 加载测试机型 返回model
-		/// </summary>
-		/// <param name="row"></param>
-		/// <returns></returns>
-        public Model.alltestitem LoadTestModel(DataRow row)
-        {
-            Model.alltestitem model = new Model.alltestitem();
-            if (row != null)
-            {
-                if (row["机型"] != null && row["机型"].ToString() != "")
-                {
-                    model.机型 = row["机型"].ToString();
-                }
-               
-            }
-            return model;
-        }
-
-		/// <summary>
-		/// 获得数据列表 DataSet
+		/// 获得数据列表
 		/// </summary>
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql = new StringBuilder();
-			strSql.Append(" select distinct 机型");
-			strSql.Append(" FROM alltestitem ");
+			strSql.Append("select distinct 测试站别 ");
+			strSql.Append(" FROM testitem ");
 			if (strWhere.Trim() != "")
 			{
-				strSql.Append(" where " + strWhere);
+				strSql.Append(" where 机型= '" + strWhere + "'");
 			}
 			return DbHelperMySql.Query(strSql.ToString());
 		}
 
-        /// <summary>
-        /// 加载测试机型
-        /// </summary>
-        public DataSet LoadTestModel(string strWhere)
-        {
-            StringBuilder strSql = new StringBuilder();
-            strSql.Append(" select distinct 机型");
-            strSql.Append(" FROM alltestitem ");
-            if (strWhere.Trim() != "")
-            {
-                strSql.Append(" where " + strWhere);
-            }
-            return DbHelperMySql.Query(strSql.ToString());
-        }
 		/// <summary>
 		/// 获取记录总数
 		/// </summary>
 		public int GetRecordCount(string strWhere)
 		{
 			StringBuilder strSql = new StringBuilder();
-			strSql.Append("select count(1) FROM alltestitem ");
+			strSql.Append("select count(1) FROM user ");
 			if (strWhere.Trim() != "")
 			{
 				strSql.Append(" where " + strWhere);
@@ -252,7 +205,7 @@ namespace After.DAL
 			{
 				strSql.Append("order by T. desc");
 			}
-			strSql.Append(")AS Row, T.*  from alltestitem T ");
+			strSql.Append(")AS Row, T.*  from user T ");
 			if (!string.IsNullOrEmpty(strWhere.Trim()))
 			{
 				strSql.Append(" WHERE " + strWhere);
@@ -277,7 +230,7 @@ namespace After.DAL
 					new MySqlParameter("@OrderType", MySqlDbType.Bit),
 					new MySqlParameter("@strWhere", MySqlDbType.VarChar,1000),
 					};
-			parameters[0].Value = "alltestitem";
+			parameters[0].Value = "user";
 			parameters[1].Value = "";
 			parameters[2].Value = PageSize;
 			parameters[3].Value = PageIndex;

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="alltestitem.cs" />
     <Compile Include="miscellaneous.cs" />
+    <Compile Include="testitem.cs" />
     <Compile Include="user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
