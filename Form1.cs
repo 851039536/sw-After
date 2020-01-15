@@ -57,14 +57,14 @@ namespace After_Test
           
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             genericForm.SelectindxChan();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            genericForm.ComboBox1SelectedIndexChanged();
         }
     }
 }

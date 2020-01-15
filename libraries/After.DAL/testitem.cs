@@ -146,10 +146,26 @@ namespace After.DAL
 			return model;
 		}
 
-        /// <summary>
-        /// 得到一个对象实体
-        /// </summary>
-        public Model.testitem DataRowToModel(DataRow row)
+		/// <summary>
+		/// 得到Testitem对象实体
+		/// </summary>
+		public Model.testitem LoadTestitemProjectList(DataRow row)
+        {
+            Model.testitem model = new Model.testitem();
+            if (row != null)
+            {
+                if (row["测试项目"] != null && row["测试项目"].ToString() != "")
+                {
+                    model.测试项目 = row["测试项目"].ToString();
+                }
+
+            }
+            return model;
+        }
+		/// <summary>
+		/// 得到一个对象实体
+		/// </summary>
+		public Model.testitem DataRowToModel(DataRow row)
         {
             Model.testitem model = new Model.testitem();
             if (row != null)
@@ -184,10 +200,27 @@ namespace After.DAL
 			return DbHelperMySql.Query(strSql.ToString());
 		}
 
-        /// <summary>
-        /// 获得站别数据
-        /// </summary>
-        public DataSet LoadTestStationList(string strWhere)
+		/// <summary>
+		/// 测试项目  条件（测试站别）
+		/// </summary>
+		public DataSet GetTestitemProjectList(string strWhere, string comb)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append(" select 测试项目 ");
+            strSql.Append(" FROM testitem ");
+            if (strWhere.Trim() != "" && comb.Trim()!="")
+            {
+                strSql.Append(" where 测试站别 = '" + comb + "'and 机型 = '" + strWhere + "'order by 编号 ASC" );
+
+			}
+            return DbHelperMySql.Query(strSql.ToString());
+        }
+		
+
+		/// <summary>
+		/// 获得站别数据
+		/// </summary>
+		public DataSet LoadTestStationList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select distinct 测试站别 ");

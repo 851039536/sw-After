@@ -109,7 +109,7 @@ namespace After_Test.Generic
                 {
                     Form1.form1.listBoxControl3.Items.Clear();
                     Form1.form1.listBoxControl2.Items.Clear();
-                    // ComboBox1SelectedIndexChanged();
+                     ComboBox1SelectedIndexChanged();
                     // Querycheck();
                     List<After.Model.alltestitem> alllist = alltestBLL.LoadTestProject(Type2.Type1);
                     foreach (After.Model.alltestitem item in alllist)
@@ -124,19 +124,18 @@ namespace After_Test.Generic
             }
         }
 
-        //public void ComboBox1SelectedIndexChanged()
-        //{
-        //    Form1.form1.listBoxControl2.Items.Clear();
-        //    mysql.conn.Open();
-        //    string dete = "select 测试项目 from testitem where 测试站别 = '" + comboBox1.Text + "'and 机型 = '" + Type2.Type1 + "'order by 编号 ASC";
-        //    MySqlCommand comm2 = new MySqlCommand(dete, mysql.conn);
-        //    MySqlDataReader readers = comm2.ExecuteReader();
-        //    while (readers.Read())
-        //    {
-        //        string y = readers[0].ToString();
-        //        Form1.form1.listBoxControl2.Items.Add(y);
-        //    }
-        //    mysql.conn.Close();
-        //}
+        /// <summary>
+        /// 测试项目  条件（测试站别）
+        /// </summary>
+        public void ComboBox1SelectedIndexChanged()
+        {
+            Form1.form1.listBoxControl2.Items.Clear();
+            List<After.Model.testitem> alllist = testBLL.GetTestitemProject(Type2.Type1, Form1.form1.comboBox1.Text);
+          //  string dete = "select 测试项目 from testitem where 测试站别 = '" + comboBox1.Text + "'and 机型 = '" + Type2.Type1 + "'order by 编号 ASC";
+          foreach (var testitem in alllist)
+          {
+              Form1.form1.listBoxControl2.Items.Add(testitem.测试项目);
+            }
+        }
     }
 }

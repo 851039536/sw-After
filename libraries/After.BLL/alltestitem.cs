@@ -88,10 +88,11 @@ namespace After.BLL
 			DataSet ds = dal.GetTestProject(strWhere);
 			return DataTestProject(ds.Tables[0]);
 		}
-        /// <summary>
-        /// 获得数据列表
-        /// </summary>
-        public List<Model.alltestitem> GetModelList(string strWhere)
+		
+		/// <summary>
+		/// 获得数据列表
+		/// </summary>
+		public List<Model.alltestitem> GetModelList(string strWhere)
         {
             DataSet ds = dal.GetList(strWhere);
             return DataTableToList(ds.Tables[0]);

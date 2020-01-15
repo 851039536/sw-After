@@ -89,11 +89,20 @@ namespace After.BLL
 			return DataTableToList(ds.Tables[0]);
 		}
 		/// <summary>
+		/// 测试项目  条件（测试站别）
+		/// </summary>
+		public List<Model.testitem> GetTestitemProject(string strWhere,string comb)
+        {
+            DataSet ds = dal.GetTestitemProjectList(strWhere,comb);
+            return DataTestitemProject(ds.Tables[0]);
+        }
+		
+		/// <summary>
 		/// 加载测试站别
 		/// </summary>
 		/// <param name="strWhere"></param>
 		/// <returns></returns>
-        public List<Model.testitem> LoadTestStation(string strWhere)
+		public List<Model.testitem> LoadTestStation(string strWhere)
         {
             DataSet ds = dal.LoadTestStationList(strWhere);
             return DataTestStation(ds.Tables[0]);
@@ -142,6 +151,29 @@ namespace After.BLL
             return modelList;
         }
 
+
+		/// <summary>
+		/// 获得TestitemProject数据
+		/// </summary>
+		public List<Model.testitem> DataTestitemProject(DataTable dt)
+        {
+            List<Model.testitem> modelList = new List<Model.testitem>();
+            int rowsCount = dt.Rows.Count;
+            if (rowsCount > 0)
+            {
+                Model.testitem model;
+                for (int n = 0; n < rowsCount; n++)
+                {
+                    model = dal.LoadTestitemProjectList(dt.Rows[n]);
+                    if (model != null)
+                    {
+                        modelList.Add(model);
+                    }
+                }
+            }
+            return modelList;
+        }
+		
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
