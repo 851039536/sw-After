@@ -137,5 +137,116 @@ namespace After_Test.Generic
               Form1.form1.listBoxControl2.Items.Add(testitem.测试项目);
             }
         }
+
+        /// <summary>
+        /// 增加按钮
+        /// </summary>
+        public void butAdd()
+        {
+            string name = Convert.ToString(Form1.form1.listBoxControl3.SelectedItem); //双击击获取当前选中行的内容
+            foreach (string item in Form1.form1.listBoxControl2.Items)
+            {
+                if (name == item)
+                {
+                    return;
+                }
+
+            }
+            Form1.form1.listBoxControl2.Items.Add(name);
+        }
+
+        /// <summary>
+        /// 删除按键
+        /// </summary>
+        public void butDelete()
+        {
+            if (Form1.form1.listBoxControl2.SelectedItem != null)
+            {
+                Form1.form1.listBoxControl2.Items.Remove(Form1.form1.listBoxControl2.SelectedItem);
+                if (Form1.form1.listBoxControl2.Items.Count > 0)
+                {
+                    //默认选中第一行
+                    Form1.form1.listBoxControl2.SelectedIndex = 0;
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"未选中");
+            }
+        }
+
+        /// <summary>
+        /// 上移按键
+        /// </summary>
+        public void butUP()
+        {
+            int index = Form1.form1.listBoxControl2.SelectedIndex;
+            if (index > 0)
+            {
+                object item = Form1.form1.listBoxControl2.SelectedItem;
+                Form1.form1.listBoxControl2.Items.Remove(item);
+                Form1.form1.listBoxControl2.Items.Insert(index - 1, item);
+                Form1.form1.listBoxControl2.SelectedIndex = index - 1;
+            }
+        }
+
+        /// <summary>
+        /// 下移按键
+        /// </summary>
+        public void butDOWN()
+        {
+            try
+            {
+                int index = Form1.form1.listBoxControl2.SelectedIndex;
+                if (index < Form1.form1.listBoxControl2.Items.Count - 1)
+                {
+
+                    object item = Form1.form1.listBoxControl2.SelectedItem;
+                    Form1.form1.listBoxControl2.Items.Remove(item);
+                    Form1.form1.listBoxControl2.Items.Insert(index + 1, item);
+                    Form1.form1.listBoxControl2.SelectedIndex = index + 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        bool _locker = true;
+        /// <summary>
+        /// 锁定按钮
+        /// </summary>
+        public void butLock()
+        {
+           
+            if (_locker)
+            {
+                Form1.form1.listBoxControl2.Enabled = false;
+                Form1.form1.listBoxControl3.Enabled = false;
+                Form1.form1.ADD.Enabled = false;
+                Form1.form1.DELETE.Enabled = false;
+                Form1.form1.UP.Enabled = false;
+                Form1.form1.DOWN.Enabled = false;
+                Form1.form1.SAVE.Enabled = true;
+                Form1.form1.LOCK.Text = @"解除锁定";
+                _locker = false;
+                Form1.form1.checkBox1.Enabled = false;
+                Form1.form1.comboBox1.Enabled = false;
+            }
+            else
+            {
+                Form1.form1.listBoxControl2.Enabled = true;
+                Form1.form1.listBoxControl3.Enabled = true;
+                Form1.form1.ADD.Enabled = true;
+                Form1.form1.DELETE.Enabled = true;
+                Form1.form1.UP.Enabled = true;
+                Form1.form1.DOWN.Enabled = true;
+                Form1.form1.SAVE.Enabled = false;
+                Form1.form1.LOCK.Text = @"锁定";
+                _locker = true;
+                Form1.form1.checkBox1.Enabled = true;
+                Form1.form1.comboBox1.Enabled = true;
+            }
+        }
     }
 }

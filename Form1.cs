@@ -1,13 +1,6 @@
 ﻿using After.Generic;
 using After_Test.Generic;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace After_Test
@@ -65,6 +58,53 @@ namespace After_Test
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             genericForm.ComboBox1SelectedIndexChanged();
+        }
+
+        /// <summary>
+        /// 增加按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ADD_Click(object sender, EventArgs e)
+        {
+            genericForm.butAdd();
+        }
+
+        private void listBoxControl3_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            genericForm.butAdd();
+        }
+
+        private void DELETE_Click(object sender, EventArgs e)
+        {
+            genericForm.butDelete();
+        }
+
+        private void UP_Click(object sender, EventArgs e)
+        {
+            genericForm.butUP();
+        }
+
+        private void DOWN_Click(object sender, EventArgs e)
+        {
+            genericForm.butDOWN();
+        }
+
+        private void LOCK_Click(object sender, EventArgs e)
+        {
+            genericForm.butLock();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Type2.Type1 == null)
+            {
+                MessageBox.Show(@"未选择站别");
+            }
+            else
+            {
+                //Buttonshow();
+            }
         }
     }
 }

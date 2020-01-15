@@ -189,6 +189,7 @@
             this.ADD.TabIndex = 43;
             this.ADD.Text = "增加";
             this.ADD.UseVisualStyleBackColor = true;
+            this.ADD.Click += new System.EventHandler(this.ADD_Click);
             // 
             // DELETE
             // 
@@ -199,6 +200,7 @@
             this.DELETE.TabIndex = 44;
             this.DELETE.Text = "删除";
             this.DELETE.UseVisualStyleBackColor = true;
+            this.DELETE.Click += new System.EventHandler(this.DELETE_Click);
             // 
             // UP
             // 
@@ -209,6 +211,7 @@
             this.UP.TabIndex = 45;
             this.UP.Text = "上移";
             this.UP.UseVisualStyleBackColor = true;
+            this.UP.Click += new System.EventHandler(this.UP_Click);
             // 
             // DOWN
             // 
@@ -219,6 +222,7 @@
             this.DOWN.TabIndex = 46;
             this.DOWN.Text = "下移";
             this.DOWN.UseVisualStyleBackColor = true;
+            this.DOWN.Click += new System.EventHandler(this.DOWN_Click);
             // 
             // LOCK
             // 
@@ -229,6 +233,7 @@
             this.LOCK.TabIndex = 47;
             this.LOCK.Text = "锁定";
             this.LOCK.UseVisualStyleBackColor = true;
+            this.LOCK.Click += new System.EventHandler(this.LOCK_Click);
             // 
             // comboBox1
             // 
@@ -253,6 +258,7 @@
             this.listBoxControl3.Name = "listBoxControl3";
             this.listBoxControl3.Size = new System.Drawing.Size(224, 247);
             this.listBoxControl3.TabIndex = 74;
+            this.listBoxControl3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxControl3_MouseDoubleClick);
             // 
             // panel5
             // 
@@ -279,6 +285,7 @@
             this.button1.TabIndex = 65;
             this.button1.Text = "站别配置";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox2
             // 
