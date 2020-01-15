@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,7 +74,7 @@ namespace After_Test.Generic
            TextName(Type2.Type1);
            try
            {
-               List<After.Model.testitem> miscelist = testBLL.GetModelList(Type2.Type1);
+               List<After.Model.testitem> miscelist = testBLL.LoadTestStation(Type2.Type1);
                 Form1.form1.comboBox1.Items.Clear();
                foreach (After.Model.testitem item in miscelist)
                {
@@ -94,5 +95,48 @@ namespace After_Test.Generic
            Form1.form1.listBox1.Items.Add(name + "数据");
            Form1.form1.listBox1.SelectedIndex = 0;
        }
+
+        /// <summary>
+        /// 加载测试项目
+        /// </summary>
+        public void SelectindxChan()
+        {
+            try
+            {
+                string _testistBox;
+                _testistBox = Convert.ToString(Form1.form1.listBox1.SelectedItem); //单击获取当前选中行的内容
+                if (_testistBox != "")
+                {
+                    Form1.form1.listBoxControl3.Items.Clear();
+                    Form1.form1.listBoxControl2.Items.Clear();
+                    // ComboBox1SelectedIndexChanged();
+                    // Querycheck();
+                    List<After.Model.alltestitem> alllist = alltestBLL.LoadTestProject(Type2.Type1);
+                    foreach (After.Model.alltestitem item in alllist)
+                    {
+                        Form1.form1.listBoxControl3.Items.Add(item.测试项目);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //public void ComboBox1SelectedIndexChanged()
+        //{
+        //    Form1.form1.listBoxControl2.Items.Clear();
+        //    mysql.conn.Open();
+        //    string dete = "select 测试项目 from testitem where 测试站别 = '" + comboBox1.Text + "'and 机型 = '" + Type2.Type1 + "'order by 编号 ASC";
+        //    MySqlCommand comm2 = new MySqlCommand(dete, mysql.conn);
+        //    MySqlDataReader readers = comm2.ExecuteReader();
+        //    while (readers.Read())
+        //    {
+        //        string y = readers[0].ToString();
+        //        Form1.form1.listBoxControl2.Items.Add(y);
+        //    }
+        //    mysql.conn.Close();
+        //}
     }
 }

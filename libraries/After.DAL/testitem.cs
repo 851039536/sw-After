@@ -132,7 +132,7 @@ namespace After.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Model.testitem DataRowToModel(DataRow row)
+		public Model.testitem LoadTestStationList(DataRow row)
 		{
 			Model.testitem model = new Model.testitem();
 			if (row != null)
@@ -141,18 +141,34 @@ namespace After.DAL
 				{
 					model.测试站别 = row["测试站别"].ToString();
 				}
-//				if (row["密码"] != null)
-//				{
-//					model.密码 = row["密码"].ToString();
-//				}
-//				if (row["权限"] != null && row["权限"].ToString() != "")
-//				{
-//					model.权限 = int.Parse(row["权限"].ToString());
-//				}
+		
 			}
 			return model;
 		}
 
+        /// <summary>
+        /// 得到一个对象实体
+        /// </summary>
+        public Model.testitem DataRowToModel(DataRow row)
+        {
+            Model.testitem model = new Model.testitem();
+            if (row != null)
+            {
+                if (row["测试站别"] != null && row["测试站别"].ToString() != "")
+                {
+                    model.测试站别 = row["测试站别"].ToString();
+                }
+                //				if (row["密码"] != null)
+                //				{
+                //					model.密码 = row["密码"].ToString();
+                //				}
+                //				if (row["权限"] != null && row["权限"].ToString() != "")
+                //				{
+                //					model.权限 = int.Parse(row["权限"].ToString());
+                //				}
+            }
+            return model;
+        }
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
@@ -167,6 +183,21 @@ namespace After.DAL
 			}
 			return DbHelperMySql.Query(strSql.ToString());
 		}
+
+        /// <summary>
+        /// 获得站别数据
+        /// </summary>
+        public DataSet LoadTestStationList(string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select distinct 测试站别 ");
+            strSql.Append(" FROM testitem ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where 机型= '" + strWhere + "'");
+            }
+            return DbHelperMySql.Query(strSql.ToString());
+        }
 
 		/// <summary>
 		/// 获取记录总数

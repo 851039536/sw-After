@@ -186,25 +186,58 @@ namespace After.DAL
             return model;
         }
 
+        /// <summary>
+        /// 加载测试项目 返回model
+        /// </summary>
+        /// <param name="row"></param>
+        /// <returns></returns>
+        public Model.alltestitem LoadTestProject(DataRow row)
+        {
+            Model.alltestitem model = new Model.alltestitem();
+            if (row != null)
+            {
+                if (row["测试项目"] != null && row["测试项目"].ToString() != "")
+                {
+                    model.测试项目 = row["测试项目"].ToString();
+                }
+
+            }
+            return model;
+        }
+
 		/// <summary>
-		/// 获得数据列表 DataSet
+		/// 获得Project数据列表 DataSet
 		/// </summary>
-		public DataSet GetList(string strWhere)
+		public DataSet GetTestProject(string strWhere)
 		{
 			StringBuilder strSql = new StringBuilder();
-			strSql.Append(" select distinct 机型");
+			strSql.Append(" select 测试项目 ");
 			strSql.Append(" FROM alltestitem ");
 			if (strWhere.Trim() != "")
 			{
-				strSql.Append(" where " + strWhere);
+				strSql.Append("where 机型 = '" + strWhere + "'");
 			}
 			return DbHelperMySql.Query(strSql.ToString());
 		}
 
         /// <summary>
-        /// 加载测试机型
+        /// 获得数据列表 DataSet
         /// </summary>
-        public DataSet LoadTestModel(string strWhere)
+        public DataSet GetList(string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append(" select distinct 机型");
+            strSql.Append(" FROM alltestitem ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            return DbHelperMySql.Query(strSql.ToString());
+        }
+		/// <summary>
+		/// 加载测试机型
+		/// </summary>
+		public DataSet LoadTestModel(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append(" select distinct 机型");

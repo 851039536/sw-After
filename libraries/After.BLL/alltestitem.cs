@@ -81,27 +81,35 @@ namespace After.BLL
 			return dal.GetList(strWhere);
 		}
 		/// <summary>
-		/// 获得数据列表
+		/// 加载测试项目 返回model
 		/// </summary>
-		public List<Model.alltestitem> GetModelList(string strWhere)
+		public List<Model.alltestitem> LoadTestProject(string strWhere)
 		{
-			DataSet ds = dal.GetList(strWhere);
-			return DataTableToList(ds.Tables[0]);
+			DataSet ds = dal.GetTestProject(strWhere);
+			return DataTestProject(ds.Tables[0]);
 		}
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        public List<Model.alltestitem> GetModelList(string strWhere)
+        {
+            DataSet ds = dal.GetList(strWhere);
+            return DataTableToList(ds.Tables[0]);
+        }
 		/// <summary>
 		/// 加载测试机型
 		/// </summary>
 		/// <param name="strWhere"></param>
 		/// <returns></returns>
-        public List<Model.alltestitem> LoadTestModel(string strWhere)
+		public List<Model.alltestitem> LoadTestModel(string strWhere)
         {
             DataSet ds = dal.LoadTestModel(strWhere);//dal
-            return DataTableToList(ds.Tables[0]); //bll
+            return DataTestModel(ds.Tables[0]); //bll
         }
 		/// <summary>
-		/// 获得数据列表
+		/// 加载测试机型
 		/// </summary>
-		public List<Model.alltestitem> DataTableToList(DataTable dt)
+		public List<Model.alltestitem> DataTestModel(DataTable dt)
 		{
 			List<Model.alltestitem> modelList = new List<Model.alltestitem>();
 			int rowsCount = dt.Rows.Count;
@@ -119,6 +127,48 @@ namespace After.BLL
 			}
 			return modelList;
 		}
+		/// <summary>
+		/// 获取测试项目
+		/// </summary>
+		public List<Model.alltestitem> DataTestProject(DataTable dt)
+        {
+            List<Model.alltestitem> modelList = new List<Model.alltestitem>();
+            int rowsCount = dt.Rows.Count;
+            if (rowsCount > 0)
+            {
+                Model.alltestitem model;
+                for (int n = 0; n < rowsCount; n++)
+                {
+                    model = dal.LoadTestProject(dt.Rows[n]);
+                    if (model != null)
+                    {
+                        modelList.Add(model);
+                    }
+                }
+            }
+            return modelList;
+        }
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        public List<Model.alltestitem> DataTableToList(DataTable dt)
+        {
+            List<Model.alltestitem> modelList = new List<Model.alltestitem>();
+            int rowsCount = dt.Rows.Count;
+            if (rowsCount > 0)
+            {
+                Model.alltestitem model;
+                for (int n = 0; n < rowsCount; n++)
+                {
+                    model = dal.LoadTestProject(dt.Rows[n]);
+                    if (model != null)
+                    {
+                        modelList.Add(model);
+                    }
+                }
+            }
+            return modelList;
+        }
 
 		/// <summary>
 		/// 获得数据列表
