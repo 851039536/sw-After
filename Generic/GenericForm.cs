@@ -53,9 +53,12 @@ namespace After_Test.Generic
            {
                string y = item.机型;
               Form1.form1.型号ToolStripMenuItem.DropDownItems.Add(y);
+              Form1.form1.listBox3.Items.Add(y);
                 // 型号ToolStripMenuItem.DropDownItems[i].Image = image;
                 Form1.form1.型号ToolStripMenuItem.DropDownItems[i].Click += Tests;
                i++;
+
+              // Form1.form1.listBox1.Items.Add(y);
            }
 
         }
@@ -68,7 +71,7 @@ namespace After_Test.Generic
        private void Tests(object sender, EventArgs e)
        {
            Form1.form1.listBoxControl2.Visible = true;
-           Form1.form1.listBox1.Items.Clear();
+           Form1.form1.listBox3.Items.Clear();
            ToolStripItem items = (ToolStripItem)sender;
            Type2.Type1 = Convert.ToString(items);
            TextName(Type2.Type1);
@@ -88,28 +91,72 @@ namespace After_Test.Generic
                MessageBox.Show(ex.Message);
            }
        }
-       private void TextName(string name)
+
+        /// <summary>
+        /// 加载listBox1参数
+        /// </summary>
+        /// <param name="name"></param>
+        private void TextName(string name)
        {
            Form1.form1.contextMenuStrip2.Enabled = true;
-           Form1.form1.listBox1.Items.Add(name + "测试项目");
-           Form1.form1.listBox1.Items.Add(name + "数据");
-           Form1.form1.listBox1.SelectedIndex = 0;
+           Form1.form1.listBox3.Items.Add(name + "测试项目");
+          // Form1.form1.listBox1.Items.Add(name + "数据");
+           Form1.form1.listBox3.SelectedIndex = 0;
        }
 
         /// <summary>
-        /// 加载测试项目
+        /// 加载listBoxControl3测试项目
         /// </summary>
         public void SelectindxChan()
         {
             try
             {
                 string _testistBox;
-                _testistBox = Convert.ToString(Form1.form1.listBox1.SelectedItem); //单击获取当前选中行的内容
+                _testistBox = Convert.ToString(Form1.form1.listBox3.SelectedItem); //单击获取当前选中行的内容
                 if (_testistBox != "")
                 {
                     Form1.form1.listBoxControl3.Items.Clear();
                     Form1.form1.listBoxControl2.Items.Clear();
-                     ComboBox1SelectedIndexChanged();
+
+                    ComboBox1SelectedIndexChanged();
+                    // Querycheck();
+                    List<After.Model.alltestitem> alllist = alltestBLL.LoadTestProject(Type2.Type1);
+                    foreach (After.Model.alltestitem item in alllist)
+                    {
+                        Form1.form1.listBoxControl3.Items.Add(item.测试项目);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void SelectindxChanListbox3()
+        {
+            try
+            {
+                string _testistBox;
+                _testistBox = Convert.ToString(Form1.form1.listBox3.SelectedItem); //单击获取当前选中行的内容
+                Type2.Type1 = _testistBox;
+
+               
+                    List<After.Model.testitem> miscelist = testBLL.LoadTestStation(Type2.Type1);
+                    Form1.form1.comboBox1.Items.Clear();
+                    foreach (After.Model.testitem item in miscelist)
+                    {
+                        Form1.form1.comboBox1.Items.Add(item.测试站别);
+                    }
+                    Form1.form1.comboBox1.SelectedIndex = 0;
+               
+
+                if (_testistBox != "")
+                {
+                    Form1.form1.listBoxControl3.Items.Clear();
+                    Form1.form1.listBoxControl2.Items.Clear();
+
+                    ComboBox1SelectedIndexChanged();
                     // Querycheck();
                     List<After.Model.alltestitem> alllist = alltestBLL.LoadTestProject(Type2.Type1);
                     foreach (After.Model.alltestitem item in alllist)

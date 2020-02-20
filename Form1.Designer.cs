@@ -51,7 +51,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.listBoxControl2 = new System.Windows.Forms.ListBox();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -70,16 +69,16 @@
             this.用户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.数据库ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.测试计数ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.列表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox2
@@ -179,6 +178,7 @@
             this.SAVE.TabIndex = 48;
             this.SAVE.Text = "更新";
             this.SAVE.UseVisualStyleBackColor = true;
+            this.SAVE.Click += new System.EventHandler(this.SAVE_Click);
             // 
             // ADD
             // 
@@ -305,16 +305,6 @@
             this.label4.TabIndex = 85;
             this.label4.Text = "label4";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(255, 92);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 84;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
@@ -360,8 +350,7 @@
             this.型号ToolStripMenuItem,
             this.帮助ToolStripMenuItem,
             this.工具ToolStripMenuItem,
-            this.数据库ToolStripMenuItem1,
-            this.列表ToolStripMenuItem});
+            this.数据库ToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -384,20 +373,20 @@
             // 
             this.路径配置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("路径配置ToolStripMenuItem.Image")));
             this.路径配置ToolStripMenuItem.Name = "路径配置ToolStripMenuItem";
-            this.路径配置ToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.路径配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.路径配置ToolStripMenuItem.Text = "Config配置";
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("退出ToolStripMenuItem.Image")));
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.退出ToolStripMenuItem.Text = "项目配置";
             // 
             // 项目配置ToolStripMenuItem
             // 
             this.项目配置ToolStripMenuItem.Name = "项目配置ToolStripMenuItem";
-            this.项目配置ToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.项目配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.项目配置ToolStripMenuItem.Text = "退出";
             // 
             // 型号ToolStripMenuItem
@@ -420,7 +409,7 @@
             // 
             this.资料ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("资料ToolStripMenuItem.Image")));
             this.资料ToolStripMenuItem.Name = "资料ToolStripMenuItem";
-            this.资料ToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.资料ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.资料ToolStripMenuItem.Text = "使用说明";
             // 
             // 工具ToolStripMenuItem
@@ -437,13 +426,13 @@
             // 
             this.云盘ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("云盘ToolStripMenuItem.Image")));
             this.云盘ToolStripMenuItem.Name = "云盘ToolStripMenuItem";
-            this.云盘ToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.云盘ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.云盘ToolStripMenuItem.Text = "数据备份";
             // 
             // 用户管理ToolStripMenuItem
             // 
             this.用户管理ToolStripMenuItem.Name = "用户管理ToolStripMenuItem";
-            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.用户管理ToolStripMenuItem.Text = "用户管理";
             // 
             // 数据库ToolStripMenuItem1
@@ -457,28 +446,8 @@
             // 测试计数ToolStripMenuItem
             // 
             this.测试计数ToolStripMenuItem.Name = "测试计数ToolStripMenuItem";
-            this.测试计数ToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.测试计数ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.测试计数ToolStripMenuItem.Text = "数据统计";
-            // 
-            // 列表ToolStripMenuItem
-            // 
-            this.列表ToolStripMenuItem.Name = "列表ToolStripMenuItem";
-            this.列表ToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
-            this.列表ToolStripMenuItem.Text = "程序";
-            // 
-            // listBox1
-            // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.ContextMenuStrip = this.contextMenuStrip2;
-            this.listBox1.Font = new System.Drawing.Font("新宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 19;
-            this.listBox1.Location = new System.Drawing.Point(6, 162);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(125, 247);
-            this.listBox1.TabIndex = 72;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -497,11 +466,36 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 39);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(255, 92);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 84;
+            this.pictureBox1.TabStop = false;
+            // 
+            // listBox3
+            // 
+            this.listBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.listBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox3.ContextMenuStrip = this.contextMenuStrip2;
+            this.listBox3.Font = new System.Drawing.Font("新宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 19;
+            this.listBox3.Location = new System.Drawing.Point(8, 160);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(125, 247);
+            this.listBox3.TabIndex = 86;
+            this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 568);
+            this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
@@ -516,7 +510,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.listBoxControl2);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label7);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -528,10 +521,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -545,7 +538,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 文件路径配置ToolStripMenuItem;
@@ -559,12 +551,10 @@
         private System.Windows.Forms.ToolStripMenuItem 用户管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 数据库ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 测试计数ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 列表ToolStripMenuItem;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.ListBox listBoxControl3;
         public System.Windows.Forms.ListBox listBoxControl2;
         public System.Windows.Forms.MenuStrip menuStrip1;
-        public System.Windows.Forms.ListBox listBox1;
         public System.Windows.Forms.ListBox listBox2;
         public System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         public System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
@@ -582,6 +572,8 @@
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.ToolStripMenuItem 型号ToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.ListBox listBox3;
     }
 }
 

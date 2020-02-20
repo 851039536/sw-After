@@ -1,6 +1,7 @@
 ﻿using After.Generic;
 using After_Test.Generic;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace After_Test
@@ -13,8 +14,8 @@ namespace After_Test
             InitializeComponent();
             form1 = this;
         }
-        public After.BLL.user userBLL = new After.BLL.user();
-        public After.BLL.miscellaneous miscellaneousBLL = new After.BLL.miscellaneous();
+        public After.BLL.user UserBll = new After.BLL.user();
+        public After.BLL.miscellaneous MiscellaneousBll = new After.BLL.miscellaneous();
         GenericForm genericForm = new GenericForm();
 
         /// <summary>
@@ -22,7 +23,7 @@ namespace After_Test
         /// </summary>
         private void Jurisdiction()
         {
-            if (After.Generic.Type2.Jurisdiction == 0)
+            if (Type2.Jurisdiction == 0)
             {
                 文件路径配置ToolStripMenuItem.Enabled = false;
                 工具ToolStripMenuItem.Enabled = false;
@@ -30,6 +31,11 @@ namespace After_Test
             }
         }
         ClassControl ctl = new ClassControl();
+
+
+
+
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false;
@@ -44,8 +50,8 @@ namespace After_Test
         private void Form1_Resize(object sender, EventArgs e)
         {
             ClassControl ctl = new ClassControl();
-            float newX = Form1.form1.Width;
-            float newY = Form1.form1.Height;
+            float newX = form1.Width;
+            float newY = form1.Height;
             ctl.setControls(newX / GenericForm._x, newY / GenericForm._y, this);
           
         }
@@ -105,6 +111,22 @@ namespace After_Test
             {
                 //Buttonshow();
             }
+        }
+
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            genericForm.SelectindxChanListbox3();
+        }
+
+        private void SAVE_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text.Equals(""))
+            {
+                MessageBox.Show(@"站别不能为空");
+                return;
+            }
+
+            
         }
     }
 }
