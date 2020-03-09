@@ -1,5 +1,6 @@
 ﻿using After.Generic;
 using After_Test.Generic;
+using DBUtility;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,7 +36,7 @@ namespace After_Test
 
 
 
-        
+        UserManager user = new UserManager();
         private void Form1_Load(object sender, EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false;
@@ -43,7 +44,6 @@ namespace After_Test
             genericForm.Firstload();
             ctl.setTag(this);
             form1.WindowState = FormWindowState.Normal;
-
             genericForm.Loadcontrol();
         }
 

@@ -35,6 +35,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>F:\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="SqlSugar, Version=5.0.0.12, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\sqlSugar.5.0.0.12\lib\SqlSugar.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,6 +63,10 @@
       <Project>{820bad20-c48b-47a3-af43-581af8949599}</Project>
       <Name>DBUtility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -38,6 +38,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SqlSugar, Version=5.0.0.12, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\sqlSugar.5.0.0.12\lib\SqlSugar.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -73,6 +76,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -102,6 +106,10 @@
     <ProjectReference Include="libraries\After.Model\After.Model.csproj">
       <Project>{c1974c28-e088-427e-ae9f-342f52846680}</Project>
       <Name>After.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="libraries\DBUtility\DBUtility.csproj">
+      <Project>{820BAD20-C48B-47A3-AF43-581AF8949599}</Project>
+      <Name>DBUtility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
 ﻿using After.Generic;
+using DBUtility;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -41,25 +42,36 @@ namespace After_Test.Generic
        public static float _x1 = 0;
        public static float _y1 = 0;
 
-
+        AlltestitemManager alltestitem = new AlltestitemManager();
        /// <summary>
        /// 加载测试机型
        /// </summary>
        public void Loadcontrol()
        {
-           List<After.Model.alltestitem> miscelist = alltestBLL.LoadTestModel("");
+         //  List<After.Model.alltestitem> miscelist = alltestBLL.LoadTestModel("");
+
+          List<string> allstring= alltestitem.QueryJX();
             int i = 0;
-            foreach (After.Model.alltestitem item in miscelist)
-           {
-               string y = item.机型;
-              Form1.form1.型号ToolStripMenuItem.DropDownItems.Add(y);
-              Form1.form1.listBox3.Items.Add(y);
+            for (int j = 0; j < allstring.Count; j++)
+            {
+                string y = allstring[j];
+                Form1.form1.型号ToolStripMenuItem.DropDownItems.Add(y);
+                Form1.form1.listBox3.Items.Add(y);
                 // 型号ToolStripMenuItem.DropDownItems[i].Image = image;
                 Form1.form1.型号ToolStripMenuItem.DropDownItems[i].Click += Tests;
-               i++;
+                i++;
+            }
+            // foreach (After.Model.alltestitem item in miscelist)
+            //{
+            //    string y = item.机型;
+            //   Form1.form1.型号ToolStripMenuItem.DropDownItems.Add(y);
+            //   Form1.form1.listBox3.Items.Add(y);
+            //     // 型号ToolStripMenuItem.DropDownItems[i].Image = image;
+            //     Form1.form1.型号ToolStripMenuItem.DropDownItems[i].Click += Tests;
+            //    i++;
 
-              // Form1.form1.listBox1.Items.Add(y);
-           }
+            //   // Form1.form1.listBox1.Items.Add(y);
+            //}
 
         }
 
@@ -133,6 +145,7 @@ namespace After_Test.Generic
             }
         }
 
+        TestitemManager testitem = new TestitemManager();
         public void SelectindxChanListbox3()
         {
             try
@@ -140,16 +153,23 @@ namespace After_Test.Generic
                 string _testistBox;
                 _testistBox = Convert.ToString(Form1.form1.listBox3.SelectedItem); //单击获取当前选中行的内容
                 Type2.Type1 = _testistBox;
-
-               
-                    List<After.Model.testitem> miscelist = testBLL.LoadTestStation(Type2.Type1);
+                  
+                    List<string> miscelistS = testitem.QueryStation(Type2.Type1);
                     Form1.form1.comboBox1.Items.Clear();
-                    foreach (After.Model.testitem item in miscelist)
-                    {
-                        Form1.form1.comboBox1.Items.Add(item.测试站别);
-                    }
-                    Form1.form1.comboBox1.SelectedIndex = 0;
-               
+                for (int i = 0; i < miscelistS.Count; i++)
+                {
+                    Form1.form1.comboBox1.Items.Add(miscelistS[i]);
+                }
+                Form1.form1.comboBox1.SelectedIndex = 0;
+
+                //原生写法
+                // List<After.Model.testitem> miscelist = testBLL.LoadTestStation(Type2.Type1);
+                //foreach (After.Model.testitem item in miscelist)
+                //    {
+                //        Form1.form1.comboBox1.Items.Add(item.测试站别);
+                //    }
+                //    Form1.form1.comboBox1.SelectedIndex = 0;
+
 
                 if (_testistBox != "")
                 {
