@@ -95,6 +95,10 @@
       <Project>{9822d16e-0e19-44e5-9e72-3e6010f7e332}</Project>
       <Name>After.Generic</Name>
     </ProjectReference>
+    <ProjectReference Include="libraries\After.Manager\After.Manager.csproj">
+      <Project>{d0ed1d0c-cef5-487e-83aa-fdd642c2b278}</Project>
+      <Name>After.Manager</Name>
+    </ProjectReference>
     <ProjectReference Include="libraries\After.Model\After.Model.csproj">
       <Project>{c1974c28-e088-427e-ae9f-342f52846680}</Project>
       <Name>After.Model</Name>

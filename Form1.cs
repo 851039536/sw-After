@@ -54,12 +54,10 @@ namespace After_Test
             ctl.setControls(newX / GenericForm._x, newY / GenericForm._y, this);
           
         }
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             genericForm.SelectindxChan();
         }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             genericForm.ComboBox1SelectedIndexChanged();
