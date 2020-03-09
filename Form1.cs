@@ -15,8 +15,7 @@ namespace After_Test
             InitializeComponent();
             form1 = this;
         }
-        public After.BLL.user UserBll = new After.BLL.user();
-        public After.BLL.miscellaneous MiscellaneousBll = new After.BLL.miscellaneous();
+      
         GenericForm genericForm = new GenericForm();
 
         /// <summary>

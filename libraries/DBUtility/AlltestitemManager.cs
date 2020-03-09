@@ -24,7 +24,18 @@ namespace DBUtility
                 .ToList();
             return data;
         }
+        /// <summary>
+        /// //加载测试项目<string>
+        /// </summary>
+        /// <returns></returns>
+        public List<string> LoadTestProject(string strWhere)
+        {
+            List<string> data = Db.Queryable<alltestitem>()
+                 .Where(w => w.机型 == strWhere)
+                .Select(f => f.测试项目)
+                .ToList();
+            return data;
+        }
 
-      
     }
 }

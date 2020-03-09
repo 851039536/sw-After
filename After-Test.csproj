@@ -91,14 +91,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="libraries\After.BLL\After.BLL.csproj">
-      <Project>{8e2ad13d-40e6-4245-adb5-b7a8558480ca}</Project>
-      <Name>After.BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="libraries\After.DAL\After.DAL.csproj">
-      <Project>{350dd709-83ce-4c0d-8f57-0a7e533c64ba}</Project>
-      <Name>After.DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="libraries\After.Generic\After.Generic.csproj">
       <Project>{9822d16e-0e19-44e5-9e72-3e6010f7e332}</Project>
       <Name>After.Generic</Name>

@@ -22,5 +22,32 @@ namespace DBUtility
                 .ToList();
             return data;
         }
+
+        /// <summary>
+        /// //机型站别<string>
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetTestitemProjectList(string strWhere, string comb)
+        {
+            List<string> data = Db.Queryable<testitem>()
+                .Where(it => it.机型 == strWhere && it.测试站别 == comb)
+                .Select(f => f.测试项目)
+                .OrderBy("编号 ASC")
+                .ToList();
+            return data;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<string> LoadTestStation(string strWhere)
+        {
+            List<string> data = Db.Queryable<testitem>()
+                .Where(it => it.机型 == strWhere)
+                .Select(f => f.测试站别)
+                .ToList();
+            return data;
+        }
     }
 }

@@ -14,8 +14,7 @@ namespace After_Test.Generic
    public class GenericForm
     {
 
-        public After.BLL.alltestitem alltestBLL = new After.BLL.alltestitem();
-        public After.BLL.testitem testBLL = new After.BLL.testitem();
+      
         /// <summary>
         /// 首次加载初始化
         /// </summary>
@@ -89,12 +88,19 @@ namespace After_Test.Generic
            TextName(Type2.Type1);
            try
            {
-               List<After.Model.testitem> miscelist = testBLL.LoadTestStation(Type2.Type1);
+
+                List<string> miscelist1 = testitem.LoadTestStation(Type2.Type1);
                 Form1.form1.comboBox1.Items.Clear();
-               foreach (After.Model.testitem item in miscelist)
-               {
-                   Form1.form1.comboBox1.Items.Add(item.测试站别);
-               }
+                for (int i = 0; i < miscelist1.Count; i++)
+                {
+                    Form1.form1.comboBox1.Items.Add(miscelist1[i]);
+                }
+               //List<After.Model.testitem> miscelist = testBLL.LoadTestStation(Type2.Type1);
+               
+               //foreach (After.Model.testitem item in miscelist)
+               //{
+               //    Form1.form1.comboBox1.Items.Add(item.测试站别);
+               //}
                Form1.form1.comboBox1.SelectedIndex = 0;
               // Querycheck(); 自动测试本地修改 暂时废弃
            }
@@ -132,11 +138,7 @@ namespace After_Test.Generic
 
                     ComboBox1SelectedIndexChanged();
                     // Querycheck();
-                    List<After.Model.alltestitem> alllist = alltestBLL.LoadTestProject(Type2.Type1);
-                    foreach (After.Model.alltestitem item in alllist)
-                    {
-                        Form1.form1.listBoxControl3.Items.Add(item.测试项目);
-                    }
+                   
                 }
             }
             catch (Exception ex)
@@ -153,7 +155,6 @@ namespace After_Test.Generic
                 string _testistBox;
                 _testistBox = Convert.ToString(Form1.form1.listBox3.SelectedItem); //单击获取当前选中行的内容
                 Type2.Type1 = _testistBox;
-                  
                     List<string> miscelistS = testitem.QueryStation(Type2.Type1);
                     Form1.form1.comboBox1.Items.Clear();
                 for (int i = 0; i < miscelistS.Count; i++)
@@ -178,11 +179,18 @@ namespace After_Test.Generic
 
                     ComboBox1SelectedIndexChanged();
                     // Querycheck();
-                    List<After.Model.alltestitem> alllist = alltestBLL.LoadTestProject(Type2.Type1);
-                    foreach (After.Model.alltestitem item in alllist)
+
+                    List<string> alllist1 = alltestitem.LoadTestProject(Type2.Type1);
+
+                    for (int i = 0; i < alllist1.Count; i++)
                     {
-                        Form1.form1.listBoxControl3.Items.Add(item.测试项目);
+                        Form1.form1.listBoxControl3.Items.Add(alllist1[i]);
                     }
+                    //List<After.Model.alltestitem> alllist = alltestBLL.LoadTestProject(Type2.Type1);
+                    //foreach (After.Model.alltestitem item in alllist)
+                    //{
+                    //    Form1.form1.listBoxControl3.Items.Add(item.测试项目);
+                    //}
                 }
             }
             catch (Exception ex)
@@ -196,13 +204,20 @@ namespace After_Test.Generic
         /// </summary>
         public void ComboBox1SelectedIndexChanged()
         {
+
             Form1.form1.listBoxControl2.Items.Clear();
-            List<After.Model.testitem> alllist = testBLL.GetTestitemProject(Type2.Type1, Form1.form1.comboBox1.Text);
-          //  string dete = "select 测试项目 from testitem where 测试站别 = '" + comboBox1.Text + "'and 机型 = '" + Type2.Type1 + "'order by 编号 ASC";
-          foreach (var testitem in alllist)
-          {
-              Form1.form1.listBoxControl2.Items.Add(testitem.测试项目);
+
+            List<string> alllist1 = testitem.GetTestitemProjectList(Type2.Type1, Form1.form1.comboBox1.Text);
+            for (int i = 0; i < alllist1.Count; i++)
+            {
+                Form1.form1.listBoxControl2.Items.Add(alllist1[i]);
             }
+
+          //  List<After.Model.testitem> alllist = testBLL.GetTestitemProject(Type2.Type1, Form1.form1.comboBox1.Text);
+          //foreach (var testitem in alllist)
+          //{
+          //    Form1.form1.listBoxControl2.Items.Add(testitem.测试项目);
+          //  }
         }
 
         /// <summary>
