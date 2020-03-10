@@ -1,7 +1,10 @@
 ﻿using After.Generic;
+using After.Model;
+using After_Test.Forms;
 using After_Test.Generic;
 using DBUtility;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,7 +28,7 @@ namespace After_Test
         {
             if (Type2.Jurisdiction == 0)
             {
-                文件路径配置ToolStripMenuItem.Enabled = false;
+                文件路径配置ToolStripMenuItem.Enabled = true;
                 工具ToolStripMenuItem.Enabled = false;
                 button1.Enabled = false;
             }
@@ -114,7 +117,8 @@ namespace After_Test
         {
             genericForm.SelectindxChanListbox3();
         }
-
+        TestitemManager testitem = new TestitemManager();
+        AlltestitemManager alltestitem = new AlltestitemManager();
         private void SAVE_Click(object sender, EventArgs e)
         {
             if (comboBox1.Text.Equals(""))
@@ -123,7 +127,60 @@ namespace After_Test
                 return;
             }
 
-            
+            bool test = testitem.DeleteSave(comboBox1.Text, Type2.Type1);
+            if (test)
+            {
+                LinkedList<string> ate = new LinkedList<string>() ;
+            int i = 0;
+            foreach (string item in listBoxControl2.Items)
+            {
+                    ate.AddLast(item);
+                    i++;
+            }
+             int zt= alltestitem.Sqlselect(comboBox1.Text, Type2.Type1, ate);
+                if (zt==1)
+                {
+                    MessageBox.Show("更新完成");
+                }
+                else
+                {
+                    MessageBox.Show("失败");
+                }
+           }
+
+            genericForm.SelectindxChanListbox3();
+        }
+
+        /// <summary>
+        /// 输出提示
+        /// </summary>
+        /// <param name="msg"></param>
+        private void DisplaylistboxMsg(String msg)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action<String>(DisplaylistboxMsg), new Object[] { msg });
+            }
+            else
+            {
+                if (msg.Contains("\r\n"))
+                {
+                    listBox2.Items.Add("\r\n");
+                }
+                else
+                {
+                    listBox2.Items.Add(String.Format("At {0:hh:mm:ss},{1}", DateTime.Now, msg));
+                }
+                if (listBox2.Items.Count > 0) listBox2.SelectedIndex = listBox2.Items.Count - 1;
+                Application.DoEvents();
+            }
+        }
+
+        private async void 路径配置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Type2.Miscellaneous = 2;
+            DateGridviews date = new DateGridviews();
+            await Task.Run(() => date.ShowDialog());
         }
     }
 }

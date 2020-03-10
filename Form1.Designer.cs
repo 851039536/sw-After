@@ -375,6 +375,7 @@
             this.路径配置ToolStripMenuItem.Name = "路径配置ToolStripMenuItem";
             this.路径配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.路径配置ToolStripMenuItem.Text = "Config配置";
+            this.路径配置ToolStripMenuItem.Click += new System.EventHandler(this.路径配置ToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
@@ -409,7 +410,7 @@
             // 
             this.资料ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("资料ToolStripMenuItem.Image")));
             this.资料ToolStripMenuItem.Name = "资料ToolStripMenuItem";
-            this.资料ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.资料ToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.资料ToolStripMenuItem.Text = "使用说明";
             // 
             // 工具ToolStripMenuItem
@@ -426,13 +427,13 @@
             // 
             this.云盘ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("云盘ToolStripMenuItem.Image")));
             this.云盘ToolStripMenuItem.Name = "云盘ToolStripMenuItem";
-            this.云盘ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.云盘ToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.云盘ToolStripMenuItem.Text = "数据备份";
             // 
             // 用户管理ToolStripMenuItem
             // 
             this.用户管理ToolStripMenuItem.Name = "用户管理ToolStripMenuItem";
-            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.用户管理ToolStripMenuItem.Text = "用户管理";
             // 
             // 数据库ToolStripMenuItem1
@@ -446,7 +447,7 @@
             // 测试计数ToolStripMenuItem
             // 
             this.测试计数ToolStripMenuItem.Name = "测试计数ToolStripMenuItem";
-            this.测试计数ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.测试计数ToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.测试计数ToolStripMenuItem.Text = "数据统计";
             // 
             // label7

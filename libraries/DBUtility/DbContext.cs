@@ -32,6 +32,7 @@ namespace DBUtility
         //注意：不能写成静态的，不能写成静态的
         public SqlSugarClient Db;//用来处理事务多表查询和复杂的操作
         public SimpleClient<user> Userdb { get { return new SimpleClient<user>(Db); } }//用来处理Student表的常用操作
-        public SimpleClient<alltestitem> alltestitemdb { get { return new SimpleClient<alltestitem>(Db); } }                                                                          // public SimpleClient<School> SchoolDb { get { return new SimpleClient<School>(Db); } }//用来处理School表的常用操作
+        public SimpleClient<alltestitem> alltestitemdb { get { return new SimpleClient<alltestitem>(Db); } }
+        public SimpleClient<testitem> testitemdb { get { return new SimpleClient<testitem>(Db); } }// public SimpleClient<School> SchoolDb { get { return new SimpleClient<School>(Db); } }//用来处理School表的常用操作
     }
 }

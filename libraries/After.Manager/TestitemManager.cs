@@ -49,5 +49,15 @@ namespace DBUtility
                 .ToList();
             return data;
         }
+
+        /// <summary>
+        /// 删除记录添加新记录
+        /// </summary>
+        public bool DeleteSave(string station, string jx)
+        {
+           var num = testitemdb.Delete(it => it.测试站别 == station && it.机型 == jx);//根据条件删除
+
+            return num;
+        }
     }
 }
