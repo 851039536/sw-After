@@ -30,7 +30,7 @@ namespace After_Test
             {
                 文件路径配置ToolStripMenuItem.Enabled = true;
                 工具ToolStripMenuItem.Enabled = false;
-                button1.Enabled = false;
+               // button1.Enabled = false;
             }
         }
         ClassControl ctl = new ClassControl();
@@ -101,7 +101,7 @@ namespace After_Test
             genericForm.butLock();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             if (Type2.Type1 == null)
             {
@@ -109,7 +109,8 @@ namespace After_Test
             }
             else
             {
-                //Buttonshow();
+                StationForms st = new StationForms(Type2.Type1);
+                await Task.Run(() => st.ShowDialog());
             }
         }
 
@@ -137,16 +138,17 @@ namespace After_Test
                     ate.AddLast(item);
                     i++;
             }
-             int zt= alltestitem.Sqlselect(comboBox1.Text, Type2.Type1, ate);
-                if (zt==1)
-                {
-                    MessageBox.Show("更新完成");
-                }
-                else
-                {
-                    MessageBox.Show("失败");
-                }
-           }
+            int zt= alltestitem.Sqlselect(comboBox1.Text, Type2.Type1, ate);
+            if (zt==1)
+            {
+                DisplaylistboxMsg("更新完成");
+                   
+            }
+            else
+            {
+                DisplaylistboxMsg("更新失败");
+            }
+            }
 
             genericForm.SelectindxChanListbox3();
         }

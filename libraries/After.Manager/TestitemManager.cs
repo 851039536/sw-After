@@ -1,9 +1,6 @@
 ﻿using After.Model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace DBUtility
 {
@@ -58,6 +55,43 @@ namespace DBUtility
            var num = testitemdb.Delete(it => it.测试站别 == station && it.机型 == jx);//根据条件删除
 
             return num;
+        }
+
+        /// <summary>
+        /// 查询机型站别
+        /// </summary>
+        /// <param name="staion"></param>
+        /// <returns></returns>
+        public DataTable QueryStaion(string staion)
+        {
+            DataTable dt = Db.Queryable<testitem>()
+                .Where(it => it.机型 == staion)
+                .GroupBy(g => new { 
+                    g.机型,
+                    g.测试站别
+                })
+                .Select(f => new
+                {
+                    f.机型,
+                    f.测试站别
+                })
+                .ToDataTable();
+            return dt;
+        }
+
+
+        /// <summary>
+        /// 查询站别机型
+        /// </summary>
+        /// <returns></returns>
+        public List<string> QueryCobox()
+        {
+            List<string> data = Db.Queryable<testitem>()
+                .GroupBy(it => new { it.机型 })
+                .Select(f => f.机型)
+                .ToList();
+            return data;
+       
         }
     }
 }

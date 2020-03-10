@@ -60,17 +60,7 @@ namespace After_Test.Generic
                 Form1.form1.型号ToolStripMenuItem.DropDownItems[i].Click += Tests;
                 i++;
             }
-            // foreach (After.Model.alltestitem item in miscelist)
-            //{
-            //    string y = item.机型;
-            //   Form1.form1.型号ToolStripMenuItem.DropDownItems.Add(y);
-            //   Form1.form1.listBox3.Items.Add(y);
-            //     // 型号ToolStripMenuItem.DropDownItems[i].Image = image;
-            //     Form1.form1.型号ToolStripMenuItem.DropDownItems[i].Click += Tests;
-            //    i++;
-
-            //   // Form1.form1.listBox1.Items.Add(y);
-            //}
+            
 
         }
 
@@ -95,12 +85,7 @@ namespace After_Test.Generic
                 {
                     Form1.form1.comboBox1.Items.Add(miscelist1[i]);
                 }
-               //List<After.Model.testitem> miscelist = testBLL.LoadTestStation(Type2.Type1);
-               
-               //foreach (After.Model.testitem item in miscelist)
-               //{
-               //    Form1.form1.comboBox1.Items.Add(item.测试站别);
-               //}
+              
                Form1.form1.comboBox1.SelectedIndex = 0;
               // Querycheck(); 自动测试本地修改 暂时废弃
            }
@@ -162,35 +147,18 @@ namespace After_Test.Generic
                     Form1.form1.comboBox1.Items.Add(miscelistS[i]);
                 }
                 Form1.form1.comboBox1.SelectedIndex = 0;
-
-                //原生写法
-                // List<After.Model.testitem> miscelist = testBLL.LoadTestStation(Type2.Type1);
-                //foreach (After.Model.testitem item in miscelist)
-                //    {
-                //        Form1.form1.comboBox1.Items.Add(item.测试站别);
-                //    }
-                //    Form1.form1.comboBox1.SelectedIndex = 0;
-
-
                 if (_testistBox != "")
                 {
                     Form1.form1.listBoxControl3.Items.Clear();
                     Form1.form1.listBoxControl2.Items.Clear();
 
                     ComboBox1SelectedIndexChanged();
-                    // Querycheck();
-
                     List<string> alllist1 = alltestitem.LoadTestProject(Type2.Type1);
-
                     for (int i = 0; i < alllist1.Count; i++)
                     {
                         Form1.form1.listBoxControl3.Items.Add(alllist1[i]);
                     }
-                    //List<After.Model.alltestitem> alllist = alltestBLL.LoadTestProject(Type2.Type1);
-                    //foreach (After.Model.alltestitem item in alllist)
-                    //{
-                    //    Form1.form1.listBoxControl3.Items.Add(item.测试项目);
-                    //}
+                  
                 }
             }
             catch (Exception ex)
@@ -206,18 +174,11 @@ namespace After_Test.Generic
         {
 
             Form1.form1.listBoxControl2.Items.Clear();
-
             List<string> alllist1 = testitem.GetTestitemProjectList(Type2.Type1, Form1.form1.comboBox1.Text);
             for (int i = 0; i < alllist1.Count; i++)
             {
                 Form1.form1.listBoxControl2.Items.Add(alllist1[i]);
             }
-
-          //  List<After.Model.testitem> alllist = testBLL.GetTestitemProject(Type2.Type1, Form1.form1.comboBox1.Text);
-          //foreach (var testitem in alllist)
-          //{
-          //    Form1.form1.listBoxControl2.Items.Add(testitem.测试项目);
-          //  }
         }
 
         /// <summary>
