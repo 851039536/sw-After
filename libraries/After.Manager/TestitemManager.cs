@@ -93,5 +93,28 @@ namespace DBUtility
             return data;
        
         }
+
+        /// <summary>
+        /// 对应机型增加站别
+        /// </summary>
+        /// <returns></returns>
+        public int InstStation(string jx ,string station)
+        {
+          int  ints = Db.Insertable<testitem>(new
+            {
+                机型 = jx,
+                测试项目 = "请选择测试项目",
+                测试站别 = station,
+                耳机指令 = "0",
+                单位 = "0",
+                数值上限 = "0",
+                数值下限 = "0",
+                编号 = "0",
+                allid = "0",
+                自动测试 = 0
+            }).ExecuteCommand();
+
+            return ints;
+        }
     }
 }

@@ -18,11 +18,20 @@ namespace DBUtility
         /// <returns></returns>
         public List<string> QueryJX()
         {
-            List<string> data = Db.Queryable<alltestitem>()
-                .GroupBy(it => new { it.机型 })
-                .Select(f => f.机型)
-                .ToList();
-            return data;
+            try
+            {
+                List<string> data = Db.Queryable<alltestitem>()
+                    .GroupBy(it => new { it.机型 })
+                    .Select(f => f.机型)
+                    .ToList();
+                return data;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+         
         }
         /// <summary>
         /// //加载测试项目<string>
