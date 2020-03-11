@@ -2,10 +2,8 @@
 using After.Manager;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Windows.Forms;
 using After.Model;
-using System.Linq;
 
 namespace After_Test.Forms
 {
@@ -193,30 +191,27 @@ namespace After_Test.Forms
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var data = config.configDb.GetList(c => c.ConfigText == comboBox2.Text);
+            List<config> data = config.configDb.GetList(c => c.ConfigText == comboBox2.Text);
 
-       
-            int[] id = data.Select(x => x.id).ToArray();
-            this.id.Text = id[0].ToString();
-            string[] ConfigText = data.Select(x => x.ConfigText).ToArray();
-            this.ConfigText.Text = ConfigText[0];
-            string[] DPID = data.Select(x => x.DPID).ToArray();
-            this.DPID.Text = DPID[0];
-            string[] DVID = data.Select(x => x.DVID).ToArray();
-            this.DVID.Text = DVID[0];
+            foreach (var data1 in data)
+            {
+              id.Text =  data1.id.ToString();
+              ConfigText.Text = data1.ConfigText;
+              HPID.Text = data1.HPID;
+              HVID.Text = data1.HVID;
+              Music.Text = data1.Music;
+              NAME.Text = data1.NAME;
+              Player.Text = data1.Player;
+              DPID.Text = data1.DPID;
+              DVID.Text = data1.DVID;
+              Delay.Text = data1.Delay.ToString();
+              barcode.Text = data1.barcode.ToString();
+              count.Text = data1.count.ToString();
+              testflag.Text = data1.testflag.ToString();
 
-            string[] HPID = data.Select(x => x.HPID).ToArray();
-            this.HPID.Text = HPID[0];
-            string[] HVID = data.Select(x => x.HVID).ToArray();
-            this.HVID.Text = HVID[0];
-            string[] Music = data.Select(x => x.Music).ToArray();
-            this.Music.Text = Music[0];
-            string[] NAME = data.Select(x => x.NAME).ToArray();
-            this.NAME.Text = NAME[0];
+            }
+           
 
-            string[] Player = data.Select(x => x.Player).ToArray();
-            this.Player.Text = Player[0];
-         
         }
     }
 };
