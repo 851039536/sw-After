@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlltestitemManager.cs" />
+    <Compile Include="configManager.cs" />
+    <Compile Include="MiscellaneousManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestitemManager.cs" />
     <Compile Include="UserManager.cs" />

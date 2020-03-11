@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="alltestitem.cs" />
+    <Compile Include="config.cs" />
     <Compile Include="miscellaneous.cs" />
     <Compile Include="testitem.cs" />
     <Compile Include="user.cs" />
