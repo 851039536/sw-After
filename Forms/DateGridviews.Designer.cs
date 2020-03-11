@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.simpleButton4 = new System.Windows.Forms.Button();
             this.simpleButton3 = new System.Windows.Forms.Button();
-            this.simpleButton2 = new System.Windows.Forms.Button();
             this.simpleButton1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -67,6 +66,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.count = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,10 +78,10 @@
             // simpleButton4
             // 
             this.simpleButton4.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.simpleButton4.Location = new System.Drawing.Point(516, 20);
+            this.simpleButton4.Location = new System.Drawing.Point(349, 24);
             this.simpleButton4.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(150, 44);
+            this.simpleButton4.Size = new System.Drawing.Size(150, 34);
             this.simpleButton4.TabIndex = 65;
             this.simpleButton4.Text = "全部";
             this.simpleButton4.UseVisualStyleBackColor = true;
@@ -87,32 +90,22 @@
             // simpleButton3
             // 
             this.simpleButton3.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.simpleButton3.Location = new System.Drawing.Point(351, 19);
+            this.simpleButton3.Location = new System.Drawing.Point(184, 24);
             this.simpleButton3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(150, 45);
+            this.simpleButton3.Size = new System.Drawing.Size(150, 34);
             this.simpleButton3.TabIndex = 64;
             this.simpleButton3.Text = "删除";
             this.simpleButton3.UseVisualStyleBackColor = true;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.simpleButton2.Location = new System.Drawing.Point(186, 19);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(150, 45);
-            this.simpleButton2.TabIndex = 63;
-            this.simpleButton2.Text = "添加";
-            this.simpleButton2.UseVisualStyleBackColor = true;
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton1
             // 
             this.simpleButton1.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.simpleButton1.Location = new System.Drawing.Point(21, 19);
+            this.simpleButton1.Location = new System.Drawing.Point(21, 24);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(150, 45);
+            this.simpleButton1.Size = new System.Drawing.Size(150, 37);
             this.simpleButton1.TabIndex = 62;
             this.simpleButton1.Text = "修改";
             this.simpleButton1.UseVisualStyleBackColor = true;
@@ -122,7 +115,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(695, 30);
+            this.comboBox1.Location = new System.Drawing.Point(528, 32);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(172, 24);
@@ -169,6 +162,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.count);
@@ -198,12 +195,13 @@
             this.panel1.Controls.Add(this.id);
             this.panel1.Location = new System.Drawing.Point(312, 160);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(576, 220);
+            this.panel1.Size = new System.Drawing.Size(576, 232);
             this.panel1.TabIndex = 68;
             // 
             // id
             // 
             this.id.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.id.Enabled = false;
             this.id.Location = new System.Drawing.Point(56, 72);
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(68, 20);
@@ -230,6 +228,7 @@
             // ConfigText
             // 
             this.ConfigText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ConfigText.Enabled = false;
             this.ConfigText.Location = new System.Drawing.Point(160, 72);
             this.ConfigText.Name = "ConfigText";
             this.ConfigText.Size = new System.Drawing.Size(68, 20);
@@ -433,6 +432,46 @@
             this.comboBox2.TabIndex = 62;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(360, 200);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 63;
+            this.button1.Text = "更新";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(456, 200);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 64;
+            this.button2.Text = "退出";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(448, 16);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(83, 23);
+            this.button3.TabIndex = 65;
+            this.button3.Text = "添加机型";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(360, 16);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 66;
+            this.button4.Text = "清空";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // DateGridviews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -442,7 +481,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.comboBox1);
             this.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -464,7 +502,6 @@
 
         private System.Windows.Forms.Button simpleButton4;
         private System.Windows.Forms.Button simpleButton3;
-        private System.Windows.Forms.Button simpleButton2;
         private System.Windows.Forms.Button simpleButton1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -500,5 +537,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

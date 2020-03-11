@@ -2,8 +2,11 @@
 using After.Manager;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Windows.Forms;
 using After.Model;
+using System.Data;
+using SqlSugar;
 
 namespace After_Test.Forms
 {
@@ -80,12 +83,10 @@ namespace After_Test.Forms
             comboBox2.Items.Clear();
             for (int i = 0; i < types.Count; i++)
             {
-
                 comboBox1.Items.Add(types[i]);
                 comboBox2.Items.Add(types[i]);
 
             }
-
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
 
@@ -212,6 +213,111 @@ namespace After_Test.Forms
             }
            
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = false;
+            Thread.Sleep(1000);
+            button1.Enabled = true;
+            // 只更新Name列和CreateTime列，其它列不更新，条件id=1
+         bool test=  config.configDb.Update(it => new config()
+            {
+                ConfigText = ConfigText.Text,
+                HPID = HPID.Text,
+                HVID = HVID.Text,
+                Music = Music.Text,
+                NAME = NAME.Text,
+                Player = Player.Text,
+                DPID = DPID.Text,
+                DVID = DVID.Text,
+                Delay = Convert.ToInt32(Delay.Text),
+                barcode = Convert.ToInt32(barcode.Text),
+                count= Convert.ToInt32(count.Text),
+                testflag= Convert.ToInt32(testflag.Text)
+            }, it => it.id == Convert.ToInt32(id.Text));
+         if (test)
+         {
+             MessageBox.Show("成功");
+         }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int ints = config.Db.Insertable<config>(new
+            {
+                ConfigText = ConfigText.Text,
+                HPID = HPID.Text,
+                HVID = HVID.Text,
+                Music = Music.Text,
+                NAME = NAME.Text,
+                Player = Player.Text,
+                DPID = DPID.Text,
+                DVID = DVID.Text,
+                Delay = Convert.ToInt32(Delay.Text),
+                barcode = Convert.ToInt32(barcode.Text),
+                count = Convert.ToInt32(count.Text),
+                testflag = Convert.ToInt32(testflag.Text)
+            }).ExecuteCommand();
+
+            if (ints>0)
+            {
+                MessageBox.Show("新增成功");
+               
+            }
+            Cobox();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ConfigText.Enabled = true;
+            ConfigText.Text = "";
+            HPID.Text = "";
+            HVID.Text = "";
+            Music.Text = "";
+            NAME.Text = "";
+            Player.Text = "";
+            DPID.Text = "";
+            DVID.Text = "";
+            Delay.Text = "";
+            barcode.Text = "";
+            count.Text = "";
+            testflag.Text = "";
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            Delect();
+        }
+
+        private void Delect()
+        {
+
+            DialogResult result = MessageBox.Show(@"确定删除吗？", @"删除", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    //删除操作
+                    if (dataGridView1.CurrentRow != null)
+                    {
+                        int index = dataGridView1.CurrentRow.Index;    //取得选中行的索引
+                        int id = dataGridView1.Rows[index].Cells["id"].Value.ObjToInt();   //获取单元格列名为‘Id’的值        
+                        config.configDb.DeleteById(id);//根据主键删除
+                    }
+                    QueryConfig();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
         }
     }
 };
