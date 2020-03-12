@@ -161,7 +161,6 @@ namespace After_Test.Forms
             if (Type2.Miscellaneous == 2) QueryConfig();
         }
 
-        bool _databaseflag;
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {

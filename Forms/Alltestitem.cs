@@ -99,7 +99,6 @@ namespace After_Test.Forms
         {
             QueryIfJX();
         }
-        bool _databaseflag = false;
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;

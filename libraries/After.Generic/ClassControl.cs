@@ -109,7 +109,7 @@ namespace After.Generic
                 GetPrivateProfileString(section, key, "", sb, 100, fileName);
                 return sb.ToString();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return "";
             }
