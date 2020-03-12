@@ -384,36 +384,35 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button simpleButton4;
-        private System.Windows.Forms.Button simpleButton3;
-        private System.Windows.Forms.Button simpleButton1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 修改ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 刷新ToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox 编号;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox 数值下限;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox 数值上限;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox 单位;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox 耳机指令;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox 测试项目;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox 机型;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox id;
+        public System.Windows.Forms.Button simpleButton4;
+        public System.Windows.Forms.Button simpleButton3;
+        public System.Windows.Forms.Button simpleButton1;
+        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox 编号;
+        public System.Windows.Forms.TextBox 数值下限;
+        public System.Windows.Forms.TextBox 数值上限;
+        public System.Windows.Forms.TextBox 单位;
+        public System.Windows.Forms.TextBox 耳机指令;
+        public System.Windows.Forms.TextBox 测试项目;
+        public System.Windows.Forms.TextBox 机型;
+        public System.Windows.Forms.TextBox id;
     }
 }

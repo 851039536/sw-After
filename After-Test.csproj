@@ -106,6 +106,7 @@
     <Compile Include="Forms\StationForms.Designer.cs">
       <DependentUpon>StationForms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generic\AlltestitemFor.cs" />
     <Compile Include="Generic\DateGridviewsFor.cs" />
     <Compile Include="Generic\GenericForm.cs" />
     <Compile Include="Generic\StationFor.cs" />
