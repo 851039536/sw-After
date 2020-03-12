@@ -184,5 +184,11 @@ namespace After_Test
             DateGridviews date = new DateGridviews();
             await Task.Run(() => date.ShowDialog());
         }
+
+        private async void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Alltestitem a = new Alltestitem();
+            await Task.Run(() => a.ShowDialog());
+        }
     }
 }

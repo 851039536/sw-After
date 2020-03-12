@@ -1,6 +1,6 @@
 ﻿namespace After_Test.Forms
 {
-    partial class DateGridviews
+    partial class Alltestitem
     {
         /// <summary>
         /// Required designer variable.
@@ -43,31 +43,20 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.count = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.barcode = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.DPID = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.DVID = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.testflag = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.NAME = new System.Windows.Forms.TextBox();
+            this.编号 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.HPID = new System.Windows.Forms.TextBox();
+            this.数值下限 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.HVID = new System.Windows.Forms.TextBox();
+            this.数值上限 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Music = new System.Windows.Forms.TextBox();
+            this.单位 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.Delay = new System.Windows.Forms.TextBox();
+            this.耳机指令 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Player = new System.Windows.Forms.TextBox();
+            this.测试项目 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.ConfigText = new System.Windows.Forms.TextBox();
+            this.机型 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -78,11 +67,11 @@
             // simpleButton4
             // 
             this.simpleButton4.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.simpleButton4.Location = new System.Drawing.Point(349, 24);
+            this.simpleButton4.Location = new System.Drawing.Point(344, 8);
             this.simpleButton4.Margin = new System.Windows.Forms.Padding(7);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(150, 34);
-            this.simpleButton4.TabIndex = 65;
+            this.simpleButton4.TabIndex = 69;
             this.simpleButton4.Text = "全部";
             this.simpleButton4.UseVisualStyleBackColor = true;
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
@@ -90,11 +79,11 @@
             // simpleButton3
             // 
             this.simpleButton3.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.simpleButton3.Location = new System.Drawing.Point(184, 24);
+            this.simpleButton3.Location = new System.Drawing.Point(179, 8);
             this.simpleButton3.Margin = new System.Windows.Forms.Padding(7);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(150, 34);
-            this.simpleButton3.TabIndex = 64;
+            this.simpleButton3.TabIndex = 68;
             this.simpleButton3.Text = "删除";
             this.simpleButton3.UseVisualStyleBackColor = true;
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
@@ -102,11 +91,11 @@
             // simpleButton1
             // 
             this.simpleButton1.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.simpleButton1.Location = new System.Drawing.Point(21, 24);
+            this.simpleButton1.Location = new System.Drawing.Point(16, 8);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(7);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(150, 37);
-            this.simpleButton1.TabIndex = 62;
+            this.simpleButton1.TabIndex = 67;
             this.simpleButton1.Text = "修改";
             this.simpleButton1.UseVisualStyleBackColor = true;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -115,22 +104,24 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(528, 32);
+            this.comboBox1.Location = new System.Drawing.Point(523, 16);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(7);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(172, 24);
-            this.comboBox1.TabIndex = 61;
+            this.comboBox1.TabIndex = 66;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 72);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 48);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(7);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1658, 866);
-            this.dataGridView1.TabIndex = 66;
+            this.dataGridView1.Size = new System.Drawing.Size(1136, 600);
+            this.dataGridView1.TabIndex = 70;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // contextMenuStrip1
@@ -166,41 +157,31 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.count);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.barcode);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.DPID);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.DVID);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.testflag);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.NAME);
+            this.panel1.Controls.Add(this.编号);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.HPID);
+            this.panel1.Controls.Add(this.数值下限);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.HVID);
+            this.panel1.Controls.Add(this.数值上限);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.Music);
+            this.panel1.Controls.Add(this.单位);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.Delay);
+            this.panel1.Controls.Add(this.耳机指令);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.Player);
+            this.panel1.Controls.Add(this.测试项目);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.ConfigText);
+            this.panel1.Controls.Add(this.机型);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.id);
-            this.panel1.Location = new System.Drawing.Point(312, 160);
+            this.panel1.Location = new System.Drawing.Point(296, 232);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(576, 232);
-            this.panel1.TabIndex = 68;
+            this.panel1.TabIndex = 72;
+            this.panel1.Visible = false;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(360, 16);
+            this.button4.Location = new System.Drawing.Point(40, 16);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 66;
@@ -210,11 +191,11 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(448, 16);
+            this.button3.Location = new System.Drawing.Point(128, 16);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(83, 23);
             this.button3.TabIndex = 65;
-            this.button3.Text = "添加机型";
+            this.button3.Text = "添加项目";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -238,221 +219,125 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(56, 16);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(7);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 24);
-            this.comboBox2.TabIndex = 62;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(264, 168);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(43, 16);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "count";
-            // 
-            // count
-            // 
-            this.count.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.count.Location = new System.Drawing.Point(256, 192);
-            this.count.Name = "count";
-            this.count.Size = new System.Drawing.Size(68, 20);
-            this.count.TabIndex = 24;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(160, 168);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 16);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "barcode";
-            // 
-            // barcode
-            // 
-            this.barcode.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.barcode.Location = new System.Drawing.Point(152, 192);
-            this.barcode.Name = "barcode";
-            this.barcode.Size = new System.Drawing.Size(68, 20);
-            this.barcode.TabIndex = 22;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(64, 168);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 16);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "DPID";
-            // 
-            // DPID
-            // 
-            this.DPID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DPID.Location = new System.Drawing.Point(56, 192);
-            this.DPID.Name = "DPID";
-            this.DPID.Size = new System.Drawing.Size(68, 20);
-            this.DPID.TabIndex = 20;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(472, 104);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 16);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "DVID";
-            // 
-            // DVID
-            // 
-            this.DVID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DVID.Location = new System.Drawing.Point(464, 136);
-            this.DVID.Name = "DVID";
-            this.DVID.Size = new System.Drawing.Size(68, 20);
-            this.DVID.TabIndex = 18;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(368, 104);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 16);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "testflag";
-            // 
-            // testflag
-            // 
-            this.testflag.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.testflag.Location = new System.Drawing.Point(360, 136);
-            this.testflag.Name = "testflag";
-            this.testflag.Size = new System.Drawing.Size(68, 20);
-            this.testflag.TabIndex = 16;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(264, 104);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 16);
+            this.label8.Size = new System.Drawing.Size(40, 16);
             this.label8.TabIndex = 15;
-            this.label8.Text = "NAME";
+            this.label8.Text = "编号";
             // 
-            // NAME
+            // 编号
             // 
-            this.NAME.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NAME.Location = new System.Drawing.Point(256, 136);
-            this.NAME.Name = "NAME";
-            this.NAME.Size = new System.Drawing.Size(68, 20);
-            this.NAME.TabIndex = 14;
+            this.编号.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.编号.Location = new System.Drawing.Point(256, 136);
+            this.编号.Name = "编号";
+            this.编号.Size = new System.Drawing.Size(68, 20);
+            this.编号.TabIndex = 14;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(160, 104);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 16);
+            this.label7.Size = new System.Drawing.Size(72, 16);
             this.label7.TabIndex = 13;
-            this.label7.Text = "HPID";
+            this.label7.Text = "数值下限";
             // 
-            // HPID
+            // 数值下限
             // 
-            this.HPID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.HPID.Location = new System.Drawing.Point(152, 136);
-            this.HPID.Name = "HPID";
-            this.HPID.Size = new System.Drawing.Size(68, 20);
-            this.HPID.TabIndex = 12;
+            this.数值下限.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.数值下限.Location = new System.Drawing.Point(152, 136);
+            this.数值下限.Name = "数值下限";
+            this.数值下限.Size = new System.Drawing.Size(68, 20);
+            this.数值下限.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(64, 104);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 16);
+            this.label6.Size = new System.Drawing.Size(72, 16);
             this.label6.TabIndex = 11;
-            this.label6.Text = "HVID";
+            this.label6.Text = "数值上限";
             // 
-            // HVID
+            // 数值上限
             // 
-            this.HVID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.HVID.Location = new System.Drawing.Point(56, 136);
-            this.HVID.Name = "HVID";
-            this.HVID.Size = new System.Drawing.Size(68, 20);
-            this.HVID.TabIndex = 10;
+            this.数值上限.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.数值上限.Location = new System.Drawing.Point(56, 136);
+            this.数值上限.Name = "数值上限";
+            this.数值上限.Size = new System.Drawing.Size(68, 20);
+            this.数值上限.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(472, 48);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 16);
+            this.label5.Size = new System.Drawing.Size(40, 16);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Music";
+            this.label5.Text = "单位";
             // 
-            // Music
+            // 单位
             // 
-            this.Music.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Music.Location = new System.Drawing.Point(464, 72);
-            this.Music.Name = "Music";
-            this.Music.Size = new System.Drawing.Size(68, 20);
-            this.Music.TabIndex = 8;
+            this.单位.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.单位.Location = new System.Drawing.Point(464, 72);
+            this.单位.Name = "单位";
+            this.单位.Size = new System.Drawing.Size(68, 20);
+            this.单位.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(376, 48);
+            this.label4.Location = new System.Drawing.Point(368, 48);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 16);
+            this.label4.Size = new System.Drawing.Size(72, 16);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Delay";
+            this.label4.Text = "耳机指令";
             // 
-            // Delay
+            // 耳机指令
             // 
-            this.Delay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Delay.Location = new System.Drawing.Point(368, 72);
-            this.Delay.Name = "Delay";
-            this.Delay.Size = new System.Drawing.Size(68, 20);
-            this.Delay.TabIndex = 6;
+            this.耳机指令.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.耳机指令.Location = new System.Drawing.Point(368, 72);
+            this.耳机指令.Name = "耳机指令";
+            this.耳机指令.Size = new System.Drawing.Size(68, 20);
+            this.耳机指令.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(272, 48);
+            this.label3.Location = new System.Drawing.Point(264, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 16);
+            this.label3.Size = new System.Drawing.Size(72, 16);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Player";
+            this.label3.Text = "测试项目";
             // 
-            // Player
+            // 测试项目
             // 
-            this.Player.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Player.Location = new System.Drawing.Point(264, 72);
-            this.Player.Name = "Player";
-            this.Player.Size = new System.Drawing.Size(68, 20);
-            this.Player.TabIndex = 4;
+            this.测试项目.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.测试项目.Location = new System.Drawing.Point(264, 72);
+            this.测试项目.Name = "测试项目";
+            this.测试项目.Size = new System.Drawing.Size(68, 20);
+            this.测试项目.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(152, 48);
+            this.label2.Location = new System.Drawing.Point(168, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 16);
+            this.label2.Size = new System.Drawing.Size(40, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "ConfigText";
+            this.label2.Text = "机型";
             // 
-            // ConfigText
+            // 机型
             // 
-            this.ConfigText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ConfigText.Enabled = false;
-            this.ConfigText.Location = new System.Drawing.Point(160, 72);
-            this.ConfigText.Name = "ConfigText";
-            this.ConfigText.Size = new System.Drawing.Size(68, 20);
-            this.ConfigText.TabIndex = 2;
+            this.机型.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.机型.Enabled = false;
+            this.机型.Location = new System.Drawing.Point(160, 72);
+            this.机型.Name = "机型";
+            this.机型.Size = new System.Drawing.Size(68, 20);
+            this.机型.TabIndex = 2;
             // 
             // label1
             // 
@@ -472,11 +357,11 @@
             this.id.Size = new System.Drawing.Size(68, 20);
             this.id.TabIndex = 0;
             // 
-            // DateGridviews
+            // Alltestitem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1233, 631);
+            this.ClientSize = new System.Drawing.Size(1138, 652);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.simpleButton4);
@@ -484,12 +369,12 @@
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.comboBox1);
             this.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "DateGridviews";
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "Alltestitem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DateGridviews";
-            this.Load += new System.EventHandler(this.DateGridviews_Load);
-            this.Resize += new System.EventHandler(this.DateGridviews_Resize);
+            this.Text = "Alltestitem";
+            this.Load += new System.EventHandler(this.Alltestitem_Load);
+            this.Resize += new System.EventHandler(this.Alltestitem_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -510,36 +395,25 @@
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 刷新ToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox count;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox barcode;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox DPID;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox DVID;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox testflag;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox NAME;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox HPID;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox HVID;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox Music;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox Delay;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox Player;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox ConfigText;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox id;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox 编号;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox 数值下限;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox 数值上限;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox 单位;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox 耳机指令;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox 测试项目;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox 机型;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox id;
     }
 }

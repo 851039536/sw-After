@@ -22,6 +22,9 @@ namespace After.Model
         public string 数值下限 { get; set; }
         public int 编号 { get; set; }
 
-
+        public static implicit operator List<object>(alltestitem v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

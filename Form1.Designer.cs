@@ -383,6 +383,7 @@
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
             this.退出ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.退出ToolStripMenuItem.Text = "项目配置";
+            this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
             // 项目配置ToolStripMenuItem
             // 
