@@ -1,7 +1,6 @@
 ﻿using After.Generic;
 using System;
 using System.Windows.Forms;
-using DBUtility;
 using After_Test.Generic;
 
 namespace After_Test.Forms
@@ -19,7 +18,7 @@ namespace After_Test.Forms
         ClassControl ctl = new ClassControl();
         private void Alltestitem_Load(object sender, EventArgs e)
         {
-            alltestitemFor.QueryJX();
+            alltestitemFor.QueryJx();
             alltestitemFor.QueryConfig();
             Control();
         }
@@ -67,7 +66,7 @@ namespace After_Test.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            alltestitemFor.QueryIfJX();
+            alltestitemFor.QueryIfJx();
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {

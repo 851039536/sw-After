@@ -1,5 +1,4 @@
 ﻿using After.Generic;
-using After.Model;
 using After_Test.Forms;
 using After_Test.Generic;
 using DBUtility;
@@ -18,8 +17,8 @@ namespace After_Test
             InitializeComponent();
             form1 = this;
         }
-      
-        GenericForm genericForm = new GenericForm();
+
+        private GenericForm genericForm = new GenericForm();
 
         /// <summary>
         /// 权限
@@ -30,15 +29,12 @@ namespace After_Test
             {
                 文件路径配置ToolStripMenuItem.Enabled = true;
                 工具ToolStripMenuItem.Enabled = false;
-               // button1.Enabled = false;
+                // button1.Enabled = false;
             }
         }
-        ClassControl ctl = new ClassControl();
 
-
-
-
-        UserManager user = new UserManager();
+        private ClassControl ctl = new ClassControl();
+        private UserManager user = new UserManager();
         private void Form1_Load(object sender, EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false;
@@ -57,12 +53,9 @@ namespace After_Test
             float newX = form1.Width;
             float newY = form1.Height;
             ctl.setControls(newX / GenericForm._x, newY / GenericForm._y, this);
-          
+
         }
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            genericForm.SelectindxChan();
-        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             genericForm.ComboBox1SelectedIndexChanged();
@@ -120,8 +113,9 @@ namespace After_Test
         {
             genericForm.SelectindxChanListbox3();
         }
-        TestitemManager testitem = new TestitemManager();
-        AlltestitemManager alltestitem = new AlltestitemManager();
+
+        private TestitemManager testitem = new TestitemManager();
+        private AlltestitemManager alltestitem = new AlltestitemManager();
         private void SAVE_Click(object sender, EventArgs e)
         {
             if (comboBox1.Text.Equals(""))
@@ -133,29 +127,29 @@ namespace After_Test
             bool test = testitem.DeleteSave(comboBox1.Text, Type2.Type1);
             if (test)
             {
-                LinkedList<string> ate = new LinkedList<string>() ;
-            int i = 0;
-            foreach (string item in listBoxControl2.Items)
-            {
+                LinkedList<string> ate = new LinkedList<string>();
+                int i = 0;
+                foreach (string item in listBoxControl2.Items)
+                {
                     ate.AddLast(item);
                     i++;
-            }
-            int zt= alltestitem.Sqlselect(comboBox1.Text, Type2.Type1, ate);
-            if (zt==1)
-            {
-                genericForm.DisplaylistboxMsg("站别："+comboBox1.Text+","+"机型："+ Type2.Type1+","+"更新完成");
-                   
-            }
-            else
-            {
-                genericForm.DisplaylistboxMsg("更新失败,站别被删除");
-            }
+                }
+                int zt = alltestitem.Sqlselect(comboBox1.Text, Type2.Type1, ate);
+                if (zt == 1)
+                {
+                    genericForm.DisplaylistboxMsg("站别：" + comboBox1.Text + "," + "机型：" + Type2.Type1 + "," + "更新完成");
+
+                }
+                else
+                {
+                    genericForm.DisplaylistboxMsg("更新失败,站别被删除");
+                }
             }
 
             //genericForm.SelectindxChanListbox3();
         }
 
-        
+
 
         private async void 路径配置ToolStripMenuItem_Click(object sender, EventArgs e)
         {

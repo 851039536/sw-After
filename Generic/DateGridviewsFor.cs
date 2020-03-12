@@ -5,17 +5,14 @@ using After_Test.Forms;
 using SqlSugar;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace After_Test.Generic
 {
-   public class DateGridviewsFor
+    public class DateGridviewsFor
     {
-        configManager config = new configManager();
+        private configManager config = new configManager();
         /// <summary>
         /// Config机型
         /// </summary>
@@ -82,7 +79,7 @@ namespace After_Test.Generic
         /// <summary>
         /// 查询数据  条件机型
         /// </summary>
-        public void QueryIfJX()
+        public void QueryIfJx()
         {
             try
             {

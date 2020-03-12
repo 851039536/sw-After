@@ -4,10 +4,10 @@ using System.Data;
 
 namespace DBUtility
 {
-   public class TestitemManager : DbContext//继承DbContext
+    public class TestitemManager : DbContext//继承DbContext
     {
         /// <summary>
-        /// //机型站别<string>
+        /// 机型站别
         /// </summary>
         /// <returns></returns>
         public List<string> QueryStation(string jx)
@@ -21,7 +21,7 @@ namespace DBUtility
         }
 
         /// <summary>
-        /// //机型站别<string>
+        /// 机型站别
         /// </summary>
         /// <returns></returns>
         public List<string> GetTestitemProjectList(string strWhere, string comb)
@@ -52,7 +52,7 @@ namespace DBUtility
         /// </summary>
         public bool DeleteSave(string station, string jx)
         {
-           var num = testitemdb.Delete(it => it.测试站别 == station && it.机型 == jx);//根据条件删除
+            var num = testitemdb.Delete(it => it.测试站别 == station && it.机型 == jx);//根据条件删除
 
             return num;
         }
@@ -66,7 +66,8 @@ namespace DBUtility
         {
             DataTable dt = Db.Queryable<testitem>()
                 .Where(it => it.机型 == staion)
-                .GroupBy(g => new { 
+                .GroupBy(g => new
+                {
                     g.机型,
                     g.测试站别
                 })
@@ -91,16 +92,16 @@ namespace DBUtility
                 .Select(f => f.机型)
                 .ToList();
             return data;
-       
+
         }
 
         /// <summary>
         /// 对应机型增加站别
         /// </summary>
         /// <returns></returns>
-        public int InstStation(string jx ,string station)
+        public int InstStation(string jx, string station)
         {
-          int  ints = Db.Insertable<testitem>(new
+            int ints = Db.Insertable<testitem>(new
             {
                 机型 = jx,
                 测试项目 = "延时1",

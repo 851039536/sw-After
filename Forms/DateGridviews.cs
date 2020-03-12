@@ -1,7 +1,5 @@
 ﻿using After.Generic;
-using After.Manager;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using After_Test.Generic;
 
@@ -72,7 +70,7 @@ namespace After_Test.Forms
         {
             if (Type2.Miscellaneous == 2)
             {
-                date.QueryIfJX();
+                date.QueryIfJx();
             }
         }
 

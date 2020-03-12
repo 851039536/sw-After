@@ -7,44 +7,43 @@ using System.Windows.Forms;
 
 namespace After_Test.Generic
 {
-   public class GenericForm
+    public class GenericForm
     {
 
 
-      
+
         /// <summary>
         /// 首次加载初始化
         /// </summary>
         public void Firstload()
         {
-           
-           Form1.form1.contextMenuStrip2.Enabled = false;
-           Form1.form1.SAVE.Enabled = false;
-           Form1.form1.timer1.Interval = 1000;
-           Form1.form1.timer1.Enabled = true;
-           Form1.form1.label1.Text = After.Generic.Type2.User1; //用户
-           Form1.form1.label4.Text = @"注:左边为待选功能，右边为需要测试的功能先锁定再更新保存";
-           Form1.form1.label4.ForeColor = Color.Red;
+
+            Form1.form1.contextMenuStrip2.Enabled = false;
+            Form1.form1.SAVE.Enabled = false;
+            Form1.form1.timer1.Interval = 1000;
+            Form1.form1.timer1.Enabled = true;
+            Form1.form1.label1.Text = After.Generic.Type2.User1; //用户
+            Form1.form1.label4.Text = @"注:左边为待选功能，右边为需要测试的功能先锁定再更新保存";
+            Form1.form1.label4.ForeColor = Color.Red;
             _x = Form1.form1.Width;
             _y = Form1.form1.Height;
             _x1 = _x;
             _y1 = _y;
-          
+
         }
 
-       
-       public static float _x = 0;
-       public static float _y = 0;
-       public static float _x1 = 0;
-       public static float _y1 = 0;
 
-        AlltestitemManager alltestitem = new AlltestitemManager();
-       /// <summary>
-       /// 加载测试机型
-       /// </summary>
-       public void Loadcontrol()
-       {
-          List<string> allstring= alltestitem.QueryJX();
+        public static float _x = 0;
+        public static float _y = 0;
+        public static float _x1 = 0;
+        public static float _y1 = 0;
+        private AlltestitemManager alltestitem = new AlltestitemManager();
+        /// <summary>
+        /// 加载测试机型
+        /// </summary>
+        public void Loadcontrol()
+        {
+            List<string> allstring = alltestitem.QueryJx();
             int i = 0;
             for (int j = 0; j < allstring.Count; j++)
             {
@@ -58,22 +57,22 @@ namespace After_Test.Generic
             Form1.form1.listBox3.SelectedIndex = 0;
 
             DisplaylistboxMsg("加载测试机型完成！！！");
-       }
+        }
 
-       /// <summary>
-       /// 点击事件
-       /// </summary>
-       /// <param name="sender"></param>
-       /// <param name="e"></param>
-       private void Tests(object sender, EventArgs e)
-       {
-           Form1.form1.listBoxControl2.Visible = true;
-           Form1.form1.listBox3.Items.Clear();
-           ToolStripItem items = (ToolStripItem)sender;
-           Type2.Type1 = Convert.ToString(items);
-           TextName(Type2.Type1);
-           try
-           {
+        /// <summary>
+        /// 点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Tests(object sender, EventArgs e)
+        {
+            Form1.form1.listBoxControl2.Visible = true;
+            Form1.form1.listBox3.Items.Clear();
+            ToolStripItem items = (ToolStripItem)sender;
+            Type2.Type1 = Convert.ToString(items);
+            TextName(Type2.Type1);
+            try
+            {
 
                 List<string> miscelist1 = testitem.LoadTestStation(Type2.Type1);
                 Form1.form1.comboBox1.Items.Clear();
@@ -81,27 +80,27 @@ namespace After_Test.Generic
                 {
                     Form1.form1.comboBox1.Items.Add(miscelist1[i]);
                 }
-              
-               Form1.form1.comboBox1.SelectedIndex = 0;
-              // Querycheck(); 自动测试本地修改 暂时废弃
-           }
-           catch (Exception ex)
-           {
-               MessageBox.Show(ex.Message);
-           }
-       }
+
+                Form1.form1.comboBox1.SelectedIndex = 0;
+                // Querycheck(); 自动测试本地修改 暂时废弃
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         /// <summary>
         /// 加载listBox1参数
         /// </summary>
         /// <param name="name"></param>
         private void TextName(string name)
-       {
-           Form1.form1.contextMenuStrip2.Enabled = true;
-           Form1.form1.listBox3.Items.Add(name + "测试项目");
-          // Form1.form1.listBox1.Items.Add(name + "数据");
-           Form1.form1.listBox3.SelectedIndex = 0;
-       }
+        {
+            Form1.form1.contextMenuStrip2.Enabled = true;
+            Form1.form1.listBox3.Items.Add(name + "测试项目");
+            // Form1.form1.listBox1.Items.Add(name + "数据");
+            Form1.form1.listBox3.SelectedIndex = 0;
+        }
 
         /// <summary>
         /// 加载listBoxControl3测试项目
@@ -119,7 +118,7 @@ namespace After_Test.Generic
 
                     ComboBox1SelectedIndexChanged();
                     // Querycheck();
-                   
+
                 }
             }
             catch (Exception ex)
@@ -128,7 +127,7 @@ namespace After_Test.Generic
             }
         }
 
-        TestitemManager testitem = new TestitemManager();
+        private TestitemManager testitem = new TestitemManager();
         public void SelectindxChanListbox3()
         {
             try
@@ -136,8 +135,8 @@ namespace After_Test.Generic
                 string _testistBox;
                 _testistBox = Convert.ToString(Form1.form1.listBox3.SelectedItem); //单击获取当前选中行的内容
                 Type2.Type1 = _testistBox;
-                    List<string> miscelistS = testitem.QueryStation(Type2.Type1);
-                    Form1.form1.comboBox1.Items.Clear();
+                List<string> miscelistS = testitem.QueryStation(Type2.Type1);
+                Form1.form1.comboBox1.Items.Clear();
                 for (int i = 0; i < miscelistS.Count; i++)
                 {
                     Form1.form1.comboBox1.Items.Add(miscelistS[i]);
@@ -154,7 +153,7 @@ namespace After_Test.Generic
                     {
                         Form1.form1.listBoxControl3.Items.Add(alllist1[i]);
                     }
-                  
+
                 }
             }
             catch (Exception ex)
@@ -251,13 +250,14 @@ namespace After_Test.Generic
                 MessageBox.Show(ex.Message);
             }
         }
-        bool _locker = true;
+
+        private bool _locker = true;
         /// <summary>
         /// 锁定按钮
         /// </summary>
         public void butLock()
         {
-           
+
             if (_locker)
             {
                 Form1.form1.listBoxControl2.Enabled = false;

@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace After_Test.Generic
 {
-   public class StationFor
+    public class StationFor
     {
-        TestitemManager testitem = new TestitemManager();
+        private TestitemManager testitem = new TestitemManager();
         /// <summary>
         /// 查询机型和站别
         /// </summary>
@@ -38,7 +38,7 @@ namespace After_Test.Generic
         /// <summary>
         /// 新增站别
         /// </summary>
-        public void IntStaion(string Staiongs)
+        public void IntStaion(string staiongs)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace After_Test.Generic
                     MessageBox.Show(@"插入失败");
                 }
 
-                QueryStaion(Staiongs);
+                QueryStaion(staiongs);
 
             }
             catch (Exception ex)
@@ -75,7 +75,7 @@ namespace After_Test.Generic
         /// <summary>
         /// 删除站别
         /// </summary>
-        public void DelectStaion(string Staiongs)
+        public void DelectStaion(string staiongs)
         {
             DialogResult result = MessageBox.Show(@"确定删除吗？", @"删除", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
@@ -92,7 +92,7 @@ namespace After_Test.Generic
                         bool test = testitem.DeleteSave(zb, jx);
                         if (test)
                         {
-                            QueryStaion(Staiongs);
+                            QueryStaion(staiongs);
                         }
                     }
 

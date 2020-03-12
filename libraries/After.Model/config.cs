@@ -1,9 +1,4 @@
 ﻿using SqlSugar;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace After.Model
 {
@@ -92,7 +87,7 @@ namespace After.Model
         /// </summary>           
         public int? barcode { get; set; }
 
-        
+
 
         /// <summary>
         /// Desc:

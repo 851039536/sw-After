@@ -1,17 +1,13 @@
 ﻿using After.Model;
 using DBUtility;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace After.Manager
 {
-   public class MiscellaneousManager : DbContext//继承DbContext
+    public class MiscellaneousManager : DbContext//继承DbContext
     {
         /// <summary>
-        /// //机型站别<string>
+        /// 机型站别
         /// </summary>
         /// <returns></returns>
         public List<string> QueryType()

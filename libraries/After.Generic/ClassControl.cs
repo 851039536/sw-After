@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace After.Generic
@@ -75,7 +72,8 @@ namespace After.Generic
             }
         }
     }
-    class APIcls
+
+    internal class APIcls
     {
         [DllImport("kernel32")]
         private static extern Int64 WritePrivateProfileString(String section,
@@ -127,10 +125,7 @@ namespace After.Generic
             {
                 throw new System.Exception(ex.Message.ToString());
             }
-            finally
-            {
 
-            }
             return irtn;
         }
         public static void writeIniFile(string fileName, string section, string key, string val)

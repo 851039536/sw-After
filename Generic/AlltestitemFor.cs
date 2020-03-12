@@ -11,15 +11,15 @@ namespace After_Test.Generic
 {
     public class AlltestitemFor
     {
-        AlltestitemManager alltestitem = new AlltestitemManager();
+        private AlltestitemManager alltestitem = new AlltestitemManager();
         /// <summary>
         /// //加载测试机型
         /// </summary>
         /// <returns></returns>
-        public void QueryJX()
+        public void QueryJx()
         {
             Alltestitem.alltest.comboBox1.Items.Clear();
-            var data = alltestitem.QueryJX();
+            var data = alltestitem.QueryJx();
             for (int i = 0; i < data.Count; i++)
             {
                 Alltestitem.alltest.comboBox1.Items.Add(data[i]);
@@ -48,7 +48,7 @@ namespace After_Test.Generic
         /// <summary>
         /// 查询alltestitem 条件 机型
         /// </summary>
-        public void QueryIfJX()
+        public void QueryIfJx()
         {
             var data = alltestitem.alltestitemdb.GetList(it => it.机型 == Alltestitem.alltest.comboBox1.Text);  //根据条件查询     
             Alltestitem.alltest.dataGridView1.DoubleBuffered(true);
@@ -76,9 +76,9 @@ namespace After_Test.Generic
             if (test)
             {
                 Alltestitem.alltest.panel1.Visible = false;
-                QueryJX();
+                QueryJx();
             }
-            
+
         }
         /// <summary>
         /// 查询所有 w:id
@@ -105,6 +105,7 @@ namespace After_Test.Generic
         /// </summary>
         public void InstAlltestitem()
         {
+
             int ints = alltestitem.Db.Insertable<alltestitem>(new
             {
                 机型 = Alltestitem.alltest.机型.Text,
@@ -120,7 +121,7 @@ namespace After_Test.Generic
             {
                 MessageBox.Show(@"新增成功");
             }
-            QueryIfJX();
+            QueryIfJx();
         }
 
 
@@ -142,7 +143,7 @@ namespace After_Test.Generic
                         int id = Alltestitem.alltest.dataGridView1.Rows[index].Cells["id"].Value.ObjToInt();   //获取单元格列名为‘Id’的值        
                         alltestitem.alltestitemdb.DeleteById(id);//根据主键删除
                     }
-                    QueryIfJX();
+                    QueryIfJx();
                 }
                 catch (Exception ex)
                 {
