@@ -47,8 +47,6 @@ namespace After_Test.Generic
        /// </summary>
        public void Loadcontrol()
        {
-         //  List<After.Model.alltestitem> miscelist = alltestBLL.LoadTestModel("");
-
           List<string> allstring= alltestitem.QueryJX();
             int i = 0;
             for (int j = 0; j < allstring.Count; j++)
@@ -56,13 +54,14 @@ namespace After_Test.Generic
                 string y = allstring[j];
                 Form1.form1.型号ToolStripMenuItem.DropDownItems.Add(y);
                 Form1.form1.listBox3.Items.Add(y);
-                // 型号ToolStripMenuItem.DropDownItems[i].Image = image;
                 Form1.form1.型号ToolStripMenuItem.DropDownItems[i].Click += Tests;
                 i++;
             }
-            
 
-        }
+            Form1.form1.listBox3.SelectedIndex = 0;
+
+            DisplaylistboxMsg("加载测试机型完成！！！");
+       }
 
        /// <summary>
        /// 点击事件
@@ -273,7 +272,6 @@ namespace After_Test.Generic
                 Form1.form1.SAVE.Enabled = true;
                 Form1.form1.LOCK.Text = @"解除锁定";
                 _locker = false;
-                Form1.form1.checkBox1.Enabled = false;
                 Form1.form1.comboBox1.Enabled = false;
             }
             else
@@ -287,8 +285,32 @@ namespace After_Test.Generic
                 Form1.form1.SAVE.Enabled = false;
                 Form1.form1.LOCK.Text = @"锁定";
                 _locker = true;
-                Form1.form1.checkBox1.Enabled = true;
                 Form1.form1.comboBox1.Enabled = true;
+            }
+        }
+
+        /// <summary>
+        /// 输出提示
+        /// </summary>
+        /// <param name="msg"></param>
+        public void DisplaylistboxMsg(String msg)
+        {
+            if (Form1.form1.InvokeRequired)
+            {
+                Form1.form1.Invoke(new Action<String>(DisplaylistboxMsg), new Object[] { msg });
+            }
+            else
+            {
+                if (msg.Contains("\r\n"))
+                {
+                    Form1.form1.listBox2.Items.Add("\r\n");
+                }
+                else
+                {
+                    Form1.form1.listBox2.Items.Add(String.Format("At {0:hh:mm:ss},{1}", DateTime.Now, msg));
+                }
+                if (Form1.form1.listBox2.Items.Count > 0) Form1.form1.listBox2.SelectedIndex = Form1.form1.listBox2.Items.Count - 1;
+                Application.DoEvents();
             }
         }
     }

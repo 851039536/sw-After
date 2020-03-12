@@ -37,7 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SAVE = new System.Windows.Forms.Button();
             this.ADD = new System.Windows.Forms.Button();
             this.DELETE = new System.Windows.Forms.Button();
@@ -144,7 +143,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.SAVE);
             this.groupBox1.Controls.Add(this.ADD);
             this.groupBox1.Controls.Add(this.DELETE);
@@ -158,20 +156,10 @@
             this.groupBox1.TabIndex = 75;
             this.groupBox1.TabStop = false;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(392, 34);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(72, 16);
-            this.checkBox1.TabIndex = 50;
-            this.checkBox1.Text = "自动测试";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // SAVE
             // 
             this.SAVE.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SAVE.Location = new System.Drawing.Point(330, 22);
+            this.SAVE.Location = new System.Drawing.Point(368, 22);
             this.SAVE.Margin = new System.Windows.Forms.Padding(2);
             this.SAVE.Name = "SAVE";
             this.SAVE.Size = new System.Drawing.Size(51, 40);
@@ -193,7 +181,7 @@
             // 
             // DELETE
             // 
-            this.DELETE.Location = new System.Drawing.Point(76, 22);
+            this.DELETE.Location = new System.Drawing.Point(80, 22);
             this.DELETE.Margin = new System.Windows.Forms.Padding(2);
             this.DELETE.Name = "DELETE";
             this.DELETE.Size = new System.Drawing.Size(52, 38);
@@ -204,7 +192,7 @@
             // 
             // UP
             // 
-            this.UP.Location = new System.Drawing.Point(139, 22);
+            this.UP.Location = new System.Drawing.Point(152, 22);
             this.UP.Margin = new System.Windows.Forms.Padding(2);
             this.UP.Name = "UP";
             this.UP.Size = new System.Drawing.Size(52, 38);
@@ -215,7 +203,7 @@
             // 
             // DOWN
             // 
-            this.DOWN.Location = new System.Drawing.Point(204, 22);
+            this.DOWN.Location = new System.Drawing.Point(224, 22);
             this.DOWN.Margin = new System.Windows.Forms.Padding(2);
             this.DOWN.Name = "DOWN";
             this.DOWN.Size = new System.Drawing.Size(52, 38);
@@ -226,7 +214,7 @@
             // 
             // LOCK
             // 
-            this.LOCK.Location = new System.Drawing.Point(268, 22);
+            this.LOCK.Location = new System.Drawing.Point(296, 22);
             this.LOCK.Margin = new System.Windows.Forms.Padding(2);
             this.LOCK.Name = "LOCK";
             this.LOCK.Size = new System.Drawing.Size(51, 38);
@@ -240,10 +228,10 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(479, 30);
+            this.comboBox1.Location = new System.Drawing.Point(456, 30);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(69, 20);
+            this.comboBox1.Size = new System.Drawing.Size(92, 20);
             this.comboBox1.TabIndex = 49;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -393,6 +381,7 @@
             // 
             // 型号ToolStripMenuItem
             // 
+            this.型号ToolStripMenuItem.Enabled = false;
             this.型号ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("型号ToolStripMenuItem.Image")));
             this.型号ToolStripMenuItem.Name = "型号ToolStripMenuItem";
             this.型号ToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
@@ -428,8 +417,9 @@
             // 
             this.云盘ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("云盘ToolStripMenuItem.Image")));
             this.云盘ToolStripMenuItem.Name = "云盘ToolStripMenuItem";
-            this.云盘ToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.云盘ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.云盘ToolStripMenuItem.Text = "数据备份";
+            this.云盘ToolStripMenuItem.Click += new System.EventHandler(this.云盘ToolStripMenuItem_Click);
             // 
             // 用户管理ToolStripMenuItem
             // 
@@ -521,7 +511,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
@@ -560,7 +549,6 @@
         public System.Windows.Forms.ListBox listBox2;
         public System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         public System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        public System.Windows.Forms.CheckBox checkBox1;
         public System.Windows.Forms.Button SAVE;
         public System.Windows.Forms.Button ADD;
         public System.Windows.Forms.Button DELETE;

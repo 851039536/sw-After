@@ -103,7 +103,7 @@ namespace DBUtility
           int  ints = Db.Insertable<testitem>(new
             {
                 机型 = jx,
-                测试项目 = "请选择测试项目",
+                测试项目 = "延时1",
                 测试站别 = station,
                 耳机指令 = "0",
                 单位 = "0",

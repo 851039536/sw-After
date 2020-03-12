@@ -46,6 +46,8 @@ namespace After_Test
             genericForm.Firstload();
             ctl.setTag(this);
             form1.WindowState = FormWindowState.Normal;
+
+            genericForm.DisplaylistboxMsg("初始化完成！！！");
             genericForm.Loadcontrol();
         }
 
@@ -141,42 +143,19 @@ namespace After_Test
             int zt= alltestitem.Sqlselect(comboBox1.Text, Type2.Type1, ate);
             if (zt==1)
             {
-                DisplaylistboxMsg("更新完成");
+                genericForm.DisplaylistboxMsg("站别："+comboBox1.Text+","+"机型："+ Type2.Type1+","+"更新完成");
                    
             }
             else
             {
-                DisplaylistboxMsg("更新失败");
+                genericForm.DisplaylistboxMsg("更新失败,站别被删除");
             }
             }
 
-            genericForm.SelectindxChanListbox3();
+            //genericForm.SelectindxChanListbox3();
         }
 
-        /// <summary>
-        /// 输出提示
-        /// </summary>
-        /// <param name="msg"></param>
-        private void DisplaylistboxMsg(String msg)
-        {
-            if (InvokeRequired)
-            {
-                Invoke(new Action<String>(DisplaylistboxMsg), new Object[] { msg });
-            }
-            else
-            {
-                if (msg.Contains("\r\n"))
-                {
-                    listBox2.Items.Add("\r\n");
-                }
-                else
-                {
-                    listBox2.Items.Add(String.Format("At {0:hh:mm:ss},{1}", DateTime.Now, msg));
-                }
-                if (listBox2.Items.Count > 0) listBox2.SelectedIndex = listBox2.Items.Count - 1;
-                Application.DoEvents();
-            }
-        }
+        
 
         private async void 路径配置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -189,6 +168,11 @@ namespace After_Test
         {
             Alltestitem a = new Alltestitem();
             await Task.Run(() => a.ShowDialog());
+        }
+
+        private void 云盘ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
