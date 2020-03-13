@@ -18,8 +18,8 @@ namespace After_Test.Generic
         public void QueryStaion(string staion)
         {
             DataTable data = testitem.QueryStaion(staion);
-            StationForms.stationgorms.dataGridView1.DoubleBuffered(true);
-            StationForms.stationgorms.dataGridView1.DataSource = data;
+            StationForms.Stationgorms.dataGridView1.DoubleBuffered(true);
+            StationForms.Stationgorms.dataGridView1.DataSource = data;
         }
 
         /// <summary>
@@ -28,13 +28,13 @@ namespace After_Test.Generic
         public void QueryCobox()
         {
             List<string> data1 = testitem.QueryCobox();
-            StationForms.stationgorms.comboBox1.Items.Clear();
+            StationForms.Stationgorms.comboBox1.Items.Clear();
             for (int i = 0; i < data1.Count; i++)
             {
-                StationForms.stationgorms.comboBox1.Items.Add(data1[i]);
+                StationForms.Stationgorms.comboBox1.Items.Add(data1[i]);
             }
 
-            StationForms.stationgorms.comboBox1.SelectedIndex = 0;
+            StationForms.Stationgorms.comboBox1.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -44,8 +44,8 @@ namespace After_Test.Generic
         {
             try
             {
-                string jx = StationForms.stationgorms.comboBox1.Text;
-                string stationt = StationForms.stationgorms.Station.Text;
+                string jx = StationForms.Stationgorms.comboBox1.Text;
+                string stationt = StationForms.Stationgorms.Station.Text;
 
                 if (jx == "" || stationt == "")
                 {
@@ -58,8 +58,8 @@ namespace After_Test.Generic
                 if (iRet > 0)
                 {
                     MessageBox.Show(@"增加站别成功");
-                    StationForms.stationgorms.comboBox1.Text = "";
-                    StationForms.stationgorms.Station.Text = "";
+                    StationForms.Stationgorms.comboBox1.Text = "";
+                    StationForms.Stationgorms.Station.Text = "";
                 }
                 else
                 {
@@ -85,11 +85,11 @@ namespace After_Test.Generic
                 try
                 {
                     //删除操作
-                    if (StationForms.stationgorms.dataGridView1.CurrentRow != null)
+                    if (StationForms.Stationgorms.dataGridView1.CurrentRow != null)
                     {
-                        int index = StationForms.stationgorms.dataGridView1.CurrentRow.Index; //取得选中行的索引
-                        string zb = StationForms.stationgorms.dataGridView1.Rows[index].Cells["测试站别"].Value.ToString(); //获取单元格列名为‘Id’的值 
-                        string jx = StationForms.stationgorms.dataGridView1.Rows[index].Cells["机型"].Value.ToString();
+                        int index = StationForms.Stationgorms.dataGridView1.CurrentRow.Index; //取得选中行的索引
+                        string zb = StationForms.Stationgorms.dataGridView1.Rows[index].Cells["测试站别"].Value.ToString(); //获取单元格列名为‘Id’的值 
+                        string jx = StationForms.Stationgorms.dataGridView1.Rows[index].Cells["机型"].Value.ToString();
 
                         bool test = testitem.DeleteSave(zb, jx);
                         if (test)

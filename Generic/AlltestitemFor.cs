@@ -19,14 +19,14 @@ namespace After_Test.Generic
         /// <returns></returns>
         public void QueryJx()
         {
-            Alltestitem.alltest.comboBox1.Items.Clear();
+            Alltestitem.Alltest.comboBox1.Items.Clear();
             var data = alltestitem.QueryJx();
             for (int i = 0; i < data.Count; i++)
             {
-                Alltestitem.alltest.comboBox1.Items.Add(data[i]);
+                Alltestitem.Alltest.comboBox1.Items.Add(data[i]);
             }
 
-            Alltestitem.alltest.comboBox1.SelectedIndex = 0;
+            Alltestitem.Alltest.comboBox1.SelectedIndex = 0;
         }
 
 
@@ -38,8 +38,8 @@ namespace After_Test.Generic
             try
             {
                 var data = alltestitem.alltestitemdb.GetList();
-                Alltestitem.alltest.dataGridView1.DoubleBuffered(true);
-                Alltestitem.alltest.dataGridView1.DataSource = data;
+                Alltestitem.Alltest.dataGridView1.DoubleBuffered(true);
+                Alltestitem.Alltest.dataGridView1.DataSource = data;
             }
             catch (Exception ex)
             {
@@ -52,9 +52,9 @@ namespace After_Test.Generic
         /// </summary>
         public void QueryIfJx()
         {
-            var data = alltestitem.alltestitemdb.GetList(it => it.机型 == Alltestitem.alltest.comboBox1.Text); //根据条件查询     
-            Alltestitem.alltest.dataGridView1.DoubleBuffered(true);
-            Alltestitem.alltest.dataGridView1.DataSource = data;
+            var data = alltestitem.alltestitemdb.GetList(it => it.机型 == Alltestitem.Alltest.comboBox1.Text); //根据条件查询     
+            Alltestitem.Alltest.dataGridView1.DoubleBuffered(true);
+            Alltestitem.Alltest.dataGridView1.DataSource = data;
         }
 
         /// <summary>
@@ -62,22 +62,22 @@ namespace After_Test.Generic
         /// </summary>
         public void UpdateAlltestitem()
         {
-            Alltestitem.alltest.button1.Enabled = false;
+            Alltestitem.Alltest.button1.Enabled = false;
             Thread.Sleep(1000);
-            Alltestitem.alltest.button1.Enabled = true;
+            Alltestitem.Alltest.button1.Enabled = true;
             // 只更新Name列和CreateTime列，其它列不更新，条件id=1
             bool test = alltestitem.alltestitemdb.Update(it => new alltestitem
             {
-                机型 = Alltestitem.alltest.机型.Text,
-                单位 = Alltestitem.alltest.单位.Text,
-                数值上限 = Alltestitem.alltest.数值上限.Text,
-                数值下限 = Alltestitem.alltest.数值下限.Text,
-                测试项目 = Alltestitem.alltest.测试项目.Text,
-                耳机指令 = Alltestitem.alltest.耳机指令.Text
-            }, it => it.id == Convert.ToInt32(Alltestitem.alltest.id.Text));
+                机型 = Alltestitem.Alltest.机型.Text,
+                单位 = Alltestitem.Alltest.单位.Text,
+                数值上限 = Alltestitem.Alltest.数值上限.Text,
+                数值下限 = Alltestitem.Alltest.数值下限.Text,
+                测试项目 = Alltestitem.Alltest.测试项目.Text,
+                耳机指令 = Alltestitem.Alltest.耳机指令.Text
+            }, it => it.id == Convert.ToInt32(Alltestitem.Alltest.id.Text));
             if (test)
             {
-                Alltestitem.alltest.panel1.Visible = false;
+                Alltestitem.Alltest.panel1.Visible = false;
                 QueryJx();
             }
         }
@@ -89,17 +89,17 @@ namespace After_Test.Generic
         /// <param name="e"></param>
         public void QueryListIfId(object sender, DataGridViewCellEventArgs e)
         {
-            int ids = Alltestitem.alltest.dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ObjToInt(); //获取选中行指定列的值
-            Alltestitem.alltest.panel1.Visible = true;
+            int ids = Alltestitem.Alltest.dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ObjToInt(); //获取选中行指定列的值
+            Alltestitem.Alltest.panel1.Visible = true;
             var data = alltestitem.alltestitemdb.GetById(ids);
-            Alltestitem.alltest.机型.Text = data.机型;
-            Alltestitem.alltest.单位.Text = data.单位;
-            Alltestitem.alltest.数值上限.Text = data.数值上限;
-            Alltestitem.alltest.数值下限.Text = data.数值下限;
-            Alltestitem.alltest.测试项目.Text = data.测试项目;
-            Alltestitem.alltest.编号.Text = data.编号.ToString();
-            Alltestitem.alltest.耳机指令.Text = data.耳机指令;
-            Alltestitem.alltest.id.Text = data.id.ToString();
+            Alltestitem.Alltest.机型.Text = data.机型;
+            Alltestitem.Alltest.单位.Text = data.单位;
+            Alltestitem.Alltest.数值上限.Text = data.数值上限;
+            Alltestitem.Alltest.数值下限.Text = data.数值下限;
+            Alltestitem.Alltest.测试项目.Text = data.测试项目;
+            Alltestitem.Alltest.编号.Text = data.编号.ToString();
+            Alltestitem.Alltest.耳机指令.Text = data.耳机指令;
+            Alltestitem.Alltest.id.Text = data.id.ToString();
         }
 
         /// <summary>
@@ -109,13 +109,13 @@ namespace After_Test.Generic
         {
             int ints = alltestitem.Db.Insertable<alltestitem>(new
             {
-                机型 = Alltestitem.alltest.机型.Text,
-                单位 = Alltestitem.alltest.单位.Text,
-                数值上限 = Alltestitem.alltest.数值上限.Text,
-                数值下限 = Alltestitem.alltest.数值下限.Text,
-                测试项目 = Alltestitem.alltest.测试项目.Text,
-                耳机指令 = Alltestitem.alltest.耳机指令.Text,
-                编号 = Alltestitem.alltest.编号.Text
+                机型 = Alltestitem.Alltest.机型.Text,
+                单位 = Alltestitem.Alltest.单位.Text,
+                数值上限 = Alltestitem.Alltest.数值上限.Text,
+                数值下限 = Alltestitem.Alltest.数值下限.Text,
+                测试项目 = Alltestitem.Alltest.测试项目.Text,
+                耳机指令 = Alltestitem.Alltest.耳机指令.Text,
+                编号 = Alltestitem.Alltest.编号.Text
             }).ExecuteCommand();
 
             if (ints > 0)
@@ -138,10 +138,10 @@ namespace After_Test.Generic
                 try
                 {
                     //删除操作
-                    if (Alltestitem.alltest.dataGridView1.CurrentRow != null)
+                    if (Alltestitem.Alltest.dataGridView1.CurrentRow != null)
                     {
-                        int index = Alltestitem.alltest.dataGridView1.CurrentRow.Index; //取得选中行的索引
-                        int id = Alltestitem.alltest.dataGridView1.Rows[index].Cells["id"].Value.ObjToInt(); //获取单元格列名为‘Id’的值        
+                        int index = Alltestitem.Alltest.dataGridView1.CurrentRow.Index; //取得选中行的索引
+                        int id = Alltestitem.Alltest.dataGridView1.Rows[index].Cells["id"].Value.ObjToInt(); //获取单元格列名为‘Id’的值        
                         alltestitem.alltestitemdb.DeleteById(id); //根据主键删除
                     }
 

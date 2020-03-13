@@ -7,18 +7,18 @@ namespace After_Test.Forms
 {
     public partial class Alltestitem : Form
     {
-        public static Alltestitem alltest;
+        public static Alltestitem Alltest;
         private AlltestitemFor alltestitemFor = new AlltestitemFor();
         private ClassControl ctl = new ClassControl();
-        private float X;
-        private float x1;
-        private float Y;
-        private float y1;
+        private float _x;
+        private float _x1;
+        private float _y;
+        private float _y1;
 
         public Alltestitem()
         {
             InitializeComponent();
-            alltest = this;
+            Alltest = this;
         }
 
         private void Alltestitem_Load(object sender, EventArgs e)
@@ -36,10 +36,10 @@ namespace After_Test.Forms
         {
             dataGridView1.ReadOnly = true;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
-            X = Width;
-            Y = Height;
-            x1 = X;
-            y1 = Y;
+            _x = Width;
+            _y = Height;
+            _x1 = _x;
+            _y1 = _y;
 
             ctl.setTag(this);
             WindowState = FormWindowState.Normal;
@@ -49,13 +49,13 @@ namespace After_Test.Forms
         {
             float newX = Width;
             float newY = Height;
-            ctl.setControls(newX / X, newY / Y, this);
+            ctl.setControls(newX / _x, newY / _y, this);
             foreach (DataGridViewTextBoxColumn item in dataGridView1.Columns)
             {
-                item.Width = Convert.ToInt16(item.Width * newX / x1);
+                item.Width = Convert.ToInt16(item.Width * newX / _x1);
             }
 
-            x1 = newX;
+            _x1 = newX;
         }
 
 

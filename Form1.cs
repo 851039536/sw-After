@@ -54,10 +54,10 @@ namespace After_Test
 
         private void Form1_Resize(object sender, EventArgs e)
         {
-            ClassControl ctl = new ClassControl();
+            ClassControl control = new ClassControl();
             float newX = form1.Width;
             float newY = form1.Height;
-            ctl.setControls(newX / GenericForm._x, newY / GenericForm._y, this);
+            control.setControls(newX / GenericForm._x, newY / GenericForm._y, this);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -130,11 +130,9 @@ namespace After_Test
             if (test)
             {
                 LinkedList<string> ate = new LinkedList<string>();
-                int i = 0;
                 foreach (string item in listBoxControl2.Items)
                 {
                     ate.AddLast(item);
-                    i++;
                 }
 
                 int zt = alltestitem.Sqlselect(comboBox1.Text, Type2.Type1, ate);

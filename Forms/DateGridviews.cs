@@ -7,7 +7,7 @@ namespace After_Test.Forms
 {
     public partial class DateGridviews : Form
     {
-        public static DateGridviews dategridviews;
+        public static DateGridviews Dategridviews;
 
         private ClassControl ctl = new ClassControl();
 
@@ -20,7 +20,7 @@ namespace After_Test.Forms
         public DateGridviews()
         {
             InitializeComponent();
-            dategridviews = this;
+            Dategridviews = this;
         }
 
         private void DateGridviews_Load(object sender, EventArgs e)

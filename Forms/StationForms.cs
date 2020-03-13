@@ -6,15 +6,15 @@ namespace After_Test.Forms
 {
     public partial class StationForms : Form
     {
-        public static StationForms stationgorms;
-        public static string Staiongs;
+        public static StationForms Stationgorms;
+        private static string Staiongs;
         private StationFor sta = new StationFor();
 
         public StationForms(string station)
         {
             InitializeComponent();
             Staiongs = station;
-            stationgorms = this;
+            Stationgorms = this;
         }
 
         private void StationForms_Load(object sender, EventArgs e)
