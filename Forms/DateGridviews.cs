@@ -1,27 +1,27 @@
-﻿using After.Generic;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using After.Generic;
 using After_Test.Generic;
 
 namespace After_Test.Forms
 {
     public partial class DateGridviews : Form
     {
-
         public static DateGridviews dategridviews;
+
+        private ClassControl ctl = new ClassControl();
+
+        private DateGridviewsFor date = new DateGridviewsFor();
+        private float X;
+        private float x1;
+        private float Y;
+        private float y1;
+
         public DateGridviews()
         {
             InitializeComponent();
             dategridviews = this;
         }
-
-        ClassControl ctl = new ClassControl();
-        float X = 0;
-        float Y = 0;
-        float x1 = 0;
-        float y1 = 0;
-
-        DateGridviewsFor date = new DateGridviewsFor();
 
         private void DateGridviews_Load(object sender, EventArgs e)
         {
@@ -43,7 +43,7 @@ namespace After_Test.Forms
             switch (Type2.Miscellaneous)
             {
                 case 1:
-                   // CoboxMis();
+                    // CoboxMis();
                     //  QueryMis();
                     break;
                 case 2:
@@ -60,7 +60,7 @@ namespace After_Test.Forms
             ctl.setControls(newX / X, newY / Y, this);
             foreach (DataGridViewTextBoxColumn item in dataGridView1.Columns)
             {
-                item.Width = Convert.ToInt16((item.Width * newX) / x1);
+                item.Width = Convert.ToInt16(item.Width * newX / x1);
             }
 
             x1 = newX;
@@ -88,14 +88,11 @@ namespace After_Test.Forms
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             date.QueryListIfJX();
-           
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -105,7 +102,7 @@ namespace After_Test.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-           date.UpdateConfig();
+            date.UpdateConfig();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -135,7 +132,5 @@ namespace After_Test.Forms
         {
             date.DelectConfig();
         }
-
-       
     }
-};
+}

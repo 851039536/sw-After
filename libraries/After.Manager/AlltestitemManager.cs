@@ -1,14 +1,12 @@
-﻿
-using After.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using After.Model;
 
 namespace DBUtility
 {
-    public class AlltestitemManager : DbContext//继承DbContext
+    public class AlltestitemManager : DbContext //继承DbContext
     {
-
         /// <summary>
         /// 加载测试机型
         /// </summary>
@@ -17,10 +15,10 @@ namespace DBUtility
         {
             try
             {
-                List<string> data = Db.Queryable<alltestitem>()
-                    .GroupBy(it => new { it.机型 })
-                    .Select(f => f.机型)
-                    .ToList();
+                List<string> data = Db.Queryable<alltestitem>().GroupBy(it => new
+                {
+                    it.机型
+                }).Select(f => f.机型).ToList();
                 return data;
             }
             catch (Exception e)
@@ -28,18 +26,15 @@ namespace DBUtility
                 Console.WriteLine(e);
                 throw;
             }
-
         }
+
         /// <summary>
         /// 加载测试项目
         /// </summary>
         /// <returns></returns>
         public List<string> LoadTestProject(string strWhere)
         {
-            List<string> data = Db.Queryable<alltestitem>()
-                 .Where(w => w.机型 == strWhere)
-                .Select(f => f.测试项目)
-                .ToList();
+            List<string> data = Db.Queryable<alltestitem>().Where(w => w.机型 == strWhere).Select(f => f.测试项目).ToList();
             return data;
         }
 
@@ -57,9 +52,7 @@ namespace DBUtility
                 if (xm.Count == 0) break;
                 string name = xm.First();
                 xm.RemoveFirst();
-                List<alltestitem> data = Db.Queryable<alltestitem>()
-                .Where(w => w.机型 == strWhere && w.测试项目 == name)
-                .Select(f => new alltestitem
+                List<alltestitem> data = Db.Queryable<alltestitem>().Where(w => w.机型 == strWhere && w.测试项目 == name).Select(f => new alltestitem
                 {
                     单位 = f.单位,
                     数值上限 = f.数值上限,
@@ -91,6 +84,5 @@ namespace DBUtility
 
             return ints;
         }
-
     }
 }

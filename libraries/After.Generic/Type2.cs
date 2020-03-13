@@ -12,26 +12,31 @@ namespace After.Generic
         public static string Type1 = null;
 
         public static string Station = null;
+
         /// <summary>
         /// 用户
         /// </summary>
         public static string User1 = "";
+
         public static string User2 = "";
+
         /// <summary>
         /// 权限
         /// </summary>
         public static int Jurisdiction = 0;
+
         /// <summary>
         /// 杂项
         /// </summary>
         public static int Miscellaneous = 0;
+
         ///
         public static int Testflag = 0;
+
         public static void DoubleBuffered(this DataGridView dgv, bool setting)
         {
             Type dgvType = dgv.GetType();
-            PropertyInfo pi = dgvType.GetProperty("DoubleBuffered",
-                BindingFlags.Instance | BindingFlags.NonPublic);
+            PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
             if (pi != null) pi.SetValue(dgv, setting, null);
         }
     }

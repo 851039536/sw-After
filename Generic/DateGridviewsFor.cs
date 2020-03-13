@@ -1,18 +1,19 @@
-﻿using After.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Windows.Forms;
+using After.Generic;
 using After.Manager;
 using After.Model;
 using After_Test.Forms;
 using SqlSugar;
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Windows.Forms;
 
 namespace After_Test.Generic
 {
     public class DateGridviewsFor
     {
         private configManager config = new configManager();
+
         /// <summary>
         /// Config机型
         /// </summary>
@@ -25,11 +26,10 @@ namespace After_Test.Generic
             {
                 DateGridviews.dategridviews.comboBox1.Items.Add(types[i]);
                 DateGridviews.dategridviews.comboBox2.Items.Add(types[i]);
-
             }
+
             DateGridviews.dategridviews.comboBox1.SelectedIndex = 0;
             DateGridviews.dategridviews.comboBox2.SelectedIndex = 0;
-
         }
 
         /// <summary>
@@ -62,17 +62,17 @@ namespace After_Test.Generic
                     //删除操作
                     if (DateGridviews.dategridviews.dataGridView1.CurrentRow != null)
                     {
-                        int index = DateGridviews.dategridviews.dataGridView1.CurrentRow.Index;    //取得选中行的索引
-                        int id = DateGridviews.dategridviews.dataGridView1.Rows[index].Cells["id"].Value.ObjToInt();   //获取单元格列名为‘Id’的值        
-                        config.configDb.DeleteById(id);//根据主键删除
+                        int index = DateGridviews.dategridviews.dataGridView1.CurrentRow.Index; //取得选中行的索引
+                        int id = DateGridviews.dategridviews.dataGridView1.Rows[index].Cells["id"].Value.ObjToInt(); //获取单元格列名为‘Id’的值        
+                        config.configDb.DeleteById(id); //根据主键删除
                     }
+
                     QueryConfig();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
         }
 
@@ -115,7 +115,6 @@ namespace After_Test.Generic
                 DateGridviews.dategridviews.barcode.Text = data1.barcode.ToString();
                 DateGridviews.dategridviews.count.Text = data1.count.ToString();
                 DateGridviews.dategridviews.testflag.Text = data1.testflag.ToString();
-
             }
         }
 
@@ -125,7 +124,7 @@ namespace After_Test.Generic
             Thread.Sleep(1000);
             DateGridviews.dategridviews.button1.Enabled = true;
             // 只更新Name列和CreateTime列，其它列不更新，条件id=1
-            bool test = config.configDb.Update(it => new config()
+            bool test = config.configDb.Update(it => new config
             {
                 ConfigText = DateGridviews.dategridviews.ConfigText.Text,
                 HPID = DateGridviews.dategridviews.HPID.Text,
@@ -171,7 +170,6 @@ namespace After_Test.Generic
             if (ints > 0)
             {
                 MessageBox.Show("新增成功");
-
             }
         }
     }

@@ -14,6 +14,5 @@ namespace After.Model
         public string 程序路径 { get; set; }
 
         public string 数据路径 { get; set; }
-
     }
 }

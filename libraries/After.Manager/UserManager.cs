@@ -82,7 +82,7 @@ namespace DBUtility
 
             Userdb.Delete(student);//根据实体删除
             Userdb.DeleteById(1);//根据主键删除
-            Userdb.DeleteById(new int[] { 1, 2 });//根据主键数组删除
+            Userdb.DeleteById(new[] { 1, 2 });//根据主键数组删除
             Userdb.Delete(it => it.id == 1);//根据条件删除
 
             //支持Userdb.AsDeleteable()
@@ -109,11 +109,10 @@ namespace DBUtility
         //多表查询
         public void JoinDemo()
         {
-
-            var list = Db.Queryable<user, user>((st, sc) => new object[] {
-            JoinType.Left,
-            st.用户==sc.用户
-        }).Select<user>().ToList();
+            Db.Queryable<user, user>((st, sc) => new object[] {
+                JoinType.Left,
+                st.用户==sc.用户
+            }).Select<user>().ToList();
         }
     }
 }

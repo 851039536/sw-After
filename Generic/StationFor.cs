@@ -1,16 +1,17 @@
-﻿using After.Generic;
-using After_Test.Forms;
-using DBUtility;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using After.Generic;
+using After_Test.Forms;
+using DBUtility;
 
 namespace After_Test.Generic
 {
     public class StationFor
     {
         private TestitemManager testitem = new TestitemManager();
+
         /// <summary>
         /// 查询机型和站别
         /// </summary>
@@ -32,6 +33,7 @@ namespace After_Test.Generic
             {
                 StationForms.stationgorms.comboBox1.Items.Add(data1[i]);
             }
+
             StationForms.stationgorms.comboBox1.SelectedIndex = 0;
         }
 
@@ -50,6 +52,7 @@ namespace After_Test.Generic
                     MessageBox.Show(@"不能为空");
                     return;
                 }
+
                 int iRet = testitem.InstStation(jx, stationt);
 
                 if (iRet > 0)
@@ -64,7 +67,6 @@ namespace After_Test.Generic
                 }
 
                 QueryStaion(staiongs);
-
             }
             catch (Exception ex)
             {
@@ -85,8 +87,8 @@ namespace After_Test.Generic
                     //删除操作
                     if (StationForms.stationgorms.dataGridView1.CurrentRow != null)
                     {
-                        int index = StationForms.stationgorms.dataGridView1.CurrentRow.Index;    //取得选中行的索引
-                        string zb = StationForms.stationgorms.dataGridView1.Rows[index].Cells["测试站别"].Value.ToString();   //获取单元格列名为‘Id’的值 
+                        int index = StationForms.stationgorms.dataGridView1.CurrentRow.Index; //取得选中行的索引
+                        string zb = StationForms.stationgorms.dataGridView1.Rows[index].Cells["测试站别"].Value.ToString(); //获取单元格列名为‘Id’的值 
                         string jx = StationForms.stationgorms.dataGridView1.Rows[index].Cells["机型"].Value.ToString();
 
                         bool test = testitem.DeleteSave(zb, jx);
@@ -95,13 +97,11 @@ namespace After_Test.Generic
                             QueryStaion(staiongs);
                         }
                     }
-
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
         }
     }

@@ -1,10 +1,10 @@
-﻿using After.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
+using After.Model;
 
 namespace DBUtility
 {
-    public class TestitemManager : DbContext//继承DbContext
+    public class TestitemManager : DbContext //继承DbContext
     {
         /// <summary>
         /// 机型站别
@@ -12,11 +12,10 @@ namespace DBUtility
         /// <returns></returns>
         public List<string> QueryStation(string jx)
         {
-            List<string> data = Db.Queryable<testitem>()
-                .Where(it => it.机型 == jx)
-                .GroupBy(it => new { it.测试站别 })
-                .Select(f => f.测试站别)
-                .ToList();
+            List<string> data = Db.Queryable<testitem>().Where(it => it.机型 == jx).GroupBy(it => new
+            {
+                it.测试站别
+            }).Select(f => f.测试站别).ToList();
             return data;
         }
 
@@ -26,11 +25,7 @@ namespace DBUtility
         /// <returns></returns>
         public List<string> GetTestitemProjectList(string strWhere, string comb)
         {
-            List<string> data = Db.Queryable<testitem>()
-                .Where(it => it.机型 == strWhere && it.测试站别 == comb)
-                .Select(f => f.测试项目)
-                .OrderBy("编号 ASC")
-                .ToList();
+            List<string> data = Db.Queryable<testitem>().Where(it => it.机型 == strWhere && it.测试站别 == comb).Select(f => f.测试项目).OrderBy("编号 ASC").ToList();
             return data;
         }
 
@@ -40,10 +35,7 @@ namespace DBUtility
         /// <returns></returns>
         public List<string> LoadTestStation(string strWhere)
         {
-            List<string> data = Db.Queryable<testitem>()
-                .Where(it => it.机型 == strWhere)
-                .Select(f => f.测试站别)
-                .ToList();
+            List<string> data = Db.Queryable<testitem>().Where(it => it.机型 == strWhere).Select(f => f.测试站别).ToList();
             return data;
         }
 
@@ -52,7 +44,7 @@ namespace DBUtility
         /// </summary>
         public bool DeleteSave(string station, string jx)
         {
-            var num = testitemdb.Delete(it => it.测试站别 == station && it.机型 == jx);//根据条件删除
+            var num = testitemdb.Delete(it => it.测试站别 == station && it.机型 == jx); //根据条件删除
 
             return num;
         }
@@ -64,19 +56,15 @@ namespace DBUtility
         /// <returns></returns>
         public DataTable QueryStaion(string staion)
         {
-            DataTable dt = Db.Queryable<testitem>()
-                .Where(it => it.机型 == staion)
-                .GroupBy(g => new
-                {
-                    g.机型,
-                    g.测试站别
-                })
-                .Select(f => new
-                {
-                    f.机型,
-                    f.测试站别
-                })
-                .ToDataTable();
+            DataTable dt = Db.Queryable<testitem>().Where(it => it.机型 == staion).GroupBy(g => new
+            {
+                g.机型,
+                g.测试站别
+            }).Select(f => new
+            {
+                f.机型,
+                f.测试站别
+            }).ToDataTable();
             return dt;
         }
 
@@ -87,12 +75,11 @@ namespace DBUtility
         /// <returns></returns>
         public List<string> QueryCobox()
         {
-            List<string> data = Db.Queryable<testitem>()
-                .GroupBy(it => new { it.机型 })
-                .Select(f => f.机型)
-                .ToList();
+            List<string> data = Db.Queryable<testitem>().GroupBy(it => new
+            {
+                it.机型
+            }).Select(f => f.机型).ToList();
             return data;
-
         }
 
         /// <summary>

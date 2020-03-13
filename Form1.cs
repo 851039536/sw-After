@@ -1,24 +1,31 @@
-﻿using After.Generic;
-using After_Test.Forms;
-using After_Test.Generic;
-using DBUtility;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using After.Generic;
+using After_Test.Forms;
+using After_Test.Generic;
+using DBUtility;
 
 namespace After_Test
 {
     public partial class Form1 : Form
     {
         public static Form1 form1;
+        private AlltestitemManager alltestitem = new AlltestitemManager();
+
+        private ClassControl ctl = new ClassControl();
+
+        private GenericForm genericForm = new GenericForm();
+
+        private TestitemManager testitem = new TestitemManager();
+        private UserManager user = new UserManager();
+
         public Form1()
         {
             InitializeComponent();
             form1 = this;
         }
-
-        private GenericForm genericForm = new GenericForm();
 
         /// <summary>
         /// 权限
@@ -33,8 +40,6 @@ namespace After_Test
             }
         }
 
-        private ClassControl ctl = new ClassControl();
-        private UserManager user = new UserManager();
         private void Form1_Load(object sender, EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false;
@@ -53,7 +58,6 @@ namespace After_Test
             float newX = form1.Width;
             float newY = form1.Height;
             ctl.setControls(newX / GenericForm._x, newY / GenericForm._y, this);
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,8 +118,6 @@ namespace After_Test
             genericForm.SelectindxChanListbox3();
         }
 
-        private TestitemManager testitem = new TestitemManager();
-        private AlltestitemManager alltestitem = new AlltestitemManager();
         private void SAVE_Click(object sender, EventArgs e)
         {
             if (comboBox1.Text.Equals(""))
@@ -134,11 +136,11 @@ namespace After_Test
                     ate.AddLast(item);
                     i++;
                 }
+
                 int zt = alltestitem.Sqlselect(comboBox1.Text, Type2.Type1, ate);
                 if (zt == 1)
                 {
                     genericForm.DisplaylistboxMsg("站别：" + comboBox1.Text + "," + "机型：" + Type2.Type1 + "," + "更新完成");
-
                 }
                 else
                 {
@@ -148,7 +150,6 @@ namespace After_Test
 
             //genericForm.SelectindxChanListbox3();
         }
-
 
 
         private async void 路径配置ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -166,7 +167,6 @@ namespace After_Test
 
         private void 云盘ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

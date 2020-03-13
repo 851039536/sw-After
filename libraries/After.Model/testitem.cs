@@ -8,6 +8,7 @@ namespace After.Model
         //指定主键和自增列，当然数据库中也要设置主键和自增列才会有效
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
         public int id { get; set; }
+
         public string 机型 { get; set; }
         public string 测试项目 { get; set; }
         public string 测试站别 { get; set; }
@@ -18,7 +19,5 @@ namespace After.Model
         public int 编号 { get; set; }
         public int allid { get; set; }
         public int 自动测试 { get; set; }
-
-
     }
 }

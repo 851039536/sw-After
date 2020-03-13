@@ -1,15 +1,23 @@
-﻿using After.Generic;
-using DBUtility;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using After.Generic;
+using DBUtility;
 
 namespace After_Test.Generic
 {
     public class GenericForm
     {
+        public static float _x;
+        public static float _y;
+        public static float _x1;
+        public static float _y1;
 
+        private bool _locker = true;
+        private AlltestitemManager alltestitem = new AlltestitemManager();
+
+        private TestitemManager testitem = new TestitemManager();
 
 
         /// <summary>
@@ -17,27 +25,19 @@ namespace After_Test.Generic
         /// </summary>
         public void Firstload()
         {
-
             Form1.form1.contextMenuStrip2.Enabled = false;
             Form1.form1.SAVE.Enabled = false;
             Form1.form1.timer1.Interval = 1000;
             Form1.form1.timer1.Enabled = true;
-            Form1.form1.label1.Text = After.Generic.Type2.User1; //用户
+            Form1.form1.label1.Text = Type2.User1; //用户
             Form1.form1.label4.Text = @"注:左边为待选功能，右边为需要测试的功能先锁定再更新保存";
             Form1.form1.label4.ForeColor = Color.Red;
             _x = Form1.form1.Width;
             _y = Form1.form1.Height;
             _x1 = _x;
             _y1 = _y;
-
         }
 
-
-        public static float _x = 0;
-        public static float _y = 0;
-        public static float _x1 = 0;
-        public static float _y1 = 0;
-        private AlltestitemManager alltestitem = new AlltestitemManager();
         /// <summary>
         /// 加载测试机型
         /// </summary>
@@ -68,12 +68,11 @@ namespace After_Test.Generic
         {
             Form1.form1.listBoxControl2.Visible = true;
             Form1.form1.listBox3.Items.Clear();
-            ToolStripItem items = (ToolStripItem)sender;
+            ToolStripItem items = (ToolStripItem) sender;
             Type2.Type1 = Convert.ToString(items);
             TextName(Type2.Type1);
             try
             {
-
                 List<string> miscelist1 = testitem.LoadTestStation(Type2.Type1);
                 Form1.form1.comboBox1.Items.Clear();
                 for (int i = 0; i < miscelist1.Count; i++)
@@ -118,7 +117,6 @@ namespace After_Test.Generic
 
                     ComboBox1SelectedIndexChanged();
                     // Querycheck();
-
                 }
             }
             catch (Exception ex)
@@ -127,7 +125,6 @@ namespace After_Test.Generic
             }
         }
 
-        private TestitemManager testitem = new TestitemManager();
         public void SelectindxChanListbox3()
         {
             try
@@ -141,6 +138,7 @@ namespace After_Test.Generic
                 {
                     Form1.form1.comboBox1.Items.Add(miscelistS[i]);
                 }
+
                 Form1.form1.comboBox1.SelectedIndex = 0;
                 if (_testistBox != "")
                 {
@@ -153,7 +151,6 @@ namespace After_Test.Generic
                     {
                         Form1.form1.listBoxControl3.Items.Add(alllist1[i]);
                     }
-
                 }
             }
             catch (Exception ex)
@@ -167,7 +164,6 @@ namespace After_Test.Generic
         /// </summary>
         public void ComboBox1SelectedIndexChanged()
         {
-
             Form1.form1.listBoxControl2.Items.Clear();
             List<string> alllist1 = testitem.GetTestitemProjectList(Type2.Type1, Form1.form1.comboBox1.Text);
             for (int i = 0; i < alllist1.Count; i++)
@@ -188,8 +184,8 @@ namespace After_Test.Generic
                 {
                     return;
                 }
-
             }
+
             Form1.form1.listBoxControl2.Items.Add(name);
         }
 
@@ -238,7 +234,6 @@ namespace After_Test.Generic
                 int index = Form1.form1.listBoxControl2.SelectedIndex;
                 if (index < Form1.form1.listBoxControl2.Items.Count - 1)
                 {
-
                     object item = Form1.form1.listBoxControl2.SelectedItem;
                     Form1.form1.listBoxControl2.Items.Remove(item);
                     Form1.form1.listBoxControl2.Items.Insert(index + 1, item);
@@ -251,13 +246,11 @@ namespace After_Test.Generic
             }
         }
 
-        private bool _locker = true;
         /// <summary>
         /// 锁定按钮
         /// </summary>
         public void butLock()
         {
-
             if (_locker)
             {
                 Form1.form1.listBoxControl2.Enabled = false;
@@ -290,11 +283,11 @@ namespace After_Test.Generic
         /// 输出提示
         /// </summary>
         /// <param name="msg"></param>
-        public void DisplaylistboxMsg(String msg)
+        public void DisplaylistboxMsg(string msg)
         {
             if (Form1.form1.InvokeRequired)
             {
-                Form1.form1.Invoke(new Action<String>(DisplaylistboxMsg), new Object[] { msg });
+                Form1.form1.Invoke(new Action<string>(DisplaylistboxMsg), msg);
             }
             else
             {
@@ -304,8 +297,9 @@ namespace After_Test.Generic
                 }
                 else
                 {
-                    Form1.form1.listBox2.Items.Add(String.Format("At {0:hh:mm:ss},{1}", DateTime.Now, msg));
+                    Form1.form1.listBox2.Items.Add(string.Format("At {0:hh:mm:ss},{1}", DateTime.Now, msg));
                 }
+
                 if (Form1.form1.listBox2.Items.Count > 0) Form1.form1.listBox2.SelectedIndex = Form1.form1.listBox2.Items.Count - 1;
                 Application.DoEvents();
             }

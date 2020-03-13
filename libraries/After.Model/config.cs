@@ -3,13 +3,8 @@
 namespace After.Model
 {
     [SugarTable("config")]
-    public partial class config
+    public class config
     {
-        public config()
-        {
-
-
-        }
         /// <summary>
         /// Desc:
         /// Default:
@@ -17,6 +12,7 @@ namespace After.Model
         /// </summary>           
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
         public int id { get; set; }
+
         /// <summary>
         /// Desc:
         /// Default:
@@ -88,7 +84,6 @@ namespace After.Model
         public int? barcode { get; set; }
 
 
-
         /// <summary>
         /// Desc:
         /// Default:
@@ -102,6 +97,5 @@ namespace After.Model
         /// Nullable:True
         /// </summary>           
         public string Music { get; set; }
-
     }
 }
