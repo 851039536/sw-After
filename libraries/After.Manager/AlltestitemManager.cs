@@ -52,7 +52,9 @@ namespace DBUtility
                 if (xm.Count == 0) break;
                 string name = xm.First();
                 xm.RemoveFirst();
-                List<alltestitem> data = Db.Queryable<alltestitem>().Where(w => w.机型 == strWhere && w.测试项目 == name).Select(f => new alltestitem
+                List<alltestitem> data = Db.Queryable<alltestitem>()
+                    .Where(w => w.机型 == strWhere && w.测试项目 == name)
+                    .Select(f => new alltestitem
                 {
                     单位 = f.单位,
                     数值上限 = f.数值上限,

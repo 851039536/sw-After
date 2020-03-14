@@ -5,11 +5,13 @@ using System.Windows.Forms;
 using After.Generic;
 using After_Test.Forms;
 using After_Test.Generic;
+using CCWin;
+using CCWin.SkinControl;
 using DBUtility;
 
 namespace After_Test
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Skin_Mac
     {
         public static Form1 form1;
         private AlltestitemManager alltestitem = new AlltestitemManager();
@@ -32,12 +34,6 @@ namespace After_Test
         /// </summary>
         private void Jurisdiction()
         {
-            if (Type2.Jurisdiction == 0)
-            {
-                文件路径配置ToolStripMenuItem.Enabled = true;
-                工具ToolStripMenuItem.Enabled = false;
-                // button1.Enabled = false;
-            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -120,25 +116,33 @@ namespace After_Test
 
         private void SAVE_Click(object sender, EventArgs e)
         {
-            if (comboBox1.Text.Equals(""))
+            if (skinComboBox1.Text.Equals(""))
             {
                 MessageBox.Show(@"站别不能为空");
                 return;
             }
 
-            bool test = testitem.DeleteSave(comboBox1.Text, Type2.Type1);
+            bool test = testitem.DeleteSave(skinComboBox1.Text, Type2.Type1);
             if (test)
             {
                 LinkedList<string> ate = new LinkedList<string>();
-                foreach (string item in listBoxControl2.Items)
+
+                SkinListBoxItemCollection ss = form1.skinListBox2.Items;
+
+                for (int i = 0; i < ss.Count; i++)
                 {
-                    ate.AddLast(item);
+                    ate.AddLast(ss[i].ToString());
                 }
 
-                int zt = alltestitem.Sqlselect(comboBox1.Text, Type2.Type1, ate);
+                //foreach (string item in listBoxControl2.Items)
+                //{
+                //    ate.AddLast(item);
+                //}
+
+                int zt = alltestitem.Sqlselect(skinComboBox1.Text, Type2.Type1, ate);
                 if (zt == 1)
                 {
-                    genericForm.DisplaylistboxMsg("站别：" + comboBox1.Text + "," + "机型：" + Type2.Type1 + "," + "更新完成");
+                    genericForm.DisplaylistboxMsg("站别：" + skinComboBox1.Text + "," + "机型：" + Type2.Type1 + "," + "更新完成");
                 }
                 else
                 {
@@ -164,6 +168,67 @@ namespace After_Test
         }
 
         private void 云盘ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void 文件上传ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FilesUpload f = new FilesUpload();
+            f.ShowDialog();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+        }
+
+        private async void skinButton1_Click(object sender, EventArgs e)
+        {
+            if (Type2.Type1 == null)
+            {
+                MessageBox.Show(@"未选择站别");
+            }
+            else
+            {
+                StationForms st = new StationForms(Type2.Type1);
+                await Task.Run(() => st.ShowDialog());
+            }
+        }
+
+        private void skinListBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            genericForm.SelectindxChanListbox3();
+        }
+
+        private void skinComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            genericForm.ComboBox1SelectedIndexChanged();
+        }
+
+        private void skinListBox2_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            genericForm.butAdd();
+        }
+
+        private async void config配置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Type2.Miscellaneous = 2;
+            DateGridviews date = new DateGridviews();
+            await Task.Run(() => date.ShowDialog());
+        }
+
+        private async void 功能配置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Alltestitem a = new Alltestitem();
+            await Task.Run(() => a.ShowDialog());
+        }
+
+        private void 文件上传ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FilesUpload f = new FilesUpload();
+            f.ShowDialog();
+        }
+
+        private void listBoxControl3_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
     }

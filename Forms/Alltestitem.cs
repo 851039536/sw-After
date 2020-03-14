@@ -2,10 +2,11 @@
 using System.Windows.Forms;
 using After.Generic;
 using After_Test.Generic;
+using CCWin;
 
 namespace After_Test.Forms
 {
-    public partial class Alltestitem : Form
+    public partial class Alltestitem : Skin_Mac
     {
         public static Alltestitem Alltest;
         private AlltestitemFor alltestitemFor = new AlltestitemFor();
@@ -119,6 +120,48 @@ namespace After_Test.Forms
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             alltestitemFor.DelectAlltestitem();
+        }
+
+        private void skinButton1_Click(object sender, EventArgs e)
+        {
+             panel1.Visible = true;
+        }
+
+        private void skinButton2_Click(object sender, EventArgs e)
+        {
+             alltestitemFor.DelectAlltestitem();
+        }
+
+        private void skinButton3_Click(object sender, EventArgs e)
+        {
+            alltestitemFor.QueryConfig();
+        }
+
+        private void skinButton4_Click(object sender, EventArgs e)
+        {
+            机型.Enabled = true;
+            // 机型.Text = "";
+            单位.Text = "";
+            数值上限.Text = "";
+            数值下限.Text = "";
+            测试项目.Text = "";
+            耳机指令.Text = "";
+            编号.Text = "";
+        }
+
+        private void skinButton5_Click(object sender, EventArgs e)
+        {
+             alltestitemFor.InstAlltestitem();
+        }
+
+        private void skinButton6_Click(object sender, EventArgs e)
+        {
+             alltestitemFor.UpdateAlltestitem();
+        }
+
+        private void skinButton7_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
         }
     }
 }

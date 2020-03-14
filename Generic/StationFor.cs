@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 using After.Generic;
 using After_Test.Forms;
@@ -18,8 +19,8 @@ namespace After_Test.Generic
         public void QueryStaion(string staion)
         {
             DataTable data = testitem.QueryStaion(staion);
-            StationForms.Stationgorms.dataGridView1.DoubleBuffered(true);
-            StationForms.Stationgorms.dataGridView1.DataSource = data;
+            StationForms.Stationgorms.skinDataGridView1.DoubleBuffered(true);
+            StationForms.Stationgorms.skinDataGridView1.DataSource = data;
         }
 
         /// <summary>
@@ -85,11 +86,11 @@ namespace After_Test.Generic
                 try
                 {
                     //删除操作
-                    if (StationForms.Stationgorms.dataGridView1.CurrentRow != null)
+                    if (StationForms.Stationgorms.skinDataGridView1.CurrentRow != null)
                     {
-                        int index = StationForms.Stationgorms.dataGridView1.CurrentRow.Index; //取得选中行的索引
-                        string zb = StationForms.Stationgorms.dataGridView1.Rows[index].Cells["测试站别"].Value.ToString(); //获取单元格列名为‘Id’的值 
-                        string jx = StationForms.Stationgorms.dataGridView1.Rows[index].Cells["机型"].Value.ToString();
+                        int index = StationForms.Stationgorms.skinDataGridView1.CurrentRow.Index; //取得选中行的索引
+                        string zb = StationForms.Stationgorms.skinDataGridView1.Rows[index].Cells["测试站别"].Value.ToString(); //获取单元格列名为‘Id’的值 
+                        string jx = StationForms.Stationgorms.skinDataGridView1.Rows[index].Cells["机型"].Value.ToString();
 
                         bool test = testitem.DeleteSave(zb, jx);
                         if (test)
@@ -104,5 +105,8 @@ namespace After_Test.Generic
                 }
             }
         }
+
+
+        
     }
 }

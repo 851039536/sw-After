@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Threading;
 using System.Windows.Forms;
 using After.Generic;
@@ -40,8 +41,9 @@ namespace After_Test.Generic
             try
             {
                 var data = config.configDb.GetList();
-                DateGridviews.Dategridviews.dataGridView1.DoubleBuffered(true);
-                DateGridviews.Dategridviews.dataGridView1.DataSource = data;
+                
+                DateGridviews.Dategridviews.skinDataGridView1.DoubleBuffered(true);
+                DateGridviews.Dategridviews.skinDataGridView1.DataSource = data;
             }
             catch (Exception ex)
             {
@@ -60,10 +62,10 @@ namespace After_Test.Generic
                 try
                 {
                     //删除操作
-                    if (DateGridviews.Dategridviews.dataGridView1.CurrentRow != null)
+                    if (DateGridviews.Dategridviews.skinDataGridView1.CurrentRow != null)
                     {
-                        int index = DateGridviews.Dategridviews.dataGridView1.CurrentRow.Index; //取得选中行的索引
-                        int id = DateGridviews.Dategridviews.dataGridView1.Rows[index].Cells["id"].Value.ObjToInt(); //获取单元格列名为‘Id’的值        
+                        int index = DateGridviews.Dategridviews.skinDataGridView1.CurrentRow.Index; //取得选中行的索引
+                        int id = DateGridviews.Dategridviews.skinDataGridView1.Rows[index].Cells["id"].Value.ObjToInt(); //获取单元格列名为‘Id’的值        
                         config.configDb.DeleteById(id); //根据主键删除
                     }
 
@@ -85,8 +87,8 @@ namespace After_Test.Generic
             {
                 var data = config.configDb.GetList(c => c.ConfigText == DateGridviews.Dategridviews.comboBox1.Text);
                 // MySqlDataAdapter sda = new MySqlDataAdapter("select * from config where ConfigText='" + comboBox1.Text + "'", mysql.conn);//
-                DateGridviews.Dategridviews.dataGridView1.DoubleBuffered(true);
-                DateGridviews.Dategridviews.dataGridView1.DataSource = data;
+                DateGridviews.Dategridviews.skinDataGridView1.DoubleBuffered(true);
+                DateGridviews.Dategridviews.skinDataGridView1.DataSource = data;
             }
             catch (Exception ex)
             {
