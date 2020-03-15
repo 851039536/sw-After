@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
 using After_Test.Generic;
+using CCWin;
 
 namespace After_Test.Forms
 {
-    public partial class StationForms : Form
+    public partial class StationForms : Skin_Mac
     {
         public static StationForms Stationgorms;
         private static string Staiongs;
@@ -19,9 +20,10 @@ namespace After_Test.Forms
 
         private void StationForms_Load(object sender, EventArgs e)
         {
-            dataGridView1.ReadOnly = true;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
+            skinDataGridView1.ReadOnly = true;
+            skinDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
 
+            
             sta.QueryStaion(Staiongs);
             sta.QueryCobox();
         }

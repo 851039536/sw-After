@@ -2,10 +2,11 @@
 using System.Windows.Forms;
 using After.Generic;
 using After_Test.Generic;
+using CCWin;
 
 namespace After_Test.Forms
 {
-    public partial class DateGridviews : Form
+    public partial class DateGridviews : Skin_Mac
     {
         public static DateGridviews Dategridviews;
 
@@ -25,10 +26,10 @@ namespace After_Test.Forms
 
         private void DateGridviews_Load(object sender, EventArgs e)
         {
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
+            skinDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
             panel1.Visible = false; //隐藏面板
             Test();
-            dataGridView1.ReadOnly = true;
+            skinDataGridView1.ReadOnly = true;
             X = Width;
             Y = Height;
             x1 = X;
@@ -58,7 +59,7 @@ namespace After_Test.Forms
             float newX = Width;
             float newY = Height;
             ctl.setControls(newX / X, newY / Y, this);
-            foreach (DataGridViewTextBoxColumn item in dataGridView1.Columns)
+            foreach (DataGridViewTextBoxColumn item in skinDataGridView1.Columns)
             {
                 item.Width = Convert.ToInt16(item.Width * newX / x1);
             }
@@ -76,6 +77,7 @@ namespace After_Test.Forms
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
+
             //if (Type2.Miscellaneous == 1) QueryMis();
             if (Type2.Miscellaneous == 2) date.QueryConfig();
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using After.Generic;
+using CCWin.SkinControl;
 using DBUtility;
 
 namespace After_Test.Generic
@@ -25,11 +26,9 @@ namespace After_Test.Generic
         /// </summary>
         public void Firstload()
         {
-            Form1.form1.contextMenuStrip2.Enabled = false;
             Form1.form1.SAVE.Enabled = false;
-            Form1.form1.timer1.Interval = 1000;
-            Form1.form1.timer1.Enabled = true;
-            Form1.form1.label1.Text = Type2.User1; //用户
+
+            // Form1.form1.label1.Text = Type2.User1; //用户
             Form1.form1.label4.Text = @"注:左边为待选功能，右边为需要测试的功能先锁定再更新保存";
             Form1.form1.label4.ForeColor = Color.Red;
             _x = Form1.form1.Width;
@@ -48,57 +47,16 @@ namespace After_Test.Generic
             for (int j = 0; j < allstring.Count; j++)
             {
                 string y = allstring[j];
-                Form1.form1.型号ToolStripMenuItem.DropDownItems.Add(y);
-                Form1.form1.listBox3.Items.Add(y);
-                Form1.form1.型号ToolStripMenuItem.DropDownItems[i].Click += Tests;
+                //   Form1.form1.型号ToolStripMenuItem.DropDownItems.Add(y);
+                // Form1.form1.listBox3.Items.Add(y);
+                Form1.form1.skinListBox3.Items.Add(new SkinListBoxItem(y));
+                //  Form1.form1.型号ToolStripMenuItem.DropDownItems[i].Click += Tests;
                 i++;
             }
 
-            Form1.form1.listBox3.SelectedIndex = 0;
+            Form1.form1.skinListBox3.SelectedIndex = 0;
 
             DisplaylistboxMsg("加载测试机型完成！！！");
-        }
-
-        /// <summary>
-        /// 点击事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Tests(object sender, EventArgs e)
-        {
-            Form1.form1.listBoxControl2.Visible = true;
-            Form1.form1.listBox3.Items.Clear();
-            ToolStripItem items = (ToolStripItem) sender;
-            Type2.Type1 = Convert.ToString(items);
-            TextName(Type2.Type1);
-            try
-            {
-                List<string> miscelist1 = testitem.LoadTestStation(Type2.Type1);
-                Form1.form1.comboBox1.Items.Clear();
-                for (int i = 0; i < miscelist1.Count; i++)
-                {
-                    Form1.form1.comboBox1.Items.Add(miscelist1[i]);
-                }
-
-                Form1.form1.comboBox1.SelectedIndex = 0;
-                // Querycheck(); 自动测试本地修改 暂时废弃
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// 加载listBox1参数
-        /// </summary>
-        /// <param name="name"></param>
-        private void TextName(string name)
-        {
-            Form1.form1.contextMenuStrip2.Enabled = true;
-            Form1.form1.listBox3.Items.Add(name + "测试项目");
-            // Form1.form1.listBox1.Items.Add(name + "数据");
-            Form1.form1.listBox3.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -109,11 +67,11 @@ namespace After_Test.Generic
             try
             {
                 string _testistBox;
-                _testistBox = Convert.ToString(Form1.form1.listBox3.SelectedItem); //单击获取当前选中行的内容
+                _testistBox = Convert.ToString(Form1.form1.skinListBox3.SelectedItem); //单击获取当前选中行的内容
                 if (_testistBox != "")
                 {
                     Form1.form1.listBoxControl3.Items.Clear();
-                    Form1.form1.listBoxControl2.Items.Clear();
+                    // Form1.form1.listBoxControl2.Items.Clear();
 
                     ComboBox1SelectedIndexChanged();
                     // Querycheck();
@@ -130,26 +88,26 @@ namespace After_Test.Generic
             try
             {
                 string _testistBox;
-                _testistBox = Convert.ToString(Form1.form1.listBox3.SelectedItem); //单击获取当前选中行的内容
+                _testistBox = Convert.ToString(Form1.form1.skinListBox3.SelectedItem); //单击获取当前选中行的内容
                 Type2.Type1 = _testistBox;
                 List<string> miscelistS = testitem.QueryStation(Type2.Type1);
-                Form1.form1.comboBox1.Items.Clear();
+                Form1.form1.skinComboBox1.Items.Clear();
                 for (int i = 0; i < miscelistS.Count; i++)
                 {
-                    Form1.form1.comboBox1.Items.Add(miscelistS[i]);
+                    Form1.form1.skinComboBox1.Items.Add(miscelistS[i]);
                 }
 
-                Form1.form1.comboBox1.SelectedIndex = 0;
+                Form1.form1.skinComboBox1.SelectedIndex = 0;
                 if (_testistBox != "")
                 {
                     Form1.form1.listBoxControl3.Items.Clear();
-                    Form1.form1.listBoxControl2.Items.Clear();
+                    Form1.form1.skinListBox2.Items.Clear();
 
                     ComboBox1SelectedIndexChanged();
                     List<string> alllist1 = alltestitem.LoadTestProject(Type2.Type1);
                     for (int i = 0; i < alllist1.Count; i++)
                     {
-                        Form1.form1.listBoxControl3.Items.Add(alllist1[i]);
+                        Form1.form1.listBoxControl3.Items.Add(new SkinListBoxItem(alllist1[i]));
                     }
                 }
             }
@@ -164,11 +122,11 @@ namespace After_Test.Generic
         /// </summary>
         public void ComboBox1SelectedIndexChanged()
         {
-            Form1.form1.listBoxControl2.Items.Clear();
-            List<string> alllist1 = testitem.GetTestitemProjectList(Type2.Type1, Form1.form1.comboBox1.Text);
+            Form1.form1.skinListBox2.Items.Clear();
+            List<string> alllist1 = testitem.GetTestitemProjectList(Type2.Type1, Form1.form1.skinComboBox1.Text);
             for (int i = 0; i < alllist1.Count; i++)
             {
-                Form1.form1.listBoxControl2.Items.Add(alllist1[i]);
+                Form1.form1.skinListBox2.Items.Add(new SkinListBoxItem(alllist1[i]));
             }
         }
 
@@ -177,16 +135,27 @@ namespace After_Test.Generic
         /// </summary>
         public void butAdd()
         {
-            string name = Convert.ToString(Form1.form1.listBoxControl3.SelectedItem); //双击击获取当前选中行的内容
-            foreach (string item in Form1.form1.listBoxControl2.Items)
+            string listBoxControl3 = Convert.ToString(Form1.form1.listBoxControl3.SelectedItem);
+
+            //双击击获取当前选中行的内容
+            SkinListBoxItemCollection ss = Form1.form1.skinListBox2.Items;
+
+            for (int i = 0; i < ss.Count; i++)
             {
-                if (name == item)
+                if (listBoxControl3 == ss[i].ToString())
                 {
                     return;
                 }
             }
+            //foreach (SkinListBoxItemCollection item in ss)
+            //{
+            //    if (listBoxControl3 == item.ToString())
+            //    {
+            //        return;
+            //    }
+            //}
 
-            Form1.form1.listBoxControl2.Items.Add(name);
+            Form1.form1.skinListBox2.Items.Add(new SkinListBoxItem(listBoxControl3));
         }
 
         /// <summary>
@@ -194,13 +163,14 @@ namespace After_Test.Generic
         /// </summary>
         public void butDelete()
         {
-            if (Form1.form1.listBoxControl2.SelectedItem != null)
+            int index1 = Form1.form1.skinListBox2.SelectedIndex;
+            if (Form1.form1.skinListBox2.SelectedItem != null)
             {
-                Form1.form1.listBoxControl2.Items.Remove(Form1.form1.listBoxControl2.SelectedItem);
-                if (Form1.form1.listBoxControl2.Items.Count > 0)
+                Form1.form1.skinListBox2.Items.RemoveAt(index1);
+                if (Form1.form1.skinListBox2.Items.Count > 0)
                 {
                     //默认选中第一行
-                    Form1.form1.listBoxControl2.SelectedIndex = 0;
+                    Form1.form1.skinListBox2.SelectedIndex = 0;
                 }
             }
             else
@@ -214,13 +184,22 @@ namespace After_Test.Generic
         /// </summary>
         public void butUP()
         {
-            int index = Form1.form1.listBoxControl2.SelectedIndex;
-            if (index > 0)
+            //int index = Form1.form1.listBoxControl2.SelectedIndex;
+            //if (index > 0)
+            //{
+            //    object item = Form1.form1.listBoxControl2.SelectedItem;
+            //    Form1.form1.listBoxControl2.Items.Remove(item);
+            //    Form1.form1.listBoxControl2.Items.Insert(index - 1, item);
+            //    Form1.form1.listBoxControl2.SelectedIndex = index - 1;
+            //}
+
+            int index1 = Form1.form1.skinListBox2.SelectedIndex;
+            if (index1 > 0)
             {
-                object item = Form1.form1.listBoxControl2.SelectedItem;
-                Form1.form1.listBoxControl2.Items.Remove(item);
-                Form1.form1.listBoxControl2.Items.Insert(index - 1, item);
-                Form1.form1.listBoxControl2.SelectedIndex = index - 1;
+                SkinListBoxItem item = new SkinListBoxItem(Form1.form1.skinListBox2.SelectedItem.ToString());
+                Form1.form1.skinListBox2.Items.RemoveAt(index1);
+                Form1.form1.skinListBox2.Items.Insert(index1 - 1, item);
+                Form1.form1.skinListBox2.SelectedIndex = index1 - 1;
             }
         }
 
@@ -231,13 +210,22 @@ namespace After_Test.Generic
         {
             try
             {
-                int index = Form1.form1.listBoxControl2.SelectedIndex;
-                if (index < Form1.form1.listBoxControl2.Items.Count - 1)
+                // int index = Form1.form1.listBoxControl2.SelectedIndex;
+                // if (index < Form1.form1.listBoxControl2.Items.Count - 1)
+                // {
+                //     object item = Form1.form1.listBoxControl2.SelectedItem;
+                //     Form1.form1.listBoxControl2.Items.Remove(item);
+                //     Form1.form1.listBoxControl2.Items.Insert(index + 1, item);
+                //     Form1.form1.listBoxControl2.SelectedIndex = index + 1;
+                // }
+
+                int index1 = Form1.form1.skinListBox2.SelectedIndex;
+                if (index1 < Form1.form1.skinListBox2.Items.Count - 1)
                 {
-                    object item = Form1.form1.listBoxControl2.SelectedItem;
-                    Form1.form1.listBoxControl2.Items.Remove(item);
-                    Form1.form1.listBoxControl2.Items.Insert(index + 1, item);
-                    Form1.form1.listBoxControl2.SelectedIndex = index + 1;
+                    SkinListBoxItem item = new SkinListBoxItem(Form1.form1.skinListBox2.SelectedItem.ToString());
+                    Form1.form1.skinListBox2.Items.RemoveAt(index1);
+                    Form1.form1.skinListBox2.Items.Insert(index1 + 1, item);
+                    Form1.form1.skinListBox2.SelectedIndex = index1 + 1;
                 }
             }
             catch (Exception ex)
@@ -253,7 +241,7 @@ namespace After_Test.Generic
         {
             if (_locker)
             {
-                Form1.form1.listBoxControl2.Enabled = false;
+                Form1.form1.skinListBox2.Enabled = false;
                 Form1.form1.listBoxControl3.Enabled = false;
                 Form1.form1.ADD.Enabled = false;
                 Form1.form1.DELETE.Enabled = false;
@@ -262,11 +250,11 @@ namespace After_Test.Generic
                 Form1.form1.SAVE.Enabled = true;
                 Form1.form1.LOCK.Text = @"解除锁定";
                 _locker = false;
-                Form1.form1.comboBox1.Enabled = false;
+                Form1.form1.skinComboBox1.Enabled = false;
             }
             else
             {
-                Form1.form1.listBoxControl2.Enabled = true;
+                Form1.form1.skinListBox2.Enabled = true;
                 Form1.form1.listBoxControl3.Enabled = true;
                 Form1.form1.ADD.Enabled = true;
                 Form1.form1.DELETE.Enabled = true;
@@ -275,7 +263,7 @@ namespace After_Test.Generic
                 Form1.form1.SAVE.Enabled = false;
                 Form1.form1.LOCK.Text = @"锁定";
                 _locker = true;
-                Form1.form1.comboBox1.Enabled = true;
+                Form1.form1.skinComboBox1.Enabled = true;
             }
         }
 
@@ -293,14 +281,14 @@ namespace After_Test.Generic
             {
                 if (msg.Contains("\r\n"))
                 {
-                    Form1.form1.listBox2.Items.Add("\r\n");
+                    Form1.form1.skinListBox1.Items.Add(new SkinListBoxItem("\r\n"));
                 }
                 else
                 {
-                    Form1.form1.listBox2.Items.Add(string.Format("At {0:hh:mm:ss},{1}", DateTime.Now, msg));
+                    Form1.form1.skinListBox1.Items.Add(new SkinListBoxItem(string.Format("At {0:hh:mm:ss},{1}", DateTime.Now, msg)));
                 }
 
-                if (Form1.form1.listBox2.Items.Count > 0) Form1.form1.listBox2.SelectedIndex = Form1.form1.listBox2.Items.Count - 1;
+                if (Form1.form1.skinListBox1.Items.Count > 0) Form1.form1.skinListBox1.SelectedIndex = Form1.form1.skinListBox1.Items.Count - 1;
                 Application.DoEvents();
             }
         }

@@ -63,11 +63,11 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data">
-      <HintPath>..\..\..\Desktop\vsTest\TestGJ\TestGJ\bin\Debug\MySql.Data.dll</HintPath>
+    <Reference Include="CSkin">
+      <HintPath>..\..\..\..\..\source\repos\TestGJ\TestGJ\bin\Debug\CSkin.dll</HintPath>
     </Reference>
     <Reference Include="SqlSugar, Version=5.0.0.12, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\sqlSugar.5.0.0.12\lib\SqlSugar.dll</HintPath>
@@ -103,6 +103,12 @@
     <Compile Include="Forms\DateGridviews.Designer.cs">
       <DependentUpon>DateGridviews.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FilesUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilesUpload.Designer.cs">
+      <DependentUpon>FilesUpload.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StationForms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,7 @@
     </Compile>
     <Compile Include="Generic\AlltestitemFor.cs" />
     <Compile Include="Generic\DateGridviewsFor.cs" />
+    <Compile Include="Generic\FilesUploadFor.cs" />
     <Compile Include="Generic\GenericForm.cs" />
     <Compile Include="Generic\StationFor.cs" />
     <Compile Include="Program.cs" />
@@ -123,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DateGridviews.resx">
       <DependentUpon>DateGridviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilesUpload.resx">
+      <DependentUpon>FilesUpload.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StationForms.resx">
       <DependentUpon>StationForms.cs</DependentUpon>

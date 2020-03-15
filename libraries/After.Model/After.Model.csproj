@@ -48,6 +48,7 @@
     <Compile Include="config.cs" />
     <Compile Include="miscellaneous.cs" />
     <Compile Include="testitem.cs" />
+    <Compile Include="uploading.cs" />
     <Compile Include="user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

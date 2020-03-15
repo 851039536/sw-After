@@ -62,9 +62,9 @@ namespace After_Test.Generic
         /// </summary>
         public void UpdateAlltestitem()
         {
-            Alltestitem.Alltest.button1.Enabled = false;
+            Alltestitem.Alltest.skinButton6.Enabled = false;
             Thread.Sleep(1000);
-            Alltestitem.Alltest.button1.Enabled = true;
+            Alltestitem.Alltest.skinButton6.Enabled = true;
             // 只更新Name列和CreateTime列，其它列不更新，条件id=1
             bool test = alltestitem.alltestitemdb.Update(it => new alltestitem
             {

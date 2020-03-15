@@ -26,7 +26,7 @@ namespace DBUtility
                 Console.WriteLine();
             };
         }
-
+         public SimpleClient<uploading> uploadingdb { get { return new SimpleClient<uploading>(Db); } }//用来处理Student表的常用操作
         public SimpleClient<user> Userdb => new SimpleClient<user>(Db); //用来处理Student表的常用操作
         public SimpleClient<alltestitem> alltestitemdb => new SimpleClient<alltestitem>(Db);
         public SimpleClient<testitem> testitemdb => new SimpleClient<testitem>(Db);
