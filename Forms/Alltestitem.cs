@@ -25,7 +25,7 @@ namespace After_Test.Forms
         private void Alltestitem_Load(object sender, EventArgs e)
         {
             alltestitemFor.QueryJx();
-            alltestitemFor.QueryConfig();
+           // alltestitemFor.QueryConfig();
             Control();
         }
 
@@ -68,6 +68,7 @@ namespace After_Test.Forms
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             alltestitemFor.QueryIfJx();
+            GenericForm.DisplaylistboxMsg("已加载："+comboBox1.Text+" 机型测试项");
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -87,6 +88,12 @@ namespace After_Test.Forms
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            编号.Enabled=false;
+            skinButton4.Visible=false;
+            skinButton5.Visible=false;
+             skinButton6.Visible=true;
+             
+             机型.Enabled = false;
             alltestitemFor.QueryListIfId(sender, e);
         }
 
@@ -124,7 +131,12 @@ namespace After_Test.Forms
 
         private void skinButton1_Click(object sender, EventArgs e)
         {
+             机型.Enabled = true;
              panel1.Visible = true;
+            编号.Enabled=true;
+            skinButton4.Visible=true;
+            skinButton5.Visible=true;
+             skinButton6.Visible=false;
         }
 
         private void skinButton2_Click(object sender, EventArgs e)
@@ -151,7 +163,12 @@ namespace After_Test.Forms
 
         private void skinButton5_Click(object sender, EventArgs e)
         {
-             alltestitemFor.InstAlltestitem();
+            if (单位.Text == ""|| 数值上限.Text == ""|| 数值上限.Text == ""||   数值下限.Text == ""|| 测试项目.Text == ""|| 耳机指令.Text == ""||编号.Text == "")
+            {
+                MessageBox.Show("不能为空");
+                return;
+            }
+            alltestitemFor.InstAlltestitem();
         }
 
         private void skinButton6_Click(object sender, EventArgs e)

@@ -44,7 +44,7 @@ namespace After_Test
             ctl.setTag(this);
             form1.WindowState = FormWindowState.Normal;
 
-            genericForm.DisplaylistboxMsg("初始化完成！！！");
+            GenericForm.DisplaylistboxMsg("初始化完成！！！");
             genericForm.Loadcontrol();
         }
 
@@ -142,11 +142,11 @@ namespace After_Test
                 int zt = alltestitem.Sqlselect(skinComboBox1.Text, Type2.Type1, ate);
                 if (zt == 1)
                 {
-                    genericForm.DisplaylistboxMsg("站别：" + skinComboBox1.Text + "," + "机型：" + Type2.Type1 + "," + "更新完成");
+                    GenericForm.DisplaylistboxMsg("站别：" + skinComboBox1.Text + "," + "机型：" + Type2.Type1 + "," + "更新完成");
                 }
                 else
                 {
-                    genericForm.DisplaylistboxMsg("更新失败,站别被删除");
+                    GenericForm.DisplaylistboxMsg("更新失败,站别被删除");
                 }
             }
 
@@ -236,6 +236,12 @@ namespace After_Test
         {
               FileConfiguration f = new FileConfiguration();
               f.ShowDialog();
+        }
+
+        private void 使用说明ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Instructions instructions = new Instructions();
+            instructions.Show();
         }
     }
 }

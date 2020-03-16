@@ -71,7 +71,7 @@ namespace After_Test.Generic
             }
             catch (Exception ex)
             {
-                DisplaylistboxMsg(ex.Message);
+               GenericForm.DisplaylistboxMsg(ex.Message);
             }
             finally
             {
@@ -83,27 +83,27 @@ namespace After_Test.Generic
         }
 
 
-        public void DisplaylistboxMsg(string msg)
-        {
-            if (FilesUpload.filesUpload.InvokeRequired)
-            {
-                FilesUpload.filesUpload.Invoke(new Action<string>(DisplaylistboxMsg), msg);
-            }
-            else
-            {
-                if (msg.Contains("\r\n"))
-                {
-                    FilesUpload.filesUpload.skinListBox1.Items.Add(new SkinListBoxItem("\r\n"));
-                }
-                else
-                {
-                    FilesUpload.filesUpload.skinListBox1.Items.Add(new SkinListBoxItem(string.Format("At {0:hh:mm:ss},{1}", DateTime.Now, msg)));
-                }
-
-                if (FilesUpload.filesUpload.skinListBox1.Items.Count > 0) FilesUpload.filesUpload.skinListBox1.SelectedIndex = FilesUpload.filesUpload.skinListBox1.Items.Count - 1;
-                Application.DoEvents();
-            }
-        }
+        // public void DisplaylistboxMsg(string msg)
+        // {
+        //     if (FilesUpload.filesUpload.InvokeRequired)
+        //     {
+        //         FilesUpload.filesUpload.Invoke(new Action<string>(DisplaylistboxMsg), msg);
+        //     }
+        //     else
+        //     {
+        //         if (msg.Contains("\r\n"))
+        //         {
+        //             FilesUpload.filesUpload.skinListBox1.Items.Add(new SkinListBoxItem("\r\n"));
+        //         }
+        //         else
+        //         {
+        //             FilesUpload.filesUpload.skinListBox1.Items.Add(new SkinListBoxItem(string.Format("At {0:hh:mm:ss},{1}", DateTime.Now, msg)));
+        //         }
+        //
+        //         if (FilesUpload.filesUpload.skinListBox1.Items.Count > 0) FilesUpload.filesUpload.skinListBox1.SelectedIndex = FilesUpload.filesUpload.skinListBox1.Items.Count - 1;
+        //         Application.DoEvents();
+        //     }
+        // }
 
 
        //===================================================压缩用的是库函数

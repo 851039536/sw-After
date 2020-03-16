@@ -271,7 +271,7 @@ namespace After_Test.Generic
         /// 输出提示
         /// </summary>
         /// <param name="msg"></param>
-        public void DisplaylistboxMsg(string msg)
+        public static void DisplaylistboxMsg(string msg)
         {
             if (Form1.form1.InvokeRequired)
             {

@@ -89,19 +89,19 @@ namespace After_Test.Forms
                     {
                         CopyDir(file, aimPath + Path.GetFileName(file));
 
-                        filesUploadFor.DisplaylistboxMsg("上传成功");
+                        GenericForm.DisplaylistboxMsg("上传成功");
                     }
                     // 否则直接Copy文件
                     else
                     {
                         File.Copy(file, aimPath + Path.GetFileName(file), true);
-                         filesUploadFor.DisplaylistboxMsg("上传成功");
+                         GenericForm.DisplaylistboxMsg("上传成功");
                     }
                 }
             }
             catch (Exception e)
             {
-                 filesUploadFor.DisplaylistboxMsg("上传失败" + e.Message);
+                 GenericForm.DisplaylistboxMsg("上传失败" + e.Message);
             }
         }
 
@@ -130,13 +130,13 @@ namespace After_Test.Forms
                 if (Directory.Exists(file))
                 {
                     CopyDir(file, aimPath + Path.GetFileName(file));
-                     filesUploadFor.DisplaylistboxMsg("下载成功");
+                     GenericForm.DisplaylistboxMsg("下载成功");
                 }
                 // 否则直接Copy文件
                 else
                 {
                     File.Copy(file, aimPath + Path.GetFileName(file), true);
-                     filesUploadFor.DisplaylistboxMsg("下载成功");
+                     GenericForm.DisplaylistboxMsg("下载成功");
                 }
             }
         }
@@ -148,11 +148,11 @@ namespace After_Test.Forms
            bool userbool = filesUploadFor.ConnectState(@"\\10.55.2.3",User.Text,Pwd.Text);
            if (userbool)
            {
-                filesUploadFor.DisplaylistboxMsg("登录成功："+User.Text);
+                GenericForm.DisplaylistboxMsg("登录成功："+User.Text);
            }
            else
            {
-                filesUploadFor.DisplaylistboxMsg("登录失败");
+                GenericForm.DisplaylistboxMsg("登录失败");
            }
         }
 
@@ -172,13 +172,13 @@ namespace After_Test.Forms
         private void skinButton1_Click(object sender, EventArgs e)
         {
             FilesUploadFor.ZipDirectory(foldertozip.Text,zipedfilename.Text);
-            filesUploadFor.DisplaylistboxMsg("压缩完成");
+            GenericForm.DisplaylistboxMsg("压缩完成");
         }
 
         private void skinButton2_Click(object sender, EventArgs e)
         {
             filesUploadFor.UnZip(zipedfilename.Text,"");
-             filesUploadFor.DisplaylistboxMsg("解压缩完成");
+             GenericForm.DisplaylistboxMsg("解压缩完成");
         }
     }
 }

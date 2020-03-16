@@ -36,7 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.skinListBox1 = new CCWin.SkinControl.SkinListBox();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,7 +59,7 @@
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox1.Location = new System.Drawing.Point(121, 102);
+            this.textBox1.Location = new System.Drawing.Point(121, 120);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(187, 75);
@@ -70,7 +69,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(28, 130);
+            this.label3.Location = new System.Drawing.Point(28, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 14);
             this.label3.TabIndex = 85;
@@ -80,7 +79,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(121, 65);
+            this.comboBox1.Location = new System.Drawing.Point(121, 64);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(186, 22);
             this.comboBox1.TabIndex = 84;
@@ -88,7 +87,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(14, 186);
+            this.button3.Location = new System.Drawing.Point(14, 221);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(96, 24);
             this.button3.TabIndex = 83;
@@ -100,7 +99,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(47, 71);
+            this.label1.Location = new System.Drawing.Point(47, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 14);
             this.label1.TabIndex = 81;
@@ -109,7 +108,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(120, 224);
+            this.button1.Location = new System.Drawing.Point(120, 259);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(190, 31);
             this.button1.TabIndex = 80;
@@ -120,21 +119,6 @@
             // folderBrowserDialog1
             // 
             this.folderBrowserDialog1.SelectedPath = "E:\\0.HDT0000";
-            // 
-            // skinListBox1
-            // 
-            this.skinListBox1.Back = null;
-            this.skinListBox1.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.skinListBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.skinListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.skinListBox1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.skinListBox1.FormattingEnabled = true;
-            this.skinListBox1.Location = new System.Drawing.Point(9, 280);
-            this.skinListBox1.MouseColor = System.Drawing.Color.White;
-            this.skinListBox1.Name = "skinListBox1";
-            this.skinListBox1.SelectedColor = System.Drawing.Color.Silver;
-            this.skinListBox1.Size = new System.Drawing.Size(303, 108);
-            this.skinListBox1.TabIndex = 87;
             // 
             // button4
             // 
@@ -316,7 +300,7 @@
             // 
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox3.Location = new System.Drawing.Point(121, 189);
+            this.textBox3.Location = new System.Drawing.Point(121, 224);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(189, 17);
             this.textBox3.TabIndex = 82;
@@ -326,7 +310,7 @@
             this.skinButton1.BackColor = System.Drawing.Color.Transparent;
             this.skinButton1.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.skinButton1.DownBack = null;
-            this.skinButton1.Location = new System.Drawing.Point(464, 280);
+            this.skinButton1.Location = new System.Drawing.Point(464, 264);
             this.skinButton1.MouseBack = null;
             this.skinButton1.Name = "skinButton1";
             this.skinButton1.NormlBack = null;
@@ -340,7 +324,7 @@
             // 
             this.foldertozip.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.foldertozip.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.foldertozip.Location = new System.Drawing.Point(344, 104);
+            this.foldertozip.Location = new System.Drawing.Point(344, 88);
             this.foldertozip.Multiline = true;
             this.foldertozip.Name = "foldertozip";
             this.foldertozip.Size = new System.Drawing.Size(189, 72);
@@ -350,17 +334,17 @@
             // 
             this.zipedfilename.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.zipedfilename.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.zipedfilename.Location = new System.Drawing.Point(344, 208);
+            this.zipedfilename.Location = new System.Drawing.Point(344, 192);
             this.zipedfilename.Multiline = true;
             this.zipedfilename.Name = "zipedfilename";
-            this.zipedfilename.Size = new System.Drawing.Size(189, 64);
+            this.zipedfilename.Size = new System.Drawing.Size(189, 56);
             this.zipedfilename.TabIndex = 100;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.Location = new System.Drawing.Point(360, 72);
+            this.label4.Location = new System.Drawing.Point(360, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 14);
             this.label4.TabIndex = 101;
@@ -370,7 +354,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label5.Location = new System.Drawing.Point(344, 184);
+            this.label5.Location = new System.Drawing.Point(344, 168);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(161, 14);
             this.label5.TabIndex = 102;
@@ -381,7 +365,7 @@
             this.skinButton2.BackColor = System.Drawing.Color.Transparent;
             this.skinButton2.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.skinButton2.DownBack = null;
-            this.skinButton2.Location = new System.Drawing.Point(352, 280);
+            this.skinButton2.Location = new System.Drawing.Point(352, 264);
             this.skinButton2.MouseBack = null;
             this.skinButton2.Name = "skinButton2";
             this.skinButton2.NormlBack = null;
@@ -395,7 +379,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 400);
+            this.ClientSize = new System.Drawing.Size(571, 317);
             this.Controls.Add(this.skinButton2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -412,7 +396,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.skinListBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
@@ -437,7 +420,6 @@
         public System.Windows.Forms.ComboBox comboBox1;
         public System.Windows.Forms.Button button3;
         public System.Windows.Forms.Button button1;
-        public CCWin.SkinControl.SkinListBox skinListBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label2;
