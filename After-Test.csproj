@@ -69,6 +69,9 @@
     <Reference Include="CSkin">
       <HintPath>..\..\..\..\..\source\repos\TestGJ\TestGJ\bin\Debug\CSkin.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="SqlSugar, Version=5.0.0.12, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\sqlSugar.5.0.0.12\lib\SqlSugar.dll</HintPath>
     </Reference>
@@ -103,6 +106,12 @@
     <Compile Include="Forms\DateGridviews.Designer.cs">
       <DependentUpon>DateGridviews.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FileConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FileConfiguration.Designer.cs">
+      <DependentUpon>FileConfiguration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FilesUpload.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DateGridviews.resx">
       <DependentUpon>DateGridviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileConfiguration.resx">
+      <DependentUpon>FileConfiguration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FilesUpload.resx">
       <DependentUpon>FilesUpload.cs</DependentUpon>

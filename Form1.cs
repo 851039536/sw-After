@@ -231,5 +231,11 @@ namespace After_Test
         private void listBoxControl3_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
+
+        private void 文件配置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+              FileConfiguration f = new FileConfiguration();
+              f.ShowDialog();
+        }
     }
 }

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Windows.Forms;
 using After.Manager;
 using After.Model;
 using After_Test.Generic;
 using CCWin;
-using CCWin.SkinControl;
 
 namespace After_Test.Forms
 {
@@ -37,19 +35,30 @@ namespace After_Test.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<string> data = uploading.GetName(comboBox1.Text);
+            List<uploading> data = uploading.GetName(comboBox1.Text);
 
-            for (int i = 0; i < data.Count; i++)
+            foreach (var sj in data)
             {
-                textBox1.Text = data[0];
-                 textBox2.Text = data[0];
+                  textBox1.Text = sj.path;
+                  textBox3.Text = sj.filepath;
+                  foldertozip.Text = sj.foldertozip;
+                  zipedfilename.Text = sj.zipedfilename;
             }
+            // for (int i = 0; i < data.Count; i++)
+            // {
+            //      textBox1.Text = data[0];
+            //      textBox2.Text = data[0];
+            // }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+             button1.Text=@"上传中，请稍等";
+             button1.Enabled=false;
             string path = textBox1.Text;
             CopyDirs(textBox3.Text, path);
+             button1.Text=@"上传";
+              button1.Enabled=true;
         }
 
         private void CopyDirs(string srcPath, string aimPath)
@@ -158,6 +167,18 @@ namespace After_Test.Forms
         private void button2_Click(object sender, EventArgs e)
         {
               CopyDir(textBox2.Text, textBox4.Text);
+        }
+
+        private void skinButton1_Click(object sender, EventArgs e)
+        {
+            FilesUploadFor.ZipDirectory(foldertozip.Text,zipedfilename.Text);
+            filesUploadFor.DisplaylistboxMsg("压缩完成");
+        }
+
+        private void skinButton2_Click(object sender, EventArgs e)
+        {
+            filesUploadFor.UnZip(zipedfilename.Text,"");
+             filesUploadFor.DisplaylistboxMsg("解压缩完成");
         }
     }
 }
