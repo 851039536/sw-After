@@ -25,7 +25,6 @@ namespace After_Test.Forms
         private void Alltestitem_Load(object sender, EventArgs e)
         {
             alltestitemFor.QueryJx();
-           // alltestitemFor.QueryConfig();
             Control();
         }
 
@@ -48,6 +47,11 @@ namespace After_Test.Forms
 
         private void Alltestitem_Resize(object sender, EventArgs e)
         {
+            Resizes();
+        }
+
+        private void Resizes()
+        {
             float newX = Width;
             float newY = Height;
             ctl.setControls(newX / _x, newY / _y, this);
@@ -60,29 +64,14 @@ namespace After_Test.Forms
         }
 
 
-        private void simpleButton4_Click(object sender, EventArgs e)
-        {
-            alltestitemFor.QueryConfig();
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             alltestitemFor.QueryIfJx();
             GenericForm.DisplaylistboxMsg("已加载："+comboBox1.Text+" 机型测试项");
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            panel1.Visible = true;
-        }
-
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            panel1.Visible = false;
         }
 
 
@@ -100,33 +89,6 @@ namespace After_Test.Forms
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            alltestitemFor.UpdateAlltestitem();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            alltestitemFor.InstAlltestitem();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            机型.Enabled = true;
-            // 机型.Text = "";
-            单位.Text = "";
-            数值上限.Text = "";
-            数值下限.Text = "";
-            测试项目.Text = "";
-            耳机指令.Text = "";
-            编号.Text = "";
-        }
-
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            alltestitemFor.DelectAlltestitem();
         }
 
         private void skinButton1_Click(object sender, EventArgs e)
@@ -165,7 +127,7 @@ namespace After_Test.Forms
         {
             if (单位.Text == ""|| 数值上限.Text == ""|| 数值上限.Text == ""||   数值下限.Text == ""|| 测试项目.Text == ""|| 耳机指令.Text == ""||编号.Text == "")
             {
-                MessageBox.Show("不能为空");
+                MessageBox.Show(@"不能为空");
                 return;
             }
             alltestitemFor.InstAlltestitem();

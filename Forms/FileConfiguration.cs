@@ -45,6 +45,11 @@ namespace After_Test.Forms
 
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ButInst();
+        }
+
+        public void ButInst()
+        {
             skinButton1.Visible = true;
             skinPanel1.Visible = true;
             skinButton2.Visible = false;
@@ -73,7 +78,7 @@ namespace After_Test.Forms
             Updateuploading();
         }
 
-         /// <summary>
+        /// <summary>
         /// 更新 w：id
         /// </summary>
         public void Updateuploading()
@@ -92,21 +97,24 @@ namespace After_Test.Forms
             }, it => it.id == Convert.ToInt32(id.Text));
             if (test)
             {
-               
-                GenericForm.DisplaylistboxMsg("已更新："+ name.Text+" id值："+id.Text);
-              Query();
+                GenericForm.DisplaylistboxMsg("已更新：" + name.Text + " id值：" + id.Text);
+                Query();
             }
         }
+
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            UpdataGrid(e);
+        }
+
+        private void UpdataGrid(DataGridViewCellEventArgs e)
         {
             skinButton2.Visible = true;
             skinButton1.Visible = false;
-            skinPanel1.Visible=true;
-
+            skinPanel1.Visible = true;
             int ids = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ObjToInt(); //获取选中行指定列的值
-            id.Text=ids.ToString();
+            id.Text = ids.ToString();
             var data = uploading.uploadingdb.GetById(ids);
-
             name.Text = data.name;
             foldertozip.Text = data.foldertozip;
             localitypath.Text = data.localitypath;
@@ -118,13 +126,23 @@ namespace After_Test.Forms
 
         private void skinButton1_Click(object sender, EventArgs e)
         {
-            if (name.Text == "" || foldertozip.Text == "" || localitypath.Text == "" || zipedfilename.Text == "" || filepath.Text == "" || zipedfilename2.Text == "" || path.Text == "")
+            if (Isnull())
             {
-                MessageBox.Show(@"不能为空");
                 return;
             }
 
             InstFile();
+        }
+
+        private bool Isnull()
+        {
+            if (name.Text == "" || foldertozip.Text == "" || localitypath.Text == "" || zipedfilename.Text == "" || filepath.Text == "" || zipedfilename2.Text == "" || path.Text == "")
+            {
+                MessageBox.Show(@"不能为空");
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -153,7 +171,6 @@ namespace After_Test.Forms
 
         private void skinPanel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }

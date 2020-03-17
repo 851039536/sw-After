@@ -88,10 +88,6 @@ namespace After_Test.Forms
             date.Cobox();
         }
 
-        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             date.QueryListIfJX();
@@ -114,6 +110,11 @@ namespace After_Test.Forms
         }
 
         private void button4_Click(object sender, EventArgs e)
+        {
+            Qnull();
+        }
+
+        private void Qnull()
         {
             ConfigText.Enabled = true;
             ConfigText.Text = "";

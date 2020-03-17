@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 using After.Model;
 
 namespace DBUtility
@@ -23,8 +24,9 @@ namespace DBUtility
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+             MessageBox.Show(e.Message);
                 throw;
+                
             }
         }
 

@@ -14,12 +14,13 @@ namespace DBUtility
         {
             Db = new SqlSugarClient(new ConnectionConfig
             {
-                // ConnectionString = "server=localhost;uid=root;pwd=woshishui;database=test",
-                ConnectionString = "server=10.55.22.34;uid=root;pwd=merryte;database=test",
+                ConnectionString = "server=localhost;uid=root;pwd=woshishui;database=test",
+               
+                // ConnectionString = "server=10.55.22.34;uid=root;pwd=merryte;database=test",
                 DbType = DbType.MySql,
                 InitKeyType = InitKeyType.Attribute, //从特性读取主键和自增列信息
                 IsAutoCloseConnection = true //开启自动释放模式和EF原理一样我就不多解释了
-            });
+            });;
             //调式代码 用来打印SQL 
             Db.Aop.OnLogExecuting = (sql, pars) =>
             {

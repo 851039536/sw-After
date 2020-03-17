@@ -56,22 +56,12 @@ namespace After_Test
             control.setControls(newX / GenericForm._x, newY / GenericForm._y, this);
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            genericForm.ComboBox1SelectedIndexChanged();
-        }
-
         /// <summary>
         /// 增加按钮
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ADD_Click(object sender, EventArgs e)
-        {
-            genericForm.butAdd();
-        }
-
-        private void listBoxControl3_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             genericForm.butAdd();
         }
@@ -96,24 +86,6 @@ namespace After_Test
             genericForm.butLock();
         }
 
-        private async void button1_Click(object sender, EventArgs e)
-        {
-            if (Type2.Type1 == null)
-            {
-                MessageBox.Show(@"未选择站别");
-            }
-            else
-            {
-                StationForms st = new StationForms(Type2.Type1);
-                await Task.Run(() => st.ShowDialog());
-            }
-        }
-
-        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            genericForm.SelectindxChanListbox3();
-        }
-
         private void SAVE_Click(object sender, EventArgs e)
         {
             if (skinComboBox1.Text.Equals(""))
@@ -133,13 +105,7 @@ namespace After_Test
                 {
                     ate.AddLast(ss[i].ToString());
                 }
-
-                //foreach (string item in listBoxControl2.Items)
-                //{
-                //    ate.AddLast(item);
-                //}
-
-                int zt = alltestitem.Sqlselect(skinComboBox1.Text, Type2.Type1, ate);
+                var zt = alltestitem.Sqlselect(skinComboBox1.Text, Type2.Type1, ate);
                 if (zt == 1)
                 {
                     GenericForm.DisplaylistboxMsg("站别：" + skinComboBox1.Text + "," + "机型：" + Type2.Type1 + "," + "更新完成");
@@ -149,48 +115,19 @@ namespace After_Test
                     GenericForm.DisplaylistboxMsg("更新失败,站别被删除");
                 }
             }
-
-            //genericForm.SelectindxChanListbox3();
         }
 
-
-        private async void 路径配置ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Type2.Miscellaneous = 2;
-            DateGridviews date = new DateGridviews();
-            await Task.Run(() => date.ShowDialog());
-        }
-
-        private async void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Alltestitem a = new Alltestitem();
-            await Task.Run(() => a.ShowDialog());
-        }
-
-        private void 云盘ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void 文件上传ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FilesUpload f = new FilesUpload();
-            f.ShowDialog();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-        }
 
         private async void skinButton1_Click(object sender, EventArgs e)
         {
-            if (Type2.Type1 == null)
-            {
-                MessageBox.Show(@"未选择站别");
-            }
-            else
+            if (Type2.Type1 != null)
             {
                 StationForms st = new StationForms(Type2.Type1);
                 await Task.Run(() => st.ShowDialog());
+            }
+            else
+            {
+                MessageBox.Show(@"未选择站别");
             }
         }
 

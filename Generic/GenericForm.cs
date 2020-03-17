@@ -54,7 +54,7 @@ namespace After_Test.Generic
                 i++;
             }
 
-            Form1.form1.skinListBox3.SelectedIndex = 0;
+            Form1.form1.skinListBox3.SelectedIndex = 1;
 
             DisplaylistboxMsg("加载测试机型完成！！！");
         }

@@ -85,10 +85,11 @@
             // 
             // Station
             // 
-            this.Station.Location = new System.Drawing.Point(212, 35);
+            this.Station.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Station.Location = new System.Drawing.Point(212, 40);
             this.Station.Margin = new System.Windows.Forms.Padding(2);
             this.Station.Name = "Station";
-            this.Station.Size = new System.Drawing.Size(63, 24);
+            this.Station.Size = new System.Drawing.Size(63, 17);
             this.Station.TabIndex = 62;
             // 
             // label2
