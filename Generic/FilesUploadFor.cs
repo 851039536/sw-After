@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 using After.Manager;
 using After.Model;
@@ -82,7 +84,17 @@ namespace After_Test.Generic
             return Flag;
         }
 
+         /// </summary>
+    /// <param name="hwnd">指定父窗口句柄</param>
+    /// <param name="lpszOp">指定要进行的操作</param>
+    /// <param name="lpszFile">指定要打开的文件名</param>
+    /// <param name="lpszParams">指定命令行参数</param>
+    /// <param name="lpszDir">用于指定默认目录</param>
+    /// <param name="FsShowCmd">参数是一个可执行程序</param>
+    /// <returns></returns>
 
+    [DllImport("shell32.dll")]
+    public static extern int ShellExecute(IntPtr hwnd, StringBuilder lpszOp, StringBuilder lpszFile, StringBuilder lpszParams, StringBuilder lpszDir, int FsShowCmd);
         // public void DisplaylistboxMsg(string msg)
         // {
         //     if (FilesUpload.filesUpload.InvokeRequired)

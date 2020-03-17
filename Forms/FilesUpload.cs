@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using After.Manager;
 using After.Model;
 using After_Test.Generic;
@@ -179,6 +180,27 @@ namespace After_Test.Forms
         {
             filesUploadFor.UnZip(zipedfilename.Text,"");
              GenericForm.DisplaylistboxMsg("解压缩完成");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FilesUploadFor.ShellExecute(IntPtr.Zero, new StringBuilder("Open"), new StringBuilder(textBox1.Text), new StringBuilder(""), new StringBuilder(textBox1.Text), 1);
+            
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FilesUploadFor.ShellExecute(IntPtr.Zero, new StringBuilder("Open"), new StringBuilder(foldertozip.Text), new StringBuilder(""), new StringBuilder(foldertozip.Text), 1);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+             FilesUploadFor.ShellExecute(IntPtr.Zero, new StringBuilder("Open"), new StringBuilder(zipedfilename.Text), new StringBuilder(""), new StringBuilder(zipedfilename.Text), 1);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+             FilesUploadFor.ShellExecute(IntPtr.Zero, new StringBuilder("Open"), new StringBuilder(textBox3.Text), new StringBuilder(""), new StringBuilder(textBox3.Text), 1);
         }
     }
 }
