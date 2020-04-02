@@ -415,13 +415,14 @@
             // 数据备份ToolStripMenuItem
             // 
             this.数据备份ToolStripMenuItem.Name = "数据备份ToolStripMenuItem";
-            this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.数据备份ToolStripMenuItem.Text = "数据备份";
+            this.数据备份ToolStripMenuItem.Click += new System.EventHandler(this.数据备份ToolStripMenuItem_Click);
             // 
             // 用户管理ToolStripMenuItem1
             // 
             this.用户管理ToolStripMenuItem1.Name = "用户管理ToolStripMenuItem1";
-            this.用户管理ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.用户管理ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.用户管理ToolStripMenuItem1.Text = "用户管理";
             // 
             // label4

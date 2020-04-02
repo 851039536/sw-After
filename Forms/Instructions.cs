@@ -20,8 +20,8 @@ namespace After_Test.Forms
 
         private void Instructions_Load(object sender, EventArgs e)
         {
-
-              webBrowser1.Navigate( @"C:\Users\CH190006\Desktop\html数据\测试后台管理系统.html");
+       
+              webBrowser1.Navigate( @"C:\Users\CH190006\Desktop\Test\winfrom\After\After-Test\bin\Debug\mysql\测试后台管理系统.html");
 
         }
     }

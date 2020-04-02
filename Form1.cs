@@ -8,6 +8,7 @@ using After_Test.Generic;
 using CCWin;
 using CCWin.SkinControl;
 using DBUtility;
+using MySql.Data.MySqlClient;
 
 namespace After_Test
 {
@@ -179,6 +180,28 @@ namespace After_Test
         {
             Instructions instructions = new Instructions();
             instructions.Show();
+        }
+
+        private void 数据备份ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(@"重要数据谨慎修改", @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show(@"备份路径默认在当前程序下", @"提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                string time1 = DateTime.Now.ToString("d").Replace("/", "-");
+                string file = ".//mysql/" + time1 + "_test.sql";
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    using (MySqlBackup mb = new MySqlBackup(cmd))
+                    {
+                        cmd.Connection = Type2.conn;
+                        Type2.conn.Open();
+                        mb.ExportToFile(file);
+                        Type2.conn.Close();
+                        MessageBox.Show(@"已备份");
+                    }
+                }
+            }
         }
     }
 }
