@@ -18,5 +18,18 @@ namespace After.Manager
             }).Select(f => f.ConfigText).ToList();
             return data;
         }
+
+         /// <summary>
+        /// 查询站别机型
+        /// </summary>
+        /// <returns></returns>
+        public List<string> QueryConfigText()
+        {
+            List<string> data = Db.Queryable<config>().GroupBy(it => new
+            {
+                it.ConfigText
+            }).Select(f => f.ConfigText).ToList();
+            return data;
+        }
     }
 }
