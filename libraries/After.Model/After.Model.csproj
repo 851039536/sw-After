@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="alltestitem.cs" />
     <Compile Include="config.cs" />
+    <Compile Include="DBUtility\DbContext.cs" />
     <Compile Include="miscellaneous.cs" />
     <Compile Include="testitem.cs" />
     <Compile Include="uploading.cs" />
@@ -55,5 +56,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

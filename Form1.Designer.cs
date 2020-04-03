@@ -61,6 +61,7 @@
             this.用户管理ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new CCWin.SkinControl.SkinLabel();
             this.skinListBox2 = new CCWin.SkinControl.SkinListBox();
+            this.数据还原ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.skinGroupBox1.SuspendLayout();
             this.skinGroupBox2.SuspendLayout();
@@ -407,7 +408,8 @@
             // 
             this.用户ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.数据备份ToolStripMenuItem,
-            this.用户管理ToolStripMenuItem1});
+            this.用户管理ToolStripMenuItem1,
+            this.数据还原ToolStripMenuItem});
             this.用户ToolStripMenuItem.Name = "用户ToolStripMenuItem";
             this.用户ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.用户ToolStripMenuItem.Text = "用户";
@@ -452,6 +454,13 @@
             this.skinListBox2.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.skinListBox2.Size = new System.Drawing.Size(504, 325);
             this.skinListBox2.TabIndex = 95;
+            // 
+            // 数据还原ToolStripMenuItem
+            // 
+            this.数据还原ToolStripMenuItem.Name = "数据还原ToolStripMenuItem";
+            this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.数据还原ToolStripMenuItem.Text = "数据还原";
+            this.数据还原ToolStripMenuItem.Click += new System.EventHandler(this.数据还原ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -519,6 +528,7 @@
         public CCWin.SkinControl.SkinLabel label4;
         public CCWin.SkinControl.SkinListBox skinListBox2;
         private System.Windows.Forms.ToolStripMenuItem 文件配置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 数据还原ToolStripMenuItem;
     }
 }
 

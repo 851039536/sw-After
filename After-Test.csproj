@@ -200,10 +200,6 @@
       <Project>{c1974c28-e088-427e-ae9f-342f52846680}</Project>
       <Name>After.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="libraries\DBUtility\DBUtility.csproj">
-      <Project>{820BAD20-C48B-47A3-AF43-581AF8949599}</Project>
-      <Name>DBUtility</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

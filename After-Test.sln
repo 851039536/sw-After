@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "After.Generic", "libraries\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "After.Model", "libraries\After.Model\After.Model.csproj", "{C1974C28-E088-427E-AE9F-342F52846680}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBUtility", "libraries\DBUtility\DBUtility.csproj", "{820BAD20-C48B-47A3-AF43-581AF8949599}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "After.Manager", "libraries\After.Manager\After.Manager.csproj", "{D0ED1D0C-CEF5-487E-83AA-FDD642C2B278}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{C1974C28-E088-427E-AE9F-342F52846680}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1974C28-E088-427E-AE9F-342F52846680}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1974C28-E088-427E-AE9F-342F52846680}.Release|Any CPU.Build.0 = Release|Any CPU
-		{820BAD20-C48B-47A3-AF43-581AF8949599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{820BAD20-C48B-47A3-AF43-581AF8949599}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{820BAD20-C48B-47A3-AF43-581AF8949599}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{820BAD20-C48B-47A3-AF43-581AF8949599}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D0ED1D0C-CEF5-487E-83AA-FDD642C2B278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D0ED1D0C-CEF5-487E-83AA-FDD642C2B278}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0ED1D0C-CEF5-487E-83AA-FDD642C2B278}.Release|Any CPU.ActiveCfg = Release|Any CPU
