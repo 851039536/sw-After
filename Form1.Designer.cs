@@ -59,9 +59,9 @@
             this.用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.数据备份ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.用户管理ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.数据还原ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new CCWin.SkinControl.SkinLabel();
             this.skinListBox2 = new CCWin.SkinControl.SkinListBox();
-            this.数据还原ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.skinGroupBox1.SuspendLayout();
             this.skinGroupBox2.SuspendLayout();
@@ -254,16 +254,18 @@
             // skinListBox1
             // 
             this.skinListBox1.Back = null;
-            this.skinListBox1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.skinListBox1.BackColor = System.Drawing.SystemColors.InfoText;
             this.skinListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.skinListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.skinListBox1.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.skinListBox1.ForeColor = System.Drawing.SystemColors.Info;
             this.skinListBox1.FormattingEnabled = true;
             this.skinListBox1.Location = new System.Drawing.Point(8, 512);
-            this.skinListBox1.MouseColor = System.Drawing.Color.Gainsboro;
+            this.skinListBox1.MouseColor = System.Drawing.Color.Black;
             this.skinListBox1.Name = "skinListBox1";
-            this.skinListBox1.RowBackColor1 = System.Drawing.Color.LightGray;
-            this.skinListBox1.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.skinListBox1.RowBackColor1 = System.Drawing.Color.Black;
+            this.skinListBox1.RowBackColor2 = System.Drawing.Color.Black;
+            this.skinListBox1.SelectedColor = System.Drawing.Color.Black;
             this.skinListBox1.Size = new System.Drawing.Size(376, 117);
             this.skinListBox1.TabIndex = 90;
             // 
@@ -417,15 +419,22 @@
             // 数据备份ToolStripMenuItem
             // 
             this.数据备份ToolStripMenuItem.Name = "数据备份ToolStripMenuItem";
-            this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.数据备份ToolStripMenuItem.Text = "数据备份";
             this.数据备份ToolStripMenuItem.Click += new System.EventHandler(this.数据备份ToolStripMenuItem_Click);
             // 
             // 用户管理ToolStripMenuItem1
             // 
             this.用户管理ToolStripMenuItem1.Name = "用户管理ToolStripMenuItem1";
-            this.用户管理ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.用户管理ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.用户管理ToolStripMenuItem1.Text = "用户管理";
+            // 
+            // 数据还原ToolStripMenuItem
+            // 
+            this.数据还原ToolStripMenuItem.Name = "数据还原ToolStripMenuItem";
+            this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.数据还原ToolStripMenuItem.Text = "数据还原";
+            this.数据还原ToolStripMenuItem.Click += new System.EventHandler(this.数据还原ToolStripMenuItem_Click);
             // 
             // label4
             // 
@@ -454,13 +463,6 @@
             this.skinListBox2.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.skinListBox2.Size = new System.Drawing.Size(504, 325);
             this.skinListBox2.TabIndex = 95;
-            // 
-            // 数据还原ToolStripMenuItem
-            // 
-            this.数据还原ToolStripMenuItem.Name = "数据还原ToolStripMenuItem";
-            this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.数据还原ToolStripMenuItem.Text = "数据还原";
-            this.数据还原ToolStripMenuItem.Click += new System.EventHandler(this.数据还原ToolStripMenuItem_Click);
             // 
             // Form1
             // 

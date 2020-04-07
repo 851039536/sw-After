@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using After.Generic;
 using CCWin.SkinControl;
 using DBUtility;
+using MySql.Data.MySqlClient;
 
 namespace After_Test.Generic
 {
@@ -26,6 +27,7 @@ namespace After_Test.Generic
         /// </summary>
         public void Firstload()
         {
+
             Form1.form1.SAVE.Enabled = false;
 
             // Form1.form1.label1.Text = Type2.User1; //用户
@@ -290,6 +292,63 @@ namespace After_Test.Generic
 
                 if (Form1.form1.skinListBox1.Items.Count > 0) Form1.form1.skinListBox1.SelectedIndex = Form1.form1.skinListBox1.Items.Count - 1;
                 Application.DoEvents();
+            }
+        }
+
+
+        /// <summary>
+        /// 新增站别
+        /// </summary>
+         public void SaveStaion()
+        {
+            if (Form1.form1.skinComboBox1.Text.Equals(""))
+            {
+                MessageBox.Show(@"站别不能为空");
+                return;
+            }
+
+            bool test = testitem.DeleteSave(Form1.form1.skinComboBox1.Text, Type2.Type1);
+            if (test)
+            {
+                LinkedList<string> ate = new LinkedList<string>();
+                SkinListBoxItemCollection ss = Form1.form1.skinListBox2.Items;
+                for (int i = 0; i < ss.Count; i++)
+                {
+                    ate.AddLast(ss[i].ToString());
+                }
+
+                var zt = alltestitem.Sqlselect(Form1.form1.skinComboBox1.Text, Type2.Type1, ate);
+                if (zt == 1)
+                {
+                    GenericForm.DisplaylistboxMsg("站别：" + Form1.form1.skinComboBox1.Text + "," + "机型：" + Type2.Type1 + "," + "更新完成");
+                }
+                else
+                {
+                    GenericForm.DisplaylistboxMsg("更新失败,站别被删除");
+                }
+            }
+        }
+
+
+          public void SqlBackups(out DialogResult result)
+        {
+            MessageBox.Show(@"重要数据谨慎修改", @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            result = MessageBox.Show(@"备份路径默认在当前程序下", @"提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                string time1 = DateTime.Now.ToString("d").Replace("/", "-");
+                string file = ".//mysql/" + time1 + "_test.sql";
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    using (MySqlBackup mb = new MySqlBackup(cmd))
+                    {
+                        cmd.Connection = Type2.conn;
+                        Type2.conn.Open();
+                        mb.ExportToFile(file);
+                        Type2.conn.Close();
+                        MessageBox.Show(@"已备份");
+                    }
+                }
             }
         }
     }
