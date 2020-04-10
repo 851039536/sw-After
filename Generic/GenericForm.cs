@@ -44,21 +44,28 @@ namespace After_Test.Generic
         /// </summary>
         public void Loadcontrol()
         {
-            List<string> allstring = alltestitem.QueryJx();
-            int i = 0;
-            for (int j = 0; j < allstring.Count; j++)
+            try
             {
-                string y = allstring[j];
-                //   Form1.form1.型号ToolStripMenuItem.DropDownItems.Add(y);
-                // Form1.form1.listBox3.Items.Add(y);
-                Form1.form1.skinListBox3.Items.Add(new SkinListBoxItem(y));
-                //  Form1.form1.型号ToolStripMenuItem.DropDownItems[i].Click += Tests;
-                i++;
+                DisplaylistboxMsg("加载测试机型中...");
+                List<string> allstring = alltestitem.QueryJx();
+                int i = 0;
+                for (int j = 0; j < allstring.Count; j++)
+                {
+                    string y = allstring[j];
+                    Form1.form1.skinListBox3.Items.Add(new SkinListBoxItem(y));
+                    i++;
+                }
+
+                Form1.form1.skinListBox3.SelectedIndex = 1;
+
+                DisplaylistboxMsg("加载测试机型完成");
+
             }
-
-            Form1.form1.skinListBox3.SelectedIndex = 1;
-
-            DisplaylistboxMsg("加载测试机型完成！！！");
+            catch (Exception e)
+            {
+                DisplaylistboxMsg("数据库连接异常！！！");
+                MessageBox.Show(e.Message);
+            }
         }
 
         /// <summary>
@@ -94,9 +101,9 @@ namespace After_Test.Generic
                 Type2.Type1 = _testistBox;
                 List<string> miscelistS = testitem.QueryStation(Type2.Type1);
                 Form1.form1.skinComboBox1.Items.Clear();
-                for (int i = 0; i < miscelistS.Count; i++)
+                foreach (var t in miscelistS)
                 {
-                    Form1.form1.skinComboBox1.Items.Add(miscelistS[i]);
+                    Form1.form1.skinComboBox1.Items.Add(t);
                 }
 
                 Form1.form1.skinComboBox1.SelectedIndex = 0;

@@ -19,14 +19,24 @@ namespace After_Test.Generic
         /// <returns></returns>
         public void QueryJx()
         {
-            Alltestitem.Alltest.comboBox1.Items.Clear();
-            var data = alltestitem.QueryJx();
-            for (int i = 0; i < data.Count; i++)
+            try
             {
-                Alltestitem.Alltest.comboBox1.Items.Add(data[i]);
-            }
 
-            Alltestitem.Alltest.comboBox1.SelectedIndex = 0;
+          
+                Alltestitem.Alltest.comboBox1.Items.Clear();
+                var data = alltestitem.QueryJx();
+                for (int i = 0; i < data.Count; i++)
+                {
+                    Alltestitem.Alltest.comboBox1.Items.Add(data[i]);
+                }
+
+                Alltestitem.Alltest.comboBox1.SelectedIndex = 0;
+
+            }
+            catch (Exception e)
+            {
+                 MessageBox.Show(e.Message);
+            }
         }
 
 

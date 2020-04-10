@@ -31,7 +31,7 @@ namespace After_Test
             ctl.setTag(this);
             form1.WindowState = FormWindowState.Normal;
 
-            GenericForm.DisplaylistboxMsg("初始化完成！！！");
+            GenericForm.DisplaylistboxMsg("控件初始化完成！！！");
             genericForm.Loadcontrol();
         }
 
@@ -153,28 +153,9 @@ namespace After_Test
 
         private void 数据还原ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(@"确定还原吗？", @"还原", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                // try
-                // {
-                //     using (MySqlCommand cmd = new MySqlCommand())
-                //     {
-                //         using (MySqlBackup mb = new MySqlBackup(cmd))
-                //         {
-                //             cmd.Connection = Type2.conn;
-                //             Type2. conn.Open();
-                //             mb.ImportFromFile(".//mysql/" + "2020-4-2" + "_test.sql");
-                //             Type2. conn.Close();
-                //             MessageBox.Show(@"已还原");
-                //         }
-                //     }
-                // }
-                // catch (Exception ex)
-                // {
-                //     MessageBox.Show(ex.Message);
-                // }
-            }
+         DataRestore dataRestore = new DataRestore();
+         dataRestore.ShowDialog();
+           
         }
     }
 }

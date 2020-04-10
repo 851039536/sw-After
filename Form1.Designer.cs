@@ -179,7 +179,7 @@
             this.skinComboBox1.ItemBorderColor = System.Drawing.Color.SlateGray;
             this.skinComboBox1.Location = new System.Drawing.Point(448, 32);
             this.skinComboBox1.Name = "skinComboBox1";
-            this.skinComboBox1.Size = new System.Drawing.Size(97, 23);
+            this.skinComboBox1.Size = new System.Drawing.Size(96, 23);
             this.skinComboBox1.TabIndex = 50;
             this.skinComboBox1.WaterText = "";
             this.skinComboBox1.SelectedIndexChanged += new System.EventHandler(this.skinComboBox1_SelectedIndexChanged);
