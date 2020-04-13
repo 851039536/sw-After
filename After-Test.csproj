@@ -63,11 +63,11 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CSkin">
-      <HintPath>..\..\..\..\..\source\repos\TestGJ\TestGJ\bin\Debug\CSkin.dll</HintPath>
+      <HintPath>..\..\..\Desktop\vsTest\TestGJ\TestGJ\bin\Debug\CSkin.dll</HintPath>
     </Reference>
     <Reference Include="SqlSugar, Version=5.0.0.12, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\sqlSugar.5.0.0.12\lib\SqlSugar.dll</HintPath>
