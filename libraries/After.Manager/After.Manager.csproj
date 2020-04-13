@@ -37,6 +37,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,10 +58,6 @@
     <ProjectReference Include="..\After.Model\After.Model.csproj">
       <Project>{c1974c28-e088-427e-ae9f-342f52846680}</Project>
       <Name>After.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
-      <Project>{820bad20-c48b-47a3-af43-581af8949599}</Project>
-      <Name>DBUtility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -19,14 +19,24 @@ namespace After_Test.Generic
         /// <returns></returns>
         public void QueryJx()
         {
-            Alltestitem.Alltest.comboBox1.Items.Clear();
-            var data = alltestitem.QueryJx();
-            for (int i = 0; i < data.Count; i++)
+            try
             {
-                Alltestitem.Alltest.comboBox1.Items.Add(data[i]);
-            }
 
-            Alltestitem.Alltest.comboBox1.SelectedIndex = 0;
+          
+                Alltestitem.Alltest.comboBox1.Items.Clear();
+                var data = alltestitem.QueryJx();
+                for (int i = 0; i < data.Count; i++)
+                {
+                    Alltestitem.Alltest.comboBox1.Items.Add(data[i]);
+                }
+
+                Alltestitem.Alltest.comboBox1.SelectedIndex = 0;
+
+            }
+            catch (Exception e)
+            {
+                 MessageBox.Show(e.Message);
+            }
         }
 
 
@@ -78,7 +88,8 @@ namespace After_Test.Generic
             if (test)
             {
                 Alltestitem.Alltest.panel1.Visible = false;
-                QueryJx();
+                GenericForm.DisplaylistboxMsg("已更新："+ Alltestitem.Alltest.comboBox1.Text+" 机型测试项："+Alltestitem.Alltest.id.Text);
+              QueryIfJx();
             }
         }
 
@@ -120,7 +131,7 @@ namespace After_Test.Generic
 
             if (ints > 0)
             {
-                MessageBox.Show(@"新增成功");
+                GenericForm.DisplaylistboxMsg("新增成功："+ Alltestitem.Alltest.comboBox1.Text+" 机型测试项："+Alltestitem.Alltest.测试项目.Text);
             }
 
             QueryIfJx();

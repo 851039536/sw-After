@@ -39,26 +39,26 @@
             this.skinButton2 = new CCWin.SkinControl.SkinButton();
             this.skinButton3 = new CCWin.SkinControl.SkinButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.id = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.机型 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.测试项目 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.耳机指令 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.单位 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.数值上限 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.数值下限 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.编号 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.skinButton6 = new CCWin.SkinControl.SkinButton();
             this.skinButton7 = new CCWin.SkinControl.SkinButton();
+            this.skinButton6 = new CCWin.SkinControl.SkinButton();
+            this.label8 = new System.Windows.Forms.Label();
             this.skinButton5 = new CCWin.SkinControl.SkinButton();
+            this.编号 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.skinButton4 = new CCWin.SkinControl.SkinButton();
+            this.数值下限 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.数值上限 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.单位 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.耳机指令 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.测试项目 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.机型 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -85,6 +85,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(884, 490);
             this.dataGridView1.TabIndex = 70;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
@@ -130,7 +131,7 @@
             this.skinButton1.NormlBack = null;
             this.skinButton1.Size = new System.Drawing.Size(118, 34);
             this.skinButton1.TabIndex = 88;
-            this.skinButton1.Text = "修改";
+            this.skinButton1.Text = "添加";
             this.skinButton1.UseVisualStyleBackColor = false;
             this.skinButton1.Click += new System.EventHandler(this.skinButton1_Click);
             // 
@@ -201,159 +202,21 @@
             this.panel1.TabIndex = 72;
             this.panel1.Visible = false;
             // 
-            // id
+            // skinButton7
             // 
-            this.id.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.id.Enabled = false;
-            this.id.Location = new System.Drawing.Point(44, 63);
-            this.id.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(53, 17);
-            this.id.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 42);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 14);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "id";
-            // 
-            // 机型
-            // 
-            this.机型.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.机型.Enabled = false;
-            this.机型.Location = new System.Drawing.Point(124, 63);
-            this.机型.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.机型.Name = "机型";
-            this.机型.Size = new System.Drawing.Size(53, 17);
-            this.机型.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(131, 42);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 14);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "机型";
-            // 
-            // 测试项目
-            // 
-            this.测试项目.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.测试项目.Location = new System.Drawing.Point(205, 63);
-            this.测试项目.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.测试项目.Name = "测试项目";
-            this.测试项目.Size = new System.Drawing.Size(53, 17);
-            this.测试项目.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(205, 42);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 14);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "测试项目";
-            // 
-            // 耳机指令
-            // 
-            this.耳机指令.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.耳机指令.Location = new System.Drawing.Point(286, 63);
-            this.耳机指令.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.耳机指令.Name = "耳机指令";
-            this.耳机指令.Size = new System.Drawing.Size(53, 17);
-            this.耳机指令.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(286, 42);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 14);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "耳机指令";
-            // 
-            // 单位
-            // 
-            this.单位.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.单位.Location = new System.Drawing.Point(361, 63);
-            this.单位.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.单位.Name = "单位";
-            this.单位.Size = new System.Drawing.Size(53, 17);
-            this.单位.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(367, 42);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 14);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "单位";
-            // 
-            // 数值上限
-            // 
-            this.数值上限.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.数值上限.Location = new System.Drawing.Point(44, 119);
-            this.数值上限.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.数值上限.Name = "数值上限";
-            this.数值上限.Size = new System.Drawing.Size(53, 17);
-            this.数值上限.TabIndex = 10;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(50, 91);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 14);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "数值上限";
-            // 
-            // 数值下限
-            // 
-            this.数值下限.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.数值下限.Location = new System.Drawing.Point(118, 119);
-            this.数值下限.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.数值下限.Name = "数值下限";
-            this.数值下限.Size = new System.Drawing.Size(53, 17);
-            this.数值下限.TabIndex = 12;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(124, 91);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 14);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "数值下限";
-            // 
-            // 编号
-            // 
-            this.编号.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.编号.Location = new System.Drawing.Point(199, 119);
-            this.编号.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.编号.Name = "编号";
-            this.编号.Size = new System.Drawing.Size(53, 17);
-            this.编号.TabIndex = 14;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(205, 91);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 14);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "编号";
+            this.skinButton7.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton7.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton7.DownBack = null;
+            this.skinButton7.Location = new System.Drawing.Point(355, 175);
+            this.skinButton7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.skinButton7.MouseBack = null;
+            this.skinButton7.Name = "skinButton7";
+            this.skinButton7.NormlBack = null;
+            this.skinButton7.Size = new System.Drawing.Size(50, 20);
+            this.skinButton7.TabIndex = 99;
+            this.skinButton7.Text = "退出";
+            this.skinButton7.UseVisualStyleBackColor = false;
+            this.skinButton7.Click += new System.EventHandler(this.skinButton7_Click);
             // 
             // skinButton6
             // 
@@ -371,21 +234,15 @@
             this.skinButton6.UseVisualStyleBackColor = false;
             this.skinButton6.Click += new System.EventHandler(this.skinButton6_Click);
             // 
-            // skinButton7
+            // label8
             // 
-            this.skinButton7.BackColor = System.Drawing.Color.Transparent;
-            this.skinButton7.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinButton7.DownBack = null;
-            this.skinButton7.Location = new System.Drawing.Point(355, 175);
-            this.skinButton7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.skinButton7.MouseBack = null;
-            this.skinButton7.Name = "skinButton7";
-            this.skinButton7.NormlBack = null;
-            this.skinButton7.Size = new System.Drawing.Size(50, 20);
-            this.skinButton7.TabIndex = 99;
-            this.skinButton7.Text = "退出";
-            this.skinButton7.UseVisualStyleBackColor = false;
-            this.skinButton7.Click += new System.EventHandler(this.skinButton7_Click);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(205, 91);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 14);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "编号";
             // 
             // skinButton5
             // 
@@ -403,6 +260,25 @@
             this.skinButton5.UseVisualStyleBackColor = false;
             this.skinButton5.Click += new System.EventHandler(this.skinButton5_Click);
             // 
+            // 编号
+            // 
+            this.编号.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.编号.Location = new System.Drawing.Point(199, 119);
+            this.编号.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.编号.Name = "编号";
+            this.编号.Size = new System.Drawing.Size(53, 17);
+            this.编号.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(124, 91);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 14);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "数值下限";
+            // 
             // skinButton4
             // 
             this.skinButton4.BackColor = System.Drawing.Color.Transparent;
@@ -418,6 +294,131 @@
             this.skinButton4.Text = "清空";
             this.skinButton4.UseVisualStyleBackColor = false;
             this.skinButton4.Click += new System.EventHandler(this.skinButton4_Click);
+            // 
+            // 数值下限
+            // 
+            this.数值下限.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.数值下限.Location = new System.Drawing.Point(118, 119);
+            this.数值下限.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.数值下限.Name = "数值下限";
+            this.数值下限.Size = new System.Drawing.Size(53, 17);
+            this.数值下限.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(50, 91);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 14);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "数值上限";
+            // 
+            // 数值上限
+            // 
+            this.数值上限.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.数值上限.Location = new System.Drawing.Point(44, 119);
+            this.数值上限.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.数值上限.Name = "数值上限";
+            this.数值上限.Size = new System.Drawing.Size(53, 17);
+            this.数值上限.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(367, 42);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 14);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "单位";
+            // 
+            // 单位
+            // 
+            this.单位.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.单位.Location = new System.Drawing.Point(361, 63);
+            this.单位.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.单位.Name = "单位";
+            this.单位.Size = new System.Drawing.Size(53, 17);
+            this.单位.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(286, 42);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 14);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "耳机指令";
+            // 
+            // 耳机指令
+            // 
+            this.耳机指令.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.耳机指令.Location = new System.Drawing.Point(286, 63);
+            this.耳机指令.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.耳机指令.Name = "耳机指令";
+            this.耳机指令.Size = new System.Drawing.Size(53, 17);
+            this.耳机指令.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(205, 42);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 14);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "测试项目";
+            // 
+            // 测试项目
+            // 
+            this.测试项目.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.测试项目.Location = new System.Drawing.Point(205, 63);
+            this.测试项目.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.测试项目.Name = "测试项目";
+            this.测试项目.Size = new System.Drawing.Size(53, 17);
+            this.测试项目.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(131, 42);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 14);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "机型";
+            // 
+            // 机型
+            // 
+            this.机型.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.机型.Enabled = false;
+            this.机型.Location = new System.Drawing.Point(124, 63);
+            this.机型.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.机型.Name = "机型";
+            this.机型.Size = new System.Drawing.Size(53, 17);
+            this.机型.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(56, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 14);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "id";
+            // 
+            // id
+            // 
+            this.id.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.id.Enabled = false;
+            this.id.Location = new System.Drawing.Point(44, 63);
+            this.id.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(53, 17);
+            this.id.TabIndex = 0;
             // 
             // Alltestitem
             // 

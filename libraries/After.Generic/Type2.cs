@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -39,5 +40,8 @@ namespace After.Generic
             PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
             if (pi != null) pi.SetValue(dgv, setting, null);
         }
+
+          public static string constr = "server=localhost;uid=root;pwd=woshishui;database=test";
+          public static MySqlConnection conn = new MySqlConnection(constr);
     }
 }

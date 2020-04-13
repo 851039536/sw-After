@@ -55,9 +55,11 @@
             this.帮助ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.使用说明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.文件上传ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.文件配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.数据备份ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.用户管理ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.数据还原ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new CCWin.SkinControl.SkinLabel();
             this.skinListBox2 = new CCWin.SkinControl.SkinListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,7 +79,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Control;
-            this.panel5.Location = new System.Drawing.Point(-11, 461);
+            this.panel5.Location = new System.Drawing.Point(-11, 488);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(408, 10);
             this.panel5.TabIndex = 82;
@@ -177,7 +179,7 @@
             this.skinComboBox1.ItemBorderColor = System.Drawing.Color.SlateGray;
             this.skinComboBox1.Location = new System.Drawing.Point(448, 32);
             this.skinComboBox1.Name = "skinComboBox1";
-            this.skinComboBox1.Size = new System.Drawing.Size(97, 23);
+            this.skinComboBox1.Size = new System.Drawing.Size(96, 23);
             this.skinComboBox1.TabIndex = 50;
             this.skinComboBox1.WaterText = "";
             this.skinComboBox1.SelectedIndexChanged += new System.EventHandler(this.skinComboBox1_SelectedIndexChanged);
@@ -252,16 +254,18 @@
             // skinListBox1
             // 
             this.skinListBox1.Back = null;
-            this.skinListBox1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.skinListBox1.BackColor = System.Drawing.SystemColors.InfoText;
             this.skinListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.skinListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.skinListBox1.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.skinListBox1.ForeColor = System.Drawing.SystemColors.Info;
             this.skinListBox1.FormattingEnabled = true;
-            this.skinListBox1.Location = new System.Drawing.Point(8, 480);
-            this.skinListBox1.MouseColor = System.Drawing.Color.Gainsboro;
+            this.skinListBox1.Location = new System.Drawing.Point(8, 512);
+            this.skinListBox1.MouseColor = System.Drawing.Color.Black;
             this.skinListBox1.Name = "skinListBox1";
-            this.skinListBox1.RowBackColor1 = System.Drawing.Color.LightGray;
-            this.skinListBox1.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.skinListBox1.RowBackColor1 = System.Drawing.Color.Black;
+            this.skinListBox1.RowBackColor2 = System.Drawing.Color.Black;
+            this.skinListBox1.SelectedColor = System.Drawing.Color.Black;
             this.skinListBox1.Size = new System.Drawing.Size(376, 117);
             this.skinListBox1.TabIndex = 90;
             // 
@@ -271,14 +275,14 @@
             this.skinListBox3.BackColor = System.Drawing.SystemColors.Menu;
             this.skinListBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.skinListBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.skinListBox3.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.skinListBox3.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.skinListBox3.FormattingEnabled = true;
             this.skinListBox3.Location = new System.Drawing.Point(8, 192);
             this.skinListBox3.MouseColor = System.Drawing.Color.Gainsboro;
             this.skinListBox3.Name = "skinListBox3";
             this.skinListBox3.RowBackColor1 = System.Drawing.Color.Gainsboro;
             this.skinListBox3.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.skinListBox3.Size = new System.Drawing.Size(136, 247);
+            this.skinListBox3.Size = new System.Drawing.Size(136, 286);
             this.skinListBox3.TabIndex = 91;
             this.skinListBox3.SelectedIndexChanged += new System.EventHandler(this.skinListBox3_SelectedIndexChanged);
             // 
@@ -295,7 +299,7 @@
             this.listBoxControl3.Name = "listBoxControl3";
             this.listBoxControl3.RowBackColor1 = System.Drawing.Color.Gainsboro;
             this.listBoxControl3.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.listBoxControl3.Size = new System.Drawing.Size(225, 247);
+            this.listBoxControl3.Size = new System.Drawing.Size(225, 286);
             this.listBoxControl3.TabIndex = 92;
             this.listBoxControl3.SelectedIndexChanged += new System.EventHandler(this.listBoxControl3_SelectedIndexChanged);
             this.listBoxControl3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.skinListBox2_MouseDoubleClick);
@@ -375,7 +379,8 @@
             // 
             this.帮助ToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.使用说明ToolStripMenuItem,
-            this.文件上传ToolStripMenuItem1});
+            this.文件上传ToolStripMenuItem1,
+            this.文件配置ToolStripMenuItem});
             this.帮助ToolStripMenuItem1.Name = "帮助ToolStripMenuItem1";
             this.帮助ToolStripMenuItem1.Size = new System.Drawing.Size(44, 21);
             this.帮助ToolStripMenuItem1.Text = "帮助";
@@ -385,6 +390,7 @@
             this.使用说明ToolStripMenuItem.Name = "使用说明ToolStripMenuItem";
             this.使用说明ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.使用说明ToolStripMenuItem.Text = "使用说明";
+            this.使用说明ToolStripMenuItem.Click += new System.EventHandler(this.使用说明ToolStripMenuItem_Click);
             // 
             // 文件上传ToolStripMenuItem1
             // 
@@ -393,11 +399,19 @@
             this.文件上传ToolStripMenuItem1.Text = "文件上传";
             this.文件上传ToolStripMenuItem1.Click += new System.EventHandler(this.文件上传ToolStripMenuItem1_Click);
             // 
+            // 文件配置ToolStripMenuItem
+            // 
+            this.文件配置ToolStripMenuItem.Name = "文件配置ToolStripMenuItem";
+            this.文件配置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.文件配置ToolStripMenuItem.Text = "文件配置";
+            this.文件配置ToolStripMenuItem.Click += new System.EventHandler(this.文件配置ToolStripMenuItem_Click);
+            // 
             // 用户ToolStripMenuItem
             // 
             this.用户ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.数据备份ToolStripMenuItem,
-            this.用户管理ToolStripMenuItem1});
+            this.用户管理ToolStripMenuItem1,
+            this.数据还原ToolStripMenuItem});
             this.用户ToolStripMenuItem.Name = "用户ToolStripMenuItem";
             this.用户ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.用户ToolStripMenuItem.Text = "用户";
@@ -407,12 +421,20 @@
             this.数据备份ToolStripMenuItem.Name = "数据备份ToolStripMenuItem";
             this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.数据备份ToolStripMenuItem.Text = "数据备份";
+            this.数据备份ToolStripMenuItem.Click += new System.EventHandler(this.数据备份ToolStripMenuItem_Click);
             // 
             // 用户管理ToolStripMenuItem1
             // 
             this.用户管理ToolStripMenuItem1.Name = "用户管理ToolStripMenuItem1";
             this.用户管理ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.用户管理ToolStripMenuItem1.Text = "用户管理";
+            // 
+            // 数据还原ToolStripMenuItem
+            // 
+            this.数据还原ToolStripMenuItem.Name = "数据还原ToolStripMenuItem";
+            this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.数据还原ToolStripMenuItem.Text = "数据还原";
+            this.数据还原ToolStripMenuItem.Click += new System.EventHandler(this.数据还原ToolStripMenuItem_Click);
             // 
             // label4
             // 
@@ -446,7 +468,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 606);
+            this.ClientSize = new System.Drawing.Size(933, 636);
             this.Controls.Add(this.skinListBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.listBoxControl3);
@@ -507,6 +529,8 @@
         private System.Windows.Forms.ToolStripMenuItem 用户管理ToolStripMenuItem1;
         public CCWin.SkinControl.SkinLabel label4;
         public CCWin.SkinControl.SkinListBox skinListBox2;
+        private System.Windows.Forms.ToolStripMenuItem 文件配置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 数据还原ToolStripMenuItem;
     }
 }
 

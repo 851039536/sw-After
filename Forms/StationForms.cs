@@ -20,8 +20,8 @@ namespace After_Test.Forms
 
         private void StationForms_Load(object sender, EventArgs e)
         {
-            skinDataGridView1.ReadOnly = true;
-            skinDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
+            dataGridView1.ReadOnly = true;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
 
             
             sta.QueryStaion(Staiongs);

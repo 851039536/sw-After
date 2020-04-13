@@ -26,10 +26,10 @@ namespace After_Test.Forms
 
         private void DateGridviews_Load(object sender, EventArgs e)
         {
-            skinDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
             panel1.Visible = false; //隐藏面板
             Test();
-            skinDataGridView1.ReadOnly = true;
+            dataGridView1.ReadOnly = true;
             X = Width;
             Y = Height;
             x1 = X;
@@ -59,7 +59,7 @@ namespace After_Test.Forms
             float newX = Width;
             float newY = Height;
             ctl.setControls(newX / X, newY / Y, this);
-            foreach (DataGridViewTextBoxColumn item in skinDataGridView1.Columns)
+            foreach (DataGridViewTextBoxColumn item in dataGridView1.Columns)
             {
                 item.Width = Convert.ToInt16(item.Width * newX / x1);
             }
@@ -88,10 +88,6 @@ namespace After_Test.Forms
             date.Cobox();
         }
 
-        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             date.QueryListIfJX();
@@ -114,6 +110,11 @@ namespace After_Test.Forms
         }
 
         private void button4_Click(object sender, EventArgs e)
+        {
+            Qnull();
+        }
+
+        private void Qnull()
         {
             ConfigText.Enabled = true;
             ConfigText.Text = "";

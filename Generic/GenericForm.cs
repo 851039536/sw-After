@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using After.Generic;
 using CCWin.SkinControl;
 using DBUtility;
+using MySql.Data.MySqlClient;
 
 namespace After_Test.Generic
 {
@@ -26,6 +27,7 @@ namespace After_Test.Generic
         /// </summary>
         public void Firstload()
         {
+
             Form1.form1.SAVE.Enabled = false;
 
             // Form1.form1.label1.Text = Type2.User1; //用户
@@ -42,21 +44,28 @@ namespace After_Test.Generic
         /// </summary>
         public void Loadcontrol()
         {
-            List<string> allstring = alltestitem.QueryJx();
-            int i = 0;
-            for (int j = 0; j < allstring.Count; j++)
+            try
             {
-                string y = allstring[j];
-                //   Form1.form1.型号ToolStripMenuItem.DropDownItems.Add(y);
-                // Form1.form1.listBox3.Items.Add(y);
-                Form1.form1.skinListBox3.Items.Add(new SkinListBoxItem(y));
-                //  Form1.form1.型号ToolStripMenuItem.DropDownItems[i].Click += Tests;
-                i++;
+                DisplaylistboxMsg("加载测试机型中...");
+                List<string> allstring = alltestitem.QueryJx();
+                int i = 0;
+                for (int j = 0; j < allstring.Count; j++)
+                {
+                    string y = allstring[j];
+                    Form1.form1.skinListBox3.Items.Add(new SkinListBoxItem(y));
+                    i++;
+                }
+
+                Form1.form1.skinListBox3.SelectedIndex = 1;
+
+                DisplaylistboxMsg("加载测试机型完成");
+
             }
-
-            Form1.form1.skinListBox3.SelectedIndex = 0;
-
-            DisplaylistboxMsg("加载测试机型完成！！！");
+            catch (Exception e)
+            {
+                DisplaylistboxMsg("数据库连接异常！！！");
+                MessageBox.Show(e.Message);
+            }
         }
 
         /// <summary>
@@ -92,9 +101,9 @@ namespace After_Test.Generic
                 Type2.Type1 = _testistBox;
                 List<string> miscelistS = testitem.QueryStation(Type2.Type1);
                 Form1.form1.skinComboBox1.Items.Clear();
-                for (int i = 0; i < miscelistS.Count; i++)
+                foreach (var t in miscelistS)
                 {
-                    Form1.form1.skinComboBox1.Items.Add(miscelistS[i]);
+                    Form1.form1.skinComboBox1.Items.Add(t);
                 }
 
                 Form1.form1.skinComboBox1.SelectedIndex = 0;
@@ -271,7 +280,7 @@ namespace After_Test.Generic
         /// 输出提示
         /// </summary>
         /// <param name="msg"></param>
-        public void DisplaylistboxMsg(string msg)
+        public static void DisplaylistboxMsg(string msg)
         {
             if (Form1.form1.InvokeRequired)
             {
@@ -290,6 +299,63 @@ namespace After_Test.Generic
 
                 if (Form1.form1.skinListBox1.Items.Count > 0) Form1.form1.skinListBox1.SelectedIndex = Form1.form1.skinListBox1.Items.Count - 1;
                 Application.DoEvents();
+            }
+        }
+
+
+        /// <summary>
+        /// 新增站别
+        /// </summary>
+         public void SaveStaion()
+        {
+            if (Form1.form1.skinComboBox1.Text.Equals(""))
+            {
+                MessageBox.Show(@"站别不能为空");
+                return;
+            }
+
+            bool test = testitem.DeleteSave(Form1.form1.skinComboBox1.Text, Type2.Type1);
+            if (test)
+            {
+                LinkedList<string> ate = new LinkedList<string>();
+                SkinListBoxItemCollection ss = Form1.form1.skinListBox2.Items;
+                for (int i = 0; i < ss.Count; i++)
+                {
+                    ate.AddLast(ss[i].ToString());
+                }
+
+                var zt = alltestitem.Sqlselect(Form1.form1.skinComboBox1.Text, Type2.Type1, ate);
+                if (zt == 1)
+                {
+                    GenericForm.DisplaylistboxMsg("站别：" + Form1.form1.skinComboBox1.Text + "," + "机型：" + Type2.Type1 + "," + "更新完成");
+                }
+                else
+                {
+                    GenericForm.DisplaylistboxMsg("更新失败,站别被删除");
+                }
+            }
+        }
+
+
+          public void SqlBackups(out DialogResult result)
+        {
+            MessageBox.Show(@"重要数据谨慎修改", @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            result = MessageBox.Show(@"备份路径默认在当前程序下", @"提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                string time1 = DateTime.Now.ToString("d").Replace("/", "-");
+                string file = ".//mysql/" + time1 + "_test.sql";
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    using (MySqlBackup mb = new MySqlBackup(cmd))
+                    {
+                        cmd.Connection = Type2.conn;
+                        Type2.conn.Open();
+                        mb.ExportToFile(file);
+                        Type2.conn.Close();
+                        MessageBox.Show(@"已备份");
+                    }
+                }
             }
         }
     }

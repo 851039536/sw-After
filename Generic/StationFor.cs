@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics;
 using System.Windows.Forms;
 using After.Generic;
+using After.Manager;
 using After_Test.Forms;
 using DBUtility;
 
@@ -12,6 +12,7 @@ namespace After_Test.Generic
     public class StationFor
     {
         private TestitemManager testitem = new TestitemManager();
+        configManager _configManager = new configManager();
 
         /// <summary>
         /// 查询机型和站别
@@ -19,8 +20,8 @@ namespace After_Test.Generic
         public void QueryStaion(string staion)
         {
             DataTable data = testitem.QueryStaion(staion);
-            StationForms.Stationgorms.skinDataGridView1.DoubleBuffered(true);
-            StationForms.Stationgorms.skinDataGridView1.DataSource = data;
+            StationForms.Stationgorms.dataGridView1.DoubleBuffered(true);
+            StationForms.Stationgorms.dataGridView1.DataSource = data;
         }
 
         /// <summary>
@@ -28,11 +29,16 @@ namespace After_Test.Generic
         /// </summary>
         public void QueryCobox()
         {
-            List<string> data1 = testitem.QueryCobox();
+            List<string> ConfigText = _configManager.QueryConfigText();
             StationForms.Stationgorms.comboBox1.Items.Clear();
-            for (int i = 0; i < data1.Count; i++)
+            
+            //for (int i = 0; i < data1.Count; i++)
+            //{
+            //    StationForms.Stationgorms.comboBox1.Items.Add(data1[i]);
+            //}
+            foreach (var t in ConfigText)
             {
-                StationForms.Stationgorms.comboBox1.Items.Add(data1[i]);
+                StationForms.Stationgorms.comboBox1.Items.Add(t);
             }
 
             StationForms.Stationgorms.comboBox1.SelectedIndex = 0;
@@ -58,13 +64,15 @@ namespace After_Test.Generic
 
                 if (iRet > 0)
                 {
-                    MessageBox.Show(@"增加站别成功");
+                    GenericForm.DisplaylistboxMsg("增加站别成功:"+jx+"，站别："+stationt);
+                  //  MessageBox.Show(@"增加站别成功");
                     StationForms.Stationgorms.comboBox1.Text = "";
                     StationForms.Stationgorms.Station.Text = "";
                 }
                 else
                 {
-                    MessageBox.Show(@"插入失败");
+                      MessageBox.Show(@"插入失败");
+                     GenericForm.DisplaylistboxMsg("插入失败");
                 }
 
                 QueryStaion(staiongs);
@@ -86,11 +94,11 @@ namespace After_Test.Generic
                 try
                 {
                     //删除操作
-                    if (StationForms.Stationgorms.skinDataGridView1.CurrentRow != null)
+                    if (StationForms.Stationgorms.dataGridView1.CurrentRow != null)
                     {
-                        int index = StationForms.Stationgorms.skinDataGridView1.CurrentRow.Index; //取得选中行的索引
-                        string zb = StationForms.Stationgorms.skinDataGridView1.Rows[index].Cells["测试站别"].Value.ToString(); //获取单元格列名为‘Id’的值 
-                        string jx = StationForms.Stationgorms.skinDataGridView1.Rows[index].Cells["机型"].Value.ToString();
+                        int index = StationForms.Stationgorms.dataGridView1.CurrentRow.Index; //取得选中行的索引
+                        string zb = StationForms.Stationgorms.dataGridView1.Rows[index].Cells["测试站别"].Value.ToString(); //获取单元格列名为‘Id’的值 
+                        string jx = StationForms.Stationgorms.dataGridView1.Rows[index].Cells["机型"].Value.ToString();
 
                         bool test = testitem.DeleteSave(zb, jx);
                         if (test)
