@@ -9,7 +9,7 @@ namespace After.Manager
         /// <summary>
         /// 机型站别
         /// </summary>
-        /// <returns></returns>
+        /// <returns>data</returns>
         public List<string> QueryType()
         {
             List<string> data = Db.Queryable<miscellaneous>().GroupBy(it => new

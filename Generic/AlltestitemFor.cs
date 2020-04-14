@@ -21,17 +21,13 @@ namespace After_Test.Generic
         {
             try
             {
-
-          
                 Alltestitem.Alltest.comboBox1.Items.Clear();
                 var data = alltestitem.QueryJx();
                 for (int i = 0; i < data.Count; i++)
                 {
                     Alltestitem.Alltest.comboBox1.Items.Add(data[i]);
                 }
-
                 Alltestitem.Alltest.comboBox1.SelectedIndex = 0;
-
             }
             catch (Exception e)
             {
@@ -65,6 +61,7 @@ namespace After_Test.Generic
             var data = alltestitem.alltestitemdb.GetList(it => it.机型 == Alltestitem.Alltest.comboBox1.Text); //根据条件查询     
             Alltestitem.Alltest.dataGridView1.DoubleBuffered(true);
             Alltestitem.Alltest.dataGridView1.DataSource = data;
+
         }
 
         /// <summary>

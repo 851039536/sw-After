@@ -44,13 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="alltestitem.cs" />
-    <Compile Include="config.cs" />
+    <Compile Include="DBUtility\alltestitem.cs" />
+    <Compile Include="DBUtility\config.cs" />
     <Compile Include="DBUtility\DbContext.cs" />
-    <Compile Include="miscellaneous.cs" />
-    <Compile Include="testitem.cs" />
-    <Compile Include="uploading.cs" />
-    <Compile Include="user.cs" />
+    <Compile Include="DBUtility\miscellaneous.cs" />
+    <Compile Include="DBUtility\testitem.cs" />
+    <Compile Include="DBUtility\uploading.cs" />
+    <Compile Include="DBUtility\user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

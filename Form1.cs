@@ -83,9 +83,9 @@ namespace After_Test
 
         private async void skinButton1_Click(object sender, EventArgs e)
         {
-            if (Type2.Type1 != null)
+            if (Type2.TypeName != null)
             {
-                StationForms st = new StationForms(Type2.Type1);
+                StationForms st = new StationForms(Type2.TypeName);
                 await Task.Run(() => st.ShowDialog());
             }
             else
@@ -155,7 +155,7 @@ namespace After_Test
         {
          DataRestore dataRestore = new DataRestore();
          dataRestore.ShowDialog();
-           
+        
         }
     }
 }

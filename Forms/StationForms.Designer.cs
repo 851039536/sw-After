@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.deleteBut = new System.Windows.Forms.Button();
+            this.StaionBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SaBut = new System.Windows.Forms.Button();
             this.Station = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,28 +39,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button3
+            // deleteBut
             // 
-            this.button3.Location = new System.Drawing.Point(6, 35);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 22);
-            this.button3.TabIndex = 58;
-            this.button3.Text = "删除";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.deleteBut.Location = new System.Drawing.Point(6, 35);
+            this.deleteBut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.deleteBut.Name = "deleteBut";
+            this.deleteBut.Size = new System.Drawing.Size(50, 22);
+            this.deleteBut.TabIndex = 58;
+            this.deleteBut.Text = "删除";
+            this.deleteBut.UseVisualStyleBackColor = true;
+            this.deleteBut.Click += new System.EventHandler(this.button3_Click);
             // 
-            // comboBox1
+            // StaionBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(101, 35);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(68, 22);
-            this.comboBox1.TabIndex = 56;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.StaionBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StaionBox.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.StaionBox.FormattingEnabled = true;
+            this.StaionBox.Location = new System.Drawing.Point(101, 35);
+            this.StaionBox.Margin = new System.Windows.Forms.Padding(2);
+            this.StaionBox.Name = "StaionBox";
+            this.StaionBox.Size = new System.Drawing.Size(68, 22);
+            this.StaionBox.TabIndex = 56;
+            this.StaionBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -72,16 +72,16 @@
             this.label3.TabIndex = 64;
             this.label3.Text = "站别";
             // 
-            // button1
+            // SaBut
             // 
-            this.button1.Location = new System.Drawing.Point(280, 35);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 24);
-            this.button1.TabIndex = 63;
-            this.button1.Text = "确定";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SaBut.Location = new System.Drawing.Point(280, 35);
+            this.SaBut.Margin = new System.Windows.Forms.Padding(2);
+            this.SaBut.Name = "SaBut";
+            this.SaBut.Size = new System.Drawing.Size(56, 24);
+            this.SaBut.TabIndex = 63;
+            this.SaBut.Text = "确定";
+            this.SaBut.UseVisualStyleBackColor = true;
+            this.SaBut.Click += new System.EventHandler(this.button1_Click);
             // 
             // Station
             // 
@@ -127,16 +127,16 @@
             this.ClientSize = new System.Drawing.Size(345, 343);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SaBut);
             this.Controls.Add(this.Station);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.deleteBut);
+            this.Controls.Add(this.StaionBox);
             this.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "StationForms";
-            this.Text = "StationForms";
+            this.Text = "站别窗口";
             this.Load += new System.EventHandler(this.StationForms_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -148,9 +148,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Button button3;
-        public System.Windows.Forms.ComboBox comboBox1;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button deleteBut;
+        public System.Windows.Forms.ComboBox StaionBox;
+        public System.Windows.Forms.Button SaBut;
         public System.Windows.Forms.TextBox Station;
         public System.Windows.Forms.DataGridView dataGridView1;
     }

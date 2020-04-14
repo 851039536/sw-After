@@ -59,7 +59,6 @@ namespace After_Test.Forms
             {
                 item.Width = Convert.ToInt16(item.Width * newX / _x1);
             }
-
             _x1 = newX;
         }
 
@@ -77,11 +76,10 @@ namespace After_Test.Forms
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            编号.Enabled=false;
-            skinButton4.Visible=false;
-            skinButton5.Visible=false;
+             编号.Enabled=false;
+             skinButton4.Visible=false;
+             skinButton5.Visible=false;
              skinButton6.Visible=true;
-             
              机型.Enabled = false;
             alltestitemFor.QueryListIfId(sender, e);
         }

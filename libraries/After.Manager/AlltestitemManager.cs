@@ -11,7 +11,7 @@ namespace DBUtility
         /// <summary>
         /// 加载测试机型
         /// </summary>
-        /// <returns></returns>
+        /// <returns>data</returns>
         public List<string> QueryJx()
         {
             try
@@ -33,7 +33,7 @@ namespace DBUtility
         /// <summary>
         /// 加载测试项目
         /// </summary>
-        /// <returns></returns>
+        /// <returns>data</returns>
         public List<string> LoadTestProject(string strWhere)
         {
             List<string> data = Db.Queryable<alltestitem>().Where(w => w.机型 == strWhere).Select(f => f.测试项目).ToList();
@@ -43,7 +43,7 @@ namespace DBUtility
         /// <summary>
         ///删除更新
         /// </summary>
-        /// <returns></returns>
+        /// <returns>ints</returns>
         public int Sqlselect(string zb, string strWhere, LinkedList<string> xm)
         {
             int k = 1;

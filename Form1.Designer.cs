@@ -38,16 +38,16 @@
             this.skinButton1 = new CCWin.SkinControl.SkinButton();
             this.skinGroupBox1 = new CCWin.SkinControl.SkinGroupBox();
             this.skinGroupBox2 = new CCWin.SkinControl.SkinGroupBox();
-            this.skinComboBox1 = new CCWin.SkinControl.SkinComboBox();
+            this.StationBox = new CCWin.SkinControl.SkinComboBox();
             this.ADD = new System.Windows.Forms.Button();
             this.SAVE = new System.Windows.Forms.Button();
             this.DELETE = new System.Windows.Forms.Button();
             this.LOCK = new System.Windows.Forms.Button();
             this.UP = new System.Windows.Forms.Button();
             this.DOWN = new System.Windows.Forms.Button();
-            this.skinListBox1 = new CCWin.SkinControl.SkinListBox();
-            this.skinListBox3 = new CCWin.SkinControl.SkinListBox();
-            this.listBoxControl3 = new CCWin.SkinControl.SkinListBox();
+            this.MsgBox = new CCWin.SkinControl.SkinListBox();
+            this.TypeNameBox = new CCWin.SkinControl.SkinListBox();
+            this.ContentBox = new CCWin.SkinControl.SkinListBox();
             this.skinMenuStrip1 = new CCWin.SkinControl.SkinMenuStrip();
             this.选项ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.config配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +61,7 @@
             this.用户管理ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.数据还原ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new CCWin.SkinControl.SkinLabel();
-            this.skinListBox2 = new CCWin.SkinControl.SkinListBox();
+            this.StaionType = new CCWin.SkinControl.SkinListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.skinGroupBox1.SuspendLayout();
             this.skinGroupBox2.SuspendLayout();
@@ -149,7 +149,7 @@
             // 
             this.skinGroupBox2.BackColor = System.Drawing.Color.Transparent;
             this.skinGroupBox2.BorderColor = System.Drawing.Color.Gainsboro;
-            this.skinGroupBox2.Controls.Add(this.skinComboBox1);
+            this.skinGroupBox2.Controls.Add(this.StationBox);
             this.skinGroupBox2.Controls.Add(this.ADD);
             this.skinGroupBox2.Controls.Add(this.SAVE);
             this.skinGroupBox2.Controls.Add(this.DELETE);
@@ -168,21 +168,21 @@
             this.skinGroupBox2.TitleRectBackColor = System.Drawing.Color.White;
             this.skinGroupBox2.TitleRoundStyle = CCWin.SkinClass.RoundStyle.All;
             // 
-            // skinComboBox1
+            // StationBox
             // 
-            this.skinComboBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.skinComboBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.skinComboBox1.BorderColor = System.Drawing.Color.Silver;
-            this.skinComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.skinComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.skinComboBox1.FormattingEnabled = true;
-            this.skinComboBox1.ItemBorderColor = System.Drawing.Color.SlateGray;
-            this.skinComboBox1.Location = new System.Drawing.Point(448, 32);
-            this.skinComboBox1.Name = "skinComboBox1";
-            this.skinComboBox1.Size = new System.Drawing.Size(96, 23);
-            this.skinComboBox1.TabIndex = 50;
-            this.skinComboBox1.WaterText = "";
-            this.skinComboBox1.SelectedIndexChanged += new System.EventHandler(this.skinComboBox1_SelectedIndexChanged);
+            this.StationBox.BackColor = System.Drawing.SystemColors.Menu;
+            this.StationBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.StationBox.BorderColor = System.Drawing.Color.Silver;
+            this.StationBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.StationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StationBox.FormattingEnabled = true;
+            this.StationBox.ItemBorderColor = System.Drawing.Color.SlateGray;
+            this.StationBox.Location = new System.Drawing.Point(448, 32);
+            this.StationBox.Name = "StationBox";
+            this.StationBox.Size = new System.Drawing.Size(96, 23);
+            this.StationBox.TabIndex = 50;
+            this.StationBox.WaterText = "";
+            this.StationBox.SelectedIndexChanged += new System.EventHandler(this.skinComboBox1_SelectedIndexChanged);
             // 
             // ADD
             // 
@@ -251,58 +251,58 @@
             this.DOWN.UseVisualStyleBackColor = true;
             this.DOWN.Click += new System.EventHandler(this.DOWN_Click);
             // 
-            // skinListBox1
+            // MsgBox
             // 
-            this.skinListBox1.Back = null;
-            this.skinListBox1.BackColor = System.Drawing.SystemColors.InfoText;
-            this.skinListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.skinListBox1.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.skinListBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.skinListBox1.FormattingEnabled = true;
-            this.skinListBox1.Location = new System.Drawing.Point(8, 512);
-            this.skinListBox1.MouseColor = System.Drawing.Color.Black;
-            this.skinListBox1.Name = "skinListBox1";
-            this.skinListBox1.RowBackColor1 = System.Drawing.Color.Black;
-            this.skinListBox1.RowBackColor2 = System.Drawing.Color.Black;
-            this.skinListBox1.SelectedColor = System.Drawing.Color.Black;
-            this.skinListBox1.Size = new System.Drawing.Size(376, 117);
-            this.skinListBox1.TabIndex = 90;
+            this.MsgBox.Back = null;
+            this.MsgBox.BackColor = System.Drawing.SystemColors.InfoText;
+            this.MsgBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.MsgBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.MsgBox.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.MsgBox.ForeColor = System.Drawing.SystemColors.Info;
+            this.MsgBox.FormattingEnabled = true;
+            this.MsgBox.Location = new System.Drawing.Point(8, 512);
+            this.MsgBox.MouseColor = System.Drawing.Color.Black;
+            this.MsgBox.Name = "MsgBox";
+            this.MsgBox.RowBackColor1 = System.Drawing.Color.Black;
+            this.MsgBox.RowBackColor2 = System.Drawing.Color.Black;
+            this.MsgBox.SelectedColor = System.Drawing.Color.Black;
+            this.MsgBox.Size = new System.Drawing.Size(376, 117);
+            this.MsgBox.TabIndex = 90;
             // 
-            // skinListBox3
+            // TypeNameBox
             // 
-            this.skinListBox3.Back = null;
-            this.skinListBox3.BackColor = System.Drawing.SystemColors.Menu;
-            this.skinListBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinListBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.skinListBox3.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinListBox3.FormattingEnabled = true;
-            this.skinListBox3.Location = new System.Drawing.Point(8, 192);
-            this.skinListBox3.MouseColor = System.Drawing.Color.Gainsboro;
-            this.skinListBox3.Name = "skinListBox3";
-            this.skinListBox3.RowBackColor1 = System.Drawing.Color.Gainsboro;
-            this.skinListBox3.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.skinListBox3.Size = new System.Drawing.Size(136, 286);
-            this.skinListBox3.TabIndex = 91;
-            this.skinListBox3.SelectedIndexChanged += new System.EventHandler(this.skinListBox3_SelectedIndexChanged);
+            this.TypeNameBox.Back = null;
+            this.TypeNameBox.BackColor = System.Drawing.SystemColors.Menu;
+            this.TypeNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TypeNameBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.TypeNameBox.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TypeNameBox.FormattingEnabled = true;
+            this.TypeNameBox.Location = new System.Drawing.Point(8, 192);
+            this.TypeNameBox.MouseColor = System.Drawing.Color.Gainsboro;
+            this.TypeNameBox.Name = "TypeNameBox";
+            this.TypeNameBox.RowBackColor1 = System.Drawing.Color.Gainsboro;
+            this.TypeNameBox.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TypeNameBox.Size = new System.Drawing.Size(136, 286);
+            this.TypeNameBox.TabIndex = 91;
+            this.TypeNameBox.SelectedIndexChanged += new System.EventHandler(this.skinListBox3_SelectedIndexChanged);
             // 
-            // listBoxControl3
+            // ContentBox
             // 
-            this.listBoxControl3.Back = null;
-            this.listBoxControl3.BackColor = System.Drawing.SystemColors.Menu;
-            this.listBoxControl3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBoxControl3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.listBoxControl3.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.listBoxControl3.FormattingEnabled = true;
-            this.listBoxControl3.Location = new System.Drawing.Point(159, 192);
-            this.listBoxControl3.MouseColor = System.Drawing.Color.Gainsboro;
-            this.listBoxControl3.Name = "listBoxControl3";
-            this.listBoxControl3.RowBackColor1 = System.Drawing.Color.Gainsboro;
-            this.listBoxControl3.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.listBoxControl3.Size = new System.Drawing.Size(225, 286);
-            this.listBoxControl3.TabIndex = 92;
-            this.listBoxControl3.SelectedIndexChanged += new System.EventHandler(this.listBoxControl3_SelectedIndexChanged);
-            this.listBoxControl3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.skinListBox2_MouseDoubleClick);
+            this.ContentBox.Back = null;
+            this.ContentBox.BackColor = System.Drawing.SystemColors.Menu;
+            this.ContentBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ContentBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ContentBox.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ContentBox.FormattingEnabled = true;
+            this.ContentBox.Location = new System.Drawing.Point(159, 192);
+            this.ContentBox.MouseColor = System.Drawing.Color.Gainsboro;
+            this.ContentBox.Name = "ContentBox";
+            this.ContentBox.RowBackColor1 = System.Drawing.Color.Gainsboro;
+            this.ContentBox.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ContentBox.Size = new System.Drawing.Size(225, 286);
+            this.ContentBox.TabIndex = 92;
+            this.ContentBox.SelectedIndexChanged += new System.EventHandler(this.listBoxControl3_SelectedIndexChanged);
+            this.ContentBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.skinListBox2_MouseDoubleClick);
             // 
             // skinMenuStrip1
             // 
@@ -364,14 +364,14 @@
             // config配置ToolStripMenuItem
             // 
             this.config配置ToolStripMenuItem.Name = "config配置ToolStripMenuItem";
-            this.config配置ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.config配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.config配置ToolStripMenuItem.Text = "Config配置";
             this.config配置ToolStripMenuItem.Click += new System.EventHandler(this.config配置ToolStripMenuItem_Click);
             // 
             // 功能配置ToolStripMenuItem
             // 
             this.功能配置ToolStripMenuItem.Name = "功能配置ToolStripMenuItem";
-            this.功能配置ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.功能配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.功能配置ToolStripMenuItem.Text = "功能配置";
             this.功能配置ToolStripMenuItem.Click += new System.EventHandler(this.功能配置ToolStripMenuItem_Click);
             // 
@@ -448,32 +448,32 @@
             this.label4.TabIndex = 94;
             this.label4.Text = "skinLabel1";
             // 
-            // skinListBox2
+            // StaionType
             // 
-            this.skinListBox2.Back = null;
-            this.skinListBox2.BackColor = System.Drawing.SystemColors.Menu;
-            this.skinListBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinListBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.skinListBox2.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.skinListBox2.FormattingEnabled = true;
-            this.skinListBox2.Location = new System.Drawing.Point(416, 192);
-            this.skinListBox2.MouseColor = System.Drawing.Color.Gainsboro;
-            this.skinListBox2.Name = "skinListBox2";
-            this.skinListBox2.RowBackColor1 = System.Drawing.Color.Gainsboro;
-            this.skinListBox2.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.skinListBox2.Size = new System.Drawing.Size(504, 325);
-            this.skinListBox2.TabIndex = 95;
+            this.StaionType.Back = null;
+            this.StaionType.BackColor = System.Drawing.SystemColors.Menu;
+            this.StaionType.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.StaionType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.StaionType.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.StaionType.FormattingEnabled = true;
+            this.StaionType.Location = new System.Drawing.Point(416, 192);
+            this.StaionType.MouseColor = System.Drawing.Color.Gainsboro;
+            this.StaionType.Name = "StaionType";
+            this.StaionType.RowBackColor1 = System.Drawing.Color.Gainsboro;
+            this.StaionType.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.StaionType.Size = new System.Drawing.Size(504, 325);
+            this.StaionType.TabIndex = 95;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 636);
-            this.Controls.Add(this.skinListBox2);
+            this.Controls.Add(this.StaionType);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.listBoxControl3);
-            this.Controls.Add(this.skinListBox3);
-            this.Controls.Add(this.skinListBox1);
+            this.Controls.Add(this.ContentBox);
+            this.Controls.Add(this.TypeNameBox);
+            this.Controls.Add(this.MsgBox);
             this.Controls.Add(this.skinGroupBox2);
             this.Controls.Add(this.skinGroupBox1);
             this.Controls.Add(this.panel2);
@@ -513,10 +513,10 @@
         public System.Windows.Forms.Button LOCK;
         public System.Windows.Forms.Button UP;
         public System.Windows.Forms.Button DOWN;
-        public CCWin.SkinControl.SkinListBox skinListBox1;
-        public CCWin.SkinControl.SkinListBox skinListBox3;
-        public CCWin.SkinControl.SkinComboBox skinComboBox1;
-        public CCWin.SkinControl.SkinListBox listBoxControl3;
+        public CCWin.SkinControl.SkinListBox MsgBox;
+        public CCWin.SkinControl.SkinListBox TypeNameBox;
+        public CCWin.SkinControl.SkinComboBox StationBox;
+        public CCWin.SkinControl.SkinListBox ContentBox;
         private CCWin.SkinControl.SkinMenuStrip skinMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 选项ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem config配置ToolStripMenuItem;
@@ -528,7 +528,7 @@
         private System.Windows.Forms.ToolStripMenuItem 数据备份ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 用户管理ToolStripMenuItem1;
         public CCWin.SkinControl.SkinLabel label4;
-        public CCWin.SkinControl.SkinListBox skinListBox2;
+        public CCWin.SkinControl.SkinListBox StaionType;
         private System.Windows.Forms.ToolStripMenuItem 文件配置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 数据还原ToolStripMenuItem;
     }

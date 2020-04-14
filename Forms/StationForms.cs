@@ -30,7 +30,7 @@ namespace After_Test.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Staiongs = comboBox1.Text;
+            Staiongs = StaionBox.Text;
             sta.QueryStaion(Staiongs);
         }
 

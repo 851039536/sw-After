@@ -10,9 +10,8 @@ namespace After.Generic
         /// <summary>
         /// 型号名称
         /// </summary>
-        public static string Type1 = null;
+        public static string TypeName = null;
 
-        public static string Station = null;
 
         /// <summary>
         /// 用户

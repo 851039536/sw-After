@@ -9,7 +9,7 @@ namespace After.Manager
         /// <summary>
         /// Config机型
         /// </summary>
-        /// <returns></returns>
+        /// <returns>data</returns>
         public List<string> QueryConfig()
         {
             List<string> data = Db.Queryable<config>().GroupBy(it => new
@@ -22,7 +22,7 @@ namespace After.Manager
          /// <summary>
         /// 查询站别机型
         /// </summary>
-        /// <returns></returns>
+        /// <returns>data</returns>
         public List<string> QueryConfigText()
         {
             List<string> data = Db.Queryable<config>().GroupBy(it => new
