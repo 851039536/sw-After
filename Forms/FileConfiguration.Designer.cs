@@ -35,25 +35,25 @@
             this.新增ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.skinPanel1 = new CCWin.SkinControl.SkinPanel();
-            this.wqw = new CCWin.SkinControl.SkinLabel();
-            this.skinLabel3 = new CCWin.SkinControl.SkinLabel();
-            this.skinLabel4 = new CCWin.SkinControl.SkinLabel();
-            this.skinLabel5 = new CCWin.SkinControl.SkinLabel();
-            this.skinLabel6 = new CCWin.SkinControl.SkinLabel();
-            this.skinLabel7 = new CCWin.SkinControl.SkinLabel();
-            this.skinLabel8 = new CCWin.SkinControl.SkinLabel();
-            this.name = new CCWin.SkinControl.SkinTextBox();
-            this.path = new CCWin.SkinControl.RtfRichTextBox();
-            this.localitypath = new CCWin.SkinControl.RtfRichTextBox();
-            this.filepath = new CCWin.SkinControl.RtfRichTextBox();
-            this.foldertozip = new CCWin.SkinControl.RtfRichTextBox();
-            this.zipedfilename = new CCWin.SkinControl.RtfRichTextBox();
-            this.zipedfilename2 = new CCWin.SkinControl.RtfRichTextBox();
-            this.skinButton1 = new CCWin.SkinControl.SkinButton();
-            this.skinButton2 = new CCWin.SkinControl.SkinButton();
-            this.skinButton3 = new CCWin.SkinControl.SkinButton();
-            this.id = new CCWin.SkinControl.SkinLabel();
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
+            this.id = new CCWin.SkinControl.SkinLabel();
+            this.skinButton3 = new CCWin.SkinControl.SkinButton();
+            this.skinButton2 = new CCWin.SkinControl.SkinButton();
+            this.skinButton1 = new CCWin.SkinControl.SkinButton();
+            this.zipedfilename2 = new CCWin.SkinControl.RtfRichTextBox();
+            this.zipedfilename = new CCWin.SkinControl.RtfRichTextBox();
+            this.foldertozip = new CCWin.SkinControl.RtfRichTextBox();
+            this.filepath = new CCWin.SkinControl.RtfRichTextBox();
+            this.localitypath = new CCWin.SkinControl.RtfRichTextBox();
+            this.path = new CCWin.SkinControl.RtfRichTextBox();
+            this.name = new CCWin.SkinControl.SkinTextBox();
+            this.skinLabel8 = new CCWin.SkinControl.SkinLabel();
+            this.skinLabel7 = new CCWin.SkinControl.SkinLabel();
+            this.skinLabel6 = new CCWin.SkinControl.SkinLabel();
+            this.skinLabel5 = new CCWin.SkinControl.SkinLabel();
+            this.skinLabel4 = new CCWin.SkinControl.SkinLabel();
+            this.skinLabel3 = new CCWin.SkinControl.SkinLabel();
+            this.wqw = new CCWin.SkinControl.SkinLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.skinMenuStrip1.SuspendLayout();
             this.skinPanel1.SuspendLayout();
@@ -164,89 +164,134 @@
             this.skinPanel1.Visible = false;
             this.skinPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.skinPanel1_Paint);
             // 
-            // wqw
+            // skinLabel1
             // 
-            this.wqw.AutoSize = true;
-            this.wqw.BackColor = System.Drawing.Color.Transparent;
-            this.wqw.BorderColor = System.Drawing.Color.White;
-            this.wqw.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wqw.Location = new System.Drawing.Point(72, 48);
-            this.wqw.Name = "wqw";
-            this.wqw.Size = new System.Drawing.Size(63, 14);
-            this.wqw.TabIndex = 0;
-            this.wqw.Text = "程序名称";
+            this.skinLabel1.AutoSize = true;
+            this.skinLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel1.BorderColor = System.Drawing.Color.White;
+            this.skinLabel1.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skinLabel1.Location = new System.Drawing.Point(32, 80);
+            this.skinLabel1.Name = "skinLabel1";
+            this.skinLabel1.Size = new System.Drawing.Size(49, 14);
+            this.skinLabel1.TabIndex = 20;
+            this.skinLabel1.Text = "上传端";
             // 
-            // skinLabel3
+            // id
             // 
-            this.skinLabel3.AutoSize = true;
-            this.skinLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel3.BorderColor = System.Drawing.Color.White;
-            this.skinLabel3.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinLabel3.Location = new System.Drawing.Point(512, 264);
-            this.skinLabel3.Name = "skinLabel3";
-            this.skinLabel3.Size = new System.Drawing.Size(147, 14);
-            this.skinLabel3.TabIndex = 3;
-            this.skinLabel3.Text = "解压完整路径文件名称";
+            this.id.AutoSize = true;
+            this.id.BackColor = System.Drawing.Color.Transparent;
+            this.id.BorderColor = System.Drawing.Color.White;
+            this.id.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.id.Location = new System.Drawing.Point(40, 48);
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(18, 14);
+            this.id.TabIndex = 19;
+            this.id.Text = "id";
             // 
-            // skinLabel4
+            // skinButton3
             // 
-            this.skinLabel4.AutoSize = true;
-            this.skinLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel4.BorderColor = System.Drawing.Color.White;
-            this.skinLabel4.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinLabel4.Location = new System.Drawing.Point(512, 104);
-            this.skinLabel4.Name = "skinLabel4";
-            this.skinLabel4.Size = new System.Drawing.Size(147, 14);
-            this.skinLabel4.TabIndex = 4;
-            this.skinLabel4.Text = "压缩到哪个路径及名称";
+            this.skinButton3.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton3.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton3.DownBack = null;
+            this.skinButton3.Location = new System.Drawing.Point(616, 384);
+            this.skinButton3.MouseBack = null;
+            this.skinButton3.Name = "skinButton3";
+            this.skinButton3.NormlBack = null;
+            this.skinButton3.Size = new System.Drawing.Size(75, 23);
+            this.skinButton3.TabIndex = 18;
+            this.skinButton3.Text = "退出";
+            this.skinButton3.UseVisualStyleBackColor = false;
+            this.skinButton3.Click += new System.EventHandler(this.skinButton3_Click);
             // 
-            // skinLabel5
+            // skinButton2
             // 
-            this.skinLabel5.AutoSize = true;
-            this.skinLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel5.BorderColor = System.Drawing.Color.White;
-            this.skinLabel5.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinLabel5.Location = new System.Drawing.Point(32, 264);
-            this.skinLabel5.Name = "skinLabel5";
-            this.skinLabel5.Size = new System.Drawing.Size(119, 14);
-            this.skinLabel5.TabIndex = 5;
-            this.skinLabel5.Text = "需要压缩的文件夹";
+            this.skinButton2.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton2.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton2.DownBack = null;
+            this.skinButton2.Location = new System.Drawing.Point(512, 24);
+            this.skinButton2.MouseBack = null;
+            this.skinButton2.Name = "skinButton2";
+            this.skinButton2.NormlBack = null;
+            this.skinButton2.Size = new System.Drawing.Size(75, 23);
+            this.skinButton2.TabIndex = 17;
+            this.skinButton2.Text = "更新";
+            this.skinButton2.UseVisualStyleBackColor = false;
+            this.skinButton2.Click += new System.EventHandler(this.skinButton2_Click);
             // 
-            // skinLabel6
+            // skinButton1
             // 
-            this.skinLabel6.AutoSize = true;
-            this.skinLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel6.BorderColor = System.Drawing.Color.White;
-            this.skinLabel6.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinLabel6.Location = new System.Drawing.Point(272, 104);
-            this.skinLabel6.Name = "skinLabel6";
-            this.skinLabel6.Size = new System.Drawing.Size(175, 14);
-            this.skinLabel6.TabIndex = 6;
-            this.skinLabel6.Text = "选择上传路径（选择文件）";
+            this.skinButton1.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton1.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton1.DownBack = null;
+            this.skinButton1.Location = new System.Drawing.Point(616, 24);
+            this.skinButton1.MouseBack = null;
+            this.skinButton1.Name = "skinButton1";
+            this.skinButton1.NormlBack = null;
+            this.skinButton1.Size = new System.Drawing.Size(75, 23);
+            this.skinButton1.TabIndex = 16;
+            this.skinButton1.Text = "添加";
+            this.skinButton1.UseVisualStyleBackColor = false;
+            this.skinButton1.Click += new System.EventHandler(this.skinButton1_Click);
             // 
-            // skinLabel7
+            // zipedfilename2
             // 
-            this.skinLabel7.AutoSize = true;
-            this.skinLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel7.BorderColor = System.Drawing.Color.White;
-            this.skinLabel7.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinLabel7.Location = new System.Drawing.Point(272, 264);
-            this.skinLabel7.Name = "skinLabel7";
-            this.skinLabel7.Size = new System.Drawing.Size(161, 14);
-            this.skinLabel7.TabIndex = 7;
-            this.skinLabel7.Text = "下载到的路径（文件夹）";
+            this.zipedfilename2.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
+            this.zipedfilename2.Location = new System.Drawing.Point(504, 296);
+            this.zipedfilename2.Name = "zipedfilename2";
+            this.zipedfilename2.Size = new System.Drawing.Size(184, 80);
+            this.zipedfilename2.TabIndex = 15;
+            this.zipedfilename2.Text = "1222222222222222222222222222222222222222222222222222222";
+            this.zipedfilename2.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
             // 
-            // skinLabel8
+            // zipedfilename
             // 
-            this.skinLabel8.AutoSize = true;
-            this.skinLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel8.BorderColor = System.Drawing.Color.White;
-            this.skinLabel8.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinLabel8.Location = new System.Drawing.Point(32, 104);
-            this.skinLabel8.Name = "skinLabel8";
-            this.skinLabel8.Size = new System.Drawing.Size(161, 14);
-            this.skinLabel8.TabIndex = 8;
-            this.skinLabel8.Text = "需要传到的路径（网盘）";
+            this.zipedfilename.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
+            this.zipedfilename.Location = new System.Drawing.Point(504, 136);
+            this.zipedfilename.Name = "zipedfilename";
+            this.zipedfilename.Size = new System.Drawing.Size(184, 80);
+            this.zipedfilename.TabIndex = 14;
+            this.zipedfilename.Text = "1222222222222222222222222222222222222222222222222222222";
+            this.zipedfilename.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
+            // 
+            // foldertozip
+            // 
+            this.foldertozip.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
+            this.foldertozip.Location = new System.Drawing.Point(24, 296);
+            this.foldertozip.Name = "foldertozip";
+            this.foldertozip.Size = new System.Drawing.Size(208, 80);
+            this.foldertozip.TabIndex = 13;
+            this.foldertozip.Text = "1222222222222222222222222222222222222222222222222222222";
+            this.foldertozip.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
+            // 
+            // filepath
+            // 
+            this.filepath.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
+            this.filepath.Location = new System.Drawing.Point(264, 136);
+            this.filepath.Name = "filepath";
+            this.filepath.Size = new System.Drawing.Size(208, 80);
+            this.filepath.TabIndex = 12;
+            this.filepath.Text = "1222222222222222222222222222222222222222222222222222222";
+            this.filepath.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
+            // 
+            // localitypath
+            // 
+            this.localitypath.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
+            this.localitypath.Location = new System.Drawing.Point(264, 296);
+            this.localitypath.Name = "localitypath";
+            this.localitypath.Size = new System.Drawing.Size(200, 80);
+            this.localitypath.TabIndex = 11;
+            this.localitypath.Text = "1222222222222222222222222222222222222222222222222222222";
+            this.localitypath.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
+            // 
+            // path
+            // 
+            this.path.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
+            this.path.Location = new System.Drawing.Point(32, 136);
+            this.path.Name = "path";
+            this.path.Size = new System.Drawing.Size(200, 80);
+            this.path.TabIndex = 10;
+            this.path.Text = "path";
+            this.path.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
             // 
             // name
             // 
@@ -292,134 +337,89 @@
             this.name.WaterText = "";
             this.name.WordWrap = true;
             // 
-            // path
+            // skinLabel8
             // 
-            this.path.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
-            this.path.Location = new System.Drawing.Point(32, 136);
-            this.path.Name = "path";
-            this.path.Size = new System.Drawing.Size(200, 80);
-            this.path.TabIndex = 10;
-            this.path.Text = "path";
-            this.path.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
+            this.skinLabel8.AutoSize = true;
+            this.skinLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel8.BorderColor = System.Drawing.Color.White;
+            this.skinLabel8.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skinLabel8.Location = new System.Drawing.Point(32, 104);
+            this.skinLabel8.Name = "skinLabel8";
+            this.skinLabel8.Size = new System.Drawing.Size(161, 14);
+            this.skinLabel8.TabIndex = 8;
+            this.skinLabel8.Text = "需要传到的路径（网盘）";
             // 
-            // localitypath
+            // skinLabel7
             // 
-            this.localitypath.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
-            this.localitypath.Location = new System.Drawing.Point(264, 296);
-            this.localitypath.Name = "localitypath";
-            this.localitypath.Size = new System.Drawing.Size(200, 80);
-            this.localitypath.TabIndex = 11;
-            this.localitypath.Text = "1222222222222222222222222222222222222222222222222222222";
-            this.localitypath.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
+            this.skinLabel7.AutoSize = true;
+            this.skinLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel7.BorderColor = System.Drawing.Color.White;
+            this.skinLabel7.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skinLabel7.Location = new System.Drawing.Point(272, 264);
+            this.skinLabel7.Name = "skinLabel7";
+            this.skinLabel7.Size = new System.Drawing.Size(161, 14);
+            this.skinLabel7.TabIndex = 7;
+            this.skinLabel7.Text = "下载到的路径（文件夹）";
             // 
-            // filepath
+            // skinLabel6
             // 
-            this.filepath.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
-            this.filepath.Location = new System.Drawing.Point(264, 136);
-            this.filepath.Name = "filepath";
-            this.filepath.Size = new System.Drawing.Size(208, 80);
-            this.filepath.TabIndex = 12;
-            this.filepath.Text = "1222222222222222222222222222222222222222222222222222222";
-            this.filepath.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
+            this.skinLabel6.AutoSize = true;
+            this.skinLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel6.BorderColor = System.Drawing.Color.White;
+            this.skinLabel6.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skinLabel6.Location = new System.Drawing.Point(272, 104);
+            this.skinLabel6.Name = "skinLabel6";
+            this.skinLabel6.Size = new System.Drawing.Size(175, 14);
+            this.skinLabel6.TabIndex = 6;
+            this.skinLabel6.Text = "选择上传路径（选择文件）";
             // 
-            // foldertozip
+            // skinLabel5
             // 
-            this.foldertozip.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
-            this.foldertozip.Location = new System.Drawing.Point(24, 296);
-            this.foldertozip.Name = "foldertozip";
-            this.foldertozip.Size = new System.Drawing.Size(208, 80);
-            this.foldertozip.TabIndex = 13;
-            this.foldertozip.Text = "1222222222222222222222222222222222222222222222222222222";
-            this.foldertozip.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
+            this.skinLabel5.AutoSize = true;
+            this.skinLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel5.BorderColor = System.Drawing.Color.White;
+            this.skinLabel5.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skinLabel5.Location = new System.Drawing.Point(32, 264);
+            this.skinLabel5.Name = "skinLabel5";
+            this.skinLabel5.Size = new System.Drawing.Size(119, 14);
+            this.skinLabel5.TabIndex = 5;
+            this.skinLabel5.Text = "需要压缩的文件夹";
             // 
-            // zipedfilename
+            // skinLabel4
             // 
-            this.zipedfilename.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
-            this.zipedfilename.Location = new System.Drawing.Point(504, 136);
-            this.zipedfilename.Name = "zipedfilename";
-            this.zipedfilename.Size = new System.Drawing.Size(184, 80);
-            this.zipedfilename.TabIndex = 14;
-            this.zipedfilename.Text = "1222222222222222222222222222222222222222222222222222222";
-            this.zipedfilename.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
+            this.skinLabel4.AutoSize = true;
+            this.skinLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel4.BorderColor = System.Drawing.Color.White;
+            this.skinLabel4.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skinLabel4.Location = new System.Drawing.Point(512, 104);
+            this.skinLabel4.Name = "skinLabel4";
+            this.skinLabel4.Size = new System.Drawing.Size(147, 14);
+            this.skinLabel4.TabIndex = 4;
+            this.skinLabel4.Text = "压缩到哪个路径及名称";
             // 
-            // zipedfilename2
+            // skinLabel3
             // 
-            this.zipedfilename2.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
-            this.zipedfilename2.Location = new System.Drawing.Point(504, 296);
-            this.zipedfilename2.Name = "zipedfilename2";
-            this.zipedfilename2.Size = new System.Drawing.Size(184, 80);
-            this.zipedfilename2.TabIndex = 15;
-            this.zipedfilename2.Text = "1222222222222222222222222222222222222222222222222222222";
-            this.zipedfilename2.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
+            this.skinLabel3.AutoSize = true;
+            this.skinLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel3.BorderColor = System.Drawing.Color.White;
+            this.skinLabel3.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skinLabel3.Location = new System.Drawing.Point(512, 264);
+            this.skinLabel3.Name = "skinLabel3";
+            this.skinLabel3.Size = new System.Drawing.Size(147, 14);
+            this.skinLabel3.TabIndex = 3;
+            this.skinLabel3.Text = "解压完整路径文件名称";
             // 
-            // skinButton1
+            // wqw
             // 
-            this.skinButton1.BackColor = System.Drawing.Color.Transparent;
-            this.skinButton1.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinButton1.DownBack = null;
-            this.skinButton1.Location = new System.Drawing.Point(616, 24);
-            this.skinButton1.MouseBack = null;
-            this.skinButton1.Name = "skinButton1";
-            this.skinButton1.NormlBack = null;
-            this.skinButton1.Size = new System.Drawing.Size(75, 23);
-            this.skinButton1.TabIndex = 16;
-            this.skinButton1.Text = "添加";
-            this.skinButton1.UseVisualStyleBackColor = false;
-            this.skinButton1.Click += new System.EventHandler(this.skinButton1_Click);
-            // 
-            // skinButton2
-            // 
-            this.skinButton2.BackColor = System.Drawing.Color.Transparent;
-            this.skinButton2.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinButton2.DownBack = null;
-            this.skinButton2.Location = new System.Drawing.Point(512, 24);
-            this.skinButton2.MouseBack = null;
-            this.skinButton2.Name = "skinButton2";
-            this.skinButton2.NormlBack = null;
-            this.skinButton2.Size = new System.Drawing.Size(75, 23);
-            this.skinButton2.TabIndex = 17;
-            this.skinButton2.Text = "更新";
-            this.skinButton2.UseVisualStyleBackColor = false;
-            this.skinButton2.Click += new System.EventHandler(this.skinButton2_Click);
-            // 
-            // skinButton3
-            // 
-            this.skinButton3.BackColor = System.Drawing.Color.Transparent;
-            this.skinButton3.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinButton3.DownBack = null;
-            this.skinButton3.Location = new System.Drawing.Point(616, 384);
-            this.skinButton3.MouseBack = null;
-            this.skinButton3.Name = "skinButton3";
-            this.skinButton3.NormlBack = null;
-            this.skinButton3.Size = new System.Drawing.Size(75, 23);
-            this.skinButton3.TabIndex = 18;
-            this.skinButton3.Text = "退出";
-            this.skinButton3.UseVisualStyleBackColor = false;
-            this.skinButton3.Click += new System.EventHandler(this.skinButton3_Click);
-            // 
-            // id
-            // 
-            this.id.AutoSize = true;
-            this.id.BackColor = System.Drawing.Color.Transparent;
-            this.id.BorderColor = System.Drawing.Color.White;
-            this.id.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.id.Location = new System.Drawing.Point(40, 48);
-            this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(18, 14);
-            this.id.TabIndex = 19;
-            this.id.Text = "id";
-            // 
-            // skinLabel1
-            // 
-            this.skinLabel1.AutoSize = true;
-            this.skinLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel1.BorderColor = System.Drawing.Color.White;
-            this.skinLabel1.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinLabel1.Location = new System.Drawing.Point(32, 80);
-            this.skinLabel1.Name = "skinLabel1";
-            this.skinLabel1.Size = new System.Drawing.Size(49, 14);
-            this.skinLabel1.TabIndex = 20;
-            this.skinLabel1.Text = "上传端";
+            this.wqw.AutoSize = true;
+            this.wqw.BackColor = System.Drawing.Color.Transparent;
+            this.wqw.BorderColor = System.Drawing.Color.White;
+            this.wqw.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wqw.Location = new System.Drawing.Point(72, 48);
+            this.wqw.Name = "wqw";
+            this.wqw.Size = new System.Drawing.Size(63, 14);
+            this.wqw.TabIndex = 0;
+            this.wqw.Text = "程序名称";
             // 
             // FileConfiguration
             // 
@@ -433,7 +433,9 @@
             this.MainMenuStrip = this.skinMenuStrip1;
             this.Name = "FileConfiguration";
             this.Text = "FileConfiguration";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FileConfiguration_FormClosing);
             this.Load += new System.EventHandler(this.FileConfiguration_Load);
+            this.Resize += new System.EventHandler(this.FileConfiguration_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.skinMenuStrip1.ResumeLayout(false);
             this.skinMenuStrip1.PerformLayout();

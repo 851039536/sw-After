@@ -35,6 +35,9 @@ namespace After_Test
             genericForm.Loadcontrol();
         }
 
+       
+
+
         private void Form1_Resize(object sender, EventArgs e)
         {
             ClassControl control = new ClassControl();

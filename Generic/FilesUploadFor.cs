@@ -127,6 +127,7 @@ namespace After_Test.Generic
         public static void ZipDirectory(string folderToZip, string zipedFileName)
         {
             ZipDirectory(folderToZip, zipedFileName, string.Empty, true, string.Empty, string.Empty, true);
+              GenericForm.DisplaylistboxMsg("压缩完成");
         }
  
  

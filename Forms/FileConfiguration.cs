@@ -21,9 +21,15 @@ namespace After_Test.Forms
             InitializeComponent();
             fileConfiguration = this;
         }
-
+         private ClassControl ctl = new ClassControl();
         private void FileConfiguration_Load(object sender, EventArgs e)
         {
+             GenericForm._x = Form1.form1.Width;
+             GenericForm._y = Form1.form1.Height;
+             GenericForm._x1 =GenericForm ._x;
+             GenericForm._y1 = GenericForm._y;
+             ctl.setTag(this);
+
             dataGridView1.ReadOnly = true;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
             Query();
@@ -171,6 +177,19 @@ namespace After_Test.Forms
 
         private void skinPanel1_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void FileConfiguration_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void FileConfiguration_Resize(object sender, EventArgs e)
+        {
+            ClassControl control = new ClassControl();
+            float newX =Width;
+            float newY =Height;
+            control.setControls(newX / GenericForm._x, newY / GenericForm._y, this);
         }
     }
 }

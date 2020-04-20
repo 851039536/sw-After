@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 using After.Manager;
 using After.Model;
 using After_Test.Generic;
@@ -60,9 +61,10 @@ namespace After_Test.Forms
             button1.Text = @"上传中，请稍等";
             button1.Enabled = false;
             string path = textBox1.Text;
-            CopyDirs(textBox3.Text, path);
-            button1.Text = @"上传";
-            button1.Enabled = true;
+            Task copy = new Task(()=> CopyDirs(textBox3.Text, path));
+            copy.Start();
+           
+            
         }
 
         private void CopyDirs(string srcPath, string aimPath)
@@ -106,7 +108,11 @@ namespace After_Test.Forms
             catch (Exception e)
             {
                 GenericForm.DisplaylistboxMsg("上传失败" + e.Message);
-            }
+            }finally{ 
+                
+                button1.Text = @"上传";
+                button1.Enabled = true;
+                }
         }
 
         private void CopyDir(string srcPath, string aimPath)
@@ -174,8 +180,8 @@ namespace After_Test.Forms
 
         private void skinButton1_Click(object sender, EventArgs e)
         {
-            FilesUploadFor.ZipDirectory(foldertozip.Text, zipedfilename.Text);
-            GenericForm.DisplaylistboxMsg("压缩完成");
+            Task zip = new Task(()=>  FilesUploadFor.ZipDirectory(foldertozip.Text, zipedfilename.Text));
+          zip.Start();
         }
 
         private void skinButton2_Click(object sender, EventArgs e)
