@@ -62,6 +62,7 @@
             this.数据还原ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new CCWin.SkinControl.SkinLabel();
             this.StaionType = new CCWin.SkinControl.SkinListBox();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.skinGroupBox1.SuspendLayout();
             this.skinGroupBox2.SuspendLayout();
@@ -339,7 +340,8 @@
             this.skinMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.选项ToolStripMenuItem,
             this.帮助ToolStripMenuItem1,
-            this.用户ToolStripMenuItem});
+            this.用户ToolStripMenuItem,
+            this.testToolStripMenuItem});
             this.skinMenuStrip1.Location = new System.Drawing.Point(4, 32);
             this.skinMenuStrip1.Name = "skinMenuStrip1";
             this.skinMenuStrip1.RadiusStyle = CCWin.SkinClass.RoundStyle.All;
@@ -364,14 +366,14 @@
             // config配置ToolStripMenuItem
             // 
             this.config配置ToolStripMenuItem.Name = "config配置ToolStripMenuItem";
-            this.config配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.config配置ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.config配置ToolStripMenuItem.Text = "Config配置";
             this.config配置ToolStripMenuItem.Click += new System.EventHandler(this.config配置ToolStripMenuItem_Click);
             // 
             // 功能配置ToolStripMenuItem
             // 
             this.功能配置ToolStripMenuItem.Name = "功能配置ToolStripMenuItem";
-            this.功能配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.功能配置ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.功能配置ToolStripMenuItem.Text = "功能配置";
             this.功能配置ToolStripMenuItem.Click += new System.EventHandler(this.功能配置ToolStripMenuItem_Click);
             // 
@@ -464,6 +466,13 @@
             this.StaionType.Size = new System.Drawing.Size(504, 325);
             this.StaionType.TabIndex = 95;
             // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.testToolStripMenuItem.Text = "Test";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -531,6 +540,7 @@
         public CCWin.SkinControl.SkinListBox StaionType;
         private System.Windows.Forms.ToolStripMenuItem 文件配置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 数据还原ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
     }
 }
 

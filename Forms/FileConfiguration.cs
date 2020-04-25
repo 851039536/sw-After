@@ -24,8 +24,8 @@ namespace After_Test.Forms
          private ClassControl ctl = new ClassControl();
         private void FileConfiguration_Load(object sender, EventArgs e)
         {
-             GenericForm._x = Form1.form1.Width;
-             GenericForm._y = Form1.form1.Height;
+             GenericForm._x = GenericForm.Form1.Width;
+             GenericForm._y = GenericForm.Form1.Height;
              GenericForm._x1 =GenericForm ._x;
              GenericForm._y1 = GenericForm._y;
              ctl.setTag(this);

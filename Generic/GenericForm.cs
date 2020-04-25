@@ -20,7 +20,7 @@ namespace After_Test.Generic
         private AlltestitemManager alltestitem = new AlltestitemManager();
 
         private TestitemManager testitem = new TestitemManager();
-
+         public static Form1 Form1;
 
         /// <summary>
         /// 首次加载初始化
@@ -28,13 +28,13 @@ namespace After_Test.Generic
         public void Firstload()
         {
 
-            Form1.form1.SAVE.Enabled = false;
+            GenericForm.Form1.SAVE.Enabled = false;
 
-            // Form1.form1.label1.Text = Type2.User1; //用户
-            Form1.form1.label4.Text = @"注:左边为待选功能，右边为需要测试的功能先锁定再更新保存";
-            Form1.form1.label4.ForeColor = Color.Red;
-            _x = Form1.form1.Width;
-            _y = Form1.form1.Height;
+            //GenericForm.form1.label1.Text = Type2.User1; //用户
+           GenericForm.Form1.label4.Text = @"注:左边为待选功能，右边为需要测试的功能先锁定再更新保存";
+           GenericForm.Form1.label4.ForeColor = Color.Red;
+            _x =GenericForm.Form1.Width;
+            _y =GenericForm.Form1.Height;
             _x1 = _x;
             _y1 = _y;
         }
@@ -52,10 +52,10 @@ namespace After_Test.Generic
                 for (int j = 0; j < allstring.Count; j++)
                 {
                     string y = allstring[j];
-                    Form1.form1.TypeNameBox.Items.Add(new SkinListBoxItem(y));
+                   GenericForm.Form1.TypeNameBox.Items.Add(new SkinListBoxItem(y));
                     i++;
                 }
-                Form1.form1.TypeNameBox.SelectedIndex = 1;
+               GenericForm.Form1.TypeNameBox.SelectedIndex = 1;
 
                 DisplaylistboxMsg("加载测试机型完成");
 
@@ -75,11 +75,11 @@ namespace After_Test.Generic
             try
             {
                 string _testistBox;
-                _testistBox = Convert.ToString(Form1.form1.TypeNameBox.SelectedItem); //单击获取当前选中行的内容
+                _testistBox = Convert.ToString(GenericForm.Form1.TypeNameBox.SelectedItem); //单击获取当前选中行的内容
                 if (_testistBox != "")
                 {
-                    Form1.form1.ContentBox.Items.Clear();
-                    // Form1.form1.listBoxControl2.Items.Clear();
+                   GenericForm.Form1.ContentBox.Items.Clear();
+                    //GenericForm.form1.listBoxControl2.Items.Clear();
 
                     ComboBox1SelectedIndexChanged();
                     // Querycheck();
@@ -96,26 +96,26 @@ namespace After_Test.Generic
             try
             {
                 string _testistBox;
-                _testistBox = Convert.ToString(Form1.form1.TypeNameBox.SelectedItem); //单击获取当前选中行的内容
+                _testistBox = Convert.ToString(GenericForm.Form1.TypeNameBox.SelectedItem); //单击获取当前选中行的内容
                 Type2.TypeName = _testistBox;
                 List<string> miscelistS = testitem.QueryStation(Type2.TypeName);
-                Form1.form1.StationBox.Items.Clear();
+               GenericForm.Form1.StationBox.Items.Clear();
                 foreach (var t in miscelistS)
                 {
-                    Form1.form1.StationBox.Items.Add(t);
+                   GenericForm.Form1.StationBox.Items.Add(t);
                 }
 
-                Form1.form1.StationBox.SelectedIndex = 0;
+               GenericForm.Form1.StationBox.SelectedIndex = 0;
                 if (_testistBox != "")
                 {
-                    Form1.form1.ContentBox.Items.Clear();
-                    Form1.form1.StaionType.Items.Clear();
+                   GenericForm.Form1.ContentBox.Items.Clear();
+                   GenericForm.Form1.StaionType.Items.Clear();
 
                     ComboBox1SelectedIndexChanged();
                     List<string> alllist1 = alltestitem.LoadTestProject(Type2.TypeName);
                     for (int i = 0; i < alllist1.Count; i++)
                     {
-                        Form1.form1.ContentBox.Items.Add(new SkinListBoxItem(alllist1[i]));
+                       GenericForm.Form1.ContentBox.Items.Add(new SkinListBoxItem(alllist1[i]));
                     }
                 }
             }
@@ -130,11 +130,11 @@ namespace After_Test.Generic
         /// </summary>
         public void ComboBox1SelectedIndexChanged()
         {
-            Form1.form1.StaionType.Items.Clear();
-            List<string> alllist1 = testitem.GetTestitemProjectList(Type2.TypeName, Form1.form1.StationBox.Text);
+           GenericForm.Form1.StaionType.Items.Clear();
+            List<string> alllist1 = testitem.GetTestitemProjectList(Type2.TypeName,GenericForm.Form1.StationBox.Text);
             for (int i = 0; i < alllist1.Count; i++)
             {
-                Form1.form1.StaionType.Items.Add(new SkinListBoxItem(alllist1[i]));
+               GenericForm.Form1.StaionType.Items.Add(new SkinListBoxItem(alllist1[i]));
             }
         }
 
@@ -143,10 +143,10 @@ namespace After_Test.Generic
         /// </summary>
         public void butAdd()
         {
-            string listBoxControl3 = Convert.ToString(Form1.form1.ContentBox.SelectedItem);
+            string listBoxControl3 = Convert.ToString(GenericForm.Form1.ContentBox.SelectedItem);
 
             //双击击获取当前选中行的内容
-            SkinListBoxItemCollection ss = Form1.form1.StaionType.Items;
+            SkinListBoxItemCollection ss =GenericForm.Form1.StaionType.Items;
 
             for (int i = 0; i < ss.Count; i++)
             {
@@ -163,7 +163,7 @@ namespace After_Test.Generic
             //    }
             //}
 
-            Form1.form1.StaionType.Items.Add(new SkinListBoxItem(listBoxControl3));
+           GenericForm.Form1.StaionType.Items.Add(new SkinListBoxItem(listBoxControl3));
         }
 
         /// <summary>
@@ -171,14 +171,14 @@ namespace After_Test.Generic
         /// </summary>
         public void butDelete()
         {
-            int index1 = Form1.form1.StaionType.SelectedIndex;
-            if (Form1.form1.StaionType.SelectedItem != null)
+            int index1 =GenericForm.Form1.StaionType.SelectedIndex;
+            if (GenericForm.Form1.StaionType.SelectedItem != null)
             {
-                Form1.form1.StaionType.Items.RemoveAt(index1);
-                if (Form1.form1.StaionType.Items.Count > 0)
+               GenericForm.Form1.StaionType.Items.RemoveAt(index1);
+                if (GenericForm.Form1.StaionType.Items.Count > 0)
                 {
                     //默认选中第一行
-                    Form1.form1.StaionType.SelectedIndex = 0;
+                   GenericForm.Form1.StaionType.SelectedIndex = 0;
                 }
             }
             else
@@ -192,23 +192,24 @@ namespace After_Test.Generic
         /// </summary>
         public void butUP()
         {
-            //int index = Form1.form1.listBoxControl2.SelectedIndex;
+            //int index =GenericForm.form1.listBoxControl2.SelectedIndex;
             //if (index > 0)
             //{
-            //    object item = Form1.form1.listBoxControl2.SelectedItem;
-            //    Form1.form1.listBoxControl2.Items.Remove(item);
-            //    Form1.form1.listBoxControl2.Items.Insert(index - 1, item);
-            //    Form1.form1.listBoxControl2.SelectedIndex = index - 1;
+            //    object item =GenericForm.form1.listBoxControl2.SelectedItem;
+            //   GenericForm.form1.listBoxControl2.Items.Remove(item);
+            //   GenericForm.form1.listBoxControl2.Items.Insert(index - 1, item);
+            //   GenericForm.form1.listBoxControl2.SelectedIndex = index - 1;
             //}
 
-            int index1 = Form1.form1.StaionType.SelectedIndex;
+            int index1 =GenericForm.Form1.StaionType.SelectedIndex;
             if (index1 > 0)
             {
-                SkinListBoxItem item = new SkinListBoxItem(Form1.form1.StaionType.SelectedItem.ToString());
-                Form1.form1.StaionType.Items.RemoveAt(index1);
-                Form1.form1.StaionType.Items.Insert(index1 - 1, item);
-                Form1.form1.StaionType.SelectedIndex = index1 - 1;
+                SkinListBoxItem item = new SkinListBoxItem(GenericForm.Form1.StaionType.SelectedItem.ToString());
+               GenericForm.Form1.StaionType.Items.RemoveAt(index1);
+               GenericForm.Form1.StaionType.Items.Insert(index1 - 1, item);
+               GenericForm.Form1.StaionType.SelectedIndex = index1 - 1;
             }
+           
         }
 
         /// <summary>
@@ -218,22 +219,22 @@ namespace After_Test.Generic
         {
             try
             {
-                // int index = Form1.form1.listBoxControl2.SelectedIndex;
-                // if (index < Form1.form1.listBoxControl2.Items.Count - 1)
+                // int index =GenericForm.form1.listBoxControl2.SelectedIndex;
+                // if (index <GenericForm.form1.listBoxControl2.Items.Count - 1)
                 // {
-                //     object item = Form1.form1.listBoxControl2.SelectedItem;
-                //     Form1.form1.listBoxControl2.Items.Remove(item);
-                //     Form1.form1.listBoxControl2.Items.Insert(index + 1, item);
-                //     Form1.form1.listBoxControl2.SelectedIndex = index + 1;
+                //     object item =GenericForm.form1.listBoxControl2.SelectedItem;
+                //    GenericForm.form1.listBoxControl2.Items.Remove(item);
+                //    GenericForm.form1.listBoxControl2.Items.Insert(index + 1, item);
+                //    GenericForm.form1.listBoxControl2.SelectedIndex = index + 1;
                 // }
 
-                int index1 = Form1.form1.StaionType.SelectedIndex;
-                if (index1 < Form1.form1.StaionType.Items.Count - 1)
+                int index1 =GenericForm.Form1.StaionType.SelectedIndex;
+                if (index1 <GenericForm.Form1.StaionType.Items.Count - 1)
                 {
-                    SkinListBoxItem item = new SkinListBoxItem(Form1.form1.StaionType.SelectedItem.ToString());
-                    Form1.form1.StaionType.Items.RemoveAt(index1);
-                    Form1.form1.StaionType.Items.Insert(index1 + 1, item);
-                    Form1.form1.StaionType.SelectedIndex = index1 + 1;
+                    SkinListBoxItem item = new SkinListBoxItem(GenericForm.Form1.StaionType.SelectedItem.ToString());
+                   GenericForm.Form1.StaionType.Items.RemoveAt(index1);
+                   GenericForm.Form1.StaionType.Items.Insert(index1 + 1, item);
+                   GenericForm.Form1.StaionType.SelectedIndex = index1 + 1;
                 }
             }
             catch (Exception ex)
@@ -245,33 +246,33 @@ namespace After_Test.Generic
         /// <summary>
         /// 锁定按钮
         /// </summary>
-        public void butLock()
+        public void ButLock()
         {
             if (_locker)
             {
-                Form1.form1.StaionType.Enabled = false;
-                Form1.form1.ContentBox.Enabled = false;
-                Form1.form1.ADD.Enabled = false;
-                Form1.form1.DELETE.Enabled = false;
-                Form1.form1.UP.Enabled = false;
-                Form1.form1.DOWN.Enabled = false;
-                Form1.form1.SAVE.Enabled = true;
-                Form1.form1.LOCK.Text = @"解除锁定";
+               GenericForm.Form1.StaionType.Enabled = false;
+               GenericForm.Form1.ContentBox.Enabled = false;
+               GenericForm.Form1.ADD.Enabled = false;
+               GenericForm.Form1.DELETE.Enabled = false;
+               GenericForm.Form1.UP.Enabled = false;
+               GenericForm.Form1.DOWN.Enabled = false;
+               GenericForm.Form1.SAVE.Enabled = true;
+               GenericForm.Form1.LOCK.Text = @"解除锁定";
                 _locker = false;
-                Form1.form1.StationBox.Enabled = false;
+               GenericForm.Form1.StationBox.Enabled = false;
             }
             else
             {
-                Form1.form1.StaionType.Enabled = true;
-                Form1.form1.ContentBox.Enabled = true;
-                Form1.form1.ADD.Enabled = true;
-                Form1.form1.DELETE.Enabled = true;
-                Form1.form1.UP.Enabled = true;
-                Form1.form1.DOWN.Enabled = true;
-                Form1.form1.SAVE.Enabled = false;
-                Form1.form1.LOCK.Text = @"锁定";
+               GenericForm.Form1.StaionType.Enabled = true;
+               GenericForm.Form1.ContentBox.Enabled = true;
+               GenericForm.Form1.ADD.Enabled = true;
+               GenericForm.Form1.DELETE.Enabled = true;
+               GenericForm.Form1.UP.Enabled = true;
+               GenericForm.Form1.DOWN.Enabled = true;
+               GenericForm.Form1.SAVE.Enabled = false;
+               GenericForm.Form1.LOCK.Text = @"锁定";
                 _locker = true;
-                Form1.form1.StationBox.Enabled = true;
+               GenericForm.Form1.StationBox.Enabled = true;
             }
         }
 
@@ -281,22 +282,22 @@ namespace After_Test.Generic
         /// <param name="msg"></param>
         public static void DisplaylistboxMsg(string msg)
         {
-            if (Form1.form1.InvokeRequired)
+            if (GenericForm.Form1.InvokeRequired)
             {
-                Form1.form1.Invoke(new Action<string>(DisplaylistboxMsg), msg);
+               GenericForm.Form1.Invoke(new Action<string>(DisplaylistboxMsg), msg);
             }
             else
             {
                 if (msg.Contains("\r\n"))
                 {
-                    Form1.form1.MsgBox.Items.Add(new SkinListBoxItem("\r\n"));
+                   GenericForm.Form1.MsgBox.Items.Add(new SkinListBoxItem("\r\n"));
                 }
                 else
                 {
-                    Form1.form1.MsgBox.Items.Add(new SkinListBoxItem(string.Format("At {0:hh:mm:ss},{1}", DateTime.Now, msg)));
+                   GenericForm.Form1.MsgBox.Items.Add(new SkinListBoxItem(string.Format("At {0:hh:mm:ss},{1}", DateTime.Now, msg)));
                 }
 
-                if (Form1.form1.MsgBox.Items.Count > 0) Form1.form1.MsgBox.SelectedIndex = Form1.form1.MsgBox.Items.Count - 1;
+                if (GenericForm.Form1.MsgBox.Items.Count > 0)GenericForm.Form1.MsgBox.SelectedIndex =GenericForm.Form1.MsgBox.Items.Count - 1;
                 Application.DoEvents();
             }
         }
@@ -307,26 +308,26 @@ namespace After_Test.Generic
         /// </summary>
          public void SaveStaion()
         {
-            if (Form1.form1.StationBox.Text.Equals(""))
+            if (GenericForm.Form1.StationBox.Text.Equals(""))
             {
                 MessageBox.Show(@"站别不能为空");
                 return;
             }
 
-            bool test = testitem.DeleteSave(Form1.form1.StationBox.Text, Type2.TypeName);
+            bool test = testitem.DeleteSave(GenericForm.Form1.StationBox.Text, Type2.TypeName);
             if (test)
             {
                 LinkedList<string> ate = new LinkedList<string>();
-                SkinListBoxItemCollection ss = Form1.form1.StaionType.Items;
+                SkinListBoxItemCollection ss =GenericForm.Form1.StaionType.Items;
                 for (int i = 0; i < ss.Count; i++)
                 {
                     ate.AddLast(ss[i].ToString());
                 }
 
-                var zt = alltestitem.Sqlselect(Form1.form1.StationBox.Text, Type2.TypeName, ate);
+                var zt = alltestitem.Sqlselect(GenericForm.Form1.StationBox.Text, Type2.TypeName, ate);
                 if (zt == 1)
                 {
-                    GenericForm.DisplaylistboxMsg("站别：" + Form1.form1.StationBox.Text + "," + "机型：" + Type2.TypeName + "," + "更新完成");
+                    GenericForm.DisplaylistboxMsg("站别：" +GenericForm.Form1.StationBox.Text + "," + "机型：" + Type2.TypeName + "," + "更新完成");
                 }
                 else
                 {

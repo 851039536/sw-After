@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using After.Generic;
 using After_Test.Generic;
 using CCWin;
 
@@ -18,8 +19,11 @@ namespace After_Test.Forms
             Stationgorms = this;
         }
 
+         private ClassControl ctl = new ClassControl();
         private void StationForms_Load(object sender, EventArgs e)
         {
+    
+
             dataGridView1.ReadOnly = true;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
 
@@ -42,6 +46,11 @@ namespace After_Test.Forms
         private void button3_Click(object sender, EventArgs e)
         {
             sta.DelectStaion(Staiongs);
+        }
+
+        private void StationForms_Resize(object sender, EventArgs e)
+        {
+            
         }
     }
 }

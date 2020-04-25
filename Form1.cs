@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using After.Generic;
 using After_Test.Forms;
+using After_Test.FormTest;
 using After_Test.Generic;
 using CCWin;
 using DBUtility;
@@ -11,7 +12,7 @@ namespace After_Test
 {
     public partial class Form1 : Skin_Mac
     {
-        public static Form1 form1;
+     
         private AlltestitemManager alltestitem = new AlltestitemManager();
         private ClassControl ctl = new ClassControl();
         private GenericForm genericForm = new GenericForm();
@@ -21,15 +22,16 @@ namespace After_Test
         public Form1()
         {
             InitializeComponent();
-            form1 = this;
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            GenericForm.Form1 = this;
             CheckForIllegalCrossThreadCalls = false;
             genericForm.Firstload();
             ctl.setTag(this);
-            form1.WindowState = FormWindowState.Normal;
+            GenericForm.Form1.WindowState = FormWindowState.Normal;
 
             GenericForm.DisplaylistboxMsg("控件初始化完成！！！");
             genericForm.Loadcontrol();
@@ -41,8 +43,8 @@ namespace After_Test
         private void Form1_Resize(object sender, EventArgs e)
         {
             ClassControl control = new ClassControl();
-            float newX = form1.Width;
-            float newY = form1.Height;
+            float newX = GenericForm.Form1.Width;
+            float newY = GenericForm.Form1.Height;
             control.setControls(newX / GenericForm._x, newY / GenericForm._y, this);
         }
 
@@ -73,7 +75,7 @@ namespace After_Test
 
         private void LOCK_Click(object sender, EventArgs e)
         {
-            genericForm.butLock();
+            genericForm.ButLock();
         }
 
         private void SAVE_Click(object sender, EventArgs e)
@@ -159,6 +161,12 @@ namespace After_Test
          DataRestore dataRestore = new DataRestore();
          dataRestore.ShowDialog();
         
+        }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           FormTest1 f = new FormTest1();
+           f.Show();
         }
     }
 }

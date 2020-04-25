@@ -138,6 +138,7 @@
             this.Name = "StationForms";
             this.Text = "站别窗口";
             this.Load += new System.EventHandler(this.StationForms_Load);
+            this.Resize += new System.EventHandler(this.StationForms_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
