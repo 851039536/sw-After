@@ -60,9 +60,10 @@
             this.数据备份ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.用户管理ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.数据还原ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new CCWin.SkinControl.SkinLabel();
             this.StaionType = new CCWin.SkinControl.SkinListBox();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.StationBox2 = new CCWin.SkinControl.SkinListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.skinGroupBox1.SuspendLayout();
             this.skinGroupBox2.SuspendLayout();
@@ -96,7 +97,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Location = new System.Drawing.Point(391, 194);
+            this.panel3.Location = new System.Drawing.Point(394, 194);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(10, 398);
             this.panel3.TabIndex = 80;
@@ -135,7 +136,7 @@
             this.skinGroupBox1.BorderColor = System.Drawing.Color.Gainsboro;
             this.skinGroupBox1.Controls.Add(this.skinButton1);
             this.skinGroupBox1.ForeColor = System.Drawing.Color.SlateGray;
-            this.skinGroupBox1.Location = new System.Drawing.Point(272, 88);
+            this.skinGroupBox1.Location = new System.Drawing.Point(272, 84);
             this.skinGroupBox1.Name = "skinGroupBox1";
             this.skinGroupBox1.RectBackColor = System.Drawing.Color.Gainsboro;
             this.skinGroupBox1.RoundStyle = CCWin.SkinClass.RoundStyle.All;
@@ -158,7 +159,7 @@
             this.skinGroupBox2.Controls.Add(this.UP);
             this.skinGroupBox2.Controls.Add(this.DOWN);
             this.skinGroupBox2.ForeColor = System.Drawing.Color.LightSlateGray;
-            this.skinGroupBox2.Location = new System.Drawing.Point(376, 88);
+            this.skinGroupBox2.Location = new System.Drawing.Point(376, 84);
             this.skinGroupBox2.Name = "skinGroupBox2";
             this.skinGroupBox2.RectBackColor = System.Drawing.Color.Gainsboro;
             this.skinGroupBox2.RoundStyle = CCWin.SkinClass.RoundStyle.All;
@@ -421,22 +422,29 @@
             // 数据备份ToolStripMenuItem
             // 
             this.数据备份ToolStripMenuItem.Name = "数据备份ToolStripMenuItem";
-            this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.数据备份ToolStripMenuItem.Text = "数据备份";
             this.数据备份ToolStripMenuItem.Click += new System.EventHandler(this.数据备份ToolStripMenuItem_Click);
             // 
             // 用户管理ToolStripMenuItem1
             // 
             this.用户管理ToolStripMenuItem1.Name = "用户管理ToolStripMenuItem1";
-            this.用户管理ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.用户管理ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.用户管理ToolStripMenuItem1.Text = "用户管理";
             // 
             // 数据还原ToolStripMenuItem
             // 
             this.数据还原ToolStripMenuItem.Name = "数据还原ToolStripMenuItem";
-            this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.数据还原ToolStripMenuItem.Text = "数据还原";
             this.数据还原ToolStripMenuItem.Click += new System.EventHandler(this.数据还原ToolStripMenuItem_Click);
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.testToolStripMenuItem.Text = "Test";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
             // label4
             // 
@@ -463,21 +471,32 @@
             this.StaionType.Name = "StaionType";
             this.StaionType.RowBackColor1 = System.Drawing.Color.Gainsboro;
             this.StaionType.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.StaionType.Size = new System.Drawing.Size(504, 325);
+            this.StaionType.Size = new System.Drawing.Size(343, 325);
             this.StaionType.TabIndex = 95;
             // 
-            // testToolStripMenuItem
+            // StationBox2
             // 
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.testToolStripMenuItem.Text = "Test";
-            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            this.StationBox2.Back = null;
+            this.StationBox2.BackColor = System.Drawing.SystemColors.Menu;
+            this.StationBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.StationBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.StationBox2.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StationBox2.FormattingEnabled = true;
+            this.StationBox2.Location = new System.Drawing.Point(782, 192);
+            this.StationBox2.MouseColor = System.Drawing.Color.Gainsboro;
+            this.StationBox2.Name = "StationBox2";
+            this.StationBox2.RowBackColor1 = System.Drawing.Color.Gainsboro;
+            this.StationBox2.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.StationBox2.Size = new System.Drawing.Size(136, 325);
+            this.StationBox2.TabIndex = 96;
+            this.StationBox2.SelectedIndexChanged += new System.EventHandler(this.StationBox2_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 636);
+            this.Controls.Add(this.StationBox2);
             this.Controls.Add(this.StaionType);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.ContentBox);
@@ -541,6 +560,7 @@
         private System.Windows.Forms.ToolStripMenuItem 文件配置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 数据还原ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        public CCWin.SkinControl.SkinListBox StationBox2;
     }
 }
 

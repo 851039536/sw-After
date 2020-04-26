@@ -52,5 +52,11 @@ namespace After_Test.Forms
         {
             
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Staiongs = listBox1.SelectedItem.ToString();
+            sta.QueryStaion(Staiongs);
+        }
     }
 }

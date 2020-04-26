@@ -39,6 +39,7 @@ namespace After_Test.Generic
             foreach (var t in ConfigText)
             {
                 StationForms.Stationgorms.StaionBox.Items.Add(t);
+                StationForms.Stationgorms.listBox1.Items.Add(t);
             }
 
             StationForms.Stationgorms.StaionBox.SelectedIndex = 0;

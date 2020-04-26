@@ -36,15 +36,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // deleteBut
             // 
-            this.deleteBut.Location = new System.Drawing.Point(6, 35);
+            this.deleteBut.Location = new System.Drawing.Point(355, 39);
             this.deleteBut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.deleteBut.Name = "deleteBut";
-            this.deleteBut.Size = new System.Drawing.Size(50, 22);
+            this.deleteBut.Size = new System.Drawing.Size(50, 24);
             this.deleteBut.TabIndex = 58;
             this.deleteBut.Text = "删除";
             this.deleteBut.UseVisualStyleBackColor = true;
@@ -55,17 +56,17 @@
             this.StaionBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StaionBox.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.StaionBox.FormattingEnabled = true;
-            this.StaionBox.Location = new System.Drawing.Point(101, 35);
+            this.StaionBox.Location = new System.Drawing.Point(56, 40);
             this.StaionBox.Margin = new System.Windows.Forms.Padding(2);
             this.StaionBox.Name = "StaionBox";
-            this.StaionBox.Size = new System.Drawing.Size(68, 22);
+            this.StaionBox.Size = new System.Drawing.Size(87, 22);
             this.StaionBox.TabIndex = 56;
             this.StaionBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(174, 42);
+            this.label3.Location = new System.Drawing.Point(157, 44);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 14);
@@ -74,19 +75,19 @@
             // 
             // SaBut
             // 
-            this.SaBut.Location = new System.Drawing.Point(280, 35);
+            this.SaBut.Location = new System.Drawing.Point(287, 39);
             this.SaBut.Margin = new System.Windows.Forms.Padding(2);
             this.SaBut.Name = "SaBut";
             this.SaBut.Size = new System.Drawing.Size(56, 24);
             this.SaBut.TabIndex = 63;
-            this.SaBut.Text = "确定";
+            this.SaBut.Text = "添加";
             this.SaBut.UseVisualStyleBackColor = true;
             this.SaBut.Click += new System.EventHandler(this.button1_Click);
             // 
             // Station
             // 
             this.Station.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Station.Location = new System.Drawing.Point(212, 40);
+            this.Station.Location = new System.Drawing.Point(203, 43);
             this.Station.Margin = new System.Windows.Forms.Padding(2);
             this.Station.Name = "Station";
             this.Station.Size = new System.Drawing.Size(63, 17);
@@ -104,7 +105,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(62, 41);
+            this.label1.Location = new System.Drawing.Point(7, 44);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 14);
@@ -114,17 +115,28 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 64);
+            this.dataGridView1.Location = new System.Drawing.Point(115, 74);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(328, 264);
+            this.dataGridView1.Size = new System.Drawing.Size(294, 272);
             this.dataGridView1.TabIndex = 65;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 14;
+            this.listBox1.Location = new System.Drawing.Point(4, 75);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(105, 270);
+            this.listBox1.TabIndex = 66;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // StationForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 343);
+            this.ClientSize = new System.Drawing.Size(416, 357);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.SaBut);
@@ -154,5 +166,6 @@
         public System.Windows.Forms.Button SaBut;
         public System.Windows.Forms.TextBox Station;
         public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.ListBox listBox1;
     }
 }

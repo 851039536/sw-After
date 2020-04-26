@@ -168,5 +168,10 @@ namespace After_Test
            FormTest1 f = new FormTest1();
            f.Show();
         }
+
+        private void StationBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            genericForm.ComboBox1SelectedIndexChanged2();
+        }
     }
 }

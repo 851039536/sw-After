@@ -39,8 +39,8 @@ namespace After.Generic
             PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
             if (pi != null) pi.SetValue(dgv, setting, null);
         }
-
-          public static string constr = "server=localhost;uid=root;pwd=woshishui;database=test";
+          public static string constr = "server=10.55.22.34;uid=root;pwd=merryte;database=test";
+         //public static string constr = "server=localhost;uid=root;pwd=woshishui;database=test";
           public static MySqlConnection conn = new MySqlConnection(constr);
     }
 }

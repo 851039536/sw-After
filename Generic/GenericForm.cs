@@ -99,10 +99,12 @@ namespace After_Test.Generic
                 _testistBox = Convert.ToString(GenericForm.Form1.TypeNameBox.SelectedItem); //单击获取当前选中行的内容
                 Type2.TypeName = _testistBox;
                 List<string> miscelistS = testitem.QueryStation(Type2.TypeName);
-               GenericForm.Form1.StationBox.Items.Clear();
+                GenericForm.Form1.StationBox.Items.Clear();
+                GenericForm.Form1.StationBox2.Items.Clear();
                 foreach (var t in miscelistS)
                 {
                    GenericForm.Form1.StationBox.Items.Add(t);
+                   GenericForm.Form1.StationBox2.Items.Add(new SkinListBoxItem(t));
                 }
 
                GenericForm.Form1.StationBox.SelectedIndex = 0;
@@ -132,6 +134,15 @@ namespace After_Test.Generic
         {
            GenericForm.Form1.StaionType.Items.Clear();
             List<string> alllist1 = testitem.GetTestitemProjectList(Type2.TypeName,GenericForm.Form1.StationBox.Text);
+            for (int i = 0; i < alllist1.Count; i++)
+            {
+               GenericForm.Form1.StaionType.Items.Add(new SkinListBoxItem(alllist1[i]));
+            }
+        }
+        public void ComboBox1SelectedIndexChanged2()
+        {
+           GenericForm.Form1.StaionType.Items.Clear();
+            List<string> alllist1 = testitem.GetTestitemProjectList(Type2.TypeName,GenericForm.Form1.StationBox2.SelectedItem.ToString());
             for (int i = 0; i < alllist1.Count; i++)
             {
                GenericForm.Form1.StaionType.Items.Add(new SkinListBoxItem(alllist1[i]));
