@@ -4,12 +4,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Windows.Forms;
 using After.Manager;
 using After.Model;
 using After_Test.Forms;
-using CCWin.SkinControl;
-using ICSharpCode.SharpZipLib.Checksum;
 using ICSharpCode.SharpZipLib.Zip;
 
 namespace After_Test.Generic
@@ -41,7 +38,7 @@ namespace After_Test.Generic
         /// <returns></returns>
         public bool ConnectState(string path, string userName, string passWord)
         {
-            bool Flag = false;
+            bool flag = false;
             Process proc = new Process();
             try
             {
@@ -64,7 +61,7 @@ namespace After_Test.Generic
                 proc.StandardError.Close();
                 if (string.IsNullOrEmpty(errormsg))
                 {
-                    Flag = true;
+                    flag = true;
                 }
                 else
                 {
@@ -81,7 +78,7 @@ namespace After_Test.Generic
                 proc.Dispose();
             }
 
-            return Flag;
+            return flag;
         }
 
          /// </summary>
