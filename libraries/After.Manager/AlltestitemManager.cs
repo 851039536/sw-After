@@ -61,13 +61,16 @@ namespace DBUtility
                     单位 = f.单位,
                     数值上限 = f.数值上限,
                     数值下限 = f.数值下限,
-                    编号 = f.编号
+                    编号 = f.编号,
+                    耳机指令 = f.耳机指令
+                  
                 }).ToList();
 
                 string[] 单位1 = data.Select(x => x.单位).ToArray();
                 string[] 数值上限1 = data.Select(x => x.数值上限).ToArray();
                 string[] 数值下限1 = data.Select(x => x.数值下限).ToArray();
                 int[] 编号1 = data.Select(x => x.编号).ToArray();
+                string[] 指令 =data.Select(x => x.耳机指令).ToArray();
 
 
                 ints = Db.Insertable<testitem>(new
@@ -75,7 +78,7 @@ namespace DBUtility
                     机型 = strWhere,
                     测试项目 = name,
                     测试站别 = zb,
-                    耳机指令 = "0",
+                    耳机指令 = 指令[0],
                     单位 = 单位1[0],
                     数值上限 = 数值上限1[0],
                     数值下限 = 数值下限1[0],
