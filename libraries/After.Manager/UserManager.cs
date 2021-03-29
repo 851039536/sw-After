@@ -2,6 +2,7 @@
 using SqlSugar;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace DBUtility
 {
@@ -114,5 +115,21 @@ namespace DBUtility
                 st.用户==sc.用户
             }).Select<user>().ToList();
         }
-    }
+
+		/// <summary>
+		/// 加载测试机型
+		/// </summary>
+		/// <returns>data</returns>
+		public List<string> SelectUsers() {
+			try {
+				List<string> data = Db.Queryable<user>()
+				.Select(f => f.用户).ToList();
+				return data;
+			}
+			catch ( Exception e ) {
+				MessageBox.Show(e.Message);
+				throw;
+			}
+		}
+	}
 }

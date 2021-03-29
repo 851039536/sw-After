@@ -82,6 +82,8 @@ namespace After_Test.Forms
              skinButton6.Visible=true;
              机型.Enabled = false;
             alltestitemFor.QueryListIfId(sender, e);
+
+			
         }
 
 
@@ -134,6 +136,7 @@ namespace After_Test.Forms
         private void skinButton6_Click(object sender, EventArgs e)
         {
              alltestitemFor.UpdateAlltestitem();
+
         }
 
         private void skinButton7_Click(object sender, EventArgs e)

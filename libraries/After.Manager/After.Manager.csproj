@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>After.Manager</RootNamespace>
     <AssemblyName>After.Manager</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -48,7 +48,9 @@
   <ItemGroup>
     <Compile Include="AlltestitemManager.cs" />
     <Compile Include="configManager.cs" />
+    <Compile Include="LogsManager.cs" />
     <Compile Include="MiscellaneousManager.cs" />
+    <Compile Include="ModelsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestitemManager.cs" />
     <Compile Include="UploadingManager.cs" />

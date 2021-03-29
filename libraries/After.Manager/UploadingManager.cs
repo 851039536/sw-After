@@ -2,13 +2,10 @@
 using DBUtility;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace After.Manager
 {
-   public class UploadingManager : DbContext
+    public class UploadingManager : DbContext
     {
 
         public List<uploading> Query()
@@ -21,7 +18,7 @@ namespace After.Manager
                         name = f.name,
                         path = f.path,
                         filepath = f.filepath
-                        
+
                     })
                     .ToList();
                 return data;
@@ -42,15 +39,15 @@ namespace After.Manager
         public List<uploading> GetName(string name)
         {
             List<uploading> data = Db.Queryable<uploading>()
-                .Where(w=>w.name== name)
+                .Where(w => w.name == name)
                 .Select(f => new uploading
-                    {
-                        name = f.name,
-                        path = f.path,
-                        filepath = f.filepath,
-                        foldertozip = f.foldertozip,
-                        zipedfilename = f.zipedfilename
-                    })
+                {
+                    name = f.name,
+                    path = f.path,
+                    filepath = f.filepath,
+                    foldertozip = f.foldertozip,
+                    zipedfilename = f.zipedfilename
+                })
                 .ToList();
             return data;
 

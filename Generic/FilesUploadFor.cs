@@ -70,7 +70,7 @@ namespace After_Test.Generic
             }
             catch (Exception ex)
             {
-               GenericForm.DisplaylistboxMsg(ex.Message);
+                GenericForm.DisplaylistboxMsg(ex.Message);
             }
             finally
             {
@@ -81,17 +81,17 @@ namespace After_Test.Generic
             return flag;
         }
 
-         /// </summary>
-    /// <param name="hwnd">指定父窗口句柄</param>
-    /// <param name="lpszOp">指定要进行的操作</param>
-    /// <param name="lpszFile">指定要打开的文件名</param>
-    /// <param name="lpszParams">指定命令行参数</param>
-    /// <param name="lpszDir">用于指定默认目录</param>
-    /// <param name="FsShowCmd">参数是一个可执行程序</param>
-    /// <returns></returns>
+        /// </summary>
+        /// <param name="hwnd">指定父窗口句柄</param>
+        /// <param name="lpszOp">指定要进行的操作</param>
+        /// <param name="lpszFile">指定要打开的文件名</param>
+        /// <param name="lpszParams">指定命令行参数</param>
+        /// <param name="lpszDir">用于指定默认目录</param>
+        /// <param name="FsShowCmd">参数是一个可执行程序</param>
+        /// <returns></returns>
 
-    [DllImport("shell32.dll")]
-    public static extern int ShellExecute(IntPtr hwnd, StringBuilder lpszOp, StringBuilder lpszFile, StringBuilder lpszParams, StringBuilder lpszDir, int FsShowCmd);
+        [DllImport("shell32.dll")]
+        public static extern int ShellExecute(IntPtr hwnd, StringBuilder lpszOp, StringBuilder lpszFile, StringBuilder lpszParams, StringBuilder lpszDir, int FsShowCmd);
         // public void DisplaylistboxMsg(string msg)
         // {
         //     if (FilesUpload.filesUpload.InvokeRequired)
@@ -115,19 +115,19 @@ namespace After_Test.Generic
         // }
 
 
-       //===================================================压缩用的是库函数
-       /// <summary>
-       /// 压缩文件夹
-       /// </summary>
-       /// <param name="folderToZip">需要压缩的文件夹</param>
-       /// <param name="zipedFileName">压缩后的Zip完整文件名</param>
+        //===================================================压缩用的是库函数
+        /// <summary>
+        /// 压缩文件夹
+        /// </summary>
+        /// <param name="folderToZip">需要压缩的文件夹</param>
+        /// <param name="zipedFileName">压缩后的Zip完整文件名</param>
         public static void ZipDirectory(string folderToZip, string zipedFileName)
         {
             ZipDirectory(folderToZip, zipedFileName, string.Empty, true, string.Empty, string.Empty, true);
-              GenericForm.DisplaylistboxMsg("压缩完成");
+            GenericForm.DisplaylistboxMsg("压缩完成");
         }
- 
- 
+
+
         /// <summary>
         /// 压缩文件夹
         /// </summary>
@@ -138,7 +138,7 @@ namespace After_Test.Generic
         /// <param name="fileRegexFilter">文件过滤正则表达式</param>
         /// <param name="directoryRegexFilter">文件夹过滤正则表达式</param>
         /// <param name="isCreateEmptyDirectories">是否压缩文件中的空文件夹</param>
- 
+
         public static void ZipDirectory(string folderToZip, string zipedFileName, string password, bool isRecurse, string fileRegexFilter, string directoryRegexFilter, bool isCreateEmptyDirectories)
         {
             FastZip fastZip = new FastZip();
@@ -149,7 +149,7 @@ namespace After_Test.Generic
 
 
 
-         //===================================================解压用的是库函数
+        //===================================================解压用的是库函数
         /// <summary>  
         /// 功能：解压zip格式的文件。  
         /// </summary>  
@@ -173,10 +173,10 @@ namespace After_Test.Generic
                 unZipDir += "/";
             if (!Directory.Exists(unZipDir))
                 Directory.CreateDirectory(unZipDir);
- 
+
             using (var s = new ZipInputStream(File.OpenRead(zipFilePath)))
             {
- 
+
                 ZipEntry theEntry;
                 while ((theEntry = s.GetNextEntry()) != null)
                 {
@@ -193,7 +193,7 @@ namespace After_Test.Generic
                     {
                         using (FileStream streamWriter = File.Create(unZipDir + theEntry.Name))
                         {
- 
+
                             int size;
                             byte[] data = new byte[2048];
                             while (true)

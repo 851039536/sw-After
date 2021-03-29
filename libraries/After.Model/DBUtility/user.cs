@@ -12,5 +12,7 @@ namespace After.Model
         public string 用户 { get; set; }
         public string 密码 { get; set; }
         public int 权限 { get; set; }
-    }
+
+		public string name { get; set; }
+	}
 }

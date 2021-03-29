@@ -31,7 +31,7 @@ namespace After_Test.Generic
         {
             List<string> ConfigText = _configManager.QueryConfigText();
             StationForms.Stationgorms.StaionBox.Items.Clear();
-            
+
             //for (int i = 0; i < data1.Count; i++)
             //{
             //    StationForms.Stationgorms.comboBox1.Items.Add(data1[i]);
@@ -65,15 +65,15 @@ namespace After_Test.Generic
 
                 if (iRet > 0)
                 {
-                    GenericForm.DisplaylistboxMsg("增加站别成功:"+jx+"，站别："+stationt);
-                  //  MessageBox.Show(@"增加站别成功");
+                    GenericForm.DisplaylistboxMsg("增加站别成功:" + jx + "，站别：" + stationt);
+                    //  MessageBox.Show(@"增加站别成功");
                     StationForms.Stationgorms.StaionBox.Text = "";
                     StationForms.Stationgorms.Station.Text = "";
                 }
                 else
                 {
-                      MessageBox.Show(@"插入失败");
-                     GenericForm.DisplaylistboxMsg("插入失败");
+                    MessageBox.Show(@"插入失败");
+                    GenericForm.DisplaylistboxMsg("插入失败");
                 }
 
                 QueryStaion(staiongs);
@@ -115,6 +115,6 @@ namespace After_Test.Generic
         }
 
 
-        
+
     }
 }
