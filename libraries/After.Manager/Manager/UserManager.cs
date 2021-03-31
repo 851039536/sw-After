@@ -131,5 +131,25 @@ namespace DBUtility
 				throw;
 			}
 		}
+
+
+
+          public List<user> Login(string username, string password)
+        {
+            //var result = Db.Queryable<user>().Where(it => it.用户 == username && it.密码 == password).Any();
+            List<user> result = new List<user>();
+            try
+            {
+                result = Db.Queryable<user>().Where(it => it.用户 == username && it.密码 == password).ToList();
+                
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+               
+            }
+           
+            return result;
+        }
 	}
 }

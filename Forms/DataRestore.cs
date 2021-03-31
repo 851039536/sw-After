@@ -24,6 +24,7 @@ namespace After_Test.Forms
              DialogResult result = MessageBox.Show(@"确定还原吗？", @"还原", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+              
                 try
                 {
                     using (MySqlCommand cmd = new MySqlCommand())

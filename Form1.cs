@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using After.Generic;
 using After_Test.Forms;
-using After_Test.FormTest;
 using After_Test.Generic;
 using CCWin;
 using DBUtility;
@@ -28,53 +27,56 @@ namespace After_Test {
 			InitializeComponent();
 		}
 
-		private async void Form1_Load(object sender, EventArgs e) {
-			GenericForm.Form1 = this;
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            GenericForm.Form1 = this;
 
-			intro.Text = nowUser.name;
+            intro.Text = nowUser.name;
 
-			if ( nowUser == null ) {
-				MessageBox.Show("登录失败，请重新登录");
-				Hide();
-				new LoginForm().Show();
-				return;
-			}
+            if (nowUser == null)
+            {
+                MessageBox.Show("登录失败，请重新登录");
+                Hide();
+                new LoginForm().Show();
+                return;
+            }
 
-			label4.Text = nowUser.用户;
+            label4.Text = nowUser.用户;
 
-			switch ( nowUser.权限 ) {
-				case 1:
-					break;
-				case 3:
-					skinButton1.Enabled = false;
-					功能配置ToolStripMenuItem1.Enabled = false;
-					config配置ToolStripMenuItem1.Enabled = false;
-					goto case 2;
-				case 2:
-					配置ToolStripMenuItem.Enabled = false;
-					用户ToolStripMenuItem.Enabled = false;
-					帮助ToolStripMenuItem1.Enabled = false;
-					break;
-			}
+            switch (nowUser.权限)
+            {
+                case 1:
+                    break;
+                case 3:
+                    skinButton1.Enabled = false;
+                    功能配置ToolStripMenuItem1.Enabled = false;
+                    config配置ToolStripMenuItem1.Enabled = false;
+                    goto case 2;
+                case 2:
+                    配置ToolStripMenuItem.Enabled = false;
+                    用户ToolStripMenuItem.Enabled = false;
+                    帮助ToolStripMenuItem1.Enabled = false;
+                    break;
+            }
 
-			loadLogByDb();
+            loadLogByDb();
 
-			genericForm.Loadcontrol();
+            genericForm.Loadcontrol();
 
-			CheckForIllegalCrossThreadCalls = false;
-			genericForm.Firstload();
-			ctl.setTag(this);
-			GenericForm.Form1.WindowState = FormWindowState.Normal;
-			//GenericForm.DisplaylistboxMsg("控件初始化完成！！！");
-			//异步执行防止主线程假死
-			//await Task.Run(() => genericForm.Loadcontrol(name);
-		}
+            CheckForIllegalCrossThreadCalls = false;
+            genericForm.Firstload();
+            ctl.setTag(this);
+            GenericForm.Form1.WindowState = FormWindowState.Normal;
+            //GenericForm.DisplaylistboxMsg("控件初始化完成！！！");
+            //异步执行防止主线程假死
+            //await Task.Run(() => genericForm.Loadcontrol(name);
+        }
 
-		
-		/// <summary>
-		/// 更新操作之前的list取值
-		/// </summary>
-		public void resetAfterModels() {
+
+        /// <summary>
+        /// 更新操作之前的list取值
+        /// </summary>
+        public void resetAfterModels() {
 			afterModels = "";
 			foreach ( var item in StaionType.Items ) {
 				afterModels += item.ToString() + ",";
@@ -201,8 +203,7 @@ namespace After_Test {
 		}
 
 		private void testToolStripMenuItem_Click(object sender, EventArgs e) {
-			FormTest1 f = new FormTest1();
-			f.Show();
+			
 		}
 
 		private void StationBox2_SelectedIndexChanged(object sender, EventArgs e) {

@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SqlSugar, Version=5.0.0.12, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\sqlSugar.5.0.0.12\lib\SqlSugar.dll</HintPath>
+    <Reference Include="SqlSugar, Version=5.0.2.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SqlSugar.5.0.2.8\lib\SqlSugar.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,8 +57,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\After.Generic\After.Generic.csproj">
+      <Project>{9822D16E-0E19-44E5-9E72-3E6010F7E332}</Project>
+      <Name>After.Generic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

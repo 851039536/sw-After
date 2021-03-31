@@ -9,6 +9,7 @@ using After.Model;
 using After_Test.Forms;
 using SqlSugar;
 using DBUtility;
+using SqlSugar.Extensions;
 
 namespace After_Test.Generic
 {

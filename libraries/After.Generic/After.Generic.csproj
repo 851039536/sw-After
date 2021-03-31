@@ -45,8 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassControl.cs" />
-    <Compile Include="Type2.cs" />
+    <Compile Include="Generic\ClassControl.cs" />
+    <Compile Include="Generic\Type2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

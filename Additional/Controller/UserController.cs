@@ -1,7 +1,6 @@
 ﻿using After_Test;
-using Manager;
+using DBUtility;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Controller {

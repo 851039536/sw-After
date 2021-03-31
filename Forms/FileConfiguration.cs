@@ -7,6 +7,7 @@ using After.Model;
 using After_Test.Generic;
 using CCWin;
 using SqlSugar;
+using SqlSugar.Extensions;
 
 namespace After_Test.Forms
 {
