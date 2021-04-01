@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Threading;
+
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using After.Generic;
@@ -8,8 +8,9 @@ using After_Test.Generic;
 using CCWin;
 using DBUtility;
 using After.Model;
-using After.Manager;
+
 using CCWin.SkinControl;
+using After.Service;
 
 namespace After_Test {
 	public partial class Form1 : Skin_Mac {
@@ -29,6 +30,7 @@ namespace After_Test {
 
         private void Form1_Load(object sender, EventArgs e)
         {
+	       
             GenericForm.Form1 = this;
 
             intro.Text = nowUser.name;

@@ -323,6 +323,10 @@
       <Project>{9822d16e-0e19-44e5-9e72-3e6010f7e332}</Project>
       <Name>After.Generic</Name>
     </ProjectReference>
+    <ProjectReference Include="libraries\After.IService\After.IService.csproj">
+      <Project>{6648b502-64c0-4bc7-9b54-db19809fab5f}</Project>
+      <Name>After.IService</Name>
+    </ProjectReference>
     <ProjectReference Include="libraries\After.Manager\After.Manager.csproj">
       <Project>{d0ed1d0c-cef5-487e-83aa-fdd642c2b278}</Project>
       <Name>After.Manager</Name>
@@ -330,6 +334,14 @@
     <ProjectReference Include="libraries\After.Model\After.Model.csproj">
       <Project>{c1974c28-e088-427e-ae9f-342f52846680}</Project>
       <Name>After.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="libraries\After.Repository\After.Repository.csproj">
+      <Project>{3F6C1DFB-F9BB-47BD-9BEC-6DD81D57F812}</Project>
+      <Name>After.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="libraries\After.Service\After.Service.csproj">
+      <Project>{F396EDD3-38DA-4976-90D9-E90CF2A34E2E}</Project>
+      <Name>After.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
