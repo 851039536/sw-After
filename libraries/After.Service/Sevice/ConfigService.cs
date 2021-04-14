@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace After.Service
 {
-    public class ConfigService : Repository<config>,IConfigService
+    public class ConfigService : Repository<config>, IConfigService
     {
         public ConfigService()
         {
@@ -18,7 +18,7 @@ namespace After.Service
 
         public async Task<List<config>> GetAllAsync()
         {
-           return await base.GetListAsync();
+            return await base.GetListAsync();
         }
     }
 }

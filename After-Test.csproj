@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>After_Test</RootNamespace>
     <AssemblyName>After-Test</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -90,8 +90,8 @@
     <Reference Include="INIFileParser, Version=2.5.2.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL">
       <HintPath>packages\ini-parser.2.5.2\lib\net20\INIFileParser.dll</HintPath>
     </Reference>
-    <Reference Include="Masuit.Tools, Version=2.4.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Masuit.Tools.Net.2.4.3\lib\net461\Masuit.Tools.dll</HintPath>
+    <Reference Include="Masuit.Tools, Version=2.4.3.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Masuit.Tools.Net.2.4.3.2\lib\net461\Masuit.Tools.dll</HintPath>
     </Reference>
     <Reference Include="MaterialSkin">
       <HintPath>C:\Users\ch190006\Desktop\周由龙\软件课程\project\Binder\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
@@ -121,11 +121,18 @@
     <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
       <HintPath>packages\StackExchange.Redis.2.2.4\lib\net461\StackExchange.Redis.dll</HintPath>
     </Reference>
+    <Reference Include="SunnyUI, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\SunnyUI.3.0.3\lib\net40\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI.Common, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\SunnyUI.Common.3.0.3\lib\net40\SunnyUI.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Diagnostics.PerformanceCounter, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Diagnostics.PerformanceCounter.5.0.1\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
     </Reference>
@@ -157,6 +164,7 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -186,7 +194,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Additional\Controller\UserController.cs" />
     <Compile Include="Additional\Util.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

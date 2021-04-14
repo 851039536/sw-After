@@ -17,7 +17,7 @@ namespace After.Manager
 		/// <returns></returns>
 		public List<config> GetAllByUser(user u) {
 			var mm = new ModelsManager();
-			var models = mm.QueryJx(u);
+			var models = mm.GetJX(u);
 			var data = Db.Queryable<config>().Where(c => models.Contains(c.ConfigText)).ToList();
 			return data;
 		}

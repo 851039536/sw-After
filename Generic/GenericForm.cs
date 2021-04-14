@@ -20,10 +20,9 @@ namespace After_Test.Generic
 
         private bool _locker = true;
         private AlltestitemManager alltestitem = new AlltestitemManager();
-		private ModelsManager models = new ModelsManager();
-		private static LogsManager logs = new LogsManager();
-
-		private TestitemManager testitem = new TestitemManager();
+        private ModelsManager models = new ModelsManager();
+        private static LogsManager logs = new LogsManager();
+        private TestitemManager testitem = new TestitemManager();
         public static Form1 Form1;
 
         /// <summary>
@@ -44,29 +43,16 @@ namespace After_Test.Generic
         /// <summary>
         /// 加载测试机型
         /// </summary>
-        public void Loadcontrol()
+        public void GetModels()
         {
-            try
+            List<string> model = models.GetJX(Form1.nowUser);
+            int i = 0;
+            foreach (var y in model)
             {
-                //DisplaylistboxMsg("加载测试机型中...");
-				//List<string> allstring = alltestitem.QueryJx();
-				List<string> allstring = models.QueryJx(Form1.nowUser);
-
-				int i = 0;
-                foreach (var y in allstring)
-                {
-                    Form1.TypeNameBox.Items.Add(new SkinListBoxItem(y));
-                    i++;
-                }
-                Form1.TypeNameBox.SelectedIndex = -1;
-				//Form1.TypeNameBox.SelectedIndex = 1;
-				//DisplaylistboxMsg("加载测试机型完成");
-			}
-            catch (Exception e)
-            {
-                DisplaylistboxMsg("数据库连接异常！！！");
-                MessageBox.Show(e.Message);
+                Form1.TypeNameBox.Items.Add(new SkinListBoxItem(y));
+                i++;
             }
+            Form1.TypeNameBox.SelectedIndex = -1;
         }
 
         /// <summary>
@@ -112,8 +98,8 @@ namespace After_Test.Generic
                 }
 
                 GenericForm.Form1.StationBox.SelectedIndex = -1;
-				//GenericForm.Form1.StationBox.SelectedIndex = -1;
-				if (_testistBox != "")
+                //GenericForm.Form1.StationBox.SelectedIndex = -1;
+                if (_testistBox != "")
                 {
                     GenericForm.Form1.ContentBox.Items.Clear();
                     GenericForm.Form1.StaionType.Items.Clear();
@@ -132,21 +118,21 @@ namespace After_Test.Generic
             }
         }
 
-		
+
 
         /// <summary>
         /// 测试项目  条件（测试站别）
         /// </summary>
-		/// 
+        /// 
         public void ComboBox1SelectedIndexChanged()
         {
             GenericForm.Form1.StaionType.Items.Clear();
             List<string> alllist1 = testitem.GetTestitemProjectList(Type2.TypeName, GenericForm.Form1.StationBox.Text);
-			
-			for (int i = 0; i < alllist1.Count; i++)
+
+            for (int i = 0; i < alllist1.Count; i++)
             {
-				
-				GenericForm.Form1.StaionType.Items.Add(new SkinListBoxItem(alllist1[i]));
+
+                GenericForm.Form1.StaionType.Items.Add(new SkinListBoxItem(alllist1[i]));
             }
         }
         public void ComboBox1SelectedIndexChanged2()
@@ -297,13 +283,13 @@ namespace After_Test.Generic
             }
         }
 
-		
 
-		/// <summary>
-		/// 输出提示
-		/// </summary>
-		/// <param name="msg"></param>
-		public static void DisplaylistboxMsg(string msg)
+
+        /// <summary>
+        /// 输出提示
+        /// </summary>
+        /// <param name="msg"></param>
+        public static void DisplaylistboxMsg(string msg)
         {
             if (GenericForm.Form1.InvokeRequired)
             {
@@ -317,17 +303,18 @@ namespace After_Test.Generic
                 }
                 else
                 {
-					msg = string.Format("{0} At {1:hh:mm:ss},{2}", Form1.nowUser.name, DateTime.Now, msg);
+                    msg = string.Format("{0} At {1:hh:mm:ss},{2}", Form1.nowUser.name, DateTime.Now, msg);
 
 
 
-					string beforeModels = "";
-					foreach ( var item in Form1.StaionType.Items ) {
-						beforeModels += item + ",";
-					}
-					
-					logs.insertLog(Form1.nowUser, msg, Form1.afterModels, beforeModels, 1);
-					GenericForm.Form1.MsgBox.Items.Add(new SkinListBoxItem(msg));
+                    string beforeModels = "";
+                    foreach (var item in Form1.StaionType.Items)
+                    {
+                        beforeModels += item + ",";
+                    }
+
+                    logs.insertLog(Form1.nowUser, msg, Form1.afterModels, beforeModels, 1);
+                    GenericForm.Form1.MsgBox.Items.Add(new SkinListBoxItem(msg));
                 }
 
                 if (GenericForm.Form1.MsgBox.Items.Count > 0) GenericForm.Form1.MsgBox.SelectedIndex = GenericForm.Form1.MsgBox.Items.Count - 1;
@@ -335,7 +322,7 @@ namespace After_Test.Generic
             }
         }
 
-		
+
 
         /// <summary>
         /// 新增站别
@@ -343,7 +330,7 @@ namespace After_Test.Generic
         public void SaveStaion()
         {
 
-			
+
 
             if (GenericForm.Form1.StationBox.Text.Equals(""))
             {
@@ -356,18 +343,18 @@ namespace After_Test.Generic
             {
                 LinkedList<string> ate = new LinkedList<string>();
                 SkinListBoxItemCollection ss = GenericForm.Form1.StaionType.Items;
-				
-				for (int i = 0; i < ss.Count; i++)
+
+                for (int i = 0; i < ss.Count; i++)
                 {
-					ate.AddLast(ss[i].ToString());
+                    ate.AddLast(ss[i].ToString());
                 }
 
-				
+
 
                 var zt = alltestitem.Sqlselect(GenericForm.Form1.StationBox.Text, Type2.TypeName, ate);
                 if (zt == 1)
                 {
-                    GenericForm.DisplaylistboxMsg("[" + Form1.nowUser.name + "] -> " +  "[站别] -> " + GenericForm.Form1.StationBox.Text + "," + "[机型] -> " + Type2.TypeName + "," + "已更新" );
+                    GenericForm.DisplaylistboxMsg("[" + Form1.nowUser.name + "] -> " + "[站别] -> " + GenericForm.Form1.StationBox.Text + "," + "[机型] -> " + Type2.TypeName + "," + "已更新");
                 }
                 else
                 {
