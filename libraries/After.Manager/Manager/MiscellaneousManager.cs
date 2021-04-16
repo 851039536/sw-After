@@ -2,7 +2,7 @@
 using After.Model;
 using DBUtility;
 
-namespace After.Manager
+namespace After.Manager.Manager
 {
     public class MiscellaneousManager : DbContext //继承DbContext
     {

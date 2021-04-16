@@ -1,25 +1,25 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using After.Generic;
+using After.Generic.Generic;
 using After_Test.Forms;
 using After_Test.Generic;
 using CCWin;
 using DBUtility;
 using After.Model;
 using CCWin.SkinControl;
+using System.Text;
+using System.Threading;
+
 namespace After_Test
 {
     public partial class Form1 : Skin_Mac
     {
 
         public static user nowUser;
-        private AlltestitemManager alltestitem = new AlltestitemManager();
-        private ClassControl ctl = new ClassControl();
-        private GenericForm genericForm = new GenericForm();
-        private TestitemManager testitem = new TestitemManager();
-        private UserManager user = new UserManager();
-        LogsManager logs = new LogsManager();
+        private ClassControl _ctl = new ClassControl();
+        private readonly GenericForm _genericForm = new GenericForm();
+        readonly LogsManager _logs = new LogsManager();
 
         public Form1()
         {
@@ -27,18 +27,16 @@ namespace After_Test
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
-           GenericForm.Form1 = this;
+            GenericForm.Form1 = this;
             CheckForIllegalCrossThreadCalls = false;
-            ctl.setTag(this);
-            genericForm.Firstload();
+            _ctl.setTag(this);
+            _genericForm.Firstload();
 
-            Authority();
-            loadLogByDb();
-            genericForm.GetModels();
-
-       
+            await Task.Run(Authority); 
+            LoadLogByDb();
+           await  _genericForm.GetJxAsync();
             GenericForm.Form1.WindowState = FormWindowState.Normal;
         }
         /// <summary>
@@ -69,12 +67,12 @@ namespace After_Test
         /// <summary>
         /// 更新操作之前的list取值
         /// </summary>
-        public void resetAfterModels()
+        private void ResetAfterModels()
         {
             afterModels = "";
             foreach (var item in StaionType.Items)
             {
-                afterModels += item.ToString() + ",";
+                afterModels += item + ",";
             }
         }
 
@@ -82,9 +80,9 @@ namespace After_Test
         /// <summary>
         /// 写入日志到数据库
         /// </summary>
-        public void loadLogByDb()
+        public void LoadLogByDb()
         {
-            var list = logs.selectLogByUid(nowUser.id);
+            var list = _logs.SelectLogByUid(nowUser.id);
             foreach (var item in list)
             {
                 MsgBox.Items.Add(new SkinListBoxItem(item.msg));
@@ -99,7 +97,7 @@ namespace After_Test
             ClassControl control = new ClassControl();
             float newX = GenericForm.Form1.Width;
             float newY = GenericForm.Form1.Height;
-            control.setControls(newX / GenericForm._x, newY / GenericForm._y, this);
+            control.setControls(newX / GenericForm.x, newY / GenericForm.y, this);
         }
 
         /// <summary>
@@ -107,40 +105,42 @@ namespace After_Test
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ADD_Click(object sender, EventArgs e)
+        private async void ADD_Click(object sender, EventArgs e)
         {
-            genericForm.butAdd();
+            await Task.Run(()=>_genericForm.ButAdd());
         }
 
-        private void DELETE_Click(object sender, EventArgs e)
+        private async void DELETE_Click(object sender, EventArgs e)
         {
-            genericForm.butDelete();
+             await Task.Run(()=>_genericForm.ButDelete());
         }
 
-        private void UP_Click(object sender, EventArgs e)
+        private async void UP_Click(object sender, EventArgs e)
         {
-            genericForm.butUP();
+             await Task.Run(()=> _genericForm.ButUp());
         }
-        private void DOWN_Click(object sender, EventArgs e)
+        private async void DOWN_Click(object sender, EventArgs e)
         {
-            genericForm.butDOWN();
+              await Task.Run(()=>_genericForm.ButDown());
+            
         }
-        private void LOCK_Click(object sender, EventArgs e)
+        private async void LOCK_Click(object sender, EventArgs e)
         {
-            genericForm.ButLock();
+            await Task.Run(()=>_genericForm.ButLock());
+            
         }
 
         private void SAVE_Click(object sender, EventArgs e)
         {
-            genericForm.SaveStaion();
-            resetAfterModels();
+            _genericForm.SaveStaion();
+            ResetAfterModels();
         }
 
         private async void skinButton1_Click(object sender, EventArgs e)
         {
-            if (Type2.TypeName != null)
+            if (Type2.jx != null)
             {
-                StationForms st = new StationForms(Type2.TypeName);
+                StationForms st = new StationForms(Type2.jx);
                 await Task.Run(() => st.ShowDialog());
             }
             else
@@ -149,46 +149,29 @@ namespace After_Test
             }
         }
 
-        private void skinListBox3_SelectedIndexChanged(object sender, EventArgs e)
+        private async void skinListBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            genericForm.SelectindxChanListbox3();
-            resetAfterModels();
+              await  _genericForm.GetJxData();
+            ResetAfterModels();
         }
 
         public static string afterModels = "";
 
         private void skinComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            genericForm.ComboBox1SelectedIndexChanged();
-            resetAfterModels();
+            _genericForm.ComboBoxGetTestItem();
+            ResetAfterModels();
         }
 
-        private void skinListBox2_MouseDoubleClick(object sender, MouseEventArgs e)
+        private async void skinListBox2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            genericForm.butAdd();
-        }
-
-        private async void config配置ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Type2.Miscellaneous = 2;
-            DateGridviews date = new DateGridviews();
-            await Task.Run(() => date.ShowDialog());
-        }
-
-        private async void 功能配置ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Alltestitem a = new Alltestitem();
-            await Task.Run(() => a.ShowDialog());
+            await Task.Run(()=>_genericForm.ButAdd());
         }
 
         private void 文件上传ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FilesUpload f = new FilesUpload();
             f.ShowDialog();
-        }
-
-        private void listBoxControl3_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
 
         private void 文件配置ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -217,14 +200,9 @@ namespace After_Test
 
         }
 
-        private void testToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void StationBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            genericForm.ComboBox1SelectedIndexChanged2();
+            _genericForm.ComboBox1SelectedIndexChanged2();
         }
 
         private async void config配置ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -266,10 +244,21 @@ namespace After_Test
 
         }
 
-        private void StaionType_SelectedIndexChanged(object sender, EventArgs e)
+        private void mEVN盘ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            const string path = @".\procedure\LoginMevn\Debug";
+            mEVN盘ToolStripMenuItem.Enabled = false;
+            Type2.ShellExecute(IntPtr.Zero, new StringBuilder("Open"), new StringBuilder("LoginMech-1.exe"), new StringBuilder(""), new StringBuilder(path), 1);
+            Thread.Sleep(1000);
+            mEVN盘ToolStripMenuItem.Enabled = true;
+
 
         }
 
+        private async void batteryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Battery battery = new Battery();
+            await Task.Run(() => battery.ShowDialog());
+        }
     }
 }

@@ -67,21 +67,13 @@ namespace DBUtility
 			}
 		}
 
-        /// <summary>
-        /// 加载测试项目
-        /// </summary>
-        /// <returns>data</returns>
-        public List<string> LoadTestProject(string strWhere)
-        {
-            List<string> data = Db.Queryable<alltestitem>().Where(w => w.机型 == strWhere).Select(f => f.测试项目).ToList();
-            return data;
-        }
+
 
         /// <summary>
         ///删除更新
         /// </summary>
         /// <returns>ints</returns>
-        public int Sqlselect(string zb, string strWhere, LinkedList<string> xm)
+        public int Sqlselect(string zb, string jx, LinkedList<string> xm)
         {
             int k = 1;
 
@@ -92,7 +84,7 @@ namespace DBUtility
                 string name = xm.First();
                 xm.RemoveFirst();
                 List<alltestitem> data = Db.Queryable<alltestitem>()
-                    .Where(w => w.机型 == strWhere && w.测试项目 == name)
+                    .Where(w => w.机型 == jx && w.测试项目 == name)
                     .Select(f => new alltestitem
                     {
                         单位 = f.单位,
@@ -102,17 +94,15 @@ namespace DBUtility
                         耳机指令 = f.耳机指令
 
                     }).ToList();
-
                 string[] 单位1 = data.Select(x => x.单位).ToArray();
                 string[] 数值上限1 = data.Select(x => x.数值上限).ToArray();
                 string[] 数值下限1 = data.Select(x => x.数值下限).ToArray();
                 int[] 编号1 = data.Select(x => x.编号).ToArray();
                 string[] 指令 = data.Select(x => x.耳机指令).ToArray();
 
-
                 ints = Db.Insertable<testitem>(new
                 {
-                    机型 = strWhere,
+                    机型 = jx,
                     测试项目 = name,
                     测试站别 = zb,
                     耳机指令 = 指令[0],

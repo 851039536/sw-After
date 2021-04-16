@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IService\IAlltestitemService.cs" />
     <Compile Include="IService\IConfigService.cs" />
     <Compile Include="IService\IModelsService.cs" />
+    <Compile Include="IService\ITestitemService.cs" />
     <Compile Include="IService\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

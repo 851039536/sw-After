@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using IniParser;
 using IniParser.Model;
-using System.Net.NetworkInformation;
 
 namespace After_Test.Additional {
 	public class Util {
@@ -35,7 +30,7 @@ namespace After_Test.Additional {
 
 
 
-		public bool checkIpInList() {
+		public bool CheckIpInList() {
 			foreach ( var ip in ipadrlist ) {
 				if ( Array.IndexOf(checkList, ip.ToString()) > -1 ) {
 					isSerctFree = true;

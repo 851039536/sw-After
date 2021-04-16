@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Threading;
 using System.Windows.Forms;
-using After.Generic;
-using After.Manager;
+using After.Generic.Generic;
+using After.Manager.Manager;
 using After.Model;
 using After_Test.Generic;
 using CCWin;
-using SqlSugar;
 using SqlSugar.Extensions;
 
 namespace After_Test.Forms
@@ -25,10 +24,10 @@ namespace After_Test.Forms
          private ClassControl ctl = new ClassControl();
         private void FileConfiguration_Load(object sender, EventArgs e)
         {
-             GenericForm._x = GenericForm.Form1.Width;
-             GenericForm._y = GenericForm.Form1.Height;
-             GenericForm._x1 =GenericForm ._x;
-             GenericForm._y1 = GenericForm._y;
+             GenericForm.x = GenericForm.Form1.Width;
+             GenericForm.y = GenericForm.Form1.Height;
+             GenericForm.x1 =GenericForm .x;
+             GenericForm.y1 = GenericForm.y;
              ctl.setTag(this);
 
             dataGridView1.ReadOnly = true;
@@ -190,7 +189,7 @@ namespace After_Test.Forms
             ClassControl control = new ClassControl();
             float newX =Width;
             float newY =Height;
-            control.setControls(newX / GenericForm._x, newY / GenericForm._y, this);
+            control.setControls(newX / GenericForm.x, newY / GenericForm.y, this);
         }
     }
 }

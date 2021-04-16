@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 using After.Model;
 using DBUtility;
-using System.Data;
-using System;
-using System.Windows.Forms;
 
-namespace After.Manager
+namespace After.Manager.Manager
 {
     public class configManager : DbContext //继承DbContext
     {
@@ -17,7 +16,7 @@ namespace After.Manager
 		/// <returns></returns>
 		public List<config> GetAllByUser(user u) {
 			var mm = new ModelsManager();
-			var models = mm.GetJX(u);
+			var models = mm.GetJx(u);
 			var data = Db.Queryable<config>().Where(c => models.Contains(c.ConfigText)).ToList();
 			return data;
 		}

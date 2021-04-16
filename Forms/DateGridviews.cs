@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using After.Generic;
+using After.Generic.Generic;
 using After_Test.Generic;
 using CCWin;
 
@@ -90,7 +90,7 @@ namespace After_Test.Forms
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            date.QueryListIfJX();
+            date.QueryListIfJx();
         }
 
         private void button2_Click(object sender, EventArgs e)

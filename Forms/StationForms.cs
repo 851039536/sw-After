@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using After.Generic;
+using After.Generic.Generic;
 using After_Test.Generic;
 using CCWin;
 
@@ -9,17 +9,17 @@ namespace After_Test.Forms
     public partial class StationForms : Skin_Mac
     {
         public static StationForms Stationgorms;
-        private static string Staiongs;
+        private static string _staiongs;
         private StationFor sta = new StationFor();
 
         public StationForms(string station)
         {
             InitializeComponent();
-            Staiongs = station;
+            _staiongs = station;
             Stationgorms = this;
         }
 
-         private ClassControl ctl = new ClassControl();
+         private ClassControl _ctl = new ClassControl();
         private void StationForms_Load(object sender, EventArgs e)
         {
     
@@ -28,24 +28,24 @@ namespace After_Test.Forms
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
 
             
-            sta.QueryStaion(Staiongs);
+            sta.QueryStaion(_staiongs);
             sta.QueryCobox();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Staiongs = StaionBox.Text;
-            sta.QueryStaion(Staiongs);
+            _staiongs = StaionBox.Text;
+            sta.QueryStaion(_staiongs);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sta.IntStaion(Staiongs);
+            sta.IntStaion(_staiongs);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            sta.DelectStaion(Staiongs);
+            sta.DelectStaion(_staiongs);
         }
 
         private void StationForms_Resize(object sender, EventArgs e)
@@ -55,8 +55,8 @@ namespace After_Test.Forms
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Staiongs = listBox1.SelectedItem.ToString();
-            sta.QueryStaion(Staiongs);
+            _staiongs = listBox1.SelectedItem.ToString();
+            sta.QueryStaion(_staiongs);
         }
     }
 }

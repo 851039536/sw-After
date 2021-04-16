@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using After.Model;
+using DBUtility;
 
-namespace DBUtility
+namespace After.Manager.Manager
 {
     public class TestitemManager : DbContext //继承DbContext
     {
         /// <summary>
-        /// 机型站别
+        /// 查询站别
         /// </summary>
         /// <returns></returns>
         public List<string> QueryStation(string jx)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using After.Manager;
+using After.Manager.Manager;
 using After.Model;
 using After_Test.Generic;
 using CCWin;

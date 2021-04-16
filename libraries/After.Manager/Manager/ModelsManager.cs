@@ -1,11 +1,11 @@
-﻿using After.Model;
-using After.Model.DBUtility;
-using DBUtility;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using After.Model;
+using After.Model.DBUtility;
+using DBUtility;
 
-namespace After.Manager
+namespace After.Manager.Manager
 {
     //继承DbContext
     public class ModelsManager : DbContext
@@ -14,7 +14,7 @@ namespace After.Manager
         /// 加载测试机型
         /// </summary>
         /// <returns>data</returns>
-        public List<string> GetJX(user u)
+        public List<string> GetJx(user u)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace After.Manager
             }
         }
 
-        public List<string> selectByUsername(string username)
+        public List<string> SelectByUsername(string username)
         {
             List<string> data = Db.Queryable<models>()
             .Where(it => it.username == username)
@@ -54,7 +54,7 @@ namespace After.Manager
             return data;
         }
 
-        public bool insertModels(string username, List<string> models)
+        public bool InsertModels(string username, List<string> models)
         {
             foreach (var model in models)
             {
@@ -67,7 +67,7 @@ namespace After.Manager
             return true;
         }
 
-        public bool deleteModels(string username, List<string> models)
+        public bool DeleteModels(string username, List<string> models)
         {
             foreach (var model in models)
             {

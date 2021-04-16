@@ -20,7 +20,7 @@ namespace After_Test
         }
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            if (util.checkIpInList())
+            if (util.CheckIpInList())
             {
                 var u = new user();
                 u.name = "超级管理员";
@@ -32,7 +32,7 @@ namespace After_Test
         }
         private void LoginForm_Shown(object sender, EventArgs e)
         {
-            if (util.checkIpInList())
+            if (util.CheckIpInList())
             {
                 Hide();
                 Visible = false;

@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
-using After.Generic;
 using After_Test.Generic;
-using After.Manager;
 using System.Collections.Generic;
-using After.Model;
-using System.Data;
-using DBUtility;
 using CCWin;
 using System.IO;
-using System.Text;
 using System.Threading;
+using After.Generic.Generic;
+using After.Manager.Manager;
 
 namespace After_Test.Forms {
 	public partial class ModelsForm : Skin_Mac {
@@ -47,9 +43,9 @@ namespace After_Test.Forms {
 			ctl.setTag(this);
 			WindowState = FormWindowState.Normal;
 
-			loadUsersData();
+			LoadUsersData();
 			Log("导入用户数据完成");
-			loadConfigData();
+			LoadConfigData();
 			Log("导入机型数据完成");
 			button6.Enabled = false;
 		}
@@ -57,7 +53,7 @@ namespace After_Test.Forms {
 		/// <summary>
 		/// 查询用户
 		/// </summary>
-		public void loadUsersData() {
+		public void LoadUsersData() {
 			var result = user.SelectUsers();
 			foreach ( var r in result ) {
 				numberList.Items.Add(r);
@@ -67,7 +63,7 @@ namespace After_Test.Forms {
 		/// <summary>
 		/// 查询机型
 		/// </summary>
-		public void loadConfigData() {
+		public void LoadConfigData() {
 			try {
 				dataSource = config.SelectConfig();
 				foreach ( var item in dataSource ) {
@@ -95,7 +91,7 @@ namespace After_Test.Forms {
 				if ( nowItem == ss[ i ].ToString() ) return;
 			}
 			toInsertModels.Add(nowItem);
-			toDeleteModels.Remove(nowItem.ToString());
+			toDeleteModels.Remove(nowItem);
 			selectedModel.Items.Add(nowItem);
 			Log("添加机型 -> " + nowItem);
 		}
@@ -103,7 +99,7 @@ namespace After_Test.Forms {
 		private void numberList_MouseClick(object sender, MouseEventArgs e) {
 			string username =  numberList.SelectedItem.ToString();
 
-			var result = models.selectByUsername(username);
+			var result = models.SelectByUsername(username);
 			selectedModel.Items.Clear();
 			foreach ( var r in result ) {
 				selectedModel.Items.Add(r);
@@ -136,7 +132,8 @@ namespace After_Test.Forms {
 				sw.Close();
 			}
 			catch ( Exception e ) {
-				MessageBox.Show("写入Log到文件失败\n" + e);
+				MessageBox.Show(@"写入Log到文件失败
+" + e);
 				//throw;
 			}
 			finally {
@@ -175,7 +172,7 @@ namespace After_Test.Forms {
 				}
 			}
 			catch ( Exception ex) {
-				MessageBox.Show("未选中" + ex);
+				MessageBox.Show(@"未选中" + ex);
 				throw;
 			}
 		}
@@ -192,7 +189,7 @@ namespace After_Test.Forms {
 				}
 			}
 			catch ( Exception ex) {
-				MessageBox.Show("未选中" + ex);
+				MessageBox.Show(@"未选中" + ex);
 			}
 		}
 
@@ -206,7 +203,7 @@ namespace After_Test.Forms {
 				button2.Enabled = false;
 				button3.Enabled = false;
 				button4.Enabled = false;
-				button5.Text = "解除锁定";
+				button5.Text = @"解除锁定";
 				button6.Enabled = true;
 			}
 			else {
@@ -217,7 +214,7 @@ namespace After_Test.Forms {
 				button2.Enabled = true;
 				button3.Enabled = true;
 				button4.Enabled = true;
-				button5.Text = "锁定";
+				button5.Text = @"锁定";
 				button6.Enabled = false;
 			}
 		}
@@ -229,13 +226,13 @@ namespace After_Test.Forms {
 				return;
 			}
 
-			button6.Text = "正在更新";
+			button6.Text = @"正在更新";
 			button6.Enabled = false;
 			Thread.Sleep(1000);
 
 			//添加数据
 			var sUser = numberList.SelectedItem.ToString();
-			var result = models.insertModels(sUser, toInsertModels);
+			var result = models.InsertModels(sUser, toInsertModels);
 
 			if ( result ) {
 				Log("添加机型成功");
@@ -246,7 +243,7 @@ namespace After_Test.Forms {
 
 			toInsertModels.Clear();
 
-			result = models.deleteModels(sUser, toDeleteModels);
+			result = models.DeleteModels(sUser, toDeleteModels);
 			if ( result ) {
 				Log("删除机型成功");
 			}
@@ -256,7 +253,7 @@ namespace After_Test.Forms {
 
 			toDeleteModels.Clear();
 
-			button6.Text = "更新";
+			button6.Text = @"更新";
 			button6.Enabled = true;
 		}
 	}

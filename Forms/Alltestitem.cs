@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using After.Generic;
+using After.Generic.Generic;
 using After_Test.Generic;
 using CCWin;
 

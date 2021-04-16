@@ -1,9 +1,9 @@
-﻿using After.Model;
-using DBUtility;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using After.Model;
+using DBUtility;
 
-namespace After.Manager
+namespace After.Manager.Manager
 {
     public class UploadingManager : DbContext
     {

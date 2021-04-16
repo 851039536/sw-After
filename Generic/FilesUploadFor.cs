@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
-using After.Manager;
+using After.Manager.Manager;
 using After.Model;
 using After_Test.Forms;
 using ICSharpCode.SharpZipLib.Zip;
@@ -90,6 +90,7 @@ namespace After_Test.Generic
         /// <param name="FsShowCmd">参数是一个可执行程序</param>
         /// <returns></returns>
 
+        
         [DllImport("shell32.dll")]
         public static extern int ShellExecute(IntPtr hwnd, StringBuilder lpszOp, StringBuilder lpszFile, StringBuilder lpszParams, StringBuilder lpszDir, int FsShowCmd);
         // public void DisplaylistboxMsg(string msg)

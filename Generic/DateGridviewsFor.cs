@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Threading;
 using System.Windows.Forms;
-using After.Generic;
-using After.Manager;
+using After.Generic.Generic;
+using After.Manager.Manager;
 using After.Model;
 using After_Test.Forms;
-using SqlSugar;
 using DBUtility;
 using SqlSugar.Extensions;
 
@@ -110,7 +108,7 @@ namespace After_Test.Generic
         /// <summary>
         /// 查询数据  条件机型
         /// </summary>
-        public void QueryListIfJX()
+        public void QueryListIfJx()
         {
 			afterChange = "";
 
@@ -194,7 +192,7 @@ namespace After_Test.Generic
 
 				afterChange = beforeChange;
 
-				MessageBox.Show("成功");
+				MessageBox.Show(@"成功");
             }
         }
 
@@ -222,7 +220,7 @@ namespace After_Test.Generic
 
             if (ints > 0)
             {
-                MessageBox.Show("新增成功");
+                MessageBox.Show(@"新增成功");
             }
         }
     }

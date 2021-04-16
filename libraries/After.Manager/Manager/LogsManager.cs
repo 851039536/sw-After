@@ -1,11 +1,7 @@
 ﻿using After.Model;
 using After.Model.DBUtility;
-using DBUtility;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DBUtility {
 	public class LogsManager : DbContext {
@@ -19,7 +15,7 @@ namespace DBUtility {
 			});
 		}
 
-		public List<logs> selectLogByUid(int uid) {
+		public List<logs> SelectLogByUid(int uid) {
 			var result = logsdb.GetList().Take(10).Where(it => it.uid == uid && it.type != 2).ToList();
 			return result;
 		}

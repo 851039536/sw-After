@@ -42,7 +42,7 @@
             // 
             // deleteBut
             // 
-            this.deleteBut.Location = new System.Drawing.Point(355, 39);
+            this.deleteBut.Location = new System.Drawing.Point(424, 40);
             this.deleteBut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.deleteBut.Name = "deleteBut";
             this.deleteBut.Size = new System.Drawing.Size(50, 24);
@@ -59,14 +59,14 @@
             this.StaionBox.Location = new System.Drawing.Point(56, 40);
             this.StaionBox.Margin = new System.Windows.Forms.Padding(2);
             this.StaionBox.Name = "StaionBox";
-            this.StaionBox.Size = new System.Drawing.Size(87, 22);
+            this.StaionBox.Size = new System.Drawing.Size(120, 22);
             this.StaionBox.TabIndex = 56;
             this.StaionBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(157, 44);
+            this.label3.Location = new System.Drawing.Point(194, 44);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 14);
@@ -75,7 +75,7 @@
             // 
             // SaBut
             // 
-            this.SaBut.Location = new System.Drawing.Point(287, 39);
+            this.SaBut.Location = new System.Drawing.Point(356, 40);
             this.SaBut.Margin = new System.Windows.Forms.Padding(2);
             this.SaBut.Name = "SaBut";
             this.SaBut.Size = new System.Drawing.Size(56, 24);
@@ -87,10 +87,10 @@
             // Station
             // 
             this.Station.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Station.Location = new System.Drawing.Point(203, 43);
+            this.Station.Location = new System.Drawing.Point(240, 43);
             this.Station.Margin = new System.Windows.Forms.Padding(2);
             this.Station.Name = "Station";
-            this.Station.Size = new System.Drawing.Size(63, 17);
+            this.Station.Size = new System.Drawing.Size(101, 17);
             this.Station.TabIndex = 62;
             // 
             // label2
@@ -115,10 +115,10 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(115, 74);
+            this.dataGridView1.Location = new System.Drawing.Point(184, 74);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(294, 272);
+            this.dataGridView1.Size = new System.Drawing.Size(296, 272);
             this.dataGridView1.TabIndex = 65;
             // 
             // listBox1
@@ -127,7 +127,7 @@
             this.listBox1.ItemHeight = 14;
             this.listBox1.Location = new System.Drawing.Point(4, 75);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(105, 270);
+            this.listBox1.Size = new System.Drawing.Size(172, 270);
             this.listBox1.TabIndex = 66;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 357);
+            this.ClientSize = new System.Drawing.Size(488, 357);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);

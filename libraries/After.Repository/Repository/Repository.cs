@@ -1,10 +1,7 @@
-﻿using After.Generic;
-using SqlSugar;
+﻿using SqlSugar;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using After.Generic.Generic;
 
 namespace After.Repository.Repository
 {
@@ -15,7 +12,7 @@ namespace After.Repository.Repository
             if (context == null)
             {
                 string[] sqlText = Type2.SqlText();
-                base.Context = new SqlSugarClient(new ConnectionConfig()
+                Context = new SqlSugarClient(new ConnectionConfig()
                 {
                     //DbType = SqlSugar.DbType.SqlServer,
                     DbType = (DbType)Convert.ToSByte(sqlText[1]),

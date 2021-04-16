@@ -4,6 +4,7 @@ using After.Model;
 using SqlSugar;
 using After.Model.DBUtility;
 using After.Generic;
+using After.Generic.Generic;
 
 namespace DBUtility
 {

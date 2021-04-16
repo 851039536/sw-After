@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Threading;
 using System.Windows.Forms;
-using After.Generic;
 using After.Model;
 using After_Test.Forms;
 using DBUtility;
-using SqlSugar;
 using System.Collections.Generic;
+using After.Generic.Generic;
 using SqlSugar.Extensions;
 
 namespace After_Test.Generic {

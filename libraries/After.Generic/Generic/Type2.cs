@@ -1,21 +1,23 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
-namespace After.Generic
+namespace After.Generic.Generic
 {
     public static class Type2
     {
         [DllImport("kernel32.dll")]
-        private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string INIPath);
-
+        private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string iniPath);
+          //class里面放入这段代码
+        [DllImport("shell32.dll")]
+        public static extern int ShellExecute(IntPtr hwnd, StringBuilder lpszOp, StringBuilder lpszFile, StringBuilder lpszParams, StringBuilder lpszDir, int FsShowCmd);
         /// <summary>
         /// 型号名称
         /// </summary>
-        public static string TypeName = null;
+        public static string jx = null;
 
 
         /// <summary>

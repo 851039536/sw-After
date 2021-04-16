@@ -1,8 +1,8 @@
-﻿using After.Generic;
-using CCWin;
+﻿using CCWin;
 using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Forms;
+using After.Generic.Generic;
 
 namespace After_Test.Forms
 {
@@ -45,11 +45,6 @@ namespace After_Test.Forms
                     MessageBox.Show(ex.Message);
                 }
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-             //System.Diagnostics.Process.Start(@".\\mysql);
         }
 
         private void button1_Click_1(object sender, EventArgs e)

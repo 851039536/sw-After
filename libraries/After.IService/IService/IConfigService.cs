@@ -6,6 +6,6 @@ namespace After.IService.IService
 {
     public interface IConfigService
     {
-        Task<List<config>> GetAllAsync();
+        Task<List<string>> GetJxAsync();
     }
 }

@@ -1,10 +1,11 @@
-﻿using After.Model;
-using SqlSugar;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using After.Model;
+using DBUtility;
+using SqlSugar;
 
-namespace DBUtility
+namespace After.Manager.Manager
 {
     public class UserManager : DbContext//继承DbContext
     {

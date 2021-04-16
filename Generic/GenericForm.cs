@@ -1,30 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using After.Generic;
+using After.Generic.Generic;
+using After.Manager.Manager;
+using After.Service.Sevice;
 using CCWin.SkinControl;
 using DBUtility;
 using MySql.Data.MySqlClient;
-using After.Manager;
 
 namespace After_Test.Generic
 {
     public class GenericForm
     {
-        public static float _x;
-        public static float _y;
-        public static float _x1;
-        public static float _y1;
-
+        public static float x;
+        public static float y;
+        public static float x1;
+        public static float y1;
+        private static LogsManager logs = new LogsManager();
+        public static Form1 Form1;
+        readonly ModelsService _modelsService = new ModelsService();
         private bool _locker = true;
         private AlltestitemManager alltestitem = new AlltestitemManager();
-        private ModelsManager models = new ModelsManager();
-        private static LogsManager logs = new LogsManager();
         private TestitemManager testitem = new TestitemManager();
-        public static Form1 Form1;
-
+        TestitemService _testitemService = new TestitemService();
+        AlltestitemService _alltestitemService = new AlltestitemService();
         /// <summary>
         /// 首次加载初始化
         /// </summary>
@@ -34,25 +35,24 @@ namespace After_Test.Generic
             //GenericForm.form1.label1.Text = Type2.User1; //用户
             Form1.label4.Text = @"注:左边为待选功能，右边为需要测试的功能先锁定再更新保存";
             Form1.label4.ForeColor = Color.Red;
-            _x = Form1.Width;
-            _y = Form1.Height;
-            _x1 = _x;
-            _y1 = _y;
+            x = Form1.Width;
+            y = Form1.Height;
+            x1 = x;
+            y1 = y;
         }
+
 
         /// <summary>
         /// 加载测试机型
         /// </summary>
-        public void GetModels()
+        public async Task GetJxAsync()
         {
-            List<string> model = models.GetJX(Form1.nowUser);
-            int i = 0;
-            foreach (var y in model)
+            var result = await _modelsService.GetJxAsync(Form1.nowUser);
+            foreach (var jx in result)
             {
-                Form1.TypeNameBox.Items.Add(new SkinListBoxItem(y));
-                i++;
+                Form1.TypeNameBox.Items.Add(new SkinListBoxItem(jx));
             }
-            Form1.TypeNameBox.SelectedIndex = -1;
+            Form1.TypeNameBox.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -63,12 +63,12 @@ namespace After_Test.Generic
             try
             {
                 string _testistBox;
-                _testistBox = Convert.ToString(GenericForm.Form1.TypeNameBox.SelectedItem); //单击获取当前选中行的内容
+                _testistBox = Convert.ToString(Form1.TypeNameBox.SelectedItem); //单击获取当前选中行的内容
                 if (_testistBox != "")
                 {
-                    GenericForm.Form1.ContentBox.Items.Clear();
+                    Form1.ContentBox.Items.Clear();
                     //GenericForm.form1.listBoxControl2.Items.Clear();
-                    ComboBox1SelectedIndexChanged();
+                    ComboBoxGetTestItem();
                     // Querycheck();
                 }
             }
@@ -81,34 +81,34 @@ namespace After_Test.Generic
         /// <summary>
         /// 加载站别数据
         /// </summary>
-        public void SelectindxChanListbox3()
+        public async Task GetJxData()
         {
             try
             {
-                string _testistBox;
-                _testistBox = Convert.ToString(GenericForm.Form1.TypeNameBox.SelectedItem); //单击获取当前选中行的内容
-                Type2.TypeName = _testistBox;
-                List<string> miscelistS = testitem.QueryStation(Type2.TypeName);
-                GenericForm.Form1.StationBox.Items.Clear();
-                GenericForm.Form1.StationBox2.Items.Clear();
-                foreach (var t in miscelistS)
+                var jx = Convert.ToString(Form1.TypeNameBox.SelectedItem);
+                Type2.jx = jx;
+                Form1.StationBox.Items.Clear();
+                Form1.StationBox2.Items.Clear();
+                //加载站别
+                var result = await _testitemService.GetStation(jx);
+
+                foreach (var data in result)
                 {
-                    GenericForm.Form1.StationBox.Items.Add(t);
-                    GenericForm.Form1.StationBox2.Items.Add(new SkinListBoxItem(t));
+                    Form1.StationBox.Items.Add(data);
+                    Form1.StationBox2.Items.Add(new SkinListBoxItem(data));
                 }
+                Form1.StationBox.SelectedIndex = 0;
 
-                GenericForm.Form1.StationBox.SelectedIndex = -1;
-                //GenericForm.Form1.StationBox.SelectedIndex = -1;
-                if (_testistBox != "")
+                if (jx != "")
                 {
-                    GenericForm.Form1.ContentBox.Items.Clear();
-                    GenericForm.Form1.StaionType.Items.Clear();
-
-                    ComboBox1SelectedIndexChanged();
-                    List<string> alllist1 = alltestitem.LoadTestProject(Type2.TypeName);
-                    for (int i = 0; i < alllist1.Count; i++)
+                    Form1.ContentBox.Items.Clear();
+                    Form1.StaionType.Items.Clear();
+                    //查询机型测试项
+                    ComboBoxGetTestItem();
+                    var result1 = await _alltestitemService.GetJxTestItem(Type2.jx);
+                    foreach (var t in result1)
                     {
-                        GenericForm.Form1.ContentBox.Items.Add(new SkinListBoxItem(alllist1[i]));
+                        Form1.ContentBox.Items.Add(new SkinListBoxItem(t));
                     }
                 }
             }
@@ -119,73 +119,61 @@ namespace After_Test.Generic
         }
 
 
-
         /// <summary>
-        /// 测试项目  条件（测试站别）
+        /// 查询机型测试项
         /// </summary>
-        /// 
-        public void ComboBox1SelectedIndexChanged()
+        public async void ComboBoxGetTestItem()
         {
-            GenericForm.Form1.StaionType.Items.Clear();
-            List<string> alllist1 = testitem.GetTestitemProjectList(Type2.TypeName, GenericForm.Form1.StationBox.Text);
-
-            for (int i = 0; i < alllist1.Count; i++)
+            Form1.StaionType.Items.Clear();
+            var result = await _testitemService.GetJxTestItem(Type2.jx, Form1.StationBox.Text);
+            foreach (var data in result)
             {
-
-                GenericForm.Form1.StaionType.Items.Add(new SkinListBoxItem(alllist1[i]));
+                Form1.StaionType.Items.Add(new SkinListBoxItem(data));
             }
         }
+
         public void ComboBox1SelectedIndexChanged2()
         {
-            GenericForm.Form1.StaionType.Items.Clear();
-            List<string> alllist1 = testitem.GetTestitemProjectList(Type2.TypeName, GenericForm.Form1.StationBox2.SelectedItem.ToString());
-            for (int i = 0; i < alllist1.Count; i++)
+            Form1.StaionType.Items.Clear();
+            var alllist1 = testitem.GetTestitemProjectList(Type2.jx, Form1.StationBox2.SelectedItem.ToString());
+            foreach (var t in alllist1)
             {
-                GenericForm.Form1.StaionType.Items.Add(new SkinListBoxItem(alllist1[i]));
+                Form1.StaionType.Items.Add(new SkinListBoxItem(t));
             }
         }
 
         /// <summary>
         /// 增加按钮
         /// </summary>
-        public void butAdd()
+        public void ButAdd()
         {
-            string listBoxControl3 = Convert.ToString(GenericForm.Form1.ContentBox.SelectedItem);
-
+            string listBoxResult = Convert.ToString(Form1.ContentBox.SelectedItem);
             //双击击获取当前选中行的内容
-            SkinListBoxItemCollection ss = GenericForm.Form1.StaionType.Items;
-
-            for (int i = 0; i < ss.Count; i++)
+            SkinListBoxItemCollection Items = Form1.StaionType.Items;
+            for (int i = 0; i < Items.Count; i++)
             {
-                if (listBoxControl3 == ss[i].ToString())
+                if (listBoxResult == Items[i].ToString())
                 {
                     return;
                 }
             }
-            //foreach (SkinListBoxItemCollection item in ss)
-            //{
-            //    if (listBoxControl3 == item.ToString())
-            //    {
-            //        return;
-            //    }
-            //}
 
-            GenericForm.Form1.StaionType.Items.Add(new SkinListBoxItem(listBoxControl3));
+            Form1.StaionType.Items.Add(new SkinListBoxItem(listBoxResult));
         }
 
         /// <summary>
         /// 删除按键
         /// </summary>
-        public void butDelete()
+        public void ButDelete()
         {
-            int index1 = GenericForm.Form1.StaionType.SelectedIndex;
-            if (GenericForm.Form1.StaionType.SelectedItem != null)
+            int index = Form1.StaionType.SelectedIndex;
+            if (Form1.StaionType.SelectedItem != null)
             {
-                GenericForm.Form1.StaionType.Items.RemoveAt(index1);
-                if (GenericForm.Form1.StaionType.Items.Count > 0)
+                Form1.StaionType.Items.RemoveAt(index);
+                if (Form1.StaionType.Items.Count > 0)
                 {
                     //默认选中第一行
-                    GenericForm.Form1.StaionType.SelectedIndex = 0;
+                    Form1.StaionType.SelectedIndex = 0;
                 }
             }
             else
@@ -197,7 +185,7 @@ namespace After_Test.Generic
         /// <summary>
         /// 上移按键
         /// </summary>
-        public void butUP()
+        public void ButUp()
         {
             //int index =GenericForm.form1.listBoxControl2.SelectedIndex;
             //if (index > 0)
@@ -208,21 +196,20 @@ namespace After_Test.Generic
             //   GenericForm.form1.listBoxControl2.SelectedIndex = index - 1;
             //}
 
-            int index1 = GenericForm.Form1.StaionType.SelectedIndex;
-            if (index1 > 0)
+            int i = Form1.StaionType.SelectedIndex;
+            if (i > 0)
             {
-                SkinListBoxItem item = new SkinListBoxItem(GenericForm.Form1.StaionType.SelectedItem.ToString());
-                GenericForm.Form1.StaionType.Items.RemoveAt(index1);
-                GenericForm.Form1.StaionType.Items.Insert(index1 - 1, item);
-                GenericForm.Form1.StaionType.SelectedIndex = index1 - 1;
+                SkinListBoxItem item = new SkinListBoxItem(Form1.StaionType.SelectedItem.ToString());
+                Form1.StaionType.Items.RemoveAt(i);
+                Form1.StaionType.Items.Insert(i - 1, item);
+                Form1.StaionType.SelectedIndex = i - 1;
             }
-
         }
 
         /// <summary>
         /// 下移按键
         /// </summary>
-        public void butDOWN()
+        public void ButDown()
         {
             try
             {
@@ -235,13 +222,13 @@ namespace After_Test.Generic
                 //    GenericForm.form1.listBoxControl2.SelectedIndex = index + 1;
                 // }
 
-                int index1 = GenericForm.Form1.StaionType.SelectedIndex;
-                if (index1 < GenericForm.Form1.StaionType.Items.Count - 1)
+                int i = Form1.StaionType.SelectedIndex;
+                if (i < Form1.StaionType.Items.Count - 1)
                 {
-                    SkinListBoxItem item = new SkinListBoxItem(GenericForm.Form1.StaionType.SelectedItem.ToString());
-                    GenericForm.Form1.StaionType.Items.RemoveAt(index1);
-                    GenericForm.Form1.StaionType.Items.Insert(index1 + 1, item);
-                    GenericForm.Form1.StaionType.SelectedIndex = index1 + 1;
+                    SkinListBoxItem item = new SkinListBoxItem(Form1.StaionType.SelectedItem.ToString());
+                    Form1.StaionType.Items.RemoveAt(i);
+                    Form1.StaionType.Items.Insert(i + 1, item);
+                    Form1.StaionType.SelectedIndex = i + 1;
                 }
             }
             catch (Exception ex)
@@ -257,32 +244,31 @@ namespace After_Test.Generic
         {
             if (_locker)
             {
-                GenericForm.Form1.StaionType.Enabled = false;
-                GenericForm.Form1.ContentBox.Enabled = false;
-                GenericForm.Form1.ADD.Enabled = false;
-                GenericForm.Form1.DELETE.Enabled = false;
-                GenericForm.Form1.UP.Enabled = false;
-                GenericForm.Form1.DOWN.Enabled = false;
-                GenericForm.Form1.SAVE.Enabled = true;
-                GenericForm.Form1.LOCK.Text = @"解除锁定";
+                Form1.StaionType.Enabled = false;
+                Form1.ContentBox.Enabled = false;
+                Form1.ADD.Enabled = false;
+                Form1.DELETE.Enabled = false;
+                Form1.UP.Enabled = false;
+                Form1.DOWN.Enabled = false;
+                Form1.SAVE.Enabled = true;
+                Form1.LOCK.Text = @"解除锁定";
                 _locker = false;
-                GenericForm.Form1.StationBox.Enabled = false;
+                Form1.StationBox.Enabled = false;
             }
             else
             {
-                GenericForm.Form1.StaionType.Enabled = true;
-                GenericForm.Form1.ContentBox.Enabled = true;
-                GenericForm.Form1.ADD.Enabled = true;
-                GenericForm.Form1.DELETE.Enabled = true;
-                GenericForm.Form1.UP.Enabled = true;
-                GenericForm.Form1.DOWN.Enabled = true;
-                GenericForm.Form1.SAVE.Enabled = false;
-                GenericForm.Form1.LOCK.Text = @"锁定";
+                Form1.StaionType.Enabled = true;
+                Form1.ContentBox.Enabled = true;
+                Form1.ADD.Enabled = true;
+                Form1.DELETE.Enabled = true;
+                Form1.UP.Enabled = true;
+                Form1.DOWN.Enabled = true;
+                Form1.SAVE.Enabled = false;
+                Form1.LOCK.Text = @"锁定";
                 _locker = true;
-                GenericForm.Form1.StationBox.Enabled = true;
+                Form1.StationBox.Enabled = true;
             }
         }
-
 
 
         /// <summary>
@@ -291,20 +277,19 @@ namespace After_Test.Generic
         /// <param name="msg"></param>
         public static void DisplaylistboxMsg(string msg)
         {
-            if (GenericForm.Form1.InvokeRequired)
+            if (Form1.InvokeRequired)
             {
-                GenericForm.Form1.Invoke(new Action<string>(DisplaylistboxMsg), msg);
+                Form1.Invoke(new Action<string>(DisplaylistboxMsg), msg);
             }
             else
             {
                 if (msg.Contains("\r\n"))
                 {
-                    GenericForm.Form1.MsgBox.Items.Add(new SkinListBoxItem("\r\n"));
+                    Form1.MsgBox.Items.Add(new SkinListBoxItem("\r\n"));
                 }
                 else
                 {
-                    msg = string.Format("{0} At {1:hh:mm:ss},{2}", Form1.nowUser.name, DateTime.Now, msg);
-
+                    msg = $"{Form1.nowUser.name} At {DateTime.Now:hh:mm:ss},{msg}";
 
 
                     string beforeModels = "";
@@ -314,51 +299,44 @@ namespace After_Test.Generic
                     }
 
                     logs.insertLog(Form1.nowUser, msg, Form1.afterModels, beforeModels, 1);
-                    GenericForm.Form1.MsgBox.Items.Add(new SkinListBoxItem(msg));
+                    Form1.MsgBox.Items.Add(new SkinListBoxItem(msg));
                 }
 
-                if (GenericForm.Form1.MsgBox.Items.Count > 0) GenericForm.Form1.MsgBox.SelectedIndex = GenericForm.Form1.MsgBox.Items.Count - 1;
+                if (Form1.MsgBox.Items.Count > 0) Form1.MsgBox.SelectedIndex = Form1.MsgBox.Items.Count - 1;
                 Application.DoEvents();
             }
         }
 
 
-
         /// <summary>
         /// 新增站别
         /// </summary>
-        public void SaveStaion()
+        public async void SaveStaion()
         {
-
-
-
-            if (GenericForm.Form1.StationBox.Text.Equals(""))
+            if (Form1.StationBox.Text.Equals(""))
             {
                 MessageBox.Show(@"站别不能为空");
                 return;
             }
-
-            bool test = testitem.DeleteSave(GenericForm.Form1.StationBox.Text, Type2.TypeName);
-            if (test)
+            //  bool result = testitem.DeleteSave(Form1.StationBox.Text, Type2.jx);
+            bool result = await _testitemService.DeleteAsync(Form1.StationBox.Text, Type2.jx);
+            if (result)
             {
                 LinkedList<string> ate = new LinkedList<string>();
-                SkinListBoxItemCollection ss = GenericForm.Form1.StaionType.Items;
-
-                for (int i = 0; i < ss.Count; i++)
+                SkinListBoxItemCollection items = Form1.StaionType.Items;
+                for (int i = 0; i < items.Count; i++)
                 {
-                    ate.AddLast(ss[i].ToString());
+                    ate.AddLast(items[i].ToString());
                 }
+                var sqlselect = alltestitem.Sqlselect(Form1.StationBox.Text, Type2.jx, ate);
 
-
-
-                var zt = alltestitem.Sqlselect(GenericForm.Form1.StationBox.Text, Type2.TypeName, ate);
-                if (zt == 1)
+                if (sqlselect == 1)
                 {
-                    GenericForm.DisplaylistboxMsg("[" + Form1.nowUser.name + "] -> " + "[站别] -> " + GenericForm.Form1.StationBox.Text + "," + "[机型] -> " + Type2.TypeName + "," + "已更新");
+                    DisplaylistboxMsg("[" + Form1.nowUser.name + "] -> " + "[站别] -> " + Form1.StationBox.Text + "," + "[机型] -> " + Type2.jx + "," + "已更新");
                 }
                 else
                 {
-                    GenericForm.DisplaylistboxMsg("更新失败,站别被删除");
+                    DisplaylistboxMsg("更新失败,站别被删除");
                 }
             }
         }
@@ -372,7 +350,7 @@ namespace After_Test.Generic
             {
                 string time1 = DateTime.Now.ToString("d").Replace("/", "-");
                 string file = ".//mysql/" + time1 + "_test.sql";
-                using (MySqlCommand cmd = new MySqlCommand())
+                using (var cmd = new MySqlCommand())
                 {
                     using (MySqlBackup mb = new MySqlBackup(cmd))
                     {

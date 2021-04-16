@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
-namespace After.Generic
+namespace After.Generic.Generic
 {
     public class ClassControl
     {
@@ -13,7 +13,7 @@ namespace After.Generic
         public float Y = 0;
         public float y1 = 0;
 
-        public Control setContol { get; set; }
+        public Control SetContol { get; set; }
 
         public void setTag(Control cons)
         {

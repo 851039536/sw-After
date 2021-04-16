@@ -1,24 +1,25 @@
-﻿using After.IService.IService;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using After.IService.IService;
 using After.Model;
 using After.Repository.Repository;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
-namespace After.Service
+namespace After.Service.Sevice
 {
     public class ConfigService : Repository<config>, IConfigService
     {
-        public ConfigService()
-        {
-        }
         /// <summary>
-        /// 查询全部
+        /// 查询机型
         /// </summary>
         /// <returns></returns>
-
-        public async Task<List<config>> GetAllAsync()
+        public async Task<List<string>> GetJxAsync()
         {
-            return await base.GetListAsync();
+              var result = Context.Queryable<config>().GroupBy(it => new
+                    {
+                        it.ConfigText
+                    })
+                .Select(f => f.ConfigText).ToListAsync();
+                    return await result;
         }
     }
 }
