@@ -17,9 +17,9 @@ namespace After_Test
     {
 
         public static user nowUser;
-        private ClassControl _ctl = new ClassControl();
+        private readonly ClassControl _ctl = new ClassControl();
         private readonly GenericForm _genericForm = new GenericForm();
-        readonly LogsManager _logs = new LogsManager();
+        public readonly LogsManager logs = new LogsManager();
 
         public Form1()
         {
@@ -34,9 +34,9 @@ namespace After_Test
             _ctl.setTag(this);
             _genericForm.Firstload();
 
-            await Task.Run(Authority); 
+            await Task.Run(Authority);
             LoadLogByDb();
-           await  _genericForm.GetJxAsync();
+            await _genericForm.GetJxAsync();
             GenericForm.Form1.WindowState = FormWindowState.Normal;
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace After_Test
         /// </summary>
         public void LoadLogByDb()
         {
-            var list = _logs.SelectLogByUid(nowUser.id);
+            var list = logs.SelectLogByUid(nowUser.id);
             foreach (var item in list)
             {
                 MsgBox.Items.Add(new SkinListBoxItem(item.msg));
@@ -107,27 +107,27 @@ namespace After_Test
         /// <param name="e"></param>
         private async void ADD_Click(object sender, EventArgs e)
         {
-            await Task.Run(()=>_genericForm.ButAdd());
+            await Task.Run(() => _genericForm.ButAdd());
         }
 
         private async void DELETE_Click(object sender, EventArgs e)
         {
-             await Task.Run(()=>_genericForm.ButDelete());
+            await Task.Run(() => _genericForm.ButDelete());
         }
 
         private async void UP_Click(object sender, EventArgs e)
         {
-             await Task.Run(()=> _genericForm.ButUp());
+            await Task.Run(() => _genericForm.ButUp());
         }
         private async void DOWN_Click(object sender, EventArgs e)
         {
-              await Task.Run(()=>_genericForm.ButDown());
-            
+            await Task.Run(() => _genericForm.ButDown());
+
         }
         private async void LOCK_Click(object sender, EventArgs e)
         {
-            await Task.Run(()=>_genericForm.ButLock());
-            
+            await Task.Run(() => _genericForm.ButLock());
+
         }
 
         private void SAVE_Click(object sender, EventArgs e)
@@ -151,7 +151,7 @@ namespace After_Test
 
         private async void skinListBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-              await  _genericForm.GetJxData();
+            await _genericForm.GetJxData();
             ResetAfterModels();
         }
 
@@ -165,7 +165,7 @@ namespace After_Test
 
         private async void skinListBox2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            await Task.Run(()=>_genericForm.ButAdd());
+            await Task.Run(() => _genericForm.ButAdd());
         }
 
         private void 文件上传ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -188,7 +188,7 @@ namespace After_Test
 
         private void 数据备份ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //genericForm.SqlBackups(out var result);;
+             _genericForm.SqlBackups(out var result);;
         }
 
 
@@ -197,7 +197,6 @@ namespace After_Test
         {
             DataRestore dataRestore = new DataRestore();
             dataRestore.ShowDialog();
-
         }
 
         private void StationBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -259,6 +258,11 @@ namespace After_Test
         {
             Battery battery = new Battery();
             await Task.Run(() => battery.ShowDialog());
+        }
+
+        private void 接口测试ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

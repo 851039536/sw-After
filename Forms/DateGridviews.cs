@@ -26,7 +26,7 @@ namespace After_Test.Forms
 
         private void DateGridviews_Load(object sender, EventArgs e)
         {
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
+            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
             panel1.Visible = false; //隐藏面板
             Test();
             dataGridView1.ReadOnly = true;

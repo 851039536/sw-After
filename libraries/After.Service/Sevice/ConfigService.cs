@@ -21,5 +21,17 @@ namespace After.Service.Sevice
                 .Select(f => f.ConfigText).ToListAsync();
                     return await result;
         }
+
+        /// <summary>
+        /// 查询机型
+        /// </summary>
+        /// <param name="jx"></param>
+        /// <returns></returns>
+        public async Task<config> GetTypeJxAsync(string jx)
+        {
+             var result= await base.GetSingleAsync(s=>s.ConfigText==jx);
+
+            return  result;
+        }
     }
 }

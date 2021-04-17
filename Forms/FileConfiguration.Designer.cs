@@ -62,10 +62,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 75);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 96);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(911, 477);
+            this.dataGridView1.Size = new System.Drawing.Size(1041, 613);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -106,9 +107,9 @@
             this.修改ToolStripMenuItem});
             this.skinMenuStrip1.Location = new System.Drawing.Point(4, 32);
             this.skinMenuStrip1.Name = "skinMenuStrip1";
-            this.skinMenuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.skinMenuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
             this.skinMenuStrip1.RadiusStyle = CCWin.SkinClass.RoundStyle.All;
-            this.skinMenuStrip1.Size = new System.Drawing.Size(917, 25);
+            this.skinMenuStrip1.Size = new System.Drawing.Size(1049, 27);
             this.skinMenuStrip1.SkinAllColor = true;
             this.skinMenuStrip1.TabIndex = 1;
             this.skinMenuStrip1.Text = "skinMenuStrip1";
@@ -155,11 +156,12 @@
             this.skinPanel1.Controls.Add(this.wqw);
             this.skinPanel1.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.skinPanel1.DownBack = null;
-            this.skinPanel1.Location = new System.Drawing.Point(112, 88);
+            this.skinPanel1.Location = new System.Drawing.Point(128, 136);
+            this.skinPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.skinPanel1.MouseBack = null;
             this.skinPanel1.Name = "skinPanel1";
             this.skinPanel1.NormlBack = null;
-            this.skinPanel1.Size = new System.Drawing.Size(704, 416);
+            this.skinPanel1.Size = new System.Drawing.Size(805, 512);
             this.skinPanel1.TabIndex = 2;
             this.skinPanel1.Visible = false;
             this.skinPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.skinPanel1_Paint);
@@ -170,7 +172,7 @@
             this.skinLabel1.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel1.BorderColor = System.Drawing.Color.White;
             this.skinLabel1.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinLabel1.Location = new System.Drawing.Point(32, 80);
+            this.skinLabel1.Location = new System.Drawing.Point(37, 88);
             this.skinLabel1.Name = "skinLabel1";
             this.skinLabel1.Size = new System.Drawing.Size(49, 14);
             this.skinLabel1.TabIndex = 20;
@@ -182,7 +184,7 @@
             this.id.BackColor = System.Drawing.Color.Transparent;
             this.id.BorderColor = System.Drawing.Color.White;
             this.id.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.id.Location = new System.Drawing.Point(40, 48);
+            this.id.Location = new System.Drawing.Point(32, 32);
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(18, 14);
             this.id.TabIndex = 19;
@@ -193,11 +195,12 @@
             this.skinButton3.BackColor = System.Drawing.Color.Transparent;
             this.skinButton3.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.skinButton3.DownBack = null;
-            this.skinButton3.Location = new System.Drawing.Point(616, 384);
+            this.skinButton3.Location = new System.Drawing.Point(696, 24);
+            this.skinButton3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.skinButton3.MouseBack = null;
             this.skinButton3.Name = "skinButton3";
             this.skinButton3.NormlBack = null;
-            this.skinButton3.Size = new System.Drawing.Size(75, 23);
+            this.skinButton3.Size = new System.Drawing.Size(86, 30);
             this.skinButton3.TabIndex = 18;
             this.skinButton3.Text = "退出";
             this.skinButton3.UseVisualStyleBackColor = false;
@@ -208,11 +211,12 @@
             this.skinButton2.BackColor = System.Drawing.Color.Transparent;
             this.skinButton2.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.skinButton2.DownBack = null;
-            this.skinButton2.Location = new System.Drawing.Point(512, 24);
+            this.skinButton2.Location = new System.Drawing.Point(472, 24);
+            this.skinButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.skinButton2.MouseBack = null;
             this.skinButton2.Name = "skinButton2";
             this.skinButton2.NormlBack = null;
-            this.skinButton2.Size = new System.Drawing.Size(75, 23);
+            this.skinButton2.Size = new System.Drawing.Size(86, 30);
             this.skinButton2.TabIndex = 17;
             this.skinButton2.Text = "更新";
             this.skinButton2.UseVisualStyleBackColor = false;
@@ -223,11 +227,12 @@
             this.skinButton1.BackColor = System.Drawing.Color.Transparent;
             this.skinButton1.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.skinButton1.DownBack = null;
-            this.skinButton1.Location = new System.Drawing.Point(616, 24);
+            this.skinButton1.Location = new System.Drawing.Point(584, 24);
+            this.skinButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.skinButton1.MouseBack = null;
             this.skinButton1.Name = "skinButton1";
             this.skinButton1.NormlBack = null;
-            this.skinButton1.Size = new System.Drawing.Size(75, 23);
+            this.skinButton1.Size = new System.Drawing.Size(86, 30);
             this.skinButton1.TabIndex = 16;
             this.skinButton1.Text = "添加";
             this.skinButton1.UseVisualStyleBackColor = false;
@@ -236,9 +241,10 @@
             // zipedfilename2
             // 
             this.zipedfilename2.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
-            this.zipedfilename2.Location = new System.Drawing.Point(504, 296);
+            this.zipedfilename2.Location = new System.Drawing.Point(576, 381);
+            this.zipedfilename2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.zipedfilename2.Name = "zipedfilename2";
-            this.zipedfilename2.Size = new System.Drawing.Size(184, 80);
+            this.zipedfilename2.Size = new System.Drawing.Size(210, 102);
             this.zipedfilename2.TabIndex = 15;
             this.zipedfilename2.Text = "1222222222222222222222222222222222222222222222222222222";
             this.zipedfilename2.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
@@ -246,9 +252,10 @@
             // zipedfilename
             // 
             this.zipedfilename.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
-            this.zipedfilename.Location = new System.Drawing.Point(504, 136);
+            this.zipedfilename.Location = new System.Drawing.Point(576, 175);
+            this.zipedfilename.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.zipedfilename.Name = "zipedfilename";
-            this.zipedfilename.Size = new System.Drawing.Size(184, 80);
+            this.zipedfilename.Size = new System.Drawing.Size(210, 102);
             this.zipedfilename.TabIndex = 14;
             this.zipedfilename.Text = "1222222222222222222222222222222222222222222222222222222";
             this.zipedfilename.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
@@ -256,9 +263,10 @@
             // foldertozip
             // 
             this.foldertozip.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
-            this.foldertozip.Location = new System.Drawing.Point(24, 296);
+            this.foldertozip.Location = new System.Drawing.Point(27, 381);
+            this.foldertozip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.foldertozip.Name = "foldertozip";
-            this.foldertozip.Size = new System.Drawing.Size(208, 80);
+            this.foldertozip.Size = new System.Drawing.Size(245, 102);
             this.foldertozip.TabIndex = 13;
             this.foldertozip.Text = "1222222222222222222222222222222222222222222222222222222";
             this.foldertozip.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
@@ -266,9 +274,10 @@
             // filepath
             // 
             this.filepath.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
-            this.filepath.Location = new System.Drawing.Point(264, 136);
+            this.filepath.Location = new System.Drawing.Point(302, 175);
+            this.filepath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.filepath.Name = "filepath";
-            this.filepath.Size = new System.Drawing.Size(208, 80);
+            this.filepath.Size = new System.Drawing.Size(237, 102);
             this.filepath.TabIndex = 12;
             this.filepath.Text = "1222222222222222222222222222222222222222222222222222222";
             this.filepath.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
@@ -276,9 +285,10 @@
             // localitypath
             // 
             this.localitypath.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
-            this.localitypath.Location = new System.Drawing.Point(264, 296);
+            this.localitypath.Location = new System.Drawing.Point(304, 381);
+            this.localitypath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.localitypath.Name = "localitypath";
-            this.localitypath.Size = new System.Drawing.Size(200, 80);
+            this.localitypath.Size = new System.Drawing.Size(240, 102);
             this.localitypath.TabIndex = 11;
             this.localitypath.Text = "1222222222222222222222222222222222222222222222222222222";
             this.localitypath.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
@@ -286,9 +296,10 @@
             // path
             // 
             this.path.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
-            this.path.Location = new System.Drawing.Point(32, 136);
+            this.path.Location = new System.Drawing.Point(37, 175);
+            this.path.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.path.Name = "path";
-            this.path.Size = new System.Drawing.Size(200, 80);
+            this.path.Size = new System.Drawing.Size(228, 102);
             this.path.TabIndex = 10;
             this.path.Text = "path";
             this.path.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
@@ -304,28 +315,30 @@
             this.name.IsSystemPasswordChar = false;
             this.name.Lines = new string[] {
         "skinTextBox1"};
-            this.name.Location = new System.Drawing.Point(152, 40);
+            this.name.Location = new System.Drawing.Point(152, 21);
             this.name.Margin = new System.Windows.Forms.Padding(0);
             this.name.MaxLength = 32767;
-            this.name.MinimumSize = new System.Drawing.Size(28, 28);
+            this.name.MinimumSize = new System.Drawing.Size(32, 36);
             this.name.MouseBack = null;
             this.name.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.name.Multiline = false;
+            this.name.Multiline = true;
             this.name.Name = "name";
             this.name.NormlBack = null;
-            this.name.Padding = new System.Windows.Forms.Padding(5);
+            this.name.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.name.ReadOnly = false;
             this.name.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.name.Size = new System.Drawing.Size(80, 28);
+            this.name.Size = new System.Drawing.Size(128, 36);
             // 
             // 
             // 
             this.name.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.name.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.name.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.name.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.name.SkinTxt.Location = new System.Drawing.Point(6, 6);
+            this.name.SkinTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.name.SkinTxt.Multiline = true;
             this.name.SkinTxt.Name = "BaseText";
-            this.name.SkinTxt.Size = new System.Drawing.Size(70, 18);
+            this.name.SkinTxt.Size = new System.Drawing.Size(116, 24);
             this.name.SkinTxt.TabIndex = 0;
             this.name.SkinTxt.Text = "skinTextBox1";
             this.name.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
@@ -343,7 +356,7 @@
             this.skinLabel8.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel8.BorderColor = System.Drawing.Color.White;
             this.skinLabel8.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinLabel8.Location = new System.Drawing.Point(32, 104);
+            this.skinLabel8.Location = new System.Drawing.Point(37, 144);
             this.skinLabel8.Name = "skinLabel8";
             this.skinLabel8.Size = new System.Drawing.Size(161, 14);
             this.skinLabel8.TabIndex = 8;
@@ -355,7 +368,7 @@
             this.skinLabel7.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel7.BorderColor = System.Drawing.Color.White;
             this.skinLabel7.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinLabel7.Location = new System.Drawing.Point(272, 264);
+            this.skinLabel7.Location = new System.Drawing.Point(311, 339);
             this.skinLabel7.Name = "skinLabel7";
             this.skinLabel7.Size = new System.Drawing.Size(161, 14);
             this.skinLabel7.TabIndex = 7;
@@ -367,7 +380,7 @@
             this.skinLabel6.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel6.BorderColor = System.Drawing.Color.White;
             this.skinLabel6.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinLabel6.Location = new System.Drawing.Point(272, 104);
+            this.skinLabel6.Location = new System.Drawing.Point(304, 144);
             this.skinLabel6.Name = "skinLabel6";
             this.skinLabel6.Size = new System.Drawing.Size(175, 14);
             this.skinLabel6.TabIndex = 6;
@@ -379,7 +392,7 @@
             this.skinLabel5.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel5.BorderColor = System.Drawing.Color.White;
             this.skinLabel5.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinLabel5.Location = new System.Drawing.Point(32, 264);
+            this.skinLabel5.Location = new System.Drawing.Point(37, 339);
             this.skinLabel5.Name = "skinLabel5";
             this.skinLabel5.Size = new System.Drawing.Size(119, 14);
             this.skinLabel5.TabIndex = 5;
@@ -391,7 +404,7 @@
             this.skinLabel4.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel4.BorderColor = System.Drawing.Color.White;
             this.skinLabel4.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinLabel4.Location = new System.Drawing.Point(512, 104);
+            this.skinLabel4.Location = new System.Drawing.Point(576, 144);
             this.skinLabel4.Name = "skinLabel4";
             this.skinLabel4.Size = new System.Drawing.Size(147, 14);
             this.skinLabel4.TabIndex = 4;
@@ -403,7 +416,7 @@
             this.skinLabel3.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel3.BorderColor = System.Drawing.Color.White;
             this.skinLabel3.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skinLabel3.Location = new System.Drawing.Point(512, 264);
+            this.skinLabel3.Location = new System.Drawing.Point(585, 339);
             this.skinLabel3.Name = "skinLabel3";
             this.skinLabel3.Size = new System.Drawing.Size(147, 14);
             this.skinLabel3.TabIndex = 3;
@@ -415,7 +428,7 @@
             this.wqw.BackColor = System.Drawing.Color.Transparent;
             this.wqw.BorderColor = System.Drawing.Color.White;
             this.wqw.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wqw.Location = new System.Drawing.Point(72, 48);
+            this.wqw.Location = new System.Drawing.Point(68, 32);
             this.wqw.Name = "wqw";
             this.wqw.Size = new System.Drawing.Size(63, 14);
             this.wqw.TabIndex = 0;
@@ -423,14 +436,15 @@
             // 
             // FileConfiguration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 566);
+            this.ClientSize = new System.Drawing.Size(1057, 737);
             this.Controls.Add(this.skinPanel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.skinMenuStrip1);
-            this.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Font = new System.Drawing.Font("微軟正黑體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.MainMenuStrip = this.skinMenuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FileConfiguration";
             this.Text = "FileConfiguration";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FileConfiguration_FormClosing);

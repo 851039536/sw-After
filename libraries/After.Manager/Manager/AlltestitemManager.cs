@@ -4,22 +4,24 @@ using System.Linq;
 using System.Windows.Forms;
 using After.Model;
 using After.Model.DBUtility;
+using DBUtility;
 
-namespace DBUtility
+namespace After.Manager.Manager
 {
     public class AlltestitemManager : DbContext //继承DbContext
     {
 
-		/// <summary>
-		/// 加载用户对应的数据
-		/// </summary>
-		/// <param name="u">用户</param>
-		/// <returns></returns>
-		public List<alltestitem> GetAllByUser(user u) {
-			var models = QueryJx(u);
-			var data = Db.Queryable<alltestitem>().Where(a => models.Contains(a.机型)).ToList();
-			return data;
-		}
+        /// <summary>
+        /// 加载用户对应的数据
+        /// </summary>
+        /// <param name="u">用户</param>
+        /// <returns></returns>
+        public List<alltestitem> GetAllByUser(user u)
+        {
+            var models = QueryJx(u);
+            var data = Db.Queryable<alltestitem>().Where(a => models.Contains(a.机型)).ToList();
+            return data;
+        }
 
 
         /// <summary>
@@ -28,44 +30,36 @@ namespace DBUtility
         /// <returns>data</returns>
         public List<string> QueryJx(user u)
         {
-			//        try
-			//        {
-			//            List<string> data = Db.Queryable<alltestitem>().GroupBy(it => new
-			//            {
-			//                it.机型
-			//            })
-			//.Select(f => f.机型).ToList();
-			//            return data;
-			//        }
-			//        catch (Exception e)
-			//        {
-			//            MessageBox.Show(e.Message);
-			//            throw;
+       
+            try
+            {
+                if (u.权限 == 1)
+                {
+                    List<string> data2 = Db.Queryable<alltestitem>().GroupBy(it => new
+                    {
+                        it.机型
+                    })
+                .Select(f => f.机型).ToList();
+                    return data2;
+                }
+                else
+                {
+                    List<string> data = Db.Queryable<models>().GroupBy(it => new
+                    {
+                        it.id
+                    })
+                .Where(it => it.username == u.用户)
+                .Select(f => f.modelname).ToList();
+                    return data;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                throw;
 
-			//        }
-			try {
-				if ( u.权限 == 1 ) {
-					List<string> data2 = Db.Queryable<alltestitem>().GroupBy(it => new {
-						it.机型
-					})
-				.Select(f => f.机型).ToList();
-					return data2;
-				}
-				else {
-					List<string> data = Db.Queryable<models>().GroupBy(it => new {
-						it.id
-					})
-				.Where(it => it.username == u.用户)
-				.Select(f => f.modelname).ToList();
-					return data;
-				}
-			}
-			catch ( Exception e ) {
-				MessageBox.Show(e.Message);
-				throw;
-
-			}
-		}
+            }
+        }
 
 
 

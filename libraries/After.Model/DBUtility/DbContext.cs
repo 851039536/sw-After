@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Linq;
-using After.Model;
-using SqlSugar;
-using After.Model.DBUtility;
-using After.Generic;
 using After.Generic.Generic;
+using SqlSugar;
 
-namespace DBUtility
+namespace After.Model.DBUtility
 {
     public class DbContext
     {
@@ -35,15 +32,15 @@ namespace DBUtility
         }
 
         //用来处理表的常用操作
-        public SimpleClient<uploading> uploadingdb { get { return new SimpleClient<uploading>(Db); } }
+        public SimpleClient<uploading> Uploadingdb { get { return new SimpleClient<uploading>(Db); } }
         public SimpleClient<user> Userdb => new SimpleClient<user>(Db);
-        public SimpleClient<alltestitem> alltestitemdb => new SimpleClient<alltestitem>(Db);
-        public SimpleClient<testitem> testitemdb => new SimpleClient<testitem>(Db);
+        public SimpleClient<alltestitem> Alltestitemdb => new SimpleClient<alltestitem>(Db);
+        public SimpleClient<testitem> Testitemdb => new SimpleClient<testitem>(Db);
         public SimpleClient<miscellaneous> miscellaneousdb => new SimpleClient<miscellaneous>(Db);
         public SimpleClient<models> modelsdb => new SimpleClient<models>(Db);
-        public SimpleClient<logs> logsdb => new SimpleClient<logs>(Db);
+        public SimpleClient<logs> Logsdb => new SimpleClient<logs>(Db);
 
-        public SimpleClient<config> configDb => new SimpleClient<config>(Db);
+        public SimpleClient<config> ConfigDb => new SimpleClient<config>(Db);
         // public SimpleClient<School> SchoolDb { get { return new SimpleClient<School>(Db); } }
     }
 }

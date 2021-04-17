@@ -6,7 +6,7 @@ using System.Linq;
 namespace DBUtility {
 	public class LogsManager : DbContext {
 		public bool insertLog(user u, string msg, string afterModels, string beforeModels, int type) {
-			return logsdb.Insert(new logs() {
+			return Logsdb.Insert(new logs() {
 				uid = u.id,
 				msg = msg,
 				afterModels = afterModels,
@@ -16,7 +16,7 @@ namespace DBUtility {
 		}
 
 		public List<logs> SelectLogByUid(int uid) {
-			var result = logsdb.GetList().Take(10).Where(it => it.uid == uid && it.type != 2).ToList();
+			var result = Logsdb.GetList().Take(10).Where(it => it.uid == uid && it.type != 2).ToList();
 			return result;
 		}
 	}

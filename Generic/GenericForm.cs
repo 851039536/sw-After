@@ -62,14 +62,11 @@ namespace After_Test.Generic
         {
             try
             {
-                string _testistBox;
-                _testistBox = Convert.ToString(Form1.TypeNameBox.SelectedItem); //单击获取当前选中行的内容
-                if (_testistBox != "")
+                var testistBox = Convert.ToString(Form1.TypeNameBox.SelectedItem);
+                if (testistBox != "")
                 {
                     Form1.ContentBox.Items.Clear();
-                    //GenericForm.form1.listBoxControl2.Items.Clear();
                     ComboBoxGetTestItem();
-                    // Querycheck();
                 }
             }
             catch (Exception ex)
@@ -132,11 +129,11 @@ namespace After_Test.Generic
             }
         }
 
-        public void ComboBox1SelectedIndexChanged2()
+        public async void ComboBox1SelectedIndexChanged2()
         {
             Form1.StaionType.Items.Clear();
-            var alllist1 = testitem.GetTestitemProjectList(Type2.jx, Form1.StationBox2.SelectedItem.ToString());
-            foreach (var t in alllist1)
+            var result =await  _testitemService.GetJxTestItem(Type2.jx, Form1.StationBox2.SelectedItem.ToString());
+            foreach (var t in result)
             {
                 Form1.StaionType.Items.Add(new SkinListBoxItem(t));
             }
@@ -149,10 +146,10 @@ namespace After_Test.Generic
         {
             string listBoxResult = Convert.ToString(Form1.ContentBox.SelectedItem);
             //双击击获取当前选中行的内容
-            SkinListBoxItemCollection Items = Form1.StaionType.Items;
-            for (int i = 0; i < Items.Count; i++)
+            SkinListBoxItemCollection items = Form1.StaionType.Items;
+            for (int i = 0; i < items.Count; i++)
             {
-                if (listBoxResult == Items[i].ToString())
+                if (listBoxResult == items[i].ToString())
                 {
                     return;
                 }

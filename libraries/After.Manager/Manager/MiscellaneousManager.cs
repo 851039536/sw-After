@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using After.Model;
+using After.Model.DBUtility;
 using DBUtility;
 
 namespace After.Manager.Manager

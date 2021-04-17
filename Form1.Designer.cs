@@ -68,6 +68,10 @@
             this.StaionType = new CCWin.SkinControl.SkinListBox();
             this.StationBox2 = new CCWin.SkinControl.SkinListBox();
             this.intro = new System.Windows.Forms.Label();
+            this.接口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chromaSwATEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aTE接口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.case接口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.skinGroupBox1.SuspendLayout();
             this.skinGroupBox2.SuspendLayout();
@@ -367,7 +371,8 @@
             this.功能配置ToolStripMenuItem1,
             this.配置ToolStripMenuItem,
             this.其他ToolStripMenuItem,
-            this.caseToolStripMenuItem});
+            this.caseToolStripMenuItem,
+            this.接口ToolStripMenuItem});
             this.skinMenuStrip1.Location = new System.Drawing.Point(4, 32);
             this.skinMenuStrip1.Name = "skinMenuStrip1";
             this.skinMenuStrip1.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
@@ -395,21 +400,21 @@
             // 使用说明ToolStripMenuItem
             // 
             this.使用说明ToolStripMenuItem.Name = "使用说明ToolStripMenuItem";
-            this.使用说明ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.使用说明ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.使用说明ToolStripMenuItem.Text = "使用说明";
             this.使用说明ToolStripMenuItem.Click += new System.EventHandler(this.使用说明ToolStripMenuItem_Click);
             // 
             // 文件上传ToolStripMenuItem1
             // 
             this.文件上传ToolStripMenuItem1.Name = "文件上传ToolStripMenuItem1";
-            this.文件上传ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.文件上传ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.文件上传ToolStripMenuItem1.Text = "文件上传";
             this.文件上传ToolStripMenuItem1.Click += new System.EventHandler(this.文件上传ToolStripMenuItem1_Click);
             // 
             // 文件配置ToolStripMenuItem
             // 
             this.文件配置ToolStripMenuItem.Name = "文件配置ToolStripMenuItem";
-            this.文件配置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.文件配置ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.文件配置ToolStripMenuItem.Text = "文件配置";
             this.文件配置ToolStripMenuItem.Click += new System.EventHandler(this.文件配置ToolStripMenuItem_Click);
             // 
@@ -426,21 +431,21 @@
             // 数据备份ToolStripMenuItem
             // 
             this.数据备份ToolStripMenuItem.Name = "数据备份ToolStripMenuItem";
-            this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.数据备份ToolStripMenuItem.Text = "数据备份";
             this.数据备份ToolStripMenuItem.Click += new System.EventHandler(this.数据备份ToolStripMenuItem_Click);
             // 
             // 用户管理ToolStripMenuItem1
             // 
             this.用户管理ToolStripMenuItem1.Name = "用户管理ToolStripMenuItem1";
-            this.用户管理ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.用户管理ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.用户管理ToolStripMenuItem1.Text = "用户管理";
             this.用户管理ToolStripMenuItem1.Click += new System.EventHandler(this.用户管理ToolStripMenuItem1_Click);
             // 
             // 数据还原ToolStripMenuItem
             // 
             this.数据还原ToolStripMenuItem.Name = "数据还原ToolStripMenuItem";
-            this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.数据还原ToolStripMenuItem.Text = "数据还原";
             this.数据还原ToolStripMenuItem.Click += new System.EventHandler(this.数据还原ToolStripMenuItem_Click);
             // 
@@ -476,7 +481,7 @@
             // mEVN盘ToolStripMenuItem
             // 
             this.mEVN盘ToolStripMenuItem.Name = "mEVN盘ToolStripMenuItem";
-            this.mEVN盘ToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.mEVN盘ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mEVN盘ToolStripMenuItem.Text = "MEVN盘";
             this.mEVN盘ToolStripMenuItem.Click += new System.EventHandler(this.mEVN盘ToolStripMenuItem_Click);
             // 
@@ -491,7 +496,7 @@
             // batteryToolStripMenuItem
             // 
             this.batteryToolStripMenuItem.Name = "batteryToolStripMenuItem";
-            this.batteryToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.batteryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.batteryToolStripMenuItem.Text = "Battery";
             this.batteryToolStripMenuItem.Click += new System.EventHandler(this.batteryToolStripMenuItem_Click);
             // 
@@ -553,6 +558,34 @@
             this.intro.Size = new System.Drawing.Size(64, 24);
             this.intro.TabIndex = 97;
             this.intro.Text = "label1";
+            // 
+            // 接口ToolStripMenuItem
+            // 
+            this.接口ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chromaSwATEToolStripMenuItem,
+            this.aTE接口ToolStripMenuItem,
+            this.case接口ToolStripMenuItem});
+            this.接口ToolStripMenuItem.Name = "接口ToolStripMenuItem";
+            this.接口ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.接口ToolStripMenuItem.Text = "接口";
+            // 
+            // chromaSwATEToolStripMenuItem
+            // 
+            this.chromaSwATEToolStripMenuItem.Name = "chromaSwATEToolStripMenuItem";
+            this.chromaSwATEToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chromaSwATEToolStripMenuItem.Text = "Chroma_SwATE";
+            // 
+            // aTE接口ToolStripMenuItem
+            // 
+            this.aTE接口ToolStripMenuItem.Name = "aTE接口ToolStripMenuItem";
+            this.aTE接口ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aTE接口ToolStripMenuItem.Text = "ATE接口";
+            // 
+            // case接口ToolStripMenuItem
+            // 
+            this.case接口ToolStripMenuItem.Name = "case接口ToolStripMenuItem";
+            this.case接口ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.case接口ToolStripMenuItem.Text = "Case接口";
             // 
             // Form1
             // 
@@ -631,6 +664,10 @@
         private System.Windows.Forms.ToolStripMenuItem mEVN盘ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem batteryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 接口ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chromaSwATEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aTE接口ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem case接口ToolStripMenuItem;
     }
 }
 

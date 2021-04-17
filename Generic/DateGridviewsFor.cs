@@ -43,7 +43,7 @@ namespace After_Test.Generic
             {
 				List<config> data;
 				if ( Form1.nowUser.权限 == 1 ) {
-					data = config.configDb.GetList();
+					data = config.ConfigDb.GetList();
 				}
 				else {
 					data = config.GetAllByUser(Form1.nowUser);
@@ -73,7 +73,7 @@ namespace After_Test.Generic
                     {
                         int index = DateGridviews.Dategridviews.dataGridView1.CurrentRow.Index; //取得选中行的索引
                         int id = DateGridviews.Dategridviews.dataGridView1.Rows[index].Cells["id"].Value.ObjToInt(); //获取单元格列名为‘Id’的值        
-                        config.configDb.DeleteById(id); //根据主键删除
+                        config.ConfigDb.DeleteById(id); //根据主键删除
                     }
 
                     QueryConfig();
@@ -92,7 +92,7 @@ namespace After_Test.Generic
         {
             try
             {
-                var data = config.configDb.GetList(c => c.ConfigText == DateGridviews.Dategridviews.comboBox1.Text);
+                var data = config.ConfigDb.GetList(c => c.ConfigText == DateGridviews.Dategridviews.comboBox1.Text);
                 // MySqlDataAdapter sda = new MySqlDataAdapter("select * from config where ConfigText='" + comboBox1.Text + "'", mysql.conn);//
                 DateGridviews.Dategridviews.dataGridView1.DoubleBuffered(true);
                 DateGridviews.Dategridviews.dataGridView1.DataSource = data;
@@ -112,7 +112,7 @@ namespace After_Test.Generic
         {
 			afterChange = "";
 
-			List<config> data = config.configDb.GetList(c => c.ConfigText == DateGridviews.Dategridviews.comboBox2.Text);
+			List<config> data = config.ConfigDb.GetList(c => c.ConfigText == DateGridviews.Dategridviews.comboBox2.Text);
             foreach (var data1 in data)
             {
                 DateGridviews.Dategridviews.id.Text = data1.id.ToString();
@@ -155,7 +155,7 @@ namespace After_Test.Generic
             Thread.Sleep(1000);
             DateGridviews.Dategridviews.button1.Enabled = true;
             // 只更新Name列和CreateTime列，其它列不更新，条件id=1
-            bool test = config.configDb.Update(it => new config
+            bool test = config.ConfigDb.Update(it => new config
             {
                 ConfigText = DateGridviews.Dategridviews.ConfigText.Text,
                 HPID = DateGridviews.Dategridviews.HPID.Text,

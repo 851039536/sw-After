@@ -256,5 +256,10 @@ namespace After_Test.Forms {
 			button6.Text = @"更新";
 			button6.Enabled = true;
 		}
-	}
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 }

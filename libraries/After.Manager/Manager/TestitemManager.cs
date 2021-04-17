@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using After.Model;
+using After.Model.DBUtility;
 using DBUtility;
 
 namespace After.Manager.Manager
@@ -45,7 +46,7 @@ namespace After.Manager.Manager
         /// </summary>
         public bool DeleteSave(string station, string jx)
         {
-            var num = testitemdb.Delete(it => it.测试站别 == station && it.机型 == jx); //根据条件删除
+            var num = Testitemdb.Delete(it => it.测试站别 == station && it.机型 == jx); //根据条件删除
 
             return num;
         }

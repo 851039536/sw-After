@@ -39,7 +39,7 @@ namespace After_Test.Forms
         {
             try
             {
-                var data = uploading.uploadingdb.GetList();
+                var data = uploading.Uploadingdb.GetList();
                 dataGridView1.DoubleBuffered(true);
                 dataGridView1.DataSource = data;
             }
@@ -91,7 +91,7 @@ namespace After_Test.Forms
         {
             Thread.Sleep(1000);
             // 只更新Name列和CreateTime列，其它列不更新，条件id=1
-            bool test = uploading.uploadingdb.Update(it => new uploading
+            bool test = uploading.Uploadingdb.Update(it => new uploading
             {
                 name = name.Text,
                 foldertozip = foldertozip.Text,
@@ -120,7 +120,7 @@ namespace After_Test.Forms
             skinPanel1.Visible = true;
             int ids = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ObjToInt(); //获取选中行指定列的值
             id.Text = ids.ToString();
-            var data = uploading.uploadingdb.GetById(ids);
+            var data = uploading.Uploadingdb.GetById(ids);
             name.Text = data.name;
             foldertozip.Text = data.foldertozip;
             localitypath.Text = data.localitypath;
