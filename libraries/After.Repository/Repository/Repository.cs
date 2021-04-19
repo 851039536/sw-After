@@ -11,7 +11,7 @@ namespace After.Repository.Repository
         {
             if (context == null)
             {
-                string[] sqlText = Type2.SqlText();
+                string[] sqlText = Util.SqlText();
                 Context = new SqlSugarClient(new ConnectionConfig()
                 {
                     //DbType = SqlSugar.DbType.SqlServer,

@@ -12,7 +12,7 @@ namespace After.Model.DBUtility
 
         public DbContext()
         {
-            string[] sqlText = Type2.SqlText();
+            string[] sqlText = Util.SqlText();
             Db = new SqlSugarClient(new ConnectionConfig
             {
                 ConnectionString = sqlText[0],

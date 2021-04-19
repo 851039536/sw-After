@@ -32,7 +32,7 @@ namespace After_Test.Generic
         public void Firstload()
         {
             Form1.SAVE.Enabled = false;
-            //GenericForm.form1.label1.Text = Type2.User1; //用户
+            //GenericForm.form1.label1.Text = Util.User1; //用户
             Form1.label4.Text = @"注:左边为待选功能，右边为需要测试的功能先锁定再更新保存";
             Form1.label4.ForeColor = Color.Red;
             x = Form1.Width;
@@ -83,7 +83,7 @@ namespace After_Test.Generic
             try
             {
                 var jx = Convert.ToString(Form1.TypeNameBox.SelectedItem);
-                Type2.jx = jx;
+                Util.jx = jx;
                 Form1.StationBox.Items.Clear();
                 Form1.StationBox2.Items.Clear();
                 //加载站别
@@ -102,7 +102,7 @@ namespace After_Test.Generic
                     Form1.StaionType.Items.Clear();
                     //查询机型测试项
                     ComboBoxGetTestItem();
-                    var result1 = await _alltestitemService.GetJxTestItem(Type2.jx);
+                    var result1 = await _alltestitemService.GetJxTestItem(Util.jx);
                     foreach (var t in result1)
                     {
                         Form1.ContentBox.Items.Add(new SkinListBoxItem(t));
@@ -122,7 +122,7 @@ namespace After_Test.Generic
         public async void ComboBoxGetTestItem()
         {
             Form1.StaionType.Items.Clear();
-            var result = await _testitemService.GetJxTestItem(Type2.jx, Form1.StationBox.Text);
+            var result = await _testitemService.GetJxTestItem(Util.jx, Form1.StationBox.Text);
             foreach (var data in result)
             {
                 Form1.StaionType.Items.Add(new SkinListBoxItem(data));
@@ -132,7 +132,7 @@ namespace After_Test.Generic
         public async void ComboBox1SelectedIndexChanged2()
         {
             Form1.StaionType.Items.Clear();
-            var result =await  _testitemService.GetJxTestItem(Type2.jx, Form1.StationBox2.SelectedItem.ToString());
+            var result =await  _testitemService.GetJxTestItem(Util.jx, Form1.StationBox2.SelectedItem.ToString());
             foreach (var t in result)
             {
                 Form1.StaionType.Items.Add(new SkinListBoxItem(t));
@@ -315,8 +315,8 @@ namespace After_Test.Generic
                 MessageBox.Show(@"站别不能为空");
                 return;
             }
-            //  bool result = testitem.DeleteSave(Form1.StationBox.Text, Type2.jx);
-            bool result = await _testitemService.DeleteAsync(Form1.StationBox.Text, Type2.jx);
+            //  bool result = testitem.DeleteSave(Form1.StationBox.Text, Util.jx);
+            bool result = await _testitemService.DeleteAsync(Form1.StationBox.Text, Util.jx);
             if (result)
             {
                 LinkedList<string> ate = new LinkedList<string>();
@@ -325,11 +325,11 @@ namespace After_Test.Generic
                 {
                     ate.AddLast(items[i].ToString());
                 }
-                var sqlselect = alltestitem.Sqlselect(Form1.StationBox.Text, Type2.jx, ate);
+                var sqlselect = alltestitem.Sqlselect(Form1.StationBox.Text, Util.jx, ate);
 
                 if (sqlselect == 1)
                 {
-                    DisplaylistboxMsg("[" + Form1.nowUser.name + "] -> " + "[站别] -> " + Form1.StationBox.Text + "," + "[机型] -> " + Type2.jx + "," + "已更新");
+                    DisplaylistboxMsg("[" + Form1.nowUser.name + "] -> " + "[站别] -> " + Form1.StationBox.Text + "," + "[机型] -> " + Util.jx + "," + "已更新");
                 }
                 else
                 {
@@ -351,10 +351,10 @@ namespace After_Test.Generic
                 {
                     using (MySqlBackup mb = new MySqlBackup(cmd))
                     {
-                        cmd.Connection = Type2.conn;
-                        Type2.conn.Open();
+                        cmd.Connection = Util.conn;
+                        Util.conn.Open();
                         mb.ExportToFile(file);
-                        Type2.conn.Close();
+                        Util.conn.Close();
                         MessageBox.Show(@"已备份");
                     }
                 }

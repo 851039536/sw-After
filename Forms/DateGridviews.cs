@@ -41,7 +41,7 @@ namespace After_Test.Forms
 
         public void Test()
         {
-            switch (Type2.Miscellaneous)
+            switch (Util.Miscellaneous)
             {
                 case 1:
                     // CoboxMis();
@@ -69,7 +69,7 @@ namespace After_Test.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Type2.Miscellaneous == 2)
+            if (Util.Miscellaneous == 2)
             {
                 date.QueryIfJx();
             }
@@ -78,8 +78,8 @@ namespace After_Test.Forms
         private void simpleButton4_Click(object sender, EventArgs e)
         {
 
-            //if (Type2.Miscellaneous == 1) QueryMis();
-            if (Type2.Miscellaneous == 2) date.QueryConfig();
+            //if (Util.Miscellaneous == 1) QueryMis();
+            if (Util.Miscellaneous == 2) date.QueryConfig();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

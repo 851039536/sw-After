@@ -31,7 +31,7 @@ namespace After_Test.Forms {
 		public ModelsForm() {
 			InitializeComponent();
 			Modeltest = this;
-			Type2.Miscellaneous = 2;
+			Util.Miscellaneous = 2;
 		}
 
 		private void ModelsForm_Load(object sender, EventArgs e) {

@@ -31,10 +31,10 @@ namespace After_Test.Forms
                     {
                         using (MySqlBackup mb = new MySqlBackup(cmd))
                         {
-                            cmd.Connection = Type2.conn;
-                            Type2. conn.Open();
+                            cmd.Connection = Util.conn;
+                            Util. conn.Open();
                             mb.ImportFromFile(textBox1.Text);
-                            Type2. conn.Close();
+                            Util. conn.Close();
                             MessageBox.Show(@"已还原");
                              
                         }

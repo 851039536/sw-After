@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace After.Generic.Generic
 {
-    public static class Type2
+    public static class Util
     {
         [DllImport("kernel32.dll")]
         private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string iniPath);
@@ -74,5 +74,8 @@ namespace After.Generic.Generic
         // public static string constr = "server=10.55.22.34;uid=root;pwd=merryte;database=test-1";
         public static string constr = MysqlBackups();
         public static MySqlConnection conn = new MySqlConnection(constr);
+
+
+
     }
 }

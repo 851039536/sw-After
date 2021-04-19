@@ -10,6 +10,7 @@ using After.Model;
 using CCWin.SkinControl;
 using System.Text;
 using System.Threading;
+using After_Test.Forms.Interface;
 
 namespace After_Test
 {
@@ -38,6 +39,9 @@ namespace After_Test
             LoadLogByDb();
             await _genericForm.GetJxAsync();
             GenericForm.Form1.WindowState = FormWindowState.Normal;
+
+             VTChroma.SwATE _sw = new VTChroma.SwATE();
+               
         }
         /// <summary>
         /// 用户权限
@@ -138,9 +142,9 @@ namespace After_Test
 
         private async void skinButton1_Click(object sender, EventArgs e)
         {
-            if (Type2.jx != null)
+            if (Util.jx != null)
             {
-                StationForms st = new StationForms(Type2.jx);
+                StationForms st = new StationForms(Util.jx);
                 await Task.Run(() => st.ShowDialog());
             }
             else
@@ -188,7 +192,7 @@ namespace After_Test
 
         private void 数据备份ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             _genericForm.SqlBackups(out var result);;
+            _genericForm.SqlBackups(out var result); ;
         }
 
 
@@ -206,7 +210,7 @@ namespace After_Test
 
         private async void config配置ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Type2.Miscellaneous = 2;
+            Util.Miscellaneous = 2;
             DateGridviews date = new DateGridviews();
             await Task.Run(() => date.ShowDialog());
         }
@@ -247,22 +251,28 @@ namespace After_Test
         {
             const string path = @".\procedure\LoginMevn\Debug";
             mEVN盘ToolStripMenuItem.Enabled = false;
-            Type2.ShellExecute(IntPtr.Zero, new StringBuilder("Open"), new StringBuilder("LoginMech-1.exe"), new StringBuilder(""), new StringBuilder(path), 1);
+            Util.ShellExecute(IntPtr.Zero, new StringBuilder("Open"), new StringBuilder("LoginMech-1.exe"), new StringBuilder(""), new StringBuilder(path), 1);
             Thread.Sleep(1000);
             mEVN盘ToolStripMenuItem.Enabled = true;
 
 
         }
 
-        private async void batteryToolStripMenuItem_Click(object sender, EventArgs e)
+        private  void batteryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Battery battery = new Battery();
-            await Task.Run(() => battery.ShowDialog());
+            battery.Show();
         }
 
         private void 接口测试ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private  void case接口ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SwSendData swSend = new SwSendData();
+           swSend.Show();
         }
     }
 }

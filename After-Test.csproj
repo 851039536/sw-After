@@ -192,9 +192,12 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="VTChroma, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WebTest\WebTest\bin\Debug\VTChroma.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Additional\Util.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +245,12 @@
     </Compile>
     <Compile Include="Forms\Instructions.Designer.cs">
       <DependentUpon>Instructions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Interface\SwSendData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Interface\SwSendData.Designer.cs">
+      <DependentUpon>SwSendData.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ModelsForm.cs">
       <SubType>Form</SubType>
@@ -297,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Instructions.resx">
       <DependentUpon>Instructions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Interface\SwSendData.resx">
+      <DependentUpon>SwSendData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ModelsForm.resx">
       <DependentUpon>ModelsForm.cs</DependentUpon>
@@ -372,5 +384,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
