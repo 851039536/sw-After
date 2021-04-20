@@ -96,6 +96,7 @@ namespace After_Test.Generic
                 // MySqlDataAdapter sda = new MySqlDataAdapter("select * from config where ConfigText='" + comboBox1.Text + "'", mysql.conn);//
                 DateGridviews.Dategridviews.dataGridView1.DoubleBuffered(true);
                 DateGridviews.Dategridviews.dataGridView1.DataSource = data;
+                DateGridviews.Dategridviews.dataGridView1.DataSource = data;
             }
             catch (Exception ex)
             {

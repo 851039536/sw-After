@@ -22,5 +22,15 @@ namespace After_Test.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://10.53.2.187:1100/Service1.asmx")]
+        public string After_Test_MevnService_Service1 {
+            get {
+                return ((string)(this["After_Test_MevnService_Service1"]));
+            }
+        }
     }
 }

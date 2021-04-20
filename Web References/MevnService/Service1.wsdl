@@ -1,0 +1,1631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="checkEmpNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sEMP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkEmpNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkEmpNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkSN_Route">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkSN_RouteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkSN_RouteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ASSY_Data">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TEMP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TKPSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TSTATION" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ASSY_DataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ASSY_DataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendTestResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sEMP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendTestResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendTestResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SN_Relation_BATTERY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sEMP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sBattery" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SN_Relation_BATTERYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SN_Relation_BATTERYResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Bluetooth_ID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLnkData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Bluetooth_IDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Bluetooth_IDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Query_Bluetooth_ID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Query_Bluetooth_IDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Query_Bluetooth_IDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QUERY_WO_SNANDPANELNO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sWO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QUERY_WO_SNANDPANELNOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QUERY_WO_SNANDPANELNOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSNInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sWO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPanelNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSNInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertSNInformationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkAssyData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTERMINALNAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEMPNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkAssyDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkAssyDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Unbind_Bluetooth_ID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strEmpNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBDs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Unbind_Bluetooth_IDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Unbind_Bluetooth_IDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSSN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLnkData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSSNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertSSNResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDCSN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sKPSNTYPE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sKPSN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDCSNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertDCSNResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkSN_Station">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="station" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkSN_StationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkSN_StationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendTestData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sEMP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendTestDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendTestDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="input_sn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sWo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="input_snResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="input_snResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_DC_Result">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TEMP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_DC_ResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insert_DC_ResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBDAFailQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TWO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBDAFailQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBDAFailQtyResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEMESBDAWOInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ls_WONo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_IsAssignOver" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEMESBDAWOInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetEMESBDAWOInfoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_AssignUsedCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_AssignBDStartNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_AssignBDEndNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_FormAssignCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_FormBDStartNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_FormBDEndNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_UsedLastNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_CVCNoS" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Query_Link_SN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Query_Link_SNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Query_Link_SNResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertSNLinkSSNRec">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pSerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pLnkData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertSNLinkSSNRecResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertSNLinkSSNRecResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLinkDataBySN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pSerialNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLinkDataBySNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getLinkDataBySNResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSNByLinkData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pLnkData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSNByLinkDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSNByLinkDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEMESUseNextBDANoTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ls_WONo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TempBDA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_TestNodeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_UID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEMESUseNextBDANoTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEMESUseNextBDANoTestResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_UsedLastNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_CVCNoS" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEMESUseNextBDANoTest2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ls_WONo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TempBDA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_SN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_TestNodeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_UID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEMESUseNextBDANoTest2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEMESUseNextBDANoTest2Result" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_UsedLastNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_CVCNoS" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEMES_Check_SN_BDA_KEY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ls_SN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_BDA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_keySet" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEMES_Check_SN_BDA_KEYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetEMES_Check_SN_BDA_KEYResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MESWriteBDALog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="v_bdano" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="v_snno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="v_wono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="v_testnodeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="v_testuserid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_LicKeys" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="v_recordtime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="v_status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MESWriteBDALogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MESWriteBDALogResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatTETestResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ls_WONo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_BDA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BDAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatTETestResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatTETestResultResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MESGetQCRecordBDACNT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ls_WONo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MESGetQCRecordBDACNTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MESGetQCRecordBDACNTResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMESQCUserNextBDANo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ls_WONo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TempBDA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_TestNodeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_UID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMESQCUserNextBDANoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMESQCUserNextBDANoResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_UsedLastNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_CVCNoS" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBDNoBySn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ls_Sn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBDNoBySnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBDNoBySnResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMESNextFailBDANo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ls_WONo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TempBDA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_TestNodeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_UID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_Creator" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_BDAType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMESNextFailBDANoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMESNextFailBDANoResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_LeaveFailBDA" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_CVCNoS" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_Msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MESGetQCRecordBDACNTByMO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ls_WONo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_StartNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_EndNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MESGetQCRecordBDACNTByMOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MESGetQCRecordBDACNTByMOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MESWritBDAUpadeRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tbda_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tsn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tterminal_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="temp_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tLicKeys" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="trecordtime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tstatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MESWritBDAUpadeRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MESWritBDAUpadeRecordResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="tres" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMESQCUserNextBDANo2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ls_WONo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TempBDA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_SN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_TestNodeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_UID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMESQCUserNextBDANo2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMESQCUserNextBDANo2Result" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_UsedLastNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_CVCNoS" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="ls_ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="checkEmpNoSoapIn">
+    <wsdl:part name="parameters" element="tns:checkEmpNo" />
+  </wsdl:message>
+  <wsdl:message name="checkEmpNoSoapOut">
+    <wsdl:part name="parameters" element="tns:checkEmpNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkSN_RouteSoapIn">
+    <wsdl:part name="parameters" element="tns:checkSN_Route" />
+  </wsdl:message>
+  <wsdl:message name="checkSN_RouteSoapOut">
+    <wsdl:part name="parameters" element="tns:checkSN_RouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ASSY_DataSoapIn">
+    <wsdl:part name="parameters" element="tns:ASSY_Data" />
+  </wsdl:message>
+  <wsdl:message name="ASSY_DataSoapOut">
+    <wsdl:part name="parameters" element="tns:ASSY_DataResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendTestResultSoapIn">
+    <wsdl:part name="parameters" element="tns:sendTestResult" />
+  </wsdl:message>
+  <wsdl:message name="sendTestResultSoapOut">
+    <wsdl:part name="parameters" element="tns:sendTestResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="SN_Relation_BATTERYSoapIn">
+    <wsdl:part name="parameters" element="tns:SN_Relation_BATTERY" />
+  </wsdl:message>
+  <wsdl:message name="SN_Relation_BATTERYSoapOut">
+    <wsdl:part name="parameters" element="tns:SN_Relation_BATTERYResponse" />
+  </wsdl:message>
+  <wsdl:message name="Bluetooth_IDSoapIn">
+    <wsdl:part name="parameters" element="tns:Bluetooth_ID" />
+  </wsdl:message>
+  <wsdl:message name="Bluetooth_IDSoapOut">
+    <wsdl:part name="parameters" element="tns:Bluetooth_IDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Query_Bluetooth_IDSoapIn">
+    <wsdl:part name="parameters" element="tns:Query_Bluetooth_ID" />
+  </wsdl:message>
+  <wsdl:message name="Query_Bluetooth_IDSoapOut">
+    <wsdl:part name="parameters" element="tns:Query_Bluetooth_IDResponse" />
+  </wsdl:message>
+  <wsdl:message name="QUERY_WO_SNANDPANELNOSoapIn">
+    <wsdl:part name="parameters" element="tns:QUERY_WO_SNANDPANELNO" />
+  </wsdl:message>
+  <wsdl:message name="QUERY_WO_SNANDPANELNOSoapOut">
+    <wsdl:part name="parameters" element="tns:QUERY_WO_SNANDPANELNOResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertSNInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertSNInformation" />
+  </wsdl:message>
+  <wsdl:message name="InsertSNInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertSNInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkAssyDataSoapIn">
+    <wsdl:part name="parameters" element="tns:checkAssyData" />
+  </wsdl:message>
+  <wsdl:message name="checkAssyDataSoapOut">
+    <wsdl:part name="parameters" element="tns:checkAssyDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="Unbind_Bluetooth_IDSoapIn">
+    <wsdl:part name="parameters" element="tns:Unbind_Bluetooth_ID" />
+  </wsdl:message>
+  <wsdl:message name="Unbind_Bluetooth_IDSoapOut">
+    <wsdl:part name="parameters" element="tns:Unbind_Bluetooth_IDResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertSSNSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertSSN" />
+  </wsdl:message>
+  <wsdl:message name="InsertSSNSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertSSNResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertDCSNSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertDCSN" />
+  </wsdl:message>
+  <wsdl:message name="InsertDCSNSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertDCSNResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkSN_StationSoapIn">
+    <wsdl:part name="parameters" element="tns:checkSN_Station" />
+  </wsdl:message>
+  <wsdl:message name="checkSN_StationSoapOut">
+    <wsdl:part name="parameters" element="tns:checkSN_StationResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendTestDataSoapIn">
+    <wsdl:part name="parameters" element="tns:sendTestData" />
+  </wsdl:message>
+  <wsdl:message name="sendTestDataSoapOut">
+    <wsdl:part name="parameters" element="tns:sendTestDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="input_snSoapIn">
+    <wsdl:part name="parameters" element="tns:input_sn" />
+  </wsdl:message>
+  <wsdl:message name="input_snSoapOut">
+    <wsdl:part name="parameters" element="tns:input_snResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_DC_ResultSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_DC_Result" />
+  </wsdl:message>
+  <wsdl:message name="Insert_DC_ResultSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_DC_ResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBDAFailQtySoapIn">
+    <wsdl:part name="parameters" element="tns:GetBDAFailQty" />
+  </wsdl:message>
+  <wsdl:message name="GetBDAFailQtySoapOut">
+    <wsdl:part name="parameters" element="tns:GetBDAFailQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEMESBDAWOInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEMESBDAWOInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetEMESBDAWOInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEMESBDAWOInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Query_Link_SNSoapIn">
+    <wsdl:part name="parameters" element="tns:Query_Link_SN" />
+  </wsdl:message>
+  <wsdl:message name="Query_Link_SNSoapOut">
+    <wsdl:part name="parameters" element="tns:Query_Link_SNResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertSNLinkSSNRecSoapIn">
+    <wsdl:part name="parameters" element="tns:insertSNLinkSSNRec" />
+  </wsdl:message>
+  <wsdl:message name="insertSNLinkSSNRecSoapOut">
+    <wsdl:part name="parameters" element="tns:insertSNLinkSSNRecResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLinkDataBySNSoapIn">
+    <wsdl:part name="parameters" element="tns:getLinkDataBySN" />
+  </wsdl:message>
+  <wsdl:message name="getLinkDataBySNSoapOut">
+    <wsdl:part name="parameters" element="tns:getLinkDataBySNResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSNByLinkDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getSNByLinkData" />
+  </wsdl:message>
+  <wsdl:message name="getSNByLinkDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getSNByLinkDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEMESUseNextBDANoTestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEMESUseNextBDANoTest" />
+  </wsdl:message>
+  <wsdl:message name="GetEMESUseNextBDANoTestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEMESUseNextBDANoTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEMESUseNextBDANoTest2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetEMESUseNextBDANoTest2" />
+  </wsdl:message>
+  <wsdl:message name="GetEMESUseNextBDANoTest2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetEMESUseNextBDANoTest2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetEMES_Check_SN_BDA_KEYSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEMES_Check_SN_BDA_KEY" />
+  </wsdl:message>
+  <wsdl:message name="GetEMES_Check_SN_BDA_KEYSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEMES_Check_SN_BDA_KEYResponse" />
+  </wsdl:message>
+  <wsdl:message name="MESWriteBDALogSoapIn">
+    <wsdl:part name="parameters" element="tns:MESWriteBDALog" />
+  </wsdl:message>
+  <wsdl:message name="MESWriteBDALogSoapOut">
+    <wsdl:part name="parameters" element="tns:MESWriteBDALogResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatTETestResultSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatTETestResult" />
+  </wsdl:message>
+  <wsdl:message name="UpdatTETestResultSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatTETestResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="MESGetQCRecordBDACNTSoapIn">
+    <wsdl:part name="parameters" element="tns:MESGetQCRecordBDACNT" />
+  </wsdl:message>
+  <wsdl:message name="MESGetQCRecordBDACNTSoapOut">
+    <wsdl:part name="parameters" element="tns:MESGetQCRecordBDACNTResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMESQCUserNextBDANoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMESQCUserNextBDANo" />
+  </wsdl:message>
+  <wsdl:message name="GetMESQCUserNextBDANoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMESQCUserNextBDANoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBDNoBySnSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBDNoBySn" />
+  </wsdl:message>
+  <wsdl:message name="GetBDNoBySnSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBDNoBySnResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMESNextFailBDANoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMESNextFailBDANo" />
+  </wsdl:message>
+  <wsdl:message name="GetMESNextFailBDANoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMESNextFailBDANoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MESGetQCRecordBDACNTByMOSoapIn">
+    <wsdl:part name="parameters" element="tns:MESGetQCRecordBDACNTByMO" />
+  </wsdl:message>
+  <wsdl:message name="MESGetQCRecordBDACNTByMOSoapOut">
+    <wsdl:part name="parameters" element="tns:MESGetQCRecordBDACNTByMOResponse" />
+  </wsdl:message>
+  <wsdl:message name="MESWritBDAUpadeRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:MESWritBDAUpadeRecord" />
+  </wsdl:message>
+  <wsdl:message name="MESWritBDAUpadeRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:MESWritBDAUpadeRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMESQCUserNextBDANo2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetMESQCUserNextBDANo2" />
+  </wsdl:message>
+  <wsdl:message name="GetMESQCUserNextBDANo2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetMESQCUserNextBDANo2Response" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="checkEmpNo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">檢查員工</wsdl:documentation>
+      <wsdl:input message="tns:checkEmpNoSoapIn" />
+      <wsdl:output message="tns:checkEmpNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkSN_Route">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检查序号和途程</wsdl:documentation>
+      <wsdl:input message="tns:checkSN_RouteSoapIn" />
+      <wsdl:output message="tns:checkSN_RouteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ASSY_Data">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传组装资料</wsdl:documentation>
+      <wsdl:input message="tns:ASSY_DataSoapIn" />
+      <wsdl:output message="tns:ASSY_DataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendTestResult">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传测试结果和过站</wsdl:documentation>
+      <wsdl:input message="tns:sendTestResultSoapIn" />
+      <wsdl:output message="tns:sendTestResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SN_Relation_BATTERY">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SN绑定电池芯</wsdl:documentation>
+      <wsdl:input message="tns:SN_Relation_BATTERYSoapIn" />
+      <wsdl:output message="tns:SN_Relation_BATTERYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Bluetooth_ID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SN与BD绑定</wsdl:documentation>
+      <wsdl:input message="tns:Bluetooth_IDSoapIn" />
+      <wsdl:output message="tns:Bluetooth_IDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Query_Bluetooth_ID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据SN查询绑定的BD</wsdl:documentation>
+      <wsdl:input message="tns:Query_Bluetooth_IDSoapIn" />
+      <wsdl:output message="tns:Query_Bluetooth_IDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QUERY_WO_SNANDPANELNO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">（镭雕）根据工单号查询所有SN、PANEL号</wsdl:documentation>
+      <wsdl:input message="tns:QUERY_WO_SNANDPANELNOSoapIn" />
+      <wsdl:output message="tns:QUERY_WO_SNANDPANELNOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSNInformation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">（镭雕）成功后记录log</wsdl:documentation>
+      <wsdl:input message="tns:InsertSNInformationSoapIn" />
+      <wsdl:output message="tns:InsertSNInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkAssyData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">檢查綁定KeyPart是否完成</wsdl:documentation>
+      <wsdl:input message="tns:checkAssyDataSoapIn" />
+      <wsdl:output message="tns:checkAssyDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Unbind_Bluetooth_ID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SN与BD解除绑定</wsdl:documentation>
+      <wsdl:input message="tns:Unbind_Bluetooth_IDSoapIn" />
+      <wsdl:output message="tns:Unbind_Bluetooth_IDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSSN">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SN绑定出货序号</wsdl:documentation>
+      <wsdl:input message="tns:InsertSSNSoapIn" />
+      <wsdl:output message="tns:InsertSSNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDCSN">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用於綁定電池序號</wsdl:documentation>
+      <wsdl:input message="tns:InsertDCSNSoapIn" />
+      <wsdl:output message="tns:InsertDCSNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkSN_Station">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检测序号有效性及是否允许在此工站测试</wsdl:documentation>
+      <wsdl:input message="tns:checkSN_StationSoapIn" />
+      <wsdl:output message="tns:checkSN_StationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendTestData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传测试项目数据</wsdl:documentation>
+      <wsdl:input message="tns:sendTestDataSoapIn" />
+      <wsdl:output message="tns:sendTestDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="input_sn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Input SN</wsdl:documentation>
+      <wsdl:input message="tns:input_snSoapIn" />
+      <wsdl:output message="tns:input_snSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_DC_Result">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">上传电池测试结果</wsdl:documentation>
+      <wsdl:input message="tns:Insert_DC_ResultSoapIn" />
+      <wsdl:output message="tns:Insert_DC_ResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBDAFailQty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得某張工單，燒錄失敗的總數量 1:燒錄成功，2:燒錄失敗，3:重新燒錄成功</wsdl:documentation>
+      <wsdl:input message="tns:GetBDAFailQtySoapIn" />
+      <wsdl:output message="tns:GetBDAFailQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEMESBDAWOInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">依據工單咨詢，取得BDA號段信息，與當前和下一個BDA號</wsdl:documentation>
+      <wsdl:input message="tns:GetEMESBDAWOInfoSoapIn" />
+      <wsdl:output message="tns:GetEMESBDAWOInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Query_Link_SN">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">依据在制品SN查询绑定的序号</wsdl:documentation>
+      <wsdl:input message="tns:Query_Link_SNSoapIn" />
+      <wsdl:output message="tns:Query_Link_SNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertSNLinkSSNRec">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SN(主)和SSN(成品)綁定,成功返回True，失敗返回False</wsdl:documentation>
+      <wsdl:input message="tns:insertSNLinkSSNRecSoapIn" />
+      <wsdl:output message="tns:insertSNLinkSSNRecSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLinkDataBySN">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根據SN獲取綁定的SSN，無為空</wsdl:documentation>
+      <wsdl:input message="tns:getLinkDataBySNSoapIn" />
+      <wsdl:output message="tns:getLinkDataBySNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSNByLinkData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根據SSN獲取綁定的SN，無為空(sn 是PCBA板SN，SSN是镭雕二维码)</wsdl:documentation>
+      <wsdl:input message="tns:getSNByLinkDataSoapIn" />
+      <wsdl:output message="tns:getSNByLinkDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEMESUseNextBDANoTest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">輸入工單取得BDA号_正常燒錄</wsdl:documentation>
+      <wsdl:input message="tns:GetEMESUseNextBDANoTestSoapIn" />
+      <wsdl:output message="tns:GetEMESUseNextBDANoTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEMESUseNextBDANoTest2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">輸入工單取得BDA号_正常燒錄</wsdl:documentation>
+      <wsdl:input message="tns:GetEMESUseNextBDANoTest2SoapIn" />
+      <wsdl:output message="tns:GetEMESUseNextBDANoTest2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEMES_Check_SN_BDA_KEY">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SN、 BD、 cvc綁定比較</wsdl:documentation>
+      <wsdl:input message="tns:GetEMES_Check_SN_BDA_KEYSoapIn" />
+      <wsdl:output message="tns:GetEMES_Check_SN_BDA_KEYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MESWriteBDALog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">BDA號燒錄記錄寫入數據庫</wsdl:documentation>
+      <wsdl:input message="tns:MESWriteBDALogSoapIn" />
+      <wsdl:output message="tns:MESWriteBDALogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatTETestResult">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">更新燒錄結果</wsdl:documentation>
+      <wsdl:input message="tns:UpdatTETestResultSoapIn" />
+      <wsdl:output message="tns:UpdatTETestResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MESGetQCRecordBDACNT">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根據工單號，取得當前工單所有號段，QC首尾件已經取了多少個號</wsdl:documentation>
+      <wsdl:input message="tns:MESGetQCRecordBDACNTSoapIn" />
+      <wsdl:output message="tns:MESGetQCRecordBDACNTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMESQCUserNextBDANo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">輸入工單取得BDA号_QC做首尾件</wsdl:documentation>
+      <wsdl:input message="tns:GetMESQCUserNextBDANoSoapIn" />
+      <wsdl:output message="tns:GetMESQCUserNextBDANoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBDNoBySn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">BDA根據產品SN號查找綁定的DBA號</wsdl:documentation>
+      <wsdl:input message="tns:GetBDNoBySnSoapIn" />
+      <wsdl:output message="tns:GetBDNoBySnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMESNextFailBDANo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取某張工單燒錄失敗的BDA號，重複利用</wsdl:documentation>
+      <wsdl:input message="tns:GetMESNextFailBDANoSoapIn" />
+      <wsdl:output message="tns:GetMESNextFailBDANoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MESGetQCRecordBDACNTByMO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根據工單號，取得指定號段，QC首尾件已經取了多少個號</wsdl:documentation>
+      <wsdl:input message="tns:MESGetQCRecordBDACNTByMOSoapIn" />
+      <wsdl:output message="tns:MESGetQCRecordBDACNTByMOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MESWritBDAUpadeRecord">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">燒錄失敗的BDA號重複利用，再次燒錄成功時，更新DB數據</wsdl:documentation>
+      <wsdl:input message="tns:MESWritBDAUpadeRecordSoapIn" />
+      <wsdl:output message="tns:MESWritBDAUpadeRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMESQCUserNextBDANo2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">先check sn 是否在這個工作站台， 輸入工單取得BDA号_QC做首尾件</wsdl:documentation>
+      <wsdl:input message="tns:GetMESQCUserNextBDANo2SoapIn" />
+      <wsdl:output message="tns:GetMESQCUserNextBDANo2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="checkEmpNo">
+      <soap:operation soapAction="http://tempuri.org/checkEmpNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkSN_Route">
+      <soap:operation soapAction="http://tempuri.org/checkSN_Route" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ASSY_Data">
+      <soap:operation soapAction="http://tempuri.org/ASSY_Data" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendTestResult">
+      <soap:operation soapAction="http://tempuri.org/sendTestResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SN_Relation_BATTERY">
+      <soap:operation soapAction="http://tempuri.org/SN_Relation_BATTERY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Bluetooth_ID">
+      <soap:operation soapAction="http://tempuri.org/Bluetooth_ID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Query_Bluetooth_ID">
+      <soap:operation soapAction="http://tempuri.org/Query_Bluetooth_ID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QUERY_WO_SNANDPANELNO">
+      <soap:operation soapAction="http://tempuri.org/QUERY_WO_SNANDPANELNO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSNInformation">
+      <soap:operation soapAction="http://tempuri.org/InsertSNInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkAssyData">
+      <soap:operation soapAction="http://tempuri.org/checkAssyData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unbind_Bluetooth_ID">
+      <soap:operation soapAction="http://tempuri.org/Unbind_Bluetooth_ID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSSN">
+      <soap:operation soapAction="http://tempuri.org/InsertSSN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDCSN">
+      <soap:operation soapAction="http://tempuri.org/InsertDCSN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkSN_Station">
+      <soap:operation soapAction="http://tempuri.org/checkSN_Station" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendTestData">
+      <soap:operation soapAction="http://tempuri.org/sendTestData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="input_sn">
+      <soap:operation soapAction="http://tempuri.org/input_sn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_DC_Result">
+      <soap:operation soapAction="http://tempuri.org/Insert_DC_Result" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBDAFailQty">
+      <soap:operation soapAction="http://tempuri.org/GetBDAFailQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEMESBDAWOInfo">
+      <soap:operation soapAction="http://tempuri.org/GetEMESBDAWOInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Query_Link_SN">
+      <soap:operation soapAction="http://tempuri.org/Query_Link_SN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertSNLinkSSNRec">
+      <soap:operation soapAction="http://tempuri.org/insertSNLinkSSNRec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLinkDataBySN">
+      <soap:operation soapAction="http://tempuri.org/getLinkDataBySN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSNByLinkData">
+      <soap:operation soapAction="http://tempuri.org/getSNByLinkData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEMESUseNextBDANoTest">
+      <soap:operation soapAction="http://tempuri.org/GetEMESUseNextBDANoTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEMESUseNextBDANoTest2">
+      <soap:operation soapAction="http://tempuri.org/GetEMESUseNextBDANoTest2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEMES_Check_SN_BDA_KEY">
+      <soap:operation soapAction="http://tempuri.org/GetEMES_Check_SN_BDA_KEY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MESWriteBDALog">
+      <soap:operation soapAction="http://tempuri.org/MESWriteBDALog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatTETestResult">
+      <soap:operation soapAction="http://tempuri.org/UpdatTETestResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MESGetQCRecordBDACNT">
+      <soap:operation soapAction="http://tempuri.org/MESGetQCRecordBDACNT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMESQCUserNextBDANo">
+      <soap:operation soapAction="http://tempuri.org/GetMESQCUserNextBDANo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBDNoBySn">
+      <soap:operation soapAction="http://tempuri.org/GetBDNoBySn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMESNextFailBDANo">
+      <soap:operation soapAction="http://tempuri.org/GetMESNextFailBDANo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MESGetQCRecordBDACNTByMO">
+      <soap:operation soapAction="http://tempuri.org/MESGetQCRecordBDACNTByMO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MESWritBDAUpadeRecord">
+      <soap:operation soapAction="http://tempuri.org/MESWritBDAUpadeRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMESQCUserNextBDANo2">
+      <soap:operation soapAction="http://tempuri.org/GetMESQCUserNextBDANo2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="checkEmpNo">
+      <soap12:operation soapAction="http://tempuri.org/checkEmpNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkSN_Route">
+      <soap12:operation soapAction="http://tempuri.org/checkSN_Route" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ASSY_Data">
+      <soap12:operation soapAction="http://tempuri.org/ASSY_Data" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendTestResult">
+      <soap12:operation soapAction="http://tempuri.org/sendTestResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SN_Relation_BATTERY">
+      <soap12:operation soapAction="http://tempuri.org/SN_Relation_BATTERY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Bluetooth_ID">
+      <soap12:operation soapAction="http://tempuri.org/Bluetooth_ID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Query_Bluetooth_ID">
+      <soap12:operation soapAction="http://tempuri.org/Query_Bluetooth_ID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QUERY_WO_SNANDPANELNO">
+      <soap12:operation soapAction="http://tempuri.org/QUERY_WO_SNANDPANELNO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSNInformation">
+      <soap12:operation soapAction="http://tempuri.org/InsertSNInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkAssyData">
+      <soap12:operation soapAction="http://tempuri.org/checkAssyData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unbind_Bluetooth_ID">
+      <soap12:operation soapAction="http://tempuri.org/Unbind_Bluetooth_ID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSSN">
+      <soap12:operation soapAction="http://tempuri.org/InsertSSN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDCSN">
+      <soap12:operation soapAction="http://tempuri.org/InsertDCSN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkSN_Station">
+      <soap12:operation soapAction="http://tempuri.org/checkSN_Station" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendTestData">
+      <soap12:operation soapAction="http://tempuri.org/sendTestData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="input_sn">
+      <soap12:operation soapAction="http://tempuri.org/input_sn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_DC_Result">
+      <soap12:operation soapAction="http://tempuri.org/Insert_DC_Result" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBDAFailQty">
+      <soap12:operation soapAction="http://tempuri.org/GetBDAFailQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEMESBDAWOInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetEMESBDAWOInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Query_Link_SN">
+      <soap12:operation soapAction="http://tempuri.org/Query_Link_SN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertSNLinkSSNRec">
+      <soap12:operation soapAction="http://tempuri.org/insertSNLinkSSNRec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLinkDataBySN">
+      <soap12:operation soapAction="http://tempuri.org/getLinkDataBySN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSNByLinkData">
+      <soap12:operation soapAction="http://tempuri.org/getSNByLinkData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEMESUseNextBDANoTest">
+      <soap12:operation soapAction="http://tempuri.org/GetEMESUseNextBDANoTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEMESUseNextBDANoTest2">
+      <soap12:operation soapAction="http://tempuri.org/GetEMESUseNextBDANoTest2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEMES_Check_SN_BDA_KEY">
+      <soap12:operation soapAction="http://tempuri.org/GetEMES_Check_SN_BDA_KEY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MESWriteBDALog">
+      <soap12:operation soapAction="http://tempuri.org/MESWriteBDALog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatTETestResult">
+      <soap12:operation soapAction="http://tempuri.org/UpdatTETestResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MESGetQCRecordBDACNT">
+      <soap12:operation soapAction="http://tempuri.org/MESGetQCRecordBDACNT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMESQCUserNextBDANo">
+      <soap12:operation soapAction="http://tempuri.org/GetMESQCUserNextBDANo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBDNoBySn">
+      <soap12:operation soapAction="http://tempuri.org/GetBDNoBySn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMESNextFailBDANo">
+      <soap12:operation soapAction="http://tempuri.org/GetMESNextFailBDANo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MESGetQCRecordBDACNTByMO">
+      <soap12:operation soapAction="http://tempuri.org/MESGetQCRecordBDACNTByMO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MESWritBDAUpadeRecord">
+      <soap12:operation soapAction="http://tempuri.org/MESWritBDAUpadeRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMESQCUserNextBDANo2">
+      <soap12:operation soapAction="http://tempuri.org/GetMESQCUserNextBDANo2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://10.53.2.187:1100/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://10.53.2.187:1100/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -34,14 +34,38 @@ namespace After_Test
             CheckForIllegalCrossThreadCalls = false;
             _ctl.setTag(this);
             _genericForm.Firstload();
+            if (Util.TestMode != 1)
+            {
+                await Task.Run(Authority);
+                LoadLogByDb();
+                await _genericForm.GetJxAsync();
+            }
+            else
+            {
+                配置ToolStripMenuItem.Enabled = false;
+                用户ToolStripMenuItem.Enabled = false;
+                帮助ToolStripMenuItem1.Enabled = false;
+                config配置ToolStripMenuItem1.Enabled = false;
+                功能配置ToolStripMenuItem1.Enabled = false;
+                配置ToolStripMenuItem.Enabled=false;
+                帮助ToolStripMenuItem1.Enabled=false;
+                用户ToolStripMenuItem.Enabled=false;
+                 StaionType.Enabled = false;
+                 ContentBox.Enabled = false;
+                 ADD.Enabled = false;
+                 DELETE.Enabled = false;
+                 UP.Enabled = false;
+                 DOWN.Enabled = false;
+                 SAVE.Enabled = false;
+                 StationBox.Enabled = false;
+                 LOCK.Enabled=false;
+            }
 
-            await Task.Run(Authority);
-            LoadLogByDb();
-            await _genericForm.GetJxAsync();
+
             GenericForm.Form1.WindowState = FormWindowState.Normal;
 
-             VTChroma.SwATE _sw = new VTChroma.SwATE();
-               
+            VTChroma.SwATE _sw = new VTChroma.SwATE();
+
         }
         /// <summary>
         /// 用户权限
@@ -258,21 +282,22 @@ namespace After_Test
 
         }
 
-        private  void batteryToolStripMenuItem_Click(object sender, EventArgs e)
+        private void batteryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Battery battery = new Battery();
             battery.Show();
         }
 
-        private void 接口测试ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private  void case接口ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void case接口ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SwSendData swSend = new SwSendData();
-           swSend.Show();
+            swSend.Show();
+        }
+
+        private void aTE接口ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MevnServices _mevn = new MevnServices();
+            _mevn.Show();
         }
     }
 }

@@ -32,6 +32,7 @@ namespace After.Generic.Generic
         /// </summary>
         public static int Jurisdiction = 0;
 
+        public static  int TestMode=0;
         /// <summary>
         /// 杂项
         /// </summary>

@@ -481,7 +481,7 @@
             // mEVN盘ToolStripMenuItem
             // 
             this.mEVN盘ToolStripMenuItem.Name = "mEVN盘ToolStripMenuItem";
-            this.mEVN盘ToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.mEVN盘ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mEVN盘ToolStripMenuItem.Text = "MEVN盘";
             this.mEVN盘ToolStripMenuItem.Click += new System.EventHandler(this.mEVN盘ToolStripMenuItem_Click);
             // 
@@ -520,7 +520,8 @@
             // 
             this.aTE接口ToolStripMenuItem.Name = "aTE接口ToolStripMenuItem";
             this.aTE接口ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aTE接口ToolStripMenuItem.Text = "ATE接口";
+            this.aTE接口ToolStripMenuItem.Text = "WebService";
+            this.aTE接口ToolStripMenuItem.Click += new System.EventHandler(this.aTE接口ToolStripMenuItem_Click);
             // 
             // case接口ToolStripMenuItem
             // 
