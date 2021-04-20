@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using After.Model;
 using After.Model.DBUtility;
@@ -30,7 +31,7 @@ namespace After.Manager.Manager
         /// <returns>data</returns>
         public List<string> QueryJx(user u)
         {
-       
+
             try
             {
                 if (u.权限 == 1)
@@ -67,34 +68,33 @@ namespace After.Manager.Manager
         ///删除更新
         /// </summary>
         /// <returns>ints</returns>
-        public int Sqlselect(string zb, string jx, LinkedList<string> xm)
+        public async Task<int> Sqlselect(string zb, string jx, LinkedList<string> xm)
         {
             int k = 1;
-
             int ints = 0;
             for (int i = 0; i < xm.Count; i--)
             {
                 if (xm.Count == 0) break;
                 string name = xm.First();
                 xm.RemoveFirst();
-                List<alltestitem> data = Db.Queryable<alltestitem>()
-                    .Where(w => w.机型 == jx && w.测试项目 == name)
-                    .Select(f => new alltestitem
-                    {
-                        单位 = f.单位,
-                        数值上限 = f.数值上限,
-                        数值下限 = f.数值下限,
-                        编号 = f.编号,
-                        耳机指令 = f.耳机指令
+                var data = await Db.Queryable<alltestitem>()
+                   .Where(w => w.机型 == jx && w.测试项目 == name)
+                   .Select(f => new alltestitem
+                   {
+                       单位 = f.单位,
+                       数值上限 = f.数值上限,
+                       数值下限 = f.数值下限,
+                       编号 = f.编号,
+                       耳机指令 = f.耳机指令
 
-                    }).ToList();
+                   }).ToListAsync();
                 string[] 单位1 = data.Select(x => x.单位).ToArray();
                 string[] 数值上限1 = data.Select(x => x.数值上限).ToArray();
                 string[] 数值下限1 = data.Select(x => x.数值下限).ToArray();
                 int[] 编号1 = data.Select(x => x.编号).ToArray();
                 string[] 指令 = data.Select(x => x.耳机指令).ToArray();
 
-                ints = Db.Insertable<testitem>(new
+                ints = await Db.Insertable<testitem>(new
                 {
                     机型 = jx,
                     测试项目 = name,
@@ -106,7 +106,7 @@ namespace After.Manager.Manager
                     编号 = k,
                     allid = 编号1[0],
                     自动测试 = 0
-                }).ExecuteCommand();
+                }).ExecuteCommandAsync();
                 k++;
             }
 

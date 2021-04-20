@@ -47,18 +47,18 @@ namespace After_Test
                 帮助ToolStripMenuItem1.Enabled = false;
                 config配置ToolStripMenuItem1.Enabled = false;
                 功能配置ToolStripMenuItem1.Enabled = false;
-                配置ToolStripMenuItem.Enabled=false;
-                帮助ToolStripMenuItem1.Enabled=false;
-                用户ToolStripMenuItem.Enabled=false;
-                 StaionType.Enabled = false;
-                 ContentBox.Enabled = false;
-                 ADD.Enabled = false;
-                 DELETE.Enabled = false;
-                 UP.Enabled = false;
-                 DOWN.Enabled = false;
-                 SAVE.Enabled = false;
-                 StationBox.Enabled = false;
-                 LOCK.Enabled=false;
+                配置ToolStripMenuItem.Enabled = false;
+                帮助ToolStripMenuItem1.Enabled = false;
+                用户ToolStripMenuItem.Enabled = false;
+                StaionType.Enabled = false;
+                ContentBox.Enabled = false;
+                ADD.Enabled = false;
+                DELETE.Enabled = false;
+                UP.Enabled = false;
+                DOWN.Enabled = false;
+                SAVE.Enabled = false;
+                StationBox.Enabled = false;
+                LOCK.Enabled = false;
             }
 
 
@@ -79,7 +79,7 @@ namespace After_Test
                 case 1:
                     break;
                 case 3:
-                    skinButton1.Enabled = false;
+                    uiButton1.Enabled = false;
                     功能配置ToolStripMenuItem1.Enabled = false;
                     config配置ToolStripMenuItem1.Enabled = false;
                     goto case 2;
@@ -126,55 +126,6 @@ namespace After_Test
             float newX = GenericForm.Form1.Width;
             float newY = GenericForm.Form1.Height;
             control.setControls(newX / GenericForm.x, newY / GenericForm.y, this);
-        }
-
-        /// <summary>
-        /// 增加按钮
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void ADD_Click(object sender, EventArgs e)
-        {
-            await Task.Run(() => _genericForm.ButAdd());
-        }
-
-        private async void DELETE_Click(object sender, EventArgs e)
-        {
-            await Task.Run(() => _genericForm.ButDelete());
-        }
-
-        private async void UP_Click(object sender, EventArgs e)
-        {
-            await Task.Run(() => _genericForm.ButUp());
-        }
-        private async void DOWN_Click(object sender, EventArgs e)
-        {
-            await Task.Run(() => _genericForm.ButDown());
-
-        }
-        private async void LOCK_Click(object sender, EventArgs e)
-        {
-            await Task.Run(() => _genericForm.ButLock());
-
-        }
-
-        private void SAVE_Click(object sender, EventArgs e)
-        {
-            _genericForm.SaveStaion();
-            ResetAfterModels();
-        }
-
-        private async void skinButton1_Click(object sender, EventArgs e)
-        {
-            if (Util.jx != null)
-            {
-                StationForms st = new StationForms(Util.jx);
-                await Task.Run(() => st.ShowDialog());
-            }
-            else
-            {
-                MessageBox.Show(@"未选择站别");
-            }
         }
 
         private async void skinListBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -298,6 +249,73 @@ namespace After_Test
         {
             MevnServices _mevn = new MevnServices();
             _mevn.Show();
+        }
+
+        private async void uiButton1_Click(object sender, EventArgs e)
+        {
+            if (Util.jx != null)
+            {
+                StationForms st = new StationForms(Util.jx);
+                await Task.Run(() => st.ShowDialog());
+            }
+            else
+            {
+                MessageBox.Show(@"未选择站别");
+            }
+        }
+
+        private async void ADD_Click_1(object sender, EventArgs e)
+        {
+            await Task.Run(() => _genericForm.ButAdd());
+        }
+
+        private async void DELETE_Click_1(object sender, EventArgs e)
+        {
+            await Task.Run(() => _genericForm.ButDelete());
+        }
+
+        private async void UP_Click_1(object sender, EventArgs e)
+        {
+            await Task.Run(() => _genericForm.ButUp());
+        }
+
+        private async void DOWN_Click_1(object sender, EventArgs e)
+        {
+            await Task.Run(() => _genericForm.ButDown());
+        }
+
+        private async void LOCK_Click_1(object sender, EventArgs e)
+        {
+            await Task.Run(() => _genericForm.ButLock());
+        }
+
+        private void SAVE_Click_1(object sender, EventArgs e)
+        {
+            _genericForm.SaveStaion();
+            ResetAfterModels();
+        }
+
+        private void uiComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+              _genericForm.ComboBoxGetTestItem();
+            ResetAfterModels();
+        }
+
+        private  void uiImageListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //  await _genericForm.GetJxData();
+            //ResetAfterModels();
+        }
+
+        private async void uiListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             await _genericForm.GetJxData();
+              ResetAfterModels();
+        }
+
+        private async void uiListBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            await Task.Run(() => _genericForm.ButAdd());
         }
     }
 }

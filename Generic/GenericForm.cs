@@ -50,7 +50,7 @@ namespace After_Test.Generic
             var result = await _modelsService.GetJxAsync(Form1.nowUser);
             foreach (var jx in result)
             {
-                Form1.TypeNameBox.Items.Add(new SkinListBoxItem(jx));
+                Form1.TypeNameBox.Items.Add( jx);
             }
             Form1.TypeNameBox.SelectedIndex = 0;
         }
@@ -105,7 +105,7 @@ namespace After_Test.Generic
                     var result1 = await _alltestitemService.GetJxTestItem(Util.jx);
                     foreach (var t in result1)
                     {
-                        Form1.ContentBox.Items.Add(new SkinListBoxItem(t));
+                        Form1.ContentBox.Items.Add(t);
                     }
                 }
             }
@@ -125,7 +125,7 @@ namespace After_Test.Generic
             var result = await _testitemService.GetJxTestItem(Util.jx, Form1.StationBox.Text);
             foreach (var data in result)
             {
-                Form1.StaionType.Items.Add(new SkinListBoxItem(data));
+                Form1.StaionType.Items.Add(data);
             }
         }
 
@@ -135,7 +135,7 @@ namespace After_Test.Generic
             var result =await  _testitemService.GetJxTestItem(Util.jx, Form1.StationBox2.SelectedItem.ToString());
             foreach (var t in result)
             {
-                Form1.StaionType.Items.Add(new SkinListBoxItem(t));
+                Form1.StaionType.Items.Add(t);
             }
         }
 
@@ -146,7 +146,7 @@ namespace After_Test.Generic
         {
             string listBoxResult = Convert.ToString(Form1.ContentBox.SelectedItem);
             //双击击获取当前选中行的内容
-            SkinListBoxItemCollection items = Form1.StaionType.Items;
+            var items = Form1.StaionType.Items;
             for (int i = 0; i < items.Count; i++)
             {
                 if (listBoxResult == items[i].ToString())
@@ -155,7 +155,7 @@ namespace After_Test.Generic
                 }
             }
 
-            Form1.StaionType.Items.Add(new SkinListBoxItem(listBoxResult));
+            Form1.StaionType.Items.Add(listBoxResult);
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace After_Test.Generic
             int i = Form1.StaionType.SelectedIndex;
             if (i > 0)
             {
-                SkinListBoxItem item = new SkinListBoxItem(Form1.StaionType.SelectedItem.ToString());
+                var item =Form1.StaionType.SelectedItem.ToString();
                 Form1.StaionType.Items.RemoveAt(i);
                 Form1.StaionType.Items.Insert(i - 1, item);
                 Form1.StaionType.SelectedIndex = i - 1;
@@ -222,7 +222,7 @@ namespace After_Test.Generic
                 int i = Form1.StaionType.SelectedIndex;
                 if (i < Form1.StaionType.Items.Count - 1)
                 {
-                    SkinListBoxItem item = new SkinListBoxItem(Form1.StaionType.SelectedItem.ToString());
+                    var item =  Form1.StaionType.SelectedItem.ToString();
                     Form1.StaionType.Items.RemoveAt(i);
                     Form1.StaionType.Items.Insert(i + 1, item);
                     Form1.StaionType.SelectedIndex = i + 1;
@@ -320,12 +320,12 @@ namespace After_Test.Generic
             if (result)
             {
                 LinkedList<string> ate = new LinkedList<string>();
-                SkinListBoxItemCollection items = Form1.StaionType.Items;
+                var items = Form1.StaionType.Items;
                 for (int i = 0; i < items.Count; i++)
                 {
                     ate.AddLast(items[i].ToString());
                 }
-                var sqlselect = alltestitem.Sqlselect(Form1.StationBox.Text, Util.jx, ate);
+                var sqlselect = await alltestitem.Sqlselect(Form1.StationBox.Text, Util.jx, ate);
 
                 if (sqlselect == 1)
                 {
