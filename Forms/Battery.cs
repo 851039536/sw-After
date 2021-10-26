@@ -25,10 +25,8 @@ namespace After_Test.Forms
         {
 
             Control();
-            //   uiComboBox1.Items.Add("dbo.[001_00A]");
             uiComboBox1.Items.Add("dbo.[001_05A]");
             uiComboBox1.Items.Add("dbo.BCP002001_00A");
-            //   uiComboBox1.Items.Add("dbo.BCP002001_01A");
             uiComboBox1.Items.Add("dbo.BCP002001_02A");
             uiComboBox1.Items.Add("dbo.BCP002001_03A");
             uiComboBox1.Items.Add("dbo.BCP002001_04A");
@@ -51,7 +49,6 @@ namespace After_Test.Forms
         private void Control()
         {
             dataGridView1.ReadOnly = true;
-            //      dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; //对齐
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             _x = Width;
             _y = Height;

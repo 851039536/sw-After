@@ -50,6 +50,7 @@
             this.mEVN盘ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.batteryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.complexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.接口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chromaSwATEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aTE接口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +70,7 @@
             this.uiListBox1 = new Sunny.UI.UIListBox();
             this.StaionType = new Sunny.UI.UIListBox();
             this.uiListBox3 = new Sunny.UI.UIListBox();
+            this.电池芯解绑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.skinMenuStrip1.SuspendLayout();
             this.ContentBox.SuspendLayout();
@@ -257,7 +259,9 @@
             // caseToolStripMenuItem
             // 
             this.caseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.batteryToolStripMenuItem});
+            this.batteryToolStripMenuItem,
+            this.complexToolStripMenuItem,
+            this.电池芯解绑ToolStripMenuItem});
             this.caseToolStripMenuItem.Name = "caseToolStripMenuItem";
             this.caseToolStripMenuItem.Size = new System.Drawing.Size(48, 21);
             this.caseToolStripMenuItem.Text = "Case";
@@ -265,9 +269,16 @@
             // batteryToolStripMenuItem
             // 
             this.batteryToolStripMenuItem.Name = "batteryToolStripMenuItem";
-            this.batteryToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.batteryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.batteryToolStripMenuItem.Text = "Battery";
             this.batteryToolStripMenuItem.Click += new System.EventHandler(this.batteryToolStripMenuItem_Click);
+            // 
+            // complexToolStripMenuItem
+            // 
+            this.complexToolStripMenuItem.Name = "complexToolStripMenuItem";
+            this.complexToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.complexToolStripMenuItem.Text = "ComplexCell";
+            this.complexToolStripMenuItem.Click += new System.EventHandler(this.complexToolStripMenuItem_Click);
             // 
             // 接口ToolStripMenuItem
             // 
@@ -492,6 +503,7 @@
             this.ContentBox.Name = "ContentBox";
             this.ContentBox.Padding = new System.Windows.Forms.Padding(2);
             this.ContentBox.Size = new System.Drawing.Size(232, 400);
+            this.ContentBox.Style = Sunny.UI.UIStyle.Custom;
             this.ContentBox.TabIndex = 108;
             this.ContentBox.Text = "uiListBox1";
             this.ContentBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.uiListBox1_MouseDown);
@@ -508,6 +520,7 @@
             this.uiListBox1.Name = "uiListBox1";
             this.uiListBox1.Padding = new System.Windows.Forms.Padding(2);
             this.uiListBox1.Size = new System.Drawing.Size(232, 400);
+            this.uiListBox1.Style = Sunny.UI.UIStyle.Custom;
             this.uiListBox1.TabIndex = 109;
             this.uiListBox1.Text = "uiListBox1";
             // 
@@ -524,6 +537,7 @@
             this.StaionType.Name = "StaionType";
             this.StaionType.Padding = new System.Windows.Forms.Padding(2);
             this.StaionType.Size = new System.Drawing.Size(400, 400);
+            this.StaionType.Style = Sunny.UI.UIStyle.Custom;
             this.StaionType.TabIndex = 110;
             this.StaionType.Text = "uiListBox1";
             // 
@@ -539,8 +553,16 @@
             this.uiListBox3.Name = "uiListBox3";
             this.uiListBox3.Padding = new System.Windows.Forms.Padding(2);
             this.uiListBox3.Size = new System.Drawing.Size(232, 400);
+            this.uiListBox3.Style = Sunny.UI.UIStyle.Custom;
             this.uiListBox3.TabIndex = 109;
             this.uiListBox3.Text = "uiListBox3";
+            // 
+            // 电池芯解绑ToolStripMenuItem
+            // 
+            this.电池芯解绑ToolStripMenuItem.Name = "电池芯解绑ToolStripMenuItem";
+            this.电池芯解绑ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.电池芯解绑ToolStripMenuItem.Text = "电池芯解绑";
+            this.电池芯解绑ToolStripMenuItem.Click += new System.EventHandler(this.电池芯解绑ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -625,6 +647,8 @@
         public Sunny.UI.UIListBox uiListBox1;
         public Sunny.UI.UIListBox StaionType;
         public Sunny.UI.UIListBox uiListBox3;
+        private System.Windows.Forms.ToolStripMenuItem complexToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 电池芯解绑ToolStripMenuItem;
     }
 }
 

@@ -37,13 +37,13 @@ namespace After_Test.Forms.Interface
             this.uiComboGh = new Sunny.UI.UIComboBox();
             this.uiButtonTest = new Sunny.UI.UIButton();
             this.uiComboZb = new Sunny.UI.UIComboBox();
-            this.MsgBox = new CCWin.SkinControl.SkinListBox();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiLabel3 = new Sunny.UI.UILabel();
             this.uiLabel4 = new Sunny.UI.UILabel();
             this.uiLabel5 = new Sunny.UI.UILabel();
             this.uiLabel6 = new Sunny.UI.UILabel();
             this.uiLine1 = new Sunny.UI.UILine();
+            this.MsgBox = new Sunny.UI.UIListBox();
             this.SuspendLayout();
             // 
             // uiList
@@ -161,25 +161,6 @@ namespace After_Test.Forms.Interface
             this.uiComboZb.Text = "请选择";
             this.uiComboZb.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // MsgBox
-            // 
-            this.MsgBox.Back = null;
-            this.MsgBox.BackColor = System.Drawing.SystemColors.InfoText;
-            this.MsgBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.MsgBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.MsgBox.Font = new System.Drawing.Font("新細明體", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.MsgBox.ForeColor = System.Drawing.SystemColors.Info;
-            this.MsgBox.FormattingEnabled = true;
-            this.MsgBox.Location = new System.Drawing.Point(8, 424);
-            this.MsgBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MsgBox.MouseColor = System.Drawing.Color.Black;
-            this.MsgBox.Name = "MsgBox";
-            this.MsgBox.RowBackColor1 = System.Drawing.Color.Black;
-            this.MsgBox.RowBackColor2 = System.Drawing.Color.Black;
-            this.MsgBox.SelectedColor = System.Drawing.Color.Black;
-            this.MsgBox.Size = new System.Drawing.Size(672, 117);
-            this.MsgBox.TabIndex = 91;
-            // 
             // uiLabel2
             // 
             this.uiLabel2.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -240,18 +221,33 @@ namespace After_Test.Forms.Interface
             this.uiLine1.TabIndex = 97;
             this.uiLine1.Text = "Result";
             // 
+            // MsgBox
+            // 
+            this.MsgBox.FillColor = System.Drawing.Color.White;
+            this.MsgBox.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.MsgBox.FormatString = "";
+            this.MsgBox.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.MsgBox.Location = new System.Drawing.Point(9, 417);
+            this.MsgBox.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
+            this.MsgBox.MinimumSize = new System.Drawing.Size(1, 2);
+            this.MsgBox.Name = "MsgBox";
+            this.MsgBox.Padding = new System.Windows.Forms.Padding(3);
+            this.MsgBox.Size = new System.Drawing.Size(671, 128);
+            this.MsgBox.TabIndex = 2;
+            this.MsgBox.Text = "uiListBox1";
+            // 
             // SwSendData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 546);
+            this.Controls.Add(this.MsgBox);
             this.Controls.Add(this.uiLine1);
             this.Controls.Add(this.uiLabel6);
             this.Controls.Add(this.uiLabel5);
             this.Controls.Add(this.uiLabel4);
             this.Controls.Add(this.uiLabel3);
             this.Controls.Add(this.uiLabel2);
-            this.Controls.Add(this.MsgBox);
             this.Controls.Add(this.uiComboZb);
             this.Controls.Add(this.uiButtonTest);
             this.Controls.Add(this.uiComboGh);
@@ -279,12 +275,12 @@ namespace After_Test.Forms.Interface
         private Sunny.UI.UIComboBox uiComboGh;
         private Sunny.UI.UIButton uiButtonTest;
         private Sunny.UI.UIComboBox uiComboZb;
-        public CCWin.SkinControl.SkinListBox MsgBox;
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UILabel uiLabel3;
         private Sunny.UI.UILabel uiLabel4;
         private Sunny.UI.UILabel uiLabel5;
         private Sunny.UI.UILabel uiLabel6;
         private Sunny.UI.UILine uiLine1;
+        private Sunny.UI.UIListBox MsgBox;
     }
 }

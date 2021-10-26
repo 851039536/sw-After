@@ -64,8 +64,7 @@ namespace After_Test
 
             GenericForm.Form1.WindowState = FormWindowState.Normal;
 
-            VTChroma.SwATE _sw = new VTChroma.SwATE();
-
+         
         }
         /// <summary>
         /// 用户权限
@@ -316,6 +315,18 @@ namespace After_Test
         private async void uiListBox1_MouseDown(object sender, MouseEventArgs e)
         {
             await Task.Run(() => _genericForm.ButAdd());
+        }
+
+        private void complexToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ComplexCell cell = new ComplexCell();
+            cell.Show();
+        }
+
+        private void 电池芯解绑ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BatteryUnbundle battery = new BatteryUnbundle();
+            battery.Show();
         }
     }
 }

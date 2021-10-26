@@ -23,6 +23,8 @@ namespace After_Test
             // uiComboboxEx1.Items.Add("生产模式");
             // uiComboboxEx1.DropDownStyle = ComboBoxStyle.DropDownList;
             // uiComboboxEx1.SelectedIndex = 0;
+
+         
         }
         private void LoginForm_Shown(object sender, EventArgs e)
         {
